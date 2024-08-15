@@ -20,7 +20,7 @@ module.exports = {
       colors: {
         si: {
           text: "#0c0d0d",
-          primary: "#005C4B",
+          primary: "#16a249",
           secondary: "#8cd9a6",
           accent: "#fbbf24",
         },
