@@ -1,12 +1,13 @@
+import { Hero } from "@/components/custom/Hero";
 import Navbar from "@/components/custom/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="min-h-screen">
       <Navbar />
+      <Hero />
       <Footer />
     </main>
   );
