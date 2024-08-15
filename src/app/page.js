@@ -1,15 +1,13 @@
-import { Hero } from "@/components/custom/Hero";
-import Navbar from "@/components/custom/Navbar";
+import { Hero } from "@/components/Home/Hero/Hero";
 import NewArrival from "@/components/Home/NewArrival/NewArrival";
 import Footer from "@/components/shared/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <div>
       <Hero />
       <NewArrival />
       <Footer />
-    </main>
+    </div>
   );
 }
