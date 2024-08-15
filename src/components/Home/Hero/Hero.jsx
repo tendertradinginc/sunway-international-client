@@ -5,9 +5,8 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
@@ -37,10 +36,10 @@ export function Hero() {
               <div className="absolute inset-0 bg-black opacity-50"></div>
               {/* Content */}
               <div className="relative flex flex-col justify-center items-center text-center h-full gap-5">
-                <h2 className="text-6xl font-semibold text-muted">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl text-balance font-semibold text-muted">
                   Lorem ipsum dolor sit amet.
                 </h2>
-                <h4 className="text-lg font-medium max-w-xl mx-auto text-muted">
+                <h4 className="text-base lg:text-xl text-balance font-medium max-w-sm md:max-w-lg lg:max-w-2xl mx-auto text-muted">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatem maiores veritatis nobis at quae voluptate possimus
                   repudiandae dolor inventore corporis cum itaque, fuga porro
