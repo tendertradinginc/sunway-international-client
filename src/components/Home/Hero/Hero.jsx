@@ -8,6 +8,44 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 
+const slides = [
+  {
+    id: 2,
+    title: "State of the Art Hospitals",
+    subtitle:
+      "Building modern hospitals equipped with the latest technology for superior patient care.",
+    imageUrl: "/solen-feyissa-jGmBZypoFPc-unsplash.jpg",
+  },
+  {
+    id: 1,
+    title: "Innovative Medical Solutions",
+    subtitle:
+      "Leading the way in healthcare with advanced medical equipment and cutting-edge hospital construction.",
+    imageUrl: "/national-cancer-institute-oCLuFi9GYNA-unsplash.jpg",
+  },
+  {
+    id: 3,
+    title: "Office Equipment Excellence",
+    subtitle:
+      "Supplying high-quality office equipment designed to enhance productivity and comfort.",
+    imageUrl: "/benjamin-child-0sT9YhNgSEs-unsplash.jpg",
+  },
+  {
+    id: 4,
+    title: "Custom Healthcare Solutions",
+    subtitle:
+      "Tailoring healthcare environments to meet the unique needs of each client.",
+    imageUrl: "/adhy-savala-zbpgmGe27p8-unsplash.jpg",
+  },
+  {
+    id: 5,
+    title: "Transforming Workspaces",
+    subtitle:
+      "Providing ergonomic office solutions that improve well-being and efficiency.",
+    imageUrl: "/adolfo-felix-PG8NyM_Mcts-unsplash.jpg",
+  },
+];
+
 export function Hero() {
   return (
     <Carousel
@@ -23,13 +61,13 @@ export function Hero() {
       ]}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+        {slides.map((slide) => (
+          <CarouselItem key={slide.id}>
             <div className="relative w-full h-svh bg-si-secondary">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(https://picsum.photos/700/550?v=${index})`,
+                  backgroundImage: `url(${slide.imageUrl})`,
                 }}
               />
               {/* Black overlay */}
@@ -37,15 +75,11 @@ export function Hero() {
               {/* Content */}
               <div className="relative flex flex-col justify-center items-center text-center h-full gap-5">
                 <h2 className="text-3xl md:text-5xl lg:text-6xl text-balance font-semibold text-muted">
-                  Lorem ipsum dolor sit amet.
+                  {slide.title}
                 </h2>
                 <h4 className="text-base lg:text-xl text-balance font-medium max-w-sm md:max-w-lg lg:max-w-2xl mx-auto text-muted">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatem maiores veritatis nobis at quae voluptate possimus
-                  repudiandae dolor inventore corporis cum itaque, fuga porro
-                  nesciunt a aut ducimus laboriosam tempore!
+                  {slide.subtitle}
                 </h4>
-
                 <div>
                   <Button>Get Started</Button>
                 </div>
@@ -56,15 +90,4 @@ export function Hero() {
       </CarouselContent>
     </Carousel>
   );
-}
-
-{
-  /* <div className="p-1 relative w-full h-dvh">
-<Image
-src={`https://picsum.photos/700/550?v=${index}`}
-alt="Your alt text"
-fill={true}
-className="object-cover object-center"
-/>
-</div> */
 }
