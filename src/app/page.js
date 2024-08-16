@@ -13,10 +13,9 @@ export default function Home() {
       <Hero />
       <NewArrival />
       <Services />
-      <CountUP />
-      <Testimonials/>
-      <OurClients />
       <ProjectShowcase />
+      <CountUP />
+      <OurClients />
       <Testimonials />
       <Footer />
     </div>
