@@ -3,9 +3,10 @@ import MaxWidthWrapper from '@/components/custom/MaxWidthWrapper';
 import CountUp from 'react-countup';
 
 const CountUP = () => {
-    const totalParcelBooked = 1200; 
-    const totalParcelDelivery = 800;
-    const totalCustomer = 500; 
+    const totalProduct = 1200; 
+    const totalSell = 750;
+    const totalOrder = 550; 
+    const totalCustomer = 400;
 
     return (
         <MaxWidthWrapper className="p-6 my-6  shadow-2xl text-gray-100  bg-opacity-10 bg-fixed bg-parallax bg-cover">
@@ -16,10 +17,10 @@ const CountUP = () => {
                     <div className='text-center'>
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
-                                <CountUp end={totalParcelBooked} duration={4} />+
+                                <CountUp end={totalProduct} duration={4} />+
                             </span>
                         </div>
-                        <p className="capitalize text-xl mt-4">Parcel Booked</p>
+                        <p className="capitalize text-xl mt-4">Total Product</p>
                     </div>
                 </div>
 
@@ -28,10 +29,10 @@ const CountUP = () => {
                     <div className="">
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
-                                <CountUp end={totalParcelDelivery} duration={4} />+
+                                <CountUp end={totalSell} duration={4} />+
                             </span>
                         </div>
-                        <p className="capitalize text-xl mt-4">Parcel Delivered</p>
+                        <p className="capitalize text-xl mt-4">Total sell</p>
                     </div>
                 </div>
 
@@ -40,10 +41,10 @@ const CountUP = () => {
                     <div className="text-center">
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
-                                <CountUp end={totalCustomer} duration={4} />+
+                                <CountUp end={totalOrder} duration={4} />+
                             </span>
                         </div>
-                        <p className="capitalize mt-4 text-xl">Customers</p>
+                        <p className="capitalize mt-4 text-xl">Total Order</p>
                     </div>
                 </div>
 
@@ -55,7 +56,7 @@ const CountUP = () => {
                                 <CountUp end={totalCustomer} duration={4} />+
                             </span>
                         </div>
-                        <p className="capitalize mt-4 text-xl">Users</p>
+                        <p className="capitalize mt-4 text-xl">Total Customer</p>
                     </div>
                 </div>
             </div>
