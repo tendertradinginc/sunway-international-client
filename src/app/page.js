@@ -1,3 +1,4 @@
+import ConstructionService from "@/components/ConstructionService/ConstructionService";
 import CountUP from "@/components/Home/CountUp/CountUp";
 import { Hero } from "@/components/Home/Hero/Hero";
 import NewArrival from "@/components/Home/NewArrival/NewArrival";
@@ -13,6 +14,8 @@ export default function Home() {
       <Hero />
       <NewArrival />
       <Services />
+      <ConstructionService />
+      <Testimonials/>
       <ProjectShowcase />
       <CountUP />
       <OurClients />

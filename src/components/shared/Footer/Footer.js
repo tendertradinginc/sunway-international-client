@@ -15,12 +15,12 @@ const Footer = () => {
       }}
       className=" w-full bg-cover bg-no-repeat"
     >
-      <div className="bg-[#16a249de]">
+      <div className="bg-[#0c0d0df6]">
         <MaxWidthWrapper>
           <div className="flex gap-x-28 gap-y-10 flex-wrap py-10">
             {/* First Column */}
-            <ul className="flex flex-col gap-3">
-              <li className="text-white text-3xl font-bold flex gap-2">
+            <ul className="flex flex-col gap-3 ">
+              <li className="text-gray-300 text-3xl font-bold flex gap-2">
                 <Image
                   height={50}
                   width={100}
@@ -29,8 +29,8 @@ const Footer = () => {
                 />{" "}
                 Sunway <br /> International
               </li>
-              <li className="max-w-80">
-                <p className="font-medium text-secondary mt-5 leading-7">
+              <li className="max-w-80 ">
+                <p className="font-medium text-gray-300 mt-5 leading-7">
                   We Reamin true to the same priciples on which our company was
                   founded over a hundred years ago; providing superior service
                   to our clients, putting safty first, creating opportunities
@@ -41,7 +41,7 @@ const Footer = () => {
 
             {/* Second Column */}
             <ul className="flex flex-col gap-y-3">
-              <li className="text-2xl font-bold text-white">Links</li>
+              <li className="text-2xl font-bold text-gray-300">Links</li>
               <li className="mt-5">
                 <Link href="/about-us" className="text-secondary">
                   About Us
@@ -71,7 +71,7 @@ const Footer = () => {
 
             {/* Third Column */}
             <ul className="grid gap-y-3">
-              <li className="text-white text-2xl font-bold">
+              <li className="text-gray-300 text-2xl font-bold">
                 Contact Information
               </li>
               <li className="max-w-80">
@@ -82,22 +82,22 @@ const Footer = () => {
                 </p>
               </li>
               <li className="flex gap-x-3 text-secondary mt-5">
-                <FaHome className="text-white mt-1 text-xl" />
+                <FaHome className="text-gray-300 mt-1 text-xl" />
                 No. 58A, East Medison Street, <br /> Batilmor, MD, USA 480
               </li>
               <li className="flex gap-x-3 text-secondary ">
-                <IoCall className="text-white mt-1 text-xl" />
+                <IoCall className="text-gray-300 mt-1 text-xl" />
                 +880 1777452341
               </li>
               <li className="flex gap-x-3 text-secondary ">
-                <IoMdMail className="text-white mt-1 text-xl" />
+                <IoMdMail className="text-gray-300 mt-1 text-xl" />
                 sunwayInternation@gmail.com
               </li>
             </ul>
 
             {/* Socials */}
             <ul className="flex flex-col gap-y-3">
-              <li className="text-white text-2xl font-bold">Socials</li>
+              <li className="text-gray-300 text-2xl font-bold">Socials</li>
               <Image
                 className="mt-2"
                 height={50}
@@ -135,7 +135,7 @@ const Footer = () => {
           </div>
         </MaxWidthWrapper>
         <div className="p-5 border-t border-secondary">
-          <h1 className="text-center text-white font-semibold">
+          <h1 className="text-center text-gray-300 font-semibold">
             {" "}
             sunwayinternational.com &copy; Designed & Developed by
             Tender-Trading-Inc.
