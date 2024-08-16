@@ -34,9 +34,9 @@ const projects = [
 
 const ProjectShowcase = () => {
   return (
-    <>
+    <div className="py-16">
       <MaxWidthWrapper>
-        <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-5">
+        <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-10">
           Featured Projects
         </h1>
       </MaxWidthWrapper>
@@ -82,7 +82,7 @@ const ProjectShowcase = () => {
           </MaxWidthWrapper>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
