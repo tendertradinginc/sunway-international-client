@@ -78,6 +78,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    backgroundImage: {
+      'parallax': 'linear-gradient(rgba(140, 217, 166, 0.5), rgba(140, 217, 166, 1)), url("https://i.postimg.cc/Qts7JQ0h/med-1.png")',
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };
