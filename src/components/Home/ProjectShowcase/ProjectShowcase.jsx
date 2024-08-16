@@ -43,7 +43,7 @@ const ProjectShowcase = () => {
 
       <div className="relative min-h-[600px] w-full">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 top-0 left-0 bg-cover bg-center bg-fixed w-full h-full bg-no-repeat"
           style={{
             backgroundImage: `url(/solen-feyissa-jGmBZypoFPc-unsplash.jpg)`,
           }}
@@ -70,10 +70,8 @@ const ProjectShowcase = () => {
                           {project.description}
                         </h4>
                       </div>
-                      <h6 className="text-xs md:text-sm">
-                        {project.location}
-                      </h6>
-                      <Button className='w-full md:w-1/2'>View More</Button>
+                      <h6 className="text-xs md:text-sm">{project.location}</h6>
+                      <Button className="w-full md:w-1/2">View More</Button>
                     </section>
                   </div>
                 </div>
