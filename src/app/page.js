@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Home/Hero/Hero";
 import NewArrival from "@/components/Home/NewArrival/NewArrival";
+import ProjectShowcase from "@/components/Home/ProjectShowcase/ProjectShowcase";
 import Testimonials from "@/components/Home/Testimonials/Testimonials";
 import Footer from "@/components/shared/Footer/Footer";
 
@@ -8,7 +9,8 @@ export default function Home() {
     <div>
       <Hero />
       <NewArrival />
-      <Testimonials/>
+      <ProjectShowcase />
+      <Testimonials />
       <Footer />
     </div>
   );
