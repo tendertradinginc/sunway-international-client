@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MaxWidthWrapper from "../custom/MaxWidthWrapper";
+import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
 import Image from "next/image";
 
 const ConstructionService = () => {

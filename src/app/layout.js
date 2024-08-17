@@ -1,6 +1,6 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Home/Navbar/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
 
 const openSans = Open_Sans({ display: "swap" });
 
