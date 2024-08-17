@@ -14,7 +14,7 @@ const NavItems = ({ className }) => {
     { id: 3, url: "#", label: "Gallery" },
     { id: 4, url: "#", label: "Services" },
     { id: 5, url: "#", label: "Blog" },
-    { id: 6, url: "#", label: "Products" },
+    { id: 6, url: "/office-eqipments", label: "Products" },
   ];
 
   return (
