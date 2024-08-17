@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
-const OfficeEqipmentCard = () => {
-// TODO1: Make the product name a button that leads to the details page
-// TODO2: Make the call for button copy a number and show toast
+const OfficeEqipmentCard = ({ id }) => {
+  // TODO2: Make the call for button copy a number and show toast
   return (
     <div className="h-[400px]">
       <div className="relative mx-auto h-[250px] w-[90%]">
@@ -15,7 +15,11 @@ const OfficeEqipmentCard = () => {
         />
       </div>
       <div className="text-balance pt-3 text-center">
-        <h3 className="text-lg font-semibold">Product Name</h3>
+        <Link href={`/office-eqipments/${id}`}>
+          <h3 className="text-lg font-semibold hover:underline">
+            Product Name
+          </h3>
+        </Link>
         <p className="mx-auto max-w-[75%] text-sm text-muted-foreground">
           Short Description: Lorem ipsum dolor sit amet.
         </p>
