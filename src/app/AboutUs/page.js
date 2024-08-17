@@ -1,5 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
+import ContactUs from "../ContactUs/page";
 
 const AboutUs = () => {
     return (
@@ -26,7 +27,7 @@ const AboutUs = () => {
                 <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
                         About Vision
                     </h1>
-                    <div className=" flex flex-col lg:flex-row justify-between gap-5 lg:gap-10 bg-secondary">
+                    <div className=" flex flex-col lg:flex-row justify-between gap-5 lg:gap-10 bg-secondary py-5">
                         <div className="flex-1 pt-3 text-justify px-4">
                             <h1 className="text-xl md:text-2xl font-semibold text-si-primary">
                                 Mission
@@ -66,7 +67,7 @@ const AboutUs = () => {
                     <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
                         About CEO
                     </h1>
-                    <div className=" flex flex-col lg:flex-row justify-between gap-5 lg:gap-10 px-4 bg-secondary">
+                    <div className=" flex flex-col lg:flex-row justify-between gap-5 lg:gap-10 px-4 bg-secondary py-5">
 
                         <div className="flex-1 flex justify-center text-justify ">
                             <Image
@@ -78,7 +79,7 @@ const AboutUs = () => {
                             />
                         </div>
 
-                        <div className="flex-1 order-first lg:order-last text-justify ">
+                        <div className="flex-1 text-justify ">
                             <h1 className="text-xl md:text-2xl font-semibold text-si-primary pt-3">
                                 Engr Sarwar Sumon
                             </h1>
@@ -91,6 +92,8 @@ const AboutUs = () => {
                     </div>
                 </section>
             </div>
+
+            <ContactUs></ContactUs>
         </div>
     );
 };
