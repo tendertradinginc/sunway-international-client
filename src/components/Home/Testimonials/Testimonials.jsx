@@ -69,8 +69,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <MaxWidthWrapper className="my-10">
-      <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-5">
+    <MaxWidthWrapper className="py-16">
+      <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-10">
         Customer Reviews
       </h1>
       <Carousel
