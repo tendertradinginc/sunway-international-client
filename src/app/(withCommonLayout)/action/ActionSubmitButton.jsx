@@ -7,7 +7,7 @@ export default function ActionSubmitButton({ children }) {
   const { pending } = useFormStatus();
   return (
     <Button disabled={pending} type="submit">
-      {pending ? <Spinner></Spinner> : children}
+      {pending ? <Spinner></Spinner> : "Submit"}
     </Button>
   );
 }

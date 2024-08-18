@@ -9,6 +9,7 @@ const registrationPage = () => {
               <RegistrationForm></RegistrationForm>
             </div>
           </div>
+          
         </div>
       );
     };

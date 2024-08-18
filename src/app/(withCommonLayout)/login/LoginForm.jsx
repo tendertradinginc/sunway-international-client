@@ -1,9 +1,21 @@
 "use client"
-
-import { Button } from "@/components/ui/button";
+import { createRef, useEffect } from "react";
+import { useFormState } from "react-dom";
+import { toast } from "sonner";
+import ActionSubmitButton from "../action/ActionSubmitButton";
 const LoginForm = () => {
+    const ref = createRef();
+    const [state, fromAction] = useFormState(signUpUser, null); 
+  
+    useEffect(() => {
+      if (state && state.success) {
+        console.log(state);
+        toast("successfully sign up");
+        ref.current?.reset();
+      }
+    }, [state, ref]);
     return (
-        <form
+        <form ref={ref} action={fromAction}
         className="md:flex justify-center md:m-0 rounded-lg"
    
       >
@@ -33,7 +45,7 @@ const LoginForm = () => {
           </div>
           <br />
           <div>
-           <Button > Login</Button>
+          <ActionSubmitButton></ActionSubmitButton>
           </div>
         </div>
       </form>

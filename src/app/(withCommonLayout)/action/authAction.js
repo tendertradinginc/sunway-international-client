@@ -3,7 +3,7 @@ export async function signUpUser(pre , fromData) {
     try {
       const formattedData = JSON.stringify(Object.fromEntries(fromData));
       console.log(formattedData);
-      const res = await fetch(`http://localhost:5000/api/v1/users/createuser`, {
+      const res = await fetch(`http://localhost:5000/api/v1/users/auth`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",

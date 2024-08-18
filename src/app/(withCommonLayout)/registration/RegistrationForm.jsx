@@ -1,8 +1,9 @@
 "use client"
-import { Button } from "@/components/ui/button";
 import { createRef, useEffect } from "react";
 import { useFormState } from "react-dom";
-import { toast, ToastContainer } from "react-toastify";
+
+import { toast } from "sonner";
+import ActionSubmitButton from "../action/ActionSubmitButton";
 import { signUpUser } from "../action/authAction";
 
 const RegistrationForm = () => {
@@ -12,7 +13,7 @@ const RegistrationForm = () => {
     useEffect(() => {
       if (state && state.success) {
         console.log(state);
-        toast.success("successfully sign up");
+        toast("successfully sign up");
         ref.current?.reset();
       }
     }, [state, ref]);
@@ -58,12 +59,15 @@ const RegistrationForm = () => {
               className="p-2 w-full   bg-white border border-gray-400 rounded-md "
             />
           </div>
+          <div>
+          
+          </div>
           <br />
           <div>
-           <Button > Register</Button>
+            <ActionSubmitButton></ActionSubmitButton>
           </div>
         </div>
-        <ToastContainer />
+       
       </form>
     );
 };
