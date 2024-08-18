@@ -1,9 +1,23 @@
 "use client"
-
 import { Button } from "@/components/ui/button";
+import { createRef, useEffect } from "react";
+import { useFormState } from "react-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { signUpUser } from "../action/authAction";
+
 const RegistrationForm = () => {
+    const ref = createRef();
+    const [state, fromAction] = useFormState(signUpUser, null);
+  
+    useEffect(() => {
+      if (state && state.success) {
+        console.log(state);
+        toast.success("successfully sign up");
+        ref.current?.reset();
+      }
+    }, [state, ref]);
     return (
-        <form
+        <form ref={ref} action={fromAction}
         className="md:flex justify-center md:m-0 rounded-lg"
    
       >
@@ -16,8 +30,8 @@ const RegistrationForm = () => {
               placeholder=" Your name "
               required
               className="p-2 w-full  bg-white border border-gray-400 rounded-md "
-              type="email"
-              name="email"
+              type="text"
+              name="fullName"
             />
           </div>
           <div className="mb-3 ">
@@ -39,6 +53,7 @@ const RegistrationForm = () => {
             <input
               placeholder="Password"
               type="password"
+              name="password"
               required
               className="p-2 w-full   bg-white border border-gray-400 rounded-md "
             />
@@ -48,6 +63,7 @@ const RegistrationForm = () => {
            <Button > Register</Button>
           </div>
         </div>
+        <ToastContainer />
       </form>
     );
 };
