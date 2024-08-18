@@ -97,8 +97,8 @@ const MedicalInstrument = () => {
               {products.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 bg-transparent ">
                   <div className="">
-                    <Card className="">
-                      <CardContent className="flex aspect-square items-center justify-center ">
+                    <Card className="rounded-none border-0">
+                      <CardContent className="flex  items-center justify-center p-0">
                       <Image
                             src={item?.image}
                             sizes="100vw"
@@ -107,7 +107,7 @@ const MedicalInstrument = () => {
                             // Make the image display full width
                             style={{
                               width: "100%",
-                              height: "auto",
+                              height: "200px",
                             }}
                             alt={`product ${index + 1}`}
                           />
