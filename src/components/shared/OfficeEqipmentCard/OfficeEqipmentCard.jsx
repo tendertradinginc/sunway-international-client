@@ -15,7 +15,7 @@ const OfficeEqipmentCard = ({ id }) => {
         />
       </div>
       <div className="text-balance pt-3 text-center">
-        <Link href={`/office-eqipments/${id}`}>
+        <Link href={`/office-equipment/${id}`}>
           <h3 className="text-lg font-semibold hover:underline">
             Product Name
           </h3>
