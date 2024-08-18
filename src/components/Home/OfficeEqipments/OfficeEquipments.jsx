@@ -13,7 +13,7 @@ const OfficeEquipments = () => {
         {Array.from({ length: 4 }).map((_, index) => {
           return (
             <div key={index}>
-              <Medical />
+              <OfficeEqipmentCard />
             </div>
           );
         })}
