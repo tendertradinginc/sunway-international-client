@@ -3,8 +3,14 @@ import Image from "next/image";
 
 const Page = () => {
   return (
-    <MaxWidthWrapper className="py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 gap-y-20">
+    <MaxWidthWrapper className="py-10">
+      <div className="max-w-2xl mx-auto">
+      <h1 className="text-3xl md:text-5xl font-semibold text-si-primary text-center">
+        Wellness Journal
+      </h1>
+      <p className="text-center font-semibold text-si-text mt-3">Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well.</p>
+      </div>
+      <div className="grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2 mt-12">
         <div>
           <Image
             alt="Blog Image 1"
@@ -26,7 +32,7 @@ const Page = () => {
             author
           </p>
         </div>
-        <div className="flex flex-col  gap-y-8">
+        <div className="flex flex-col gap-y-8">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
             <div>
               <Image
@@ -68,8 +74,7 @@ const Page = () => {
                 turpis, pretium nec placerat ornare, sodales ac urna. Sed
                 commodo semper fermentum. Phasellus bibendum lorem nisi turpis,
                 pretium nec placerat ornare, sodales ac urna. Sed commodo semper
-                fermentum. Phasellus bibendum lorem nisi condimentum 
-                
+                fermentum. Phasellus bibendum lorem nisi condimentum
               </p>
             </div>
           </div>
