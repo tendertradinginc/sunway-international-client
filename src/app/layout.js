@@ -1,6 +1,5 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar/Navbar";
 
 const openSans = Open_Sans({ display: "swap" });
 
@@ -14,7 +13,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={openSans.className}>
         <main className="min-h-screen">
-          <Navbar />
           {children}
         </main>
       </body>
