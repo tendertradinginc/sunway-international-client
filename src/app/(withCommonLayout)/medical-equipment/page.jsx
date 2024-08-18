@@ -1,3 +1,5 @@
+import MedicalCategoryCard from "@/components/custom/MedicalCategoryCard";
+
 const MedicalEquipmentPage = () => {
   return (
     <div>
@@ -5,7 +7,7 @@ const MedicalEquipmentPage = () => {
         Medical Equipment
       </h2>
 
-      
+      <MedicalCategoryCard/>
     </div>
   );
 };
