@@ -1,3 +1,4 @@
+import BannerCategory from "@/components/Home/BannerCategory/BannerCategory";
 import ConstructionService from "@/components/Home/ConstructionService/ConstructionService";
 import CountUP from "@/components/Home/CountUp/CountUp";
 import { Hero } from "@/components/Home/Hero/Hero";
@@ -13,8 +14,8 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <BannerCategory />
       <NewArrival />
-      <OfficeEquipment />
       <Services />
       <CountUP />
       <MedicalEquipments />
