@@ -19,7 +19,10 @@ const MedicalEquipmentCard = () => {
             <p className="text-sm line-clamp-2">
                 <b>Short Description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores eligendi inventore qui commodi! Quam?
             </p>
-            <Link href={"/"} className="text-si-accent font-bold">Explore More</Link>
+            {/* <Link href={"/"} className="text-si-accent pa font-bold">Explore More</Link> */}
+            <button className="bg-[#fbbe24d3] rounded-sm px-3 p-1 mt-2 font-semibold text-black">
+            Explore More
+            </button>
         </div>
     );
 };
