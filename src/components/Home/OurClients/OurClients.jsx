@@ -51,12 +51,12 @@ const OurClients = () => {
                 Our Clients
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ">
 
                 {ClientInfo.map((client, idx) => (
                     <div
                         key={idx}
-                        className="relative h-32 w-60 mx-auto border-[2px] border-primary p-3 gap-2  h text-center rounded-lg shadow-xl hover:-translate-y-3 duration-700 cursor-pointer">
+                        className="relative h-48 md:h-32 w-full mx-auto border-[2px] border-primary text-center rounded-lg shadow-xl hover:-translate-y-3 duration-700 cursor-pointer">
                         <Image
                             src={client.img}
                             alt={client.clientName}

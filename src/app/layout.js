@@ -1,4 +1,5 @@
 import { Open_Sans } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const openSans = Open_Sans({ display: "swap" });
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <main className="min-h-screen">
           {children}
         </main>
+        <Toaster></Toaster>
       </body>
     </html>
   );
