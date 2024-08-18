@@ -7,7 +7,6 @@ import OfficeEquipments from "@/components/Home/OfficeEqipments/OfficeEquipments
 import OurClients from "@/components/Home/OurClients/OurClients";
 import ProjectShowcase from "@/components/Home/ProjectShowcase/ProjectShowcase";
 import Testimonials from "@/components/Home/Testimonials/Testimonials";
-import Footer from "@/components/shared/Footer/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +20,7 @@ export default function Home() {
       <ProjectShowcase />
       <CountUP />
       <OurClients />
-      <Footer />
+     
     </div>
   );
 }
