@@ -1,11 +1,10 @@
-import React from "react";
-import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
+import Image from "next/image";
+import Link from "next/link";
 import { FaFacebook, FaHome, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoCall } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
-import Link from "next/link";
-import Image from "next/image";
+import { IoCall } from "react-icons/io5";
+import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
 
 const Footer = () => {
   return (
@@ -43,6 +42,11 @@ const Footer = () => {
             <ul className="flex flex-col gap-y-3">
               <li className="text-2xl font-bold text-gray-300">Links</li>
               <li className="mt-5">
+                <Link href="/login" className="text-secondary">
+                 Login
+                </Link>
+              </li>
+              <li className="">
                 <Link href="/about-us" className="text-secondary">
                   About Us
                 </Link>

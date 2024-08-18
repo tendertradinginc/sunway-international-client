@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "../../ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "../../ui/button";
 
 const NavItems = ({ className }) => {
   const pathname = usePathname();
@@ -15,6 +15,7 @@ const NavItems = ({ className }) => {
     { id: 4, url: "#", label: "Services" },
     { id: 5, url: "#", label: "Blog" },
     { id: 6, url: "/office-eqipments", label: "Products" },
+   
   ];
 
   return (
