@@ -1,6 +1,7 @@
 import ConstructionService from "@/components/Home/ConstructionService/ConstructionService";
 import CountUP from "@/components/Home/CountUp/CountUp";
 import { Hero } from "@/components/Home/Hero/Hero";
+import MedicalEquipments from "@/components/Home/Medical Equipments/MedicalEquipments";
 import NewArrival from "@/components/Home/NewArrival/NewArrival";
 import Services from "@/components/Home/NewArrival/Services";
 import OfficeEquipment from "@/components/Home/OfficeEquipment/OfficeEquipment";
@@ -15,12 +16,13 @@ export default function Home() {
       <NewArrival />
       <OfficeEquipment />
       <Services />
+      <CountUP />
+      <MedicalEquipments />
       <ConstructionService />
+      <OfficeEquipment />
       <Testimonials />
       <ProjectShowcase />
-      <CountUP />
-      <OurClients />
-     
+      <OurClients />    
     </div>
   );
 }
