@@ -4,8 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import EqipmentCard from "@/components/shared/EqipmentCard/EqipmentCard";
 import { Button } from "@/components/ui/button";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 const MedicalCategoryCard = () => {
+  // TODO: replace the links with the actual category
+
   return (
     <MaxWidthWrapper className="py-16">
       <Card className="w-full">
@@ -14,8 +17,10 @@ const MedicalCategoryCard = () => {
             <CardTitle className="text-xl md:text-2xl lg:text-4xl">
               Linen
             </CardTitle>
-            <Button>
-              View More <DoubleArrowRightIcon className="ml-2 size-5" />
+            <Button asChild>
+              <Link href={`/medical-equipment/${"linen"}`}>
+                View More <DoubleArrowRightIcon className="ml-2 size-5" />
+              </Link>
             </Button>
           </div>
         </CardHeader>
@@ -23,7 +28,7 @@ const MedicalCategoryCard = () => {
           {Array.from({ length: 4 }).map((_, index) => {
             return (
               <div key={index}>
-                <EqipmentCard navigateTo={`/medical-equipment/${index}`} />
+                <EqipmentCard navigateTo={`/medical-equipment/linen/${index}`} />
               </div>
             );
           })}
