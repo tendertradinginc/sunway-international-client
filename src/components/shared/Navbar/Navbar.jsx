@@ -30,7 +30,7 @@ const Navbar = () => {
             <RiMenu3Line className="size-5" />
           </SheetTrigger>
           <SheetContent>
-            <NavItems className="flex-col pt-5"/>
+            <NavItems/>
           </SheetContent>
         </Sheet>
       </MaxWidthWrapper>
