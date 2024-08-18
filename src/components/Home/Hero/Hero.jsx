@@ -61,7 +61,7 @@ export function Hero() {
       ]}
     >
       <CarouselContent>
-        {slides.map((slide) => (
+        {slides?.map((slide) => (
           <CarouselItem key={slide.id}>
             <div className="relative w-full h-svh bg-si-secondary">
               <div
