@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
+  const array = new Array(9).fill(0);
   return (
     <MaxWidthWrapper className="py-10">
+      {/* Title Section */}
       <div className="mx-auto max-w-2xl">
         <h1 className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
           Wellness Journal
@@ -14,6 +16,8 @@ const Page = () => {
           insights. Your go-to resource for staying healthy and well.
         </p>
       </div>
+
+      {/* First Blog Section */}
       <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
         <div className="bg-secondary">
           <Image
@@ -39,7 +43,7 @@ const Page = () => {
             <Link href="#">
               {" "}
               <button className="mt-4 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                New Arrival
+                Read More
               </button>
             </Link>
           </div>
@@ -68,7 +72,7 @@ const Page = () => {
               <Link href="#">
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  New Arrival
+                  Read More
                 </button>
               </Link>
             </div>
@@ -97,7 +101,7 @@ const Page = () => {
               <Link href="#">
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  New Arrival
+                  Read More
                 </button>
               </Link>
             </div>
@@ -126,12 +130,45 @@ const Page = () => {
               <Link href="#">
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  New Arrival
+                  Read More
                 </button>
               </Link>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* second Blog Section */}
+      <div className="mt-20 grid grid-cols-1 gap-y-10 md:grid-cols-2 gap-5 lg:grid-cols-3 lg:gap-x-10">
+        {array?.map((_, idx) => (
+          <div key={idx} className="bg-secondary">
+            <Image
+              alt="Blog Image 1"
+              height={500}
+              width={500}
+              src="https://mida.peerduck.com/wp-content/uploads/2022/03/4tgcfw.png"
+              className="w-fit md:w-full"
+            />
+            <div className="p-3">
+              <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
+                Spotlight on Our Diagnostic Technology
+              </h1>
+              <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
+                Donec vel pellentesque nisl, molestie tempus ligula. Cras massa
+                turpis, pretium nec placerat ornare, sodales ac urna. Sed
+                commodo semper fermentum. Phasellus bibendum lorem nisi
+                condimentum commodo semper fermentum. Phasellus bibendum lorem
+                nisi condimentum commodo
+              </p>
+              <Link href="#">
+                {" "}
+                <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+                  Read More
+                </button>
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </MaxWidthWrapper>
   );
