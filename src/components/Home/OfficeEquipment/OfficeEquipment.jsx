@@ -2,7 +2,7 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import OfficeEqipmentCard from "@/components/shared/OfficeEqipmentCard/OfficeEqipmentCard";
 import React from "react";
 
-const OfficeEquipments = () => {
+const OfficeEquipment = () => {
   return (
     <MaxWidthWrapper className="py-16">
       <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
@@ -22,4 +22,4 @@ const OfficeEquipments = () => {
   );
 };
 
-export default OfficeEquipments;
+export default OfficeEquipment;
