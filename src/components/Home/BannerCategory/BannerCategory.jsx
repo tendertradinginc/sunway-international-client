@@ -1,7 +1,7 @@
 import { MdBathtub, MdOutlineListAlt } from "react-icons/md";
 import { RiFirstAidKitFill } from "react-icons/ri";
-import { TbWheelchair } from "react-icons/tb";
 import { PiBedBold } from "react-icons/pi";
+import { TfiWheelchair } from "react-icons/tfi";
 import { MdAddShoppingCart } from "react-icons/md";
 
 const BannerCategory = () => {
@@ -21,7 +21,7 @@ const BannerCategory = () => {
                 </div>
                 {/* category 3 */}
                 <div className="flex justify-center items-center flex-col h-32 hover:bg-gradient-to-r from-[#fbbe24d3]  to-[#faca5083] text-white border-r">
-                <TbWheelchair className="text-6xl text-si-primary mb-2" />
+                <TfiWheelchair className="text-6xl text-si-primary mb-2" />
                     <h1 className="text-center text-black text-md font-semibold">Wheelchair Series</h1>
                 </div>
                 {/* category 4 */}
