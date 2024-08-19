@@ -2,7 +2,7 @@ import { Open_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const openSans = Open_Sans({ display: "swap" });
+const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Sunway International",
