@@ -3,11 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import blogs from "@/lib/blogs";
 
-const Page = async () => {
-  const array = new Array(9).fill(0);
-  //   const res = await fetch("./lib/blogs.json");
-  //   const blogs = await res.json()
-  console.log(blogs?.blogs.length);
+const Page = async () => { 
   return (
     <MaxWidthWrapper className="py-10">
       {/* Title Section */}
@@ -38,7 +34,7 @@ const Page = async () => {
             <p className="line-clamp-4 text-justify font-medium text-si-text">
               {blogs?.blogs[0]?.description}
             </p>
-            <Link href="#">
+            <Link href={`/blog/${blogs?.blogs[0].id}`}>
               {" "}
               <button className="mt-4 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
                 Read More
@@ -64,7 +60,7 @@ const Page = async () => {
               <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
               {item?.description}
               </p>
-              <Link href="#">
+              <Link href={`/blog/${item.id}`}>
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
                   Read More
@@ -152,7 +148,7 @@ const Page = async () => {
               <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
                {item?.description}
               </p>
-              <Link href="#">
+              <Link href={`/blog/${item?.id}`}>
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
                   Read More

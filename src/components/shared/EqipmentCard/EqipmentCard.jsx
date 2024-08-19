@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-const OfficeEqipmentCard = ({ id }) => {
+const EqipmentCard = ({ navigateTo = "" }) => {
   // TODO2: Make the call for button copy a number and show toast
   return (
     <div className="h-[400px]">
@@ -15,7 +15,7 @@ const OfficeEqipmentCard = ({ id }) => {
         />
       </div>
       <div className="text-balance pt-3 text-center">
-        <Link href={`/office-equipment/${id}`}>
+        <Link href={navigateTo}>
           <h3 className="text-lg font-semibold hover:underline">
             Product Name
           </h3>
@@ -29,4 +29,4 @@ const OfficeEqipmentCard = ({ id }) => {
   );
 };
 
-export default OfficeEqipmentCard;
+export default EqipmentCard;

@@ -9,11 +9,11 @@ const CountUP = () => {
     const totalCustomer = 400;
 
     return (
-        <MaxWidthWrapper className="p-6 my-6  shadow-2xl text-gray-100  bg-opacity-10 bg-fixed bg-parallax bg-cover">
+        <MaxWidthWrapper className="p-6 my-6 text-gray-100 ">
               
             <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
-                {/* Parcel Booked */}
-                <div className="flex flex-col justify-center items-center py-20 rounded-lg text-black">
+                {/* totalProduct */}
+                <div className="flex flex-col justify-center items-center  rounded-lg text-black bg-si-accent">
                     <div className='text-center'>
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
@@ -24,8 +24,8 @@ const CountUP = () => {
                     </div>
                 </div>
 
-                {/* Parcel Delivered */}
-                <div className="flex flex-col justify-center items-center py-20 rounded-none text-black">
+                {/* totalSell */}
+                <div className="flex flex-col justify-center items-center py-20 rounded-none text-black bg-si-accent">
                     <div className="">
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
@@ -36,8 +36,8 @@ const CountUP = () => {
                     </div>
                 </div>
 
-                {/* Customers */}
-                <div className="flex flex-col justify-center items-center py-20 rounded-lg text-black">
+                {/* totalOrder */}
+                <div className="flex flex-col justify-center items-center py-20 rounded-lg text-black bg-si-accent">
                     <div className="text-center">
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
@@ -48,8 +48,8 @@ const CountUP = () => {
                     </div>
                 </div>
 
-                 {/* users */}
-                 <div className="flex flex-col justify-center items-center py-20 rounded-lg text-black">
+                 {/* totalCustomer */}
+                 <div className="flex flex-col justify-center items-center py-20 rounded-lg text-black bg-si-accent">
                     <div className="text-center">
                         <div className='flex justify-center items-center'>
                             <span className='text-5xl font-semibold leading-none pb-2'>
