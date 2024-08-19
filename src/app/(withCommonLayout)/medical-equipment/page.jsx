@@ -74,6 +74,41 @@ const MedicalEquipmentPage = () => {
             </Link>
           </div>
         </div>
+
+        {/* Advertisement Carousel */}
+
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 4500,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="w-full">
+            <CarouselItem className="h-[300px] w-full">
+              <div className="relative h-[300px] w-full">
+                <Image
+                  src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="h-[300px] w-full">
+              <div className="relative h-[300px] w-full">
+                <Image
+                  src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </MaxWidthWrapper>
 
       <MedicalCategoryCard />
