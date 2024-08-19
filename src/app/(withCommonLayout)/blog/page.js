@@ -1,9 +1,13 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
+import blogs from "@/lib/blogs";
 
-const Page = () => {
+const Page = async () => {
   const array = new Array(9).fill(0);
+  //   const res = await fetch("./lib/blogs.json");
+  //   const blogs = await res.json()
+  console.log(blogs?.blogs.length);
   return (
     <MaxWidthWrapper className="py-10">
       {/* Title Section */}
@@ -24,21 +28,15 @@ const Page = () => {
             alt="Blog Image 1"
             height={500}
             width={500}
-            src="https://bodybykotoske.com/wp-content/uploads/2020/02/Differences-between-cosmetic-and-plastic-surgery.jpg"
+            src={blogs?.blogs[0]?.image}
             className="w-fit md:w-full"
           />
           <div className="px-3">
             <h1 className="my-4 text-4xl font-semibold text-si-primary">
-              Common Misconceptions About Plastic Surgery
+              {blogs?.blogs[0]?.title}
             </h1>
             <p className="line-clamp-4 text-justify font-medium text-si-text">
-              Suspendisse id libero pellentesque, condimentum dui sed,
-              vestibulum turpis. Pellentesque eu tortor ut orci rhoncus
-              vestibulum. Vestibulum placerat porta sem eu viverra. Nulla
-              interdum nibh sit amet convallis laoreet. Integer sit amet dolor
-              ac lectus semper mollis. Proin et porttitor velit. Mauris commodo
-              nunc neque. Sed hendrerit consectetur lectus ac feugiat. Nullam et
-              cursus. Post author
+              {blogs?.blogs[0]?.description}
             </p>
             <Link href="#">
               {" "}
@@ -49,25 +47,22 @@ const Page = () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-8">
-          <div className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
+            {blogs?.blogs?.slice(1,4).map((item, idx)=>   <div key={idx} className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
             <div>
               <Image
                 alt="Blog Image 2"
                 height={500}
                 width={500}
-                src="https://mida.peerduck.com/wp-content/uploads/2022/03/i8kjtg.png"
-                className="w-fit"
+                src= {item?.image}
+                className="w-fit h-full"
               />
             </div>
             <div className="p-3">
               <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
-                Importance of Diagnostic Testing
+               {item?.title}
               </h1>
               <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-                Donec vel pellentesque nisl, molestie tempus ligula. Cras massa
-                turpis, pretium nec placerat ornare, sodales ac urna. Sed
-                commodo semper fermentum. Phasellus bibendum lorem nisi
-                condimentum
+              {item?.description}
               </p>
               <Link href="#">
                 {" "}
@@ -76,8 +71,9 @@ const Page = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
+          </div>)}
+        
+          {/* <div className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
             <div>
               <Image
                 alt="Blog Image 2"
@@ -134,31 +130,27 @@ const Page = () => {
                 </button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* second Blog Section */}
-      <div className="mt-20 grid grid-cols-1 gap-y-10 md:grid-cols-2 gap-5 lg:grid-cols-3 lg:gap-x-10">
-        {array?.map((_, idx) => (
+      <div className="mt-20 grid grid-cols-1 gap-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
+        {blogs?.blogs?.slice(4, blogs?.blogs.length).map((item, idx) => (
           <div key={idx} className="bg-secondary">
             <Image
               alt="Blog Image 1"
               height={500}
               width={500}
-              src="https://mida.peerduck.com/wp-content/uploads/2022/03/4tgcfw.png"
-              className="w-fit md:w-full"
+              src={item?.image}
+              className="w-fit md:w-full h-80"
             />
             <div className="p-3">
-              <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
-                Spotlight on Our Diagnostic Technology
+              <h1 className="line-clamp-2  p-0 text-2xl font-semibold text-si-primary">
+                {item?.title}
               </h1>
               <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-                Donec vel pellentesque nisl, molestie tempus ligula. Cras massa
-                turpis, pretium nec placerat ornare, sodales ac urna. Sed
-                commodo semper fermentum. Phasellus bibendum lorem nisi
-                condimentum commodo semper fermentum. Phasellus bibendum lorem
-                nisi condimentum commodo
+               {item?.description}
               </p>
               <Link href="#">
                 {" "}
