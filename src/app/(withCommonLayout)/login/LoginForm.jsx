@@ -1,18 +1,24 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { createRef, useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "sonner";
 import ActionSubmitButton from "../action/ActionSubmitButton";
 import { loginUser } from "../action/authAction";
 const LoginForm = () => {
+  const router = useRouter();
   const ref = createRef();
   const [state, fromAction] = useFormState(loginUser, null);
 
   useEffect(() => {
     if (state && state.success) {
       console.log(state);
-      toast("successfully sign up");
+      toast("successfully login");
       ref.current?.reset();
+      router.push("/");
+    }
+    if (state && !state?.success) {
+      toast.error(state?.message);
     }
   }, [state, ref]);
   return (
