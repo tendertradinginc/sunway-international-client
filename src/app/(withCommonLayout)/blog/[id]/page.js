@@ -2,8 +2,11 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import blogs from "@/lib/blogs";
 import Image from "next/image";
 
-const page = ({ params }) => {
-  const blog = blogs?.blogs?.find((item) => item.id === Number(params.id));
+const page = async ({ params }) => {
+  // const blog = blogs?.blogs?.find((item) => item.id === Number(params.id));
+  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?._id}`)
+  const data = await res.json()
+  const blog = data.data 
 
   return (
     <MaxWidthWrapper className="py-16">
