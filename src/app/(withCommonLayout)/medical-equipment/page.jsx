@@ -19,11 +19,11 @@ const MedicalEquipmentPage = () => {
   // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , whilchare:[{obj}, {obj}, {obj}]. Map that and show category cards
   return (
     <div className="bg-secondary">
-      <h2 className="pt-3 text-center text-2xl font-bold md:pt-5 lg:text-4xl">
+      <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
         Medical Equipment
       </h2>
 
-      <MaxWidthWrapper className="flex justify-between gap-5">
+      <MaxWidthWrapper className="flex flex-col items-center lg:items-start justify-between gap-5 lg:flex-row">
         {/* Category selector */}
         <div className="size-[350px]">
           <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
@@ -74,41 +74,70 @@ const MedicalEquipmentPage = () => {
             </Link>
           </div>
         </div>
+        <div className="flex w-full flex-col gap-5">
+          {/* Advertisement Carousel */}
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[
+              Autoplay({
+                delay: 4500,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="w-full">
+              <CarouselItem className="h-[300px] w-full">
+                <div className="relative h-[300px] w-full">
+                  <Image
+                    src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
+                    alt="Advertisement"
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="h-[300px] w-full">
+                <div className="relative h-[300px] w-full">
+                  <Image
+                    src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
+                    alt="Advertisement"
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
 
-        {/* Advertisement Carousel */}
+          {/* small cards */}
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
+              <TbAirConditioning className="size-10 text-primary" />
+              <h5 className="text-wrap text-center font-semibold">
+                Air Purification Equipment
+              </h5>
+            </div>
 
-        <Carousel
-          opts={{ loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 4500,
-            }),
-          ]}
-          className="w-full"
-        >
-          <CarouselContent className="w-full">
-            <CarouselItem className="h-[300px] w-full">
-              <div className="relative h-[300px] w-full">
-                <Image
-                  src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
-                  alt="Advertisement"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-            </CarouselItem>
-            <CarouselItem className="h-[300px] w-full">
-              <div className="relative h-[300px] w-full">
-                <Image
-                  src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
-                  alt="Advertisement"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+            <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
+              <GiMedicalDrip className="size-10 text-primary" />
+              <h5 className="text-center font-semibold">
+                Hospital Operating Room Support Equipment
+              </h5>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
+              <PiFaceMaskLight className="size-10 text-primary" />
+              <h5 className="text-center font-semibold">Air Filter</h5>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
+              <TbAirConditioningDisabled className="size-10 text-primary" />
+              <h5 className="text-center font-semibold">
+                Air Conditioning and Ventilation Terminal Equipment
+              </h5>
+            </div>
+          </div>
+        </div>
       </MaxWidthWrapper>
 
       <MedicalCategoryCard />
