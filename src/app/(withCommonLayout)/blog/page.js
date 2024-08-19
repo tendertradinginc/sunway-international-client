@@ -1,9 +1,12 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
-import blogs from "@/lib/blogs";
+// import blogs from "@/lib/blogs";
 
-const Page = async () => { 
+const Page = async () => {
+  const res = await fetch("http://localhost:5000/api/v1/blogs");
+  const data = await res.json();
+  const blogs = data?.data?.allBlogs;
   return (
     <MaxWidthWrapper className="py-10">
       {/* Title Section */}
@@ -24,17 +27,17 @@ const Page = async () => {
             alt="Blog Image 1"
             height={500}
             width={500}
-            src={blogs?.blogs[0]?.image}
+            src={blogs[0]?.image}
             className="w-fit md:w-full"
           />
           <div className="px-3">
             <h1 className="my-4 text-4xl font-semibold text-si-primary">
-              {blogs?.blogs[0]?.title}
+              {blogs[0]?.title}
             </h1>
             <p className="line-clamp-4 text-justify font-medium text-si-text">
-              {blogs?.blogs[0]?.description}
+              {blogs[0]?.description}
             </p>
-            <Link href={`/blog/${blogs?.blogs[0].id}`}>
+            <Link href={`/blog/${blogs[0]._id}`}>
               {" "}
               <button className="mt-4 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
                 Read More
@@ -43,112 +46,58 @@ const Page = async () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-8">
-            {blogs?.blogs?.slice(1,4).map((item, idx)=>   <div key={idx} className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
-            <div>
-              <Image
-                alt="Blog Image 2"
-                height={500}
-                width={500}
-                src= {item?.image}
-                className="w-fit h-full"
-              />
+          {blogs?.slice(1, 4).map((item, idx) => (
+            <div
+              key={idx}
+              className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2"
+            >
+              <div>
+                <Image
+                  alt="Blog Image 2"
+                  height={500}
+                  width={500}
+                  src={item?.image}
+                  className="h-full w-fit"
+                />
+              </div>
+              <div className="p-3">
+                <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
+                  {item?.title}
+                </h1>
+                <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
+                  {item?.description}
+                </p>
+                <Link href={`/blog/${item?._id}`}>
+                  {" "}
+                  <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+                    Read More
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className="p-3">
-              <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
-               {item?.title}
-              </h1>
-              <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-              {item?.description}
-              </p>
-              <Link href={`/blog/${item.id}`}>
-                {" "}
-                <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  Read More
-                </button>
-              </Link>
-            </div>
-          </div>)}
-        
-          {/* <div className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
-            <div>
-              <Image
-                alt="Blog Image 2"
-                height={500}
-                width={500}
-                src="https://mida.peerduck.com/wp-content/uploads/2022/03/4tgdeg.png"
-                className="w-fit"
-              />
-            </div>
-            <div className="p-3">
-              <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
-                Importance of Diagnostic Testing
-              </h1>
-              <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-                Donec vel pellentesque nisl, molestie tempus ligula. Cras massa
-                turpis, pretium nec placerat ornare, sodales ac urna. Sed
-                commodo semper fermentum. Phasellus bibendum lorem nisi turpis,
-                pretium nec placerat ornare, sodales ac urna. Sed commodo semper
-                fermentum. Phasellus bibendum lorem nisi condimentum
-              </p>
-              <Link href="#">
-                {" "}
-                <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  Read More
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2">
-            <div>
-              <Image
-                alt="Blog Image 2"
-                height={500}
-                width={500}
-                src="https://mida.peerduck.com/wp-content/uploads/2022/03/yh5ghwv.png"
-                className="w-fit"
-              />
-            </div>
-            <div className="p-3">
-              <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
-                Importance of Diagnostic Testing
-              </h1>
-              <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-                Donec vel pellentesque nisl, molestie tempus ligula. Cras massa
-                turpis, pretium nec placerat ornare, sodales ac urna. Sed
-                commodo semper fermentum. Phasellus bibendum lorem nisi
-                condimentum commodo semper fermentum. Phasellus bibendum lorem
-                nisi condimentum commodo
-              </p>
-              <Link href="#">
-                {" "}
-                <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
-                  Read More
-                </button>
-              </Link>
-            </div>
-          </div> */}
+          ))}
         </div>
       </div>
 
       {/* second Blog Section */}
       <div className="mt-20 grid grid-cols-1 gap-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
-        {blogs?.blogs?.slice(4, blogs?.blogs.length).map((item, idx) => (
+        {blogs?.slice(4, blogs.length).map((item, idx) => (
           <div key={idx} className="bg-secondary">
             <Image
               alt="Blog Image 1"
               height={500}
               width={500}
               src={item?.image}
-              className="w-fit md:w-full h-80"
+              className="h-80 w-fit md:w-full"
             />
             <div className="p-3">
-              <h1 className="line-clamp-2  p-0 text-2xl font-semibold text-si-primary">
+              <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
                 {item?.title}
               </h1>
               <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-               {item?.description}
+                {item?.description}
               </p>
-              <Link href={`/blog/${item?.id}`}>
+              <Link href={`/blog/${item?._id}`}>
                 {" "}
                 <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
                   Read More
