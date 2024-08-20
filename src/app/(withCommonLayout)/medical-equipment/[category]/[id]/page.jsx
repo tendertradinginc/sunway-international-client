@@ -2,16 +2,51 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 const MedicalEquipmentDetailsPage = ({ params }) => {
   // TODO: Fetch individual Data based on the id
   // TODO: Turn The image section into a carousel
   return (
-    <div className="min-h-screen">
-      <MaxWidthWrapper className="py-10">
+    <MaxWidthWrapper className="min-h-screen py-10">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">Home</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/medical-equipment">Medical Equipment</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/medical-equipment/linen">Category</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Product Name</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      <div className="py-10">
         <Card className="rounded-none">
           <CardContent className="flex flex-col p-0">
-            <section className="w-full h-full">
+            <section className="h-full w-full">
               <div className="relative mx-auto min-h-[500px] w-full">
                 <Image
                   src="/martha-dominguez-de-gouveia-KF-h9HMxRKg-unsplash.jpg"
@@ -66,8 +101,8 @@ const MedicalEquipmentDetailsPage = ({ params }) => {
             </section>
           </CardContent>
         </Card>
-      </MaxWidthWrapper>
-    </div>
+      </div>
+    </MaxWidthWrapper>
   );
 };
 
