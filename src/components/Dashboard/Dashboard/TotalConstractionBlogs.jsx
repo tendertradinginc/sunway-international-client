@@ -1,13 +1,13 @@
-import React from 'react';
-import { SiBlogger } from "react-icons/si";
+import { FaBloggerB } from "react-icons/fa";
+
 
 const TotalConstructionBlogs = () => {
     return (
         <div>
             {/* category 1 */}
-            <div className="flex justify-center items-center flex-col h-36 duration-500 hover:bg-gradient-to-r from-[#fbbe24d3]  to-[#faca5083] text-white border-2">
-                <SiBlogger className="text-6xl text-si-primary mb-2" />
-                <h1 className=" text-center text-black text-md font-semibold">Walking Aids Series</h1>
+            <div className="flex justify-center items-center gap-3 h-36 duration-500 bg-gradient-to-r from-[#16a249]  to-[#fbbf24] text-white">
+                <FaBloggerB className="text-4xl text-si-white mb-2" />
+                <h1 className=" text-center text-black text-md font-semibold">Total Blogs</h1>
             </div>
         </div>
     );
