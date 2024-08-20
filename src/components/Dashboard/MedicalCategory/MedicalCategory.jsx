@@ -33,6 +33,7 @@ const MedicalCategory = () => {
       const result = await res.json();
 
       setData(result?.data?.result);
+      console.log(result?.data?.result);
       setLoading(false);
     }
 
@@ -40,7 +41,7 @@ const MedicalCategory = () => {
   }, [currentPage, pageLimit, reload]);
   // loading skeleton
   const skeleton = new Array(pageLimit).fill(Math.random());
-  console.log(data);
+
   return (
     <div>
       <div className="min-h-[80vh]">
@@ -83,11 +84,12 @@ const MedicalCategory = () => {
               </div>
               <hr />
 
-              <table className="w-full table-auto">
+              <table className="w-full table-auto border">
                 <thead className="bg-gradient-to-r from-si-primary to-si-secondary text-white">
                   <tr className="text-left">
                     <th className="px-4 py-2">No</th>
                     <th className="px-4 py-2">Title</th>
+                    <th className="px-4 py-2">Icon</th>
                     <th className="px-4 py-2">Actions</th>
                   </tr>
                 </thead>
@@ -98,7 +100,7 @@ const MedicalCategory = () => {
                         <tr className="mb-10 gap-5" key={idx}>
                           <td
                             colSpan={3}
-                            className={`h-14 w-full animate-pulse rounded-sm ${
+                            className={`h-10 w-full animate-pulse rounded-sm ${
                               idx % 2 == 0 ? "bg-gray-200" : "bg-white"
                             }`}
                           ></td>

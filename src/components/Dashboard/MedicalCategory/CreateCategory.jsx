@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"; // Ensure this import path is cor
 import { Label } from "@/components/ui/label";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const CreateCategory = ({ setReload }) => {
   const [loading, setLoading] = useState(false);
@@ -26,10 +27,10 @@ const CreateCategory = ({ setReload }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!imageFile) {
-    //   toast.error("Please upload an image.");
-    //   return;
-    // }
+    if (!imageFile) {
+      toast.error("Please upload an image.");
+      return;
+    }
     setLoading(true);
     try {
       const imageUrl = await uploadImageToImgBB(imageFile);
@@ -51,9 +52,10 @@ const CreateCategory = ({ setReload }) => {
           body: JSON.stringify(categoryData),
         },
       );
+      console.log(response);
 
-      if (response?.status === 200) {
-        toast.success("Organization Created successfully");
+      if (response?.ok) {
+        toast("Category Created successfully");
         setFormData({
           name: "",
         });
