@@ -1,14 +1,6 @@
 "use client";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { CgSpinnerTwoAlt } from "react-icons/cg";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -16,9 +8,15 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { FaPlusCircle } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { CgSpinnerTwoAlt } from "react-icons/cg";
+import { FaPlusCircle } from "react-icons/fa";
 
 const BlogCreateButton = () => {
   const [imageFile, setImageFile] = useState(null);
@@ -55,14 +53,12 @@ const BlogCreateButton = () => {
         {
           method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(blogData),
         },
       );
-console.log(response)
       const data = await response.json();
-
       if (data?.status === "success") {
         toast.success("Article submitted successfully");
         e.target.reset();
