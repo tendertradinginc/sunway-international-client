@@ -2,13 +2,13 @@ const uploadImageToImgBB = async (imageFile) => {
   if (!imageFile) {
     return;
   }
-  const apiKey = "c74cc0f2c97da68210a8d24aedf0b939";
+  const apiKey = "ff1714c9e15fabccb2b3cfcf64e2b427";
   const formData = new FormData();
   formData.append("image", imageFile);
 
   try {
     const response = await fetch(
-      "https://api.imgbb.com/1/upload?key=" + apiKey,
+      `https://api.imgbb.com/1/upload?key=${apiKey}` ,
       {
         method: "POST",
         body: formData,
