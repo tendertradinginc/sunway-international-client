@@ -1,5 +1,4 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import blogs from "@/lib/blogs";
 import Image from "next/image";
 
 const page = async ({ params }) => {
@@ -24,7 +23,7 @@ const page = async ({ params }) => {
               style={{ lineHeight: "1.2" }}
               className="text-3xl font-bold leading-normal text-si-primary md:text-4xl"
             >
-              {blog.title}
+              {blog?.title}
             </h2>
 
             <div className="mt-5">

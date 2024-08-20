@@ -11,17 +11,21 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogFooter,
+  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { FaPlusCircle } from "react-icons/fa";
+import { uploadImageToImgBB } from "@/utils/imageUpload";
+import toast from "react-hot-toast";
 
 const BlogCreateButton = () => {
   const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
-    headline: "",
+    title: "",
     description: "",
-    // thumbnail: null,
+    image: null,
   });
 
   const [loading, setLoading] = useState(false);
@@ -36,26 +40,40 @@ const BlogCreateButton = () => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-      image:image
     }));
   };
 
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    // Log the form data
-    console.log("Form Data Submitted:", formData);
-
-    // Simulate form submission delay
-    setTimeout(() => {
-      setLoading(false);
-      alert(
-        "Form submitted successfully! Check your terminal for logged data.",
+    const toastId = toast.loading("loading...");
+    try {
+      const imageUrl = await uploadImageToImgBB(imageFile);
+      const blogData = { ...formData, image: imageUrl };
+      console.log(blogData);
+      const response = await fetch(
+        "http://localhost:5000/api/v1/blogs/create-blog",
+        {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(blogData),
+        },
       );
-    }, 2000);
+console.log(response)
+      const data = await response.json();
+
+      if (data?.status === "success") {
+        toast.success("Article submitted successfully");
+        e.target.reset();
+      }
+    } catch (error) {
+      toast.error(error.message || "An unexpected error occurred");
+      console.error("Error:", error);
+    } finally {
+      toast.dismiss(toastId);
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,13 +87,16 @@ const BlogCreateButton = () => {
           <FaPlusCircle className="inline text-xl" />
         </Button>
       </AlertDialogTrigger>
+
       <AlertDialogContent className="max-w-2xl">
+        <AlertDialogTitle></AlertDialogTitle>
+        <AlertDialogDescription></AlertDialogDescription>
         <form className="mx-auto w-full p-4" onSubmit={handleSubmit}>
           <div className="mb-4">
             <Label className="mb-2 block">Blog Name</Label>
             <Input
               type="text"
-              name="headline"
+              name="title"
               value={formData.headline}
               onChange={handleInputChange}
               required
@@ -97,7 +118,7 @@ const BlogCreateButton = () => {
               id="blogImage"
               type="file"
               accept="image/*"
-              name="thumbnail"
+              name="image"
               onChange={handleImageUpload}
             />
           </div>
