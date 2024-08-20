@@ -9,16 +9,20 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { FaSpinner } from "react-icons/fa6";
 import Image from "next/image";
+import { ProductCategoryCombobox } from "@/components/custom/ProductCategoryCombobox";
+import { DatePicker } from "@/components/custom/DatePicker";
+import { uploadImageToImgBB } from "@/utils/imageUpload";
+import axios from "axios";
 import { toast } from "sonner";
 
 const AddMedicalEquipmentPage = () => {
-  // TODO: Setup image upload & directly insert the data into formData
-  // TODO: use the custom API to send data to the backend and create a loading state while it's submitting
+  const [category, setCategory] = useState("");
+  const [dateOfManufacture, setDateOfManufacture] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     productName: "",
     model: "",
-    category: "",
     serialNumber: "",
     manufacturer: "",
     regulatoryApproval: "",
@@ -26,7 +30,6 @@ const AddMedicalEquipmentPage = () => {
     images: [],
     shortDescription: "",
     description: "",
-    dateOfManufacture: "",
     warrantyPeriod: "",
   });
 
@@ -38,20 +41,66 @@ const AddMedicalEquipmentPage = () => {
     });
   };
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
-    setFormData({
-      ...formData,
-      images: imageUrls,
-    });
+  const handleImageUpload = async (e) => {
+    setLoading(true); // Start loading before image upload
+    try {
+      const files = Array.from(e.target.files);
+      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUrls = await Promise.all(imageUploadPromises);
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: [...prevFormData.images, ...imageUrls],
+      }));
+    } catch (error) {
+      toast.error("Failed to upload images. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading after image upload is complete
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    toast.success("Medical Equipment Added Successfully!");
+    setLoading(true);
+
+    try {
+      const completeFormData = {
+        ...formData,
+        category,
+        dateOfManufacture,
+      };
+
+      const res = await axios.post(
+        "http://localhost:5000/api/v1/medicalEquipment/create",
+        completeFormData,
+      );
+
+      console.log(res);
+
+      if (res.status === 201) {
+        toast.success("Medical Equipment Added Successfully!");
+
+        // Reset form data
+        setFormData({
+          productName: "",
+          model: "",
+          serialNumber: "",
+          manufacturer: "",
+          regulatoryApproval: "",
+          maintenanceSchedule: "",
+          images: [],
+          shortDescription: "",
+          description: "",
+          warrantyPeriod: "",
+        });
+        setCategory("");
+        setDateOfManufacture("");
+      }
+    } catch (error) {
+      toast.error("Failed to add medical equipment. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -93,12 +142,9 @@ const AddMedicalEquipmentPage = () => {
                 {/* Category */}
                 <div>
                   <Label className="mb-2 block">Category</Label>
-                  <Input
-                    type="text"
-                    name="category"
-                    value={formData.category}
-                    onChange={handleInputChange}
-                    required
+                  <ProductCategoryCombobox
+                    value={category}
+                    setValue={setCategory}
                   />
                 </div>
 
@@ -109,6 +155,7 @@ const AddMedicalEquipmentPage = () => {
                     type="text"
                     name="serialNumber"
                     value={formData.serialNumber}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -119,6 +166,7 @@ const AddMedicalEquipmentPage = () => {
                     type="text"
                     name="manufacturer"
                     value={formData.manufacturer}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -129,6 +177,7 @@ const AddMedicalEquipmentPage = () => {
                     type="text"
                     name="regulatoryApproval"
                     value={formData.regulatoryApproval}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -139,17 +188,16 @@ const AddMedicalEquipmentPage = () => {
                     type="text"
                     name="maintenanceSchedule"
                     value={formData.maintenanceSchedule}
+                    onChange={handleInputChange}
                   />
                 </div>
 
                 {/* Date of Manufacture */}
                 <div>
                   <Label className="mb-2 block">Date of Manufacture</Label>
-                  <Input
-                    type="date"
-                    name="dateOfManufacture"
-                    value={formData.dateOfManufacture}
-                    onChange={handleInputChange}
+                  <DatePicker
+                    date={dateOfManufacture}
+                    setDate={setDateOfManufacture}
                   />
                 </div>
 
@@ -159,7 +207,6 @@ const AddMedicalEquipmentPage = () => {
                   <Input
                     type="text"
                     name="warrantyPeriod"
-                    value={formData.warrantyPeriod}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -201,9 +248,9 @@ const AddMedicalEquipmentPage = () => {
                   onChange={handleImageUpload}
                 />
                 <div className="mt-2">
-                  {formData.images.length > 0 && (
+                  {formData?.images.length > 0 && (
                     <div className="grid grid-cols-3 gap-4">
-                      {formData.images.map((url, index) => (
+                      {formData?.images.map((url, index) => (
                         <div key={index}>
                           <Image
                             src={url}
@@ -220,14 +267,20 @@ const AddMedicalEquipmentPage = () => {
               </div>
 
               {/* Submit Button */}
-              <Button disabled className="w-full items-center gap-2.5">
-                Processing
-                <span className="animate-spin">
-                  <FaSpinner size={18} />
-                </span>
-              </Button>
-              <Button type="submit" className="mt-2 w-full">
-                Submit
+              <Button
+                disabled={loading}
+                className="mt-4 w-full items-center gap-2.5"
+              >
+                {loading ? (
+                  <>
+                    Processing
+                    <span className="animate-spin">
+                      <FaSpinner size={18} />
+                    </span>
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </form>
           </CardContent>
