@@ -4,13 +4,12 @@ import Image from "next/image";
 
 const page = async ({ params }) => {
   // const blog = blogs?.blogs?.find((item) => item.id === Number(params.id));
-  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`)
-  const data = await res.json()
-  const blog = data?.data
-
+  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`);
+  const data = await res.json();
+  const blog = data?.data;
 
   return (
-    <MaxWidthWrapper className="py-16 p-5 md:p-20">
+    <MaxWidthWrapper className="p-5 py-16 md:p-20">
       <div className="mx-auto min-h-[80vh]">
         <div className="pb-10">
           <Image

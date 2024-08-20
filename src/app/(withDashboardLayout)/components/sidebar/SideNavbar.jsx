@@ -42,6 +42,9 @@ const SideNavbar = () => {
             <Link href="/dashboard">dashboard</Link>
           </Button>
           <Button variant="secondary">
+            <Link href="/dashboard/add-office-equipment">Add Office Equipment</Link>
+          </Button>
+          <Button variant="secondary">
             <Link href="/dashboard/create-product">Create Product</Link>
           </Button>
           <Button variant="secondary">
