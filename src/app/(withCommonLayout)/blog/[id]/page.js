@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const page = async ({ params }) => {
   // const blog = blogs?.blogs?.find((item) => item.id === Number(params.id));
-  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?._id}`)
-  const data = await res.json()
-  const blog = data.data 
+  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`);
+  const data = await res.json();
+  const blog = data?.data;
 
   return (
-    <MaxWidthWrapper className="py-16">
+    <MaxWidthWrapper className="p-5 py-16 md:p-20">
       <div className="mx-auto min-h-[80vh]">
-        <div className="">
+        <div className="pb-10">
           <Image
             src={blog?.image}
             alt="Blog Details Thumbnail"
@@ -22,13 +22,13 @@ const page = async ({ params }) => {
           <div className="flex-1">
             <h2
               style={{ lineHeight: "1.2" }}
-              className="text-3xl font-semibold leading-normal text-si-primary md:text-5xl"
+              className="text-3xl font-bold leading-normal text-si-primary md:text-4xl"
             >
               {blog.title}
             </h2>
 
-            <div className="mt-5 space-y-10">
-              <p className="whitespace-break-spaces text-justify text-lg font-medium">
+            <div className="mt-5">
+              <p className="whitespace-break-spaces text-justify font-semibold">
                 {blog?.description}
               </p>
             </div>
