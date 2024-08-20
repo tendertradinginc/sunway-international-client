@@ -1,3 +1,4 @@
+"use client";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -6,63 +7,72 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { Pagination } from "@/components/ui/pagination";
 
-import SingleOrganization from "@/components/OrganizationsName/SingleOrganization";
-import Pagination from "@/components/Shared/Paginatin/Pagination";
-import useAllOrganizations from "@/hooks/useAllOrganization";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
 import { FaPlusCircle } from "react-icons/fa";
-import CreateOrganizationName from "./CreateOrganizationName";
+import CreateCategory from "./CreateCategory";
+import SingleCategory from "./SingleCategory";
 
 const MedicalCategory = () => {
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
+  const [reload, setReload] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   //* Fetching Data
-  const { setReload, organizations, loading, organizationNamesCount } =
-    useAllOrganizations({ page: currentPage, limit: pageLimit });
 
+  useEffect(() => {
+    setLoading(true);
+    async function fetchData() {
+      const res = await fetch(
+        `http://localhost:5000/api/v1/medical-category?page=${currentPage}&limit=${pageLimit}`,
+      );
+      const result = await res.json();
+
+      setData(result?.data?.result);
+      setLoading(false);
+    }
+
+    fetchData();
+  }, [currentPage, pageLimit, reload]);
   // loading skeleton
   const skeleton = new Array(pageLimit).fill(Math.random());
-
+  console.log(data);
   return (
     <div>
       <div className="min-h-[80vh]">
         <div className="container mx-auto px-10">
           <br />
 
-          <div className="mx-auto w-full max-w-screen-lg bg-white">
+          <div className="mx-auto w-full bg-white">
             <div className="overflow-x-auto sm:px-1">
               <div className="flex items-center justify-between pb-6">
-                <h2 className="text-2xl font-semibold text-blue-950">
+                <h2 className="text-2xl font-semibold text-si-primary">
                   <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
-                  Organizations List
+                  Medical Category List
                 </h2>
                 <div className="mt-4 flex items-center justify-between px-2">
-                  {/* <p className="border hover:bg-blue-950 duration-500 hover:text-white px-3 text-base py-1 font-semibold rounded-lg cursor-pointer">
-                        Create Category <FaPlusCircle className="inline" />
-                      </p> */}
                   <div>
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
                         <Button
-                          className="cursor-pointer rounded-lg border bg-blue-950 px-3 py-1 text-base font-semibold text-white duration-500 hover:bg-[#8BA8E5] hover:text-black"
+                          className="cursor-pointer rounded-lg border bg-si-primary px-3 py-1 text-base font-semibold text-white duration-500 hover:bg-si-primary hover:text-gray-400"
                           variant="outline"
                         >
-                          Create Organization{" "}
+                          Create Medical Category{" "}
                           <span className="ml-2">
                             <FaPlusCircle className="inline" />
                           </span>{" "}
                         </Button>
                       </AlertDialogTrigger>
 
-                      <AlertDialogContent className="max-w-4xl">
-                        <CreateOrganizationName
-                          setReload={setReload}
-                        ></CreateOrganizationName>
+                      <AlertDialogContent className="max-w-4xl rounded-lg">
+                        <CreateCategory setReload={setReload}></CreateCategory>
                         <AlertDialogFooter>
-                          <AlertDialogCancel className="hover:bg-blue-950 hover:text-white">
+                          <AlertDialogCancel className="hover:bg-red-700 hover:text-white">
                             Close
                           </AlertDialogCancel>
                         </AlertDialogFooter>
@@ -74,7 +84,7 @@ const MedicalCategory = () => {
               <hr />
 
               <table className="w-full table-auto">
-                <thead className="bg-gradient-to-r from-blue-950 to-[#91AADF] text-white">
+                <thead className="bg-gradient-to-r from-si-primary to-si-secondary text-white">
                   <tr className="text-left">
                     <th className="px-4 py-2">No</th>
                     <th className="px-4 py-2">Title</th>
@@ -94,13 +104,13 @@ const MedicalCategory = () => {
                           ></td>
                         </tr>
                       ))
-                    : organizations?.map((organization, index) => (
-                        <SingleOrganization
-                          key={organizations?._id}
+                    : data?.map((category, index) => (
+                        <SingleCategory
+                          key={category?._id}
                           index={index}
-                          data={organization}
+                          data={category}
                           setReload={setReload}
-                        ></SingleOrganization>
+                        ></SingleCategory>
                       ))}
                 </tbody>
               </table>
@@ -115,7 +125,7 @@ const MedicalCategory = () => {
             pageLimit,
             setCurrentPage,
             setPageLimit,
-            articlesCount: organizationNamesCount,
+            // articlesCount: organizationNamesCount,
             currentPage,
             defaultPageLimit: 10,
           }}
