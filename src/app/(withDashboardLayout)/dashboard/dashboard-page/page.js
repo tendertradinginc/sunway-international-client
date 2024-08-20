@@ -1,3 +1,4 @@
+import BarChartData from "@/components/Dashboard/Dashboard/BarChartData";
 import TotalClients from "@/components/Dashboard/Dashboard/TotalClients";
 import TotalConstructionBlogs from "@/components/Dashboard/Dashboard/TotalConstractionBlogs";
 import TotalFurnitureEquipments from "@/components/Dashboard/Dashboard/TotalFurnitureEquipments";
@@ -11,6 +12,14 @@ const dashboardPage = () => {
                 <TotalMedicalEquipments />
                 <TotalFurnitureEquipments />
                 <TotalClients />
+            </div>
+            <div className="grid mt-4 px-4">
+                <div className="w-3/5 border">
+                    <BarChartData />
+                </div>
+                <div className="w-2/5">
+
+                </div>
             </div>
         </div>
     );
