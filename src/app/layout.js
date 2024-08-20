@@ -16,10 +16,7 @@ export default function RootLayout({ children }) {
       <body className={openSans.className}>
         <main className="min-h-screen">{children}</main>
         {/* <Toaster richColors position="top-right" /> */}
-        <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
     </html>
   );
