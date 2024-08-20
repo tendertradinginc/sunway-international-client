@@ -35,7 +35,7 @@ const BlogTable = async () => {
               )} */}
 
               {  <table className="w-full table-auto">
-                  <thead className="bg-gradient-to-r from-si-primary to-si-secondary  text-white">
+                  <thead className="bg-si-primary  text-white border-2 border-si-primary">
                     <tr className="">
                       <th className="px-4 py-2">No</th>
                       <th className="px-4 py-2 text-left">Title</th>
@@ -43,7 +43,7 @@ const BlogTable = async () => {
                     </tr>
                   </thead>
 
-                  <tbody className="text-center">
+                  <tbody className="text-center border">
                 {  blogs?.map((blog, index) => (
                           <SingleBlog
                             key={index}

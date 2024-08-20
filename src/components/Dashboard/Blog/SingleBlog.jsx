@@ -2,6 +2,7 @@ import { AlertDialog } from "@radix-ui/react-alert-dialog";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import BlogUpdate from "./BlogUpdate";
+import DeleteBlog from "./DeleteBlog";
 
 
 const SingleBlog = ({ data, index}) => {
@@ -14,7 +15,7 @@ const SingleBlog = ({ data, index}) => {
             <td className="md:px-4  space-x-3   ">
                 <AlertDialog className="flex gap-3">
                         <BlogUpdate data={data} />
-                        <MdDeleteOutline className="inline m-1 text-3xl text-red-800"></MdDeleteOutline>
+                        <DeleteBlog id={data?._id}/>
                 </AlertDialog>
             </td>
         </tr>
