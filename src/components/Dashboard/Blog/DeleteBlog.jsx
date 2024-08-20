@@ -10,6 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdDeleteOutline } from "react-icons/md";
@@ -35,7 +36,6 @@ const DeleteBlog = ({ id }) => {
       console.error("Error:", error);
     } finally {
       toast.dismiss(toastId);
-      setReload((prevReload) => prevReload + 1);
     }
   };
 
@@ -47,8 +47,8 @@ const DeleteBlog = ({ id }) => {
         </div>
       </AlertDialogTrigger>
       <AlertDialogContent className="max-w-xl">
-      <AlertDialogTitle></AlertDialogTitle>
-      <AlertDialogDescription></AlertDialogDescription>
+        <AlertDialogTitle></AlertDialogTitle>
+        <AlertDialogDescription></AlertDialogDescription>
         <div className="customScrollbar max-h-[70vh] space-y-5 overflow-y-auto p-4 text-center text-gray-900">
           <h3 className="text-2xl font-bold">Are Your sure ?</h3>
           <h3 className="text-lg font-semibold">
