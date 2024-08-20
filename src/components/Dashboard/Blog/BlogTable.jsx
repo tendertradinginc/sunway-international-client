@@ -1,30 +1,18 @@
-"use client"
+
 import { AiFillDatabase } from "react-icons/ai";
-import BlogCreateButton from "./BlogCreateButton";
 import SingleBlog from "./SingleBlog";
-import { useState } from "react";
 
-const BlogTable = () => {
-  const [loading, setLoading] = useState(0);
 
-    const blogs = [
-        {
-  
-            name: "FH Plastic Industry",
-        },
-        {
-         
-            name: "FH Plastic Industry",
-        },
-        {
-            name: "FH Plastic Industry",
-        }
-       
-    ];
+const BlogTable = async () => {
+  const res = await fetch("http://localhost:5000/api/v1/blogs");
+  const data = await res.json();
+  const blogs = data?.data?.allBlogs;
+
+    
  
   return (
     <div>
-      <div className="min-h-[80vh] ">
+      <div className="min-h-[80vh]">
         <div className="container px-10 mx-auto">
           <br />
           <div className="w-full max-w-screen-lg mx-auto bg-white pb-10 ">
@@ -37,42 +25,33 @@ const BlogTable = () => {
             
               </div>
               <hr />
-              {blogs?.length > 0 ? (
-                <table className="w-full table-auto">
+              {/* {blogs?.length > 0 ? (
+              
+              ) : (
+                <div className="text-center text-xl font-medium pt-32">
+                  <p>No result found</p>
+                </div>
+              )} */}
+
+              {  <table className="w-full table-auto">
                   <thead className="bg-gradient-to-r from-si-primary to-si-secondary  text-white">
                     <tr className="">
                       <th className="px-4 py-2">No</th>
-                      <th className="px-4 py-2">Title</th>
+                      <th className="px-4 py-2 text-left">Title</th>
                       <th className="px-4 py-2">Actions</th>
                     </tr>
                   </thead>
 
                   <tbody className="text-center">
-                    {loading
-                      ? skeleton?.map((item, idx) => (
-                          <tr className="mb-10 gap-5" key={idx}>
-                            <td
-                              colSpan={3}
-                              className={`w-full animate-pulse h-14 rounded-sm ${
-                                idx % 2 == 0 ? "bg-gray-200 " : "bg-white "
-                              }`}
-                            ></td>
-                          </tr>
-                        ))
-                      : blogs?.map((blog, index) => (
+                {  blogs?.map((blog, index) => (
                           <SingleBlog
-                            key={blogs?._id}
+                            key={index}
                             index={index}
                             data={blog}
                           ></SingleBlog>
                         ))}
                   </tbody>
-                </table>
-              ) : (
-                <div className="text-center text-xl font-medium pt-32">
-                  <p>No result found</p>
-                </div>
-              )}
+                </table>}
             </div>
           </div>
         </div>
