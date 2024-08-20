@@ -1,6 +1,7 @@
 
 import { AiFillDatabase } from "react-icons/ai";
 import SingleBlog from "./SingleBlog";
+import BlogCreateButton from "./BlogCreateButton";
 
 
 const BlogTable = async () => {
@@ -22,7 +23,7 @@ const BlogTable = async () => {
                   <AiFillDatabase className="inline mb-1"></AiFillDatabase>
                   Blog List
                 </h2>
-            
+                <BlogCreateButton />
               </div>
               <hr />
               {/* {blogs?.length > 0 ? (
