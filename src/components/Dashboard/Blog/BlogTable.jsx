@@ -34,11 +34,7 @@ const BlogTable = () => {
                   <AiFillDatabase className="inline mb-1"></AiFillDatabase>
                   Blog List
                 </h2>
-                <div className="flex items-center justify-between mt-4 px-2">
-                  <div>
-                  <BlogCreateButton />
-                  </div>
-                </div>
+            
               </div>
               <hr />
               {blogs?.length > 0 ? (
