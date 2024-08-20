@@ -39,6 +39,9 @@ const SideNavbar = () => {
 
         <div className="flex flex-col gap-2">
           <Button variant="secondary">
+            <Link href="/">Home</Link>
+          </Button>
+          <Button variant="secondary">
             <Link href="/dashboard">dashboard</Link>
           </Button>
           <Button variant="secondary">
@@ -47,7 +50,9 @@ const SideNavbar = () => {
             </Link>
           </Button>
           <Button variant="secondary">
-            <Link href="/dashboard/add-medical-equipment">Add Medical Equipment</Link>
+            <Link href="/dashboard/add-medical-equipment">
+              Add Medical Equipment
+            </Link>
           </Button>
           <Button variant="secondary">
             <Link href="/dashboard/create-product">Create Product</Link>
