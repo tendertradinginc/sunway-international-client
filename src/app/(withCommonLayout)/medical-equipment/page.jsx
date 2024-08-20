@@ -16,14 +16,14 @@ import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 
 const MedicalEquipmentPage = () => {
-  // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , whilchare:[{obj}, {obj}, {obj}]. Map that and show category cards
+  // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
         Medical Equipment
       </h2>
 
-      <MaxWidthWrapper className="flex flex-col items-center lg:items-start justify-between gap-5 lg:flex-row">
+      <MaxWidthWrapper className="flex flex-col items-center justify-between gap-5 lg:flex-row lg:items-start">
         {/* Category selector */}
         <div className="size-[350px]">
           <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
@@ -39,35 +39,35 @@ const MedicalEquipmentPage = () => {
           <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
             <Link
               href="/#"
-              className="scale-90 hover:scale-100 hover:shadow-md"
+              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
             >
-              <span className="inline-flex items-center p-2 font-semibold hover:text-primary">
+              <span className="inline-flex items-center p-2 font-semibold">
                 <TbAirConditioning className="mr-2 size-5" /> Air Purification
                 Equipment
               </span>
             </Link>
             <Link
               href="/#"
-              className="scale-90 hover:scale-100 hover:shadow-md"
+              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
             >
-              <span className="inline-flex items-center p-2 font-semibold hover:text-primary">
+              <span className="inline-flex items-center p-2 font-semibold">
                 <GiMedicalDrip className="mr-2 size-6" /> Hospital Operating
                 Room Support Equipment
               </span>
             </Link>
             <Link
               href="/#"
-              className="scale-90 hover:scale-100 hover:shadow-md"
+              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
             >
-              <span className="inline-flex items-center p-2 font-semibold hover:text-primary">
+              <span className="inline-flex items-center p-2 font-semibold">
                 <PiFaceMaskLight className="mr-2 size-6" /> Air Filter
               </span>
             </Link>
             <Link
               href="/#"
-              className="scale-90 hover:scale-100 hover:shadow-md"
+              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
             >
-              <span className="inline-flex items-center p-2 font-semibold hover:text-primary">
+              <span className="inline-flex items-center p-2 font-semibold">
                 <TbAirConditioningDisabled className="mr-2 size-6" /> Air
                 Conditioning and Ventilation Terminal Equipment
               </span>
