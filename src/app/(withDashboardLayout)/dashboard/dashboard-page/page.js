@@ -1,4 +1,4 @@
-// import TotalClients from "@/components/Dashboard/Dashboard/TotalClients";
+import TotalClients from "@/components/Dashboard/Dashboard/TotalClients";
 import TotalConstructionBlogs from "@/components/Dashboard/Dashboard/TotalConstractionBlogs";
 import TotalFurnitureEquipments from "@/components/Dashboard/Dashboard/TotalFurnitureEquipments";
 import TotalMedicalEquipments from "@/components/Dashboard/Dashboard/TotalMedicalEquipments";
@@ -10,7 +10,7 @@ const dashboardPage = () => {
                 <TotalConstructionBlogs />
                 <TotalMedicalEquipments />
                 <TotalFurnitureEquipments />
-                {/* <TotalClients /> */}
+                <TotalClients />
             </div>
         </div>
     );
