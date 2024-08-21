@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-const EqipmentCard = ({ navigateTo = "" }) => {
+const EqipmentCard = ({ navigateTo = "", data = {} }) => {
   // TODO2: Make the call for button copy a number and show toast
   return (
     <div className="h-[400px]">
       <div className="relative mx-auto h-[250px] w-[90%]">
         <Image
-          src="/adolfo-felix-PG8NyM_Mcts-unsplash.jpg"
+          src={data ? data?.images[0] : ""}
           alt="product name"
           fill
           className="object-cover object-center"
@@ -17,11 +17,11 @@ const EqipmentCard = ({ navigateTo = "" }) => {
       <div className="text-balance pt-3 text-center">
         <Link href={navigateTo}>
           <h3 className="text-lg font-semibold hover:underline">
-            Product Name
+            {data?.productName}
           </h3>
         </Link>
         <p className="mx-auto max-w-[75%] text-sm text-muted-foreground">
-          Short Description: Lorem ipsum dolor sit amet.
+          {data?.shortDescription}
         </p>
         <Button variant="link">Call For Price</Button>
       </div>
