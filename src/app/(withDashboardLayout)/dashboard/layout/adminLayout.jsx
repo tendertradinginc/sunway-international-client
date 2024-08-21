@@ -1,5 +1,5 @@
 import SideNavbar from "../../components/sidebar/SideNavbar";
-
+//dd
 export default function AdminLayout({ children }) {
   return (
     <div className="grid grid-cols-12">
