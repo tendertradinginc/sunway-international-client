@@ -2,8 +2,10 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 
 const page = async ({ params }) => {
-  // const blog = blogs?.blogs?.find((item) => item.id === Number(params.id));
-  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`);
+
+  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`, {
+    cache:"no-store"
+  });
   const data = await res.json();
   const blog = data?.data;
 

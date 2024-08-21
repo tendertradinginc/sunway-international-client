@@ -28,7 +28,7 @@ const ViewBlog = ({ data }) => {
             src={data?.image}
             alt="updated blog Image"
           />
-          <AlertDialogTitle className="my-5 text-si-primary text-2xl font-semibold">
+          <AlertDialogTitle className="my-5 text-2xl font-semibold text-si-primary">
             {data?.title}
           </AlertDialogTitle>
           <AlertDialogDescription>{data?.description}</AlertDialogDescription>

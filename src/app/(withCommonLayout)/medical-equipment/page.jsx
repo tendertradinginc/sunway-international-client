@@ -14,8 +14,21 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
-const MedicalEquipmentPage = () => {
+const MedicalEquipmentPage =  () => {
+  const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(()=>{
+    setLoading(true)
+    fetch("http://localhost:5000/api/v1/medical-category")
+    .then(res => res.json())
+    .then(data =>{
+      setLoading(false)
+      console.log(data.data.result)
+    })
+  },[])
   // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
   return (
     <div className="bg-secondary">
