@@ -10,7 +10,25 @@ const page = async ({ params }) => {
   const blog = data?.data;
 
   return (
-    <MaxWidthWrapper className="p-5 py-16 md:p-20">
+   <div>
+     <title>{blog?.title}</title>
+      <meta
+        name="description"
+        content={`${blog.description.slice(0, 100)} ...`}
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <meta property="og:title" content={blog?.title} />
+      <meta
+        property="og:description"
+        content={`${blog.description.slice(0, 100)} ...`}
+      />
+      <meta property="og:image" content={blog.image} />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:url"
+        content={`https://tander-trading-inc-next.vercel.app/news/${params.id}`}
+      />
+     <MaxWidthWrapper className="p-5 py-16 md:p-20">
       <div className="mx-auto min-h-[80vh]">
         <div className="pb-10">
           <Image
@@ -37,6 +55,7 @@ const page = async ({ params }) => {
         </div>
       </div>
     </MaxWidthWrapper>
+   </div>
   );
 };
 
