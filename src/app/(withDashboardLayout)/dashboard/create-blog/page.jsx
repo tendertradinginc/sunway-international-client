@@ -1,5 +1,11 @@
-const createBlogPage = () => {
-  return <div>create-blog</div>;
+import BlogTable from "@/components/Dashboard/Blog/BlogTable";
+
+const blogPage = () => {
+  return (
+    <div className="w-full p-5 md:p-10">
+      <BlogTable />
+    </div>
+  );
 };
 
-export default createBlogPage;
+export default blogPage;
