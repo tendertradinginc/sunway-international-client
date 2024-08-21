@@ -9,11 +9,12 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { FaSpinner } from "react-icons/fa6";
 import Image from "next/image";
+import axios from "axios";
 import { toast } from "sonner";
+import { uploadImageToImgBB } from "@/utils/imageUpload";
 
 const AddOfficeEquipmentPage = () => {
-  // TODO: Setup imge upload & directly insert the data into formdata
-  // TODO: use the custom api to send data to the backend and create a loading state while it's submitting
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     modelNumber: "",
@@ -31,20 +32,50 @@ const AddOfficeEquipmentPage = () => {
     });
   };
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
-    setFormData({
-      ...formData,
-      images: imageUrls.map((url) => ({ url })),
-    });
+  const handleImageUpload = async (e) => {
+    setLoading(true); // Start loading before image upload
+    try {
+      const files = Array.from(e.target.files);
+      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUrls = await Promise.all(imageUploadPromises);
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: [...prevFormData.images, ...imageUrls],
+      }));
+    } catch (error) {
+      toast.error("Failed to upload images. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading after image upload is complete
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    toast.success("Product Added Successfully!");
+    setLoading(true);
+
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/v1/officeEquipment/create",
+        formData,
+      );
+
+      if (res.status === 201) {
+        toast.success("Product Added Successfully!");
+        // Reset form data
+        setFormData({
+          modelNumber: "",
+          productName: "",
+          images: [],
+          shortDescription: "",
+          description: "",
+        });
+      }
+    } catch (error) {
+      toast.error("Failed to add product. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,28 +89,30 @@ const AddOfficeEquipmentPage = () => {
           </CardHeader>
           <CardContent>
             <form className="mx-auto max-w-2xl p-4" onSubmit={handleSubmit}>
-              {/* name */}
-              <div className="mb-4">
-                <Label className="mb-2 block">Product Name</Label>
-                <Input
-                  type="text"
-                  name="uniqueId"
-                  value={formData.productName}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
+              <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {/* Product Name */}
+                <div>
+                  <Label className="mb-2 block">Product Name</Label>
+                  <Input
+                    type="text"
+                    name="productName"
+                    value={formData.productName}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
 
-              {/* Model Number */}
-              <div className="mb-4">
-                <Label className="mb-2 block">Model Number</Label>
-                <Input
-                  type="text"
-                  name="modelNumber"
-                  value={formData.modelNumber}
-                  onChange={handleInputChange}
-                  required
-                />
+                {/* Model Number */}
+                <div>
+                  <Label className="mb-2 block">Model Number</Label>
+                  <Input
+                    type="text"
+                    name="modelNumber"
+                    value={formData.modelNumber}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </div>
 
               {/* Short Description */}
@@ -119,15 +152,15 @@ const AddOfficeEquipmentPage = () => {
                 />
                 <div className="mt-2">
                   {formData.images.length > 0 && (
-                    <div className="grid grid-cols-3">
+                    <div className="grid grid-cols-3 gap-4">
                       {formData.images.map((image, index) => (
                         <div key={index}>
                           <Image
-                            src={image.url}
+                            src={image}
                             height={200}
                             width={200}
                             alt={`Uploaded ${index}`}
-                            className="mt-2 h-auto w-[200px]"
+                            className="mt-2 h-auto w-full"
                           />
                         </div>
                       ))}
@@ -137,14 +170,20 @@ const AddOfficeEquipmentPage = () => {
               </div>
 
               {/* Submit Button */}
-              <Button disabled className="w-full items-center gap-2.5">
-                Processing
-                <span className="animate-spin">
-                  <FaSpinner size={18} />
-                </span>
-              </Button>
-              <Button type="submit" className="mt-2 w-full">
-                Submit
+              <Button
+                disabled={loading}
+                className="w-full items-center gap-2.5"
+              >
+                {loading ? (
+                  <>
+                    Processing
+                    <span className="animate-spin">
+                      <FaSpinner size={18} />
+                    </span>
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </form>
           </CardContent>
