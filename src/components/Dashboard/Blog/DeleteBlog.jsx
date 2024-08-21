@@ -15,8 +15,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdDeleteOutline } from "react-icons/md";
 
-const DeleteBlog = ({ id }) => {
-  console.log(id);
+const DeleteBlog = ({ id, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleBlogDelete = async (e) => {
     e.preventDefault();
@@ -29,6 +28,7 @@ const DeleteBlog = ({ id }) => {
         setIsOpen(false);
         toast.dismiss(toastId);
         toast.success("success");
+        setReload(prev => prev + 1)
       }
     } catch (error) {
       toast.dismiss(toastId);

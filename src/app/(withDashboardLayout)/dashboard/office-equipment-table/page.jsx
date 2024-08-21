@@ -1,5 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 
+export const dynamic = "force-dynamic";
+
 const officeEquipmentTablePage = async () => {
   const data = await fetch(
     "http://localhost:5000/api/v1/officeEquipment/all?search=&limit=&page=",
