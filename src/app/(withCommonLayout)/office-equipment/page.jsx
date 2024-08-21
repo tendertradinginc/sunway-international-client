@@ -8,6 +8,8 @@ const OfficeEquipmentPage = async () => {
 
   const products = data?.data?.result || [];
 
+  console.log(products);
+
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">

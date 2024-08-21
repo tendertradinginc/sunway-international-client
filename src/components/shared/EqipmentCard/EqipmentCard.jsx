@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-const EqipmentCard = ({ navigateTo = "", data = {} }) => {
+const EqipmentCard = ({ navigateTo = "", data }) => {
+  console.log("Equipment card: ", data);
   // TODO2: Make the call for button copy a number and show toast
   return (
     <div className="h-[400px]">

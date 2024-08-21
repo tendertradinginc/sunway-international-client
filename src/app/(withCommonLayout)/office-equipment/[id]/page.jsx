@@ -57,12 +57,18 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
             </div>
           </section>
 
-          <section className="w-full px-2.5 py-5 lg:w-1/2">
+          <section className="w-full p-5 lg:w-1/2">
             <h2 className="text-2xl font-semibold">{product?.productName}</h2>
-            <p className="mt-4 text-gray-600">{product?.shortDescription}</p>
-            <p className="mt-4 text-gray-600">{product?.modelNumber}</p>
+            <p className="">
+              <span className="font-semibold">Model No:</span>{" "}
+              {product?.modelNumber}
+            </p>
+            <p className="">{product?.shortDescription}</p>
 
-            <Markdown>{product?.description}</Markdown>
+            <div className="mt-5 space-y-1">
+              <h4 className="font-bold">Product Details</h4>
+              <Markdown>{product?.description}</Markdown>
+            </div>
 
             <Button className="mt-5">Contact For Price</Button>
           </section>
