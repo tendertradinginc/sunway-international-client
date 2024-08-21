@@ -16,20 +16,24 @@ import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 
-const MedicalEquipmentPage =  () => {
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
+const MedicalEquipmentPage = () => {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
-    setLoading(true)
+  useEffect(() => {
+    setLoading(true);
     fetch("http://localhost:5000/api/v1/medical-category")
-    .then(res => res.json())
-    .then(data =>{
-      setLoading(false)
-      console.log(data.data.result)
-    })
-  },[])
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setCategories(data.data.result)
+        console.log(data.data.result);
+      });
+  }, []);
   // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
+  if(loading){
+    return
+  }
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
@@ -50,16 +54,21 @@ const MedicalEquipmentPage =  () => {
           </div>
 
           <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <TbAirConditioning className="mr-2 size-5" /> Air Purification
-                Equipment
-              </span>
-            </Link>
-            <Link
+            {categories?.map((item) => (
+              <Link
+                key={item?._id}
+                href="/#"
+                className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
+              >
+                <span className="inline-flex items-center p-2 font-semibold">
+                  <Image className="h-7 w-7 mr-3" height={25} width={25} alt="category icon" src={item?.image} />  {item?.name}
+                </span>
+              </Link>
+            ))}
+
+        
+
+            {/* <Link
               href="/#"
               className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
             >
@@ -84,7 +93,7 @@ const MedicalEquipmentPage =  () => {
                 <TbAirConditioningDisabled className="mr-2 size-6" /> Air
                 Conditioning and Ventilation Terminal Equipment
               </span>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="flex w-full flex-col gap-5">
