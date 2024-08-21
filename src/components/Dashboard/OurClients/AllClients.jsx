@@ -1,4 +1,5 @@
-import SingleCategory from "@/components/Category/SingleCategory";
+"use client"
+
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -8,10 +9,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-// import { useEffect, useState } from "react";
+// import {  useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
 import { FaPlusCircle } from "react-icons/fa";
-import CategoryPage from "./CategoryPage";
+import CreateClient from "./CreateClient";
+import SingleClient from "./SingleClient";
 
 const AllClients = () => {
 //   const [clients, setClients] = useState([]);
@@ -26,7 +28,7 @@ const AllClients = () => {
 //       try {
 //         setLoading(true);
 //         const response = await fetch(
-//           `https://server.tendertradinginc.com/api/v1/categories`
+//           `http://localhost:5000/api/v1/client`
 //         );
 //         const data = await response.json();
 
@@ -78,7 +80,7 @@ const AllClients = () => {
           <div className="w-full max-w-screen-lg mx-auto bg-white  ">
             <div className="overflow-x-auto sm:px-1 ">
               <div className="pb-6 flex justify-between items-center">
-                <h2 className="text-blue-950 font-semibold text-2xl ">
+                <h2 className="text-si-primary font-semibold text-2xl ">
                   <AiFillDatabase className="inline mb-1"></AiFillDatabase>
                   Clients List
                 </h2>
@@ -87,7 +89,7 @@ const AllClients = () => {
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
                         <Button
-                          className="border bg-blue-950 hover:bg-[#8BA8E5] duration-500 hover:text-black text-white px-3 text-base py-1 font-semibold rounded-lg cursor-pointer"
+                          className="border bg-si-primary hover:bg-si-secondary duration-500 hover:text-black text-white px-3 text-base py-1 font-semibold rounded-lg cursor-pointer"
                           variant="outline"
                         >
                           Create Client{" "}
@@ -98,9 +100,9 @@ const AllClients = () => {
                       </AlertDialogTrigger>
 
                       <AlertDialogContent className="max-w-4xl">
-                        <CategoryPage></CategoryPage>
+                        <CreateClient />
                         <AlertDialogFooter>
-                          <AlertDialogCancel className="hover:bg-blue-950 hover:text-white">
+                          <AlertDialogCancel className="hover:bg-si-primary hover:text-white">
                             Close
                           </AlertDialogCancel>
                         </AlertDialogFooter>
@@ -112,18 +114,18 @@ const AllClients = () => {
               <hr />
               {
                 <table className="w-full table-auto">
-                  <thead className="bg-gradient-to-r from-blue-950 to-[#91AADF]  text-white ">
+                  <thead className="bg-gradient-to-r from-si-primary to-si-secondary  text-white ">
                     <tr className="text-left">
                       <th className="px-4 py-2">No</th>
-                      <th className="px-4 py-2">Image</th>
-                      <th className="px-4 py-2">Title</th>
-                      <th className="px-4 py-2">Details</th>
+                      <th className="pl-16 py-2">Image</th>
+                      <th className="pl-16 py-2">Title</th>
+                      <th className="pl-16 py-2">Details</th>
                       <th className="px-4 py-2">Actions</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                    {loading
+                    {/* {loading
                       ? skeleton?.map((item, idx) => (
                           <tr className="mb-10 gap-5" key={idx}>
                             <td
@@ -134,13 +136,14 @@ const AllClients = () => {
                             ></td>
                           </tr>
                         ))
-                      : ClientsInfo?.map((client, index) => (
-                          <SingleCategory
-                            key={clients?._id}
+                      :  */}
+                     { ClientsInfo?.map((client, index) => (
+                          <SingleClient
+                            key={ClientsInfo?._id}
                             index={index}
-                            data={client}
-                            setReload={setReload}
-                          ></SingleCategory>
+                            clientData={client}
+                    
+                          ></SingleClient>
                         ))}
                   </tbody>
                 </table>
