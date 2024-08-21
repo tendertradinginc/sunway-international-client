@@ -46,7 +46,7 @@ const totalPage = Math.ceil(totalBlog / limit)
                   <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
                   Blog List
                 </h2>
-                <BlogCreateButton />
+                <BlogCreateButton  setReload={setReload} />
               </div>
               <hr />
              

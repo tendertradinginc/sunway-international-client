@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 import { CgSpinnerTwoAlt } from "react-icons/cg";
 import { FaPlusCircle } from "react-icons/fa";
 
-const BlogCreateButton = () => {
+const BlogCreateButton = ({ setReload}) => {
   const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -62,6 +62,7 @@ const BlogCreateButton = () => {
       if (data?.status === "success") {
         toast.success("Article submitted successfully");
         e.target.reset();
+        setReload(prev => prev + 1)
       }
     } catch (error) {
       toast.error(error.message || "An unexpected error occurred");
