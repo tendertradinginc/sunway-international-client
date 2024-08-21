@@ -1,26 +1,42 @@
-
+"use client"
 import { AiFillDatabase } from "react-icons/ai";
 import SingleBlog from "./SingleBlog";
 import BlogCreateButton from "./BlogCreateButton";
+import PaginationBlog from "./Pagination";
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 
-const BlogTable = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs");
-  const data = await res.json();
-  const blogs = data?.data?.allBlogs;
+const BlogTable =  () => {
+const searchParams = useSearchParams()
+const [blogs, setBlogs] = useState([])
+const [page, setPage] = useState(searchParams.get('page' || 1))
+const [limit, setLimit] = useState(searchParams.get('limit' || 10))
+const [totalBlog, setTolatBlog] = useState(0)
 
-    
- 
+
+useState(()=>{
+  fetch(`http://localhost:5000/api/v1/blogs?page=${page}&limit=${limit}`)
+  .then(res => res.json())
+  .then(data => {
+    setBlogs(data?.data?.allBlogs)
+    setTolatBlog(data?.data?.totlaBlogs)
+  })
+},[page, limit])
+
+const totalPage = Math.ceil(totalBlog / limit)
+console.log(totalPage)
+
   return (
     <div>
       <div className="min-h-[80vh]">
-        <div className="container px-10 mx-auto">
+        <div className="container mx-auto px-10">
           <br />
-          <div className="w-full max-w-screen-lg mx-auto bg-white pb-10 ">
-            <div className="overflow-x-auto sm:px-1 ">
-              <div className="pb-6 flex justify-between items-center">
-                <h2 className="text-si-primary font-semibold text-2xl ">
-                  <AiFillDatabase className="inline mb-1"></AiFillDatabase>
+          <div className="mx-auto w-full max-w-screen-lg bg-white pb-10">
+            <div className="overflow-x-auto sm:px-1">
+              <div className="flex items-center justify-between pb-6">
+                <h2 className="text-2xl font-semibold text-si-primary">
+                  <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
                   Blog List
                 </h2>
                 <BlogCreateButton />
@@ -34,8 +50,9 @@ const BlogTable = async () => {
                 </div>
               )} */}
 
-              {  <table className="w-full table-auto">
-                  <thead className="bg-si-primary  text-white border-2 border-si-primary">
+              {
+                <table className="w-full table-auto">
+                  <thead className="border-2 border-si-primary bg-si-primary text-white">
                     <tr className="">
                       <th className="px-4 py-2">No</th>
                       <th className="px-4 py-2 text-left">Title</th>
@@ -43,16 +60,20 @@ const BlogTable = async () => {
                     </tr>
                   </thead>
 
-                  <tbody className="text-center border">
-                {  blogs?.map((blog, index) => (
-                          <SingleBlog
-                            key={index}
-                            index={index}
-                            data={blog}
-                          ></SingleBlog>
-                        ))}
+                  <tbody className="border text-center">
+                    {blogs?.map((blog, index) => (
+                      <SingleBlog
+                        key={index}
+                        index={index}
+                        data={blog}
+                      ></SingleBlog>
+                    ))}
                   </tbody>
-                </table>}
+                </table>
+              }
+            </div>
+            <div className="mt-5">
+            <PaginationBlog data={{setPage, page, limit, totalPage}} />
             </div>
           </div>
         </div>
