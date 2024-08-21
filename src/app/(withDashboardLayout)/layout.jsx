@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import DashboardLayout from "./layout/dashboardLayout";
 
 export const metadata = {
@@ -6,5 +7,12 @@ export const metadata = {
 };
 
 export default function dashboardMainLayout({ children }) {
-  return <DashboardLayout>{children}</DashboardLayout>;
+  return (
+    <DashboardLayout>
+      <>
+        {children}
+        <Toaster richColors position="top-right" duration={4000} />
+      </>
+    </DashboardLayout>
+  );
 }
