@@ -40,14 +40,19 @@ const SideNavbar = () => {
     },
     {
       id: 5,
+      href: "/dashboard/medical-equipment-table",
+      label: "Medical Equipment",
+    },
+    {
+      id: 6,
       href: "/dashboard/add-medical-equipment",
       label: "Add Medical Equipment",
     },
-    { id: 6, href: "/dashboard/create-product", label: "Create Product" },
-    { id: 7, href: "/dashboard/blog-page", label: "Blog" },
-    { id: 8, href: "/dashboard/create-blog", label: "Create Blog" },
+    { id: 7, href: "/dashboard/create-product", label: "Create Product" },
+    { id: 8, href: "/dashboard/blog-page", label: "Blog" },
+    { id: 9, href: "/dashboard/create-blog", label: "Create Blog" },
     {
-      id: 9,
+      id: 10,
       href: "/dashboard/medical-category-page",
       label: "Medical Category",
     },
@@ -68,7 +73,12 @@ const SideNavbar = () => {
         {/* Mapping over links */}
         <div className="flex flex-col gap-2">
           {links.map((link) => (
-            <Button key={link.id} variant="secondary" asChild>
+            <Button
+              key={link.id}
+              variant="secondary"
+              asChild
+              className="justify-start"
+            >
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
