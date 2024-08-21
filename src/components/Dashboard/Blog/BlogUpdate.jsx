@@ -18,7 +18,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
 
-const BlogUpdate = ({ data }) => {
+const BlogUpdate = ({ data,setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDisbaled, setIsdisabled] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -59,8 +59,9 @@ const BlogUpdate = ({ data }) => {
         toast.success("Success");
         setIsdisabled(true);
         setLoading(false);
-        setReload((prevReload) => prevReload + 1);
+        setReload(prev => prev +1)
         setIsOpen(false);
+        
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || "An unexpected error occurred");

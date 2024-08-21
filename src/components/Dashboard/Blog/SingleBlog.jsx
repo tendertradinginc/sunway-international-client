@@ -5,7 +5,7 @@ import BlogUpdate from "./BlogUpdate";
 import DeleteBlog from "./DeleteBlog";
 import ViewBlog from "./ViewBlog";
 
-const SingleBlog = ({ data, index }) => {
+const SingleBlog = ({ data, index, setReload }) => {
   const { title } = data;
   return (
     <tr className={` ${index % 2 === 1 ? "bg-[#f2f2f2]" : ""}`}>
@@ -15,8 +15,8 @@ const SingleBlog = ({ data, index }) => {
       <td className="space-x-3 md:px-4">
         <AlertDialog className="flex gap-3">
           <ViewBlog data={data}/>
-          <BlogUpdate data={data} />
-          <DeleteBlog id={data?._id} />
+          <BlogUpdate setReload={setReload} data={data} />
+          <DeleteBlog setReload={setReload} id={data?._id} />
         </AlertDialog>
       </td>
     </tr>

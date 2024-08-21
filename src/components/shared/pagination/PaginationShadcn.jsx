@@ -13,7 +13,7 @@ import {
 const PaginationBlog = ({ data }) => {
   const { page, limit, totalPage } = data;
   const pageNumber = Number(page);
-  console.log(totalPage, page);
+ 
   return (
     <Pagination>
       <PaginationContent>

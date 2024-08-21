@@ -4,7 +4,7 @@ import SingleBlog from "./SingleBlog";
 import BlogCreateButton from "./BlogCreateButton";
 import PaginationBlog from "../../shared/pagination/PaginationShadcn";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 
@@ -15,22 +15,24 @@ const [blogs, setBlogs] = useState([])
 const [page, setPage] = useState(searchParams.get('page' || 1))
 const [limit, setLimit] = useState(searchParams.get('limit' || 10))
 const [totalBlog, setTolatBlog] = useState(0)
+const [reload, setReload] = useState(0)
 
-
-useState(()=>{
+useEffect(()=>{
   fetch(`http://localhost:5000/api/v1/blogs?page=${page}&limit=${limit}`)
   .then(res => res.json())
   .then(data => {
     setBlogs(data?.data?.allBlogs)
     setTolatBlog(data?.data?.totlaBlogs)
     setLoading(false)
+
  
   })
   .catch(err => toast.error(err.message))
-},[page, limit])
+  console.log(reload)
+},[page, limit,loading, reload])
 
 const totalPage = Math.ceil(totalBlog / limit)
-console.log(totalPage)
+
 
   return (
     <div>
@@ -47,13 +49,7 @@ console.log(totalPage)
                 <BlogCreateButton />
               </div>
               <hr />
-              {/* {blogs?.length > 0 ? (
-              
-              ) : (
-                <div className="text-center text-xl font-medium pt-32">
-                  <p>No result found</p>
-                </div>
-              )} */}
+             
 
               { 
                 <table className="w-full table-auto">
@@ -71,6 +67,7 @@ console.log(totalPage)
                         key={index}
                         index={index}
                         data={blog}
+                        setReload={setReload}
                       ></SingleBlog>
                     )) : Array.from({ length: 10 }).map((_, idx)=><tr  key={idx} className={`h-10 w-full ${idx%2==0 ? "bg-secondary":""} `}>
                       <td className="col" colSpan={4}></td>
