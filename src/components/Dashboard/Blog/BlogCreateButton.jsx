@@ -98,16 +98,7 @@ const BlogCreateButton = () => {
               required
             />
           </div>
-          <div className="mb-4">
-            <Label className="mb-2 block">Blog Description</Label>
-            <Textarea
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}
-              required
-              className="min-h-64"
-            />
-          </div>
+         
           <div className="mb-4">
             <Label className="mb-2 block">Blog Thumbnail</Label>
             <Input
