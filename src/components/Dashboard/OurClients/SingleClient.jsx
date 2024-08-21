@@ -2,9 +2,10 @@ import { AlertDialog } from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import EditClientModal from "./EditClientModal";
 
 
-const SingleClient = ({ clientData, index }) => {
+const SingleClient = ({ clientData, index, setReload  }) => {
 
     const { name, image, details } = clientData;
     // console.log(name, image,details, data);
@@ -36,7 +37,7 @@ const SingleClient = ({ clientData, index }) => {
 
             <td className="md:px-4 py-2 space-x-3 flex items-center">
                 <AlertDialog>
-                <CiEdit className="inline m-1 text-3xl font-bold"></CiEdit>
+                <EditClientModal data={clientData} setReload={setReload}></EditClientModal>
                 <MdDeleteOutline className="inline m-1 text-3xl text-red-800"></MdDeleteOutline>
 
                 </AlertDialog>
