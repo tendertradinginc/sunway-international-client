@@ -8,7 +8,6 @@ const ClientsPage = () => {
   return (
     <div>
      <AllClients /> 
-     {/* <CreateClient /> */}
     </div>
   );
 };
