@@ -1,7 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Markdown from "react-markdown";
 import Image from "next/image";
 import {
   Breadcrumb,
@@ -12,13 +11,13 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const OfficeEqipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
     `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
-
-  console.log("Indi: ", data.data);
 
   const product = data?.data || {};
 
@@ -39,7 +38,7 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Product Name</BreadcrumbPage>
+            <BreadcrumbPage>{product?.productName}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -49,8 +48,8 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
           <section className="w-full lg:w-1/2">
             <div className="relative mx-auto min-h-[500px] w-full">
               <Image
-                src={product ? product?.images[0] : ""}
-                alt="Ergonomic Office Chair"
+                src={product?.images[0] || ""}
+                alt={product?.productName || "Product Image"}
                 fill
                 className="object-cover object-center"
               />
@@ -67,7 +66,9 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
 
             <div className="mt-5 space-y-1">
               <h4 className="font-bold">Product Details</h4>
-              <Markdown>{product?.description}</Markdown>
+              <Markdown className="prose" remarkPlugins={[remarkGfm]}>
+                {product?.description}
+              </Markdown>
             </div>
 
             <Button className="mt-5">Contact For Price</Button>
