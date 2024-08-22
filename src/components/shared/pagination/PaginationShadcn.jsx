@@ -13,8 +13,8 @@ import {
 const PaginationBlog = ({ data }) => {
   const { page, limit, totalPage } = data;
   const pageNumber = Number(page);
- 
-  return (
+
+   return (
     <Pagination>
       <PaginationContent>
         <PaginationItem>
