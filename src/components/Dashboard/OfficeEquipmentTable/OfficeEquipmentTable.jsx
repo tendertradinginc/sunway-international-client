@@ -8,58 +8,70 @@ import { Button } from "@/components/ui/button";
 import OfficeEquipmentTableRow from "./OfficeEquipmentTableRow";
 import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
+import { CgSpinnerAlt } from "react-icons/cg";
 
 const OfficeEquipmentTable = () => {
   const searchParams = useSearchParams();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(searchParams.get("page" || 1));
-  const [limit, setLimit] = useState(searchParams.get("limit" || 10));
+  const [page, setPage] = useState(parseInt(searchParams.get("page")) || 1);
+  const [limit, setLimit] = useState(parseInt(searchParams.get("limit")) || 10);
   const [totalProducts, setTotalProducts] = useState(0);
-  const [reload, setReload] = useState(0);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:5000/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data?.data?.result);
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
+        );
+        const data = await response.json();
         setProducts(data?.data?.result);
         setTotalProducts(data?.data?.totalOfficeEquipment);
+      } catch (err) {
+        toast.error(err.message);
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => toast.error(err.message));
-    console.log(reload);
-  }, [page, limit, loading, reload]);
+      }
+    };
+
+    fetchData();
+  }, [page, limit, reload]);
 
   const totalPage = Math.ceil(totalProducts / limit);
 
   return (
-    <div>
-      <div className="min-h-[80vh]">
-        <div className="container mx-auto px-10">
-          <br />
-          <div className="mx-auto w-full max-w-screen-lg bg-white pb-10">
-            <div className="overflow-x-auto sm:px-1">
-              <div className="flex items-center justify-between pb-6">
-                <h2 className="text-2xl font-semibold text-si-primary">
-                  <AiFillDatabase className="mb-1 inline" />
-                  Office Equipment List
-                </h2>
-                <Button asChild>
-                  <Link href="/dashboard/add-office-equipment">
-                    Add Office Equipment{" "}
-                    <PlusCircleIcon className="ml-2 size-5" />
-                  </Link>
-                </Button>
-              </div>
-              <hr />
+    <div className="min-h-[80vh]">
+      <div className="container mx-auto px-10">
+        <br />
+        <div className="mx-auto w-full max-w-screen-lg bg-white pb-10">
+          <div className="overflow-x-auto sm:px-1">
+            <div className="flex items-center justify-between pb-6">
+              <h2 className="text-2xl font-semibold text-si-primary">
+                <AiFillDatabase className="mb-1 inline" />
+                Office Equipment List
+              </h2>
+              <Button asChild>
+                <Link href="/dashboard/add-office-equipment">
+                  Add Office Equipment{" "}
+                  <PlusCircleIcon className="ml-2 size-5" />
+                </Link>
+              </Button>
+            </div>
+            <hr />
 
-              {
+            {loading ? (
+              <div className="flex min-h-[50vh] items-center justify-center">
+                <span className="animate-spin text-si-primary">
+                  <CgSpinnerAlt className="h-10 w-10" />
+                </span>
+              </div>
+            ) : (
+              <>
                 <table className="w-full table-auto">
                   <thead className="border-2 border-si-primary bg-si-primary text-white">
-                    <tr className="">
+                    <tr>
                       <th className="px-4 py-2">No</th>
                       <th className="px-4 py-2 text-left">Product Name</th>
                       <th className="px-4 py-2 text-left">Model Number</th>
@@ -69,9 +81,9 @@ const OfficeEquipmentTable = () => {
 
                   <tbody className="border text-center">
                     {products?.length > 0
-                      ? products?.map((product, index) => (
+                      ? products.map((product, index) => (
                           <OfficeEquipmentTableRow
-                            key={index}
+                            key={product?._id}
                             index={index}
                             data={product}
                             setReload={setReload}
@@ -80,19 +92,20 @@ const OfficeEquipmentTable = () => {
                       : Array.from({ length: 10 }).map((_, idx) => (
                           <tr
                             key={idx}
-                            className={`h-10 w-full ${idx % 2 == 0 ? "bg-secondary" : ""} `}
+                            className={`h-10 w-full ${
+                              idx % 2 === 0 ? "bg-secondary" : ""
+                            }`}
                           >
                             <td className="col" colSpan={4}></td>
                           </tr>
                         ))}
                   </tbody>
                 </table>
-              }
-            </div>
-            {!loading && (
-              <div className="mt-5">
-                <PaginationBlog data={{ setPage, page, limit, totalPage }} />
-              </div>
+
+                <div className="mt-5">
+                  <PaginationBlog data={{ setPage, page, limit, totalPage }} />
+                </div>
+              </>
             )}
           </div>
         </div>
