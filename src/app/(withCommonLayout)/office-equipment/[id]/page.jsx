@@ -1,6 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Markdown from "react-markdown";
 import Image from "next/image";
 import {
   Breadcrumb,
@@ -12,8 +13,15 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
-const OfficeEqipmentDetailsPage = ({ params }) => {
-  // TODO: Fetch individual Data based on the id
+const OfficeEqipmentDetailsPage = async ({ params }) => {
+  const data = await fetch(
+    `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
+  ).then((res) => res.json());
+
+  console.log("Indi: ", data.data);
+
+  const product = data?.data || {};
+
   return (
     <MaxWidthWrapper className="min-h-screen py-10">
       <Breadcrumb>
@@ -36,12 +44,12 @@ const OfficeEqipmentDetailsPage = ({ params }) => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Card className="rounded-none mt-5">
+      <Card className="mt-5 rounded-none">
         <CardContent className="flex flex-col gap-0 p-0 lg:flex-row lg:gap-5">
           <section className="w-full lg:w-1/2">
             <div className="relative mx-auto min-h-[500px] w-full">
               <Image
-                src="/adolfo-felix-PG8NyM_Mcts-unsplash.jpg"
+                src={product ? product?.images[0] : ""}
                 alt="Ergonomic Office Chair"
                 fill
                 className="object-cover object-center"
@@ -49,38 +57,18 @@ const OfficeEqipmentDetailsPage = ({ params }) => {
             </div>
           </section>
 
-          <section className="w-full px-2.5 py-5 lg:w-1/2">
-            <h2 className="text-2xl font-semibold">Ergonomic Office Chair</h2>
-            <p className="mt-4 text-gray-600">
-              This ergonomic office chair is designed to provide maximum comfort
-              during long work hours. The chair features adjustable height,
-              lumbar support, and a breathable mesh back that keeps you cool
-              throughout the day.
+          <section className="w-full p-5 lg:w-1/2">
+            <h2 className="text-2xl font-semibold">{product?.productName}</h2>
+            <p className="">
+              <span className="font-semibold">Model No:</span>{" "}
+              {product?.modelNumber}
             </p>
+            <p className="">{product?.shortDescription}</p>
 
-            <ul className="mt-4 space-y-2 text-gray-700">
-              <li>
-                <strong>Product Id:</strong> {params.id}
-              </li>
-              <li>
-                <strong>Material:</strong> Mesh and foam
-              </li>
-              <li>
-                <strong>Color:</strong> Black
-              </li>
-              <li>
-                <strong>Weight Capacity:</strong> 300 lbs
-              </li>
-              <li>
-                <strong>Dimensions:</strong> 24 W x 24 D x 44 H
-              </li>
-              <li>
-                <strong>Adjustability:</strong> Height, tilt, and armrests
-              </li>
-              <li>
-                <strong>Warranty:</strong> 2 years
-              </li>
-            </ul>
+            <div className="mt-5 space-y-1">
+              <h4 className="font-bold">Product Details</h4>
+              <Markdown>{product?.description}</Markdown>
+            </div>
 
             <Button className="mt-5">Contact For Price</Button>
           </section>
