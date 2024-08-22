@@ -164,7 +164,7 @@ const AllClients = () => {
                 </table>
               }
             </div>
-            {!loading && <div className="mt-5">
+            {!loading && <div className="mt-8">
             <PaginationBlog data={{ page, limit, totalPage}} />
             </div>}
           </div>
