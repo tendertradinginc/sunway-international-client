@@ -78,13 +78,15 @@ const EditClientModal = ({ data, setReload }) => {
                     <CiEdit className="inline m-1 text-3xl font-bold"></CiEdit>
                 </div>
             </AlertDialogTrigger>
-            <AlertDialogContent className="max-w-3xl">
+            <AlertDialogContent className="max-w-3xl max-h-[600px] overflow-y-scroll">
                 <AlertDialogHeader>
-                    <hr />
-                    <AlertDialogDescription className=" min-h-[70vh] overflow-y-auto p-4 customScrollbar">
-                        <form
+                    
+                    <AlertDialogDescription className="  overflow-y-auto p-4 customScrollbar">
+                        
+                    </AlertDialogDescription>
+                    <form
                             onSubmit={handleSubmit}
-                            className="max-w-2xl mx-auto py-4 space-y-10"
+                            className="w-full mx-auto py-4 space-y-10"
                         >
                             <div className="mb-5">
                                 <Label className="block mb-2">Title</Label>
@@ -161,7 +163,6 @@ const EditClientModal = ({ data, setReload }) => {
                                 </div>
                             </div>
                         </form>
-                    </AlertDialogDescription>
                 </AlertDialogHeader>
 
                 <AlertDialogFooter>
