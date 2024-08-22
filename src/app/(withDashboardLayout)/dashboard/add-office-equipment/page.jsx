@@ -12,6 +12,8 @@ import Image from "next/image";
 import axios from "axios";
 import { toast } from "sonner";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const AddOfficeEquipmentPage = () => {
   const [loading, setLoading] = useState(false);
@@ -138,6 +140,13 @@ const AddOfficeEquipmentPage = () => {
                   required
                   className="min-h-64"
                 />
+
+                <Markdown
+                  className="prose"
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {formData.description}
+                </Markdown>
               </div>
 
               {/* Image Upload */}
