@@ -68,32 +68,7 @@ const MedicalEquipmentPage = () => {
 
         
 
-            {/* <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <GiMedicalDrip className="mr-2 size-6" /> Hospital Operating
-                Room Support Equipment
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiFaceMaskLight className="mr-2 size-6" /> Air Filter
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <TbAirConditioningDisabled className="mr-2 size-6" /> Air
-                Conditioning and Ventilation Terminal Equipment
-              </span>
-            </Link> */}
+         
           </div>
         </div>
         <div className="flex w-full flex-col gap-5">
