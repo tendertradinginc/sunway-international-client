@@ -14,6 +14,8 @@ import { DatePicker } from "@/components/custom/DatePicker";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import { toast } from "sonner";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const AddMedicalEquipmentPage = () => {
   const [category, setCategory] = useState("");
@@ -235,6 +237,9 @@ const AddMedicalEquipmentPage = () => {
                   required
                   className="min-h-64"
                 />
+                <Markdown className="prose" remarkPlugins={[remarkGfm]}>
+                  {formData.description}
+                </Markdown>
               </div>
 
               {/* Image Upload */}
