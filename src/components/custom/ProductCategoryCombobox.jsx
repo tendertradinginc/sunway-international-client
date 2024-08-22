@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -14,18 +15,30 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ProductCategoryCombobox({ value, setValue }) {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const categories = [
-    { _id: "1", name: "Hospital Beds" },
-    { _id: "2", name: "Wheelchairs" },
-    { _id: "3", name: "Surgical Instruments" },
-    { _id: "4", name: "Medical Monitors" },
-    { _id: "5", name: "Diagnostic Devices" },
-  ];
+  // const categories = [
+  //   { _id: "1", name: "Hospital Beds" },
+  //   { _id: "2", name: "Wheelchairs" },
+  //   { _id: "3", name: "Surgical Instruments" },
+  //   { _id: "4", name: "Medical Monitors" },
+  //   { _id: "5", name: "Diagnostic Devices" },
+  // ];
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:5000/api/v1/medical-category")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setCategories(data.data.result)
+        console.log(data.data.result);
+      });
+  }, [loading]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

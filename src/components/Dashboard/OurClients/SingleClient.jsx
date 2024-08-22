@@ -32,7 +32,7 @@ const SingleClient = ({ clientData, index, setReload  }) => {
                 {name}
             </td>
 
-            <td className="pr-2 py-1 text-blue-900 font-semibold ">
+            <td className="pr-2 py-1 text-si-primary font-semibold ">
                 {details}
             </td>
 

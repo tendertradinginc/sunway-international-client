@@ -4,9 +4,11 @@ import Link from "next/link";
 // import blogs from "@/lib/blogs";
 
 const Page = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs");
+  const res = await fetch("http://localhost:5000/api/v1/blogs", {cache:"no-cache"});
   const data = await res.json();
   const blogs = data?.data?.allBlogs;
+  console.log(blogs)
+
   return (
     <MaxWidthWrapper className="py-10">
       {/* Title Section */}

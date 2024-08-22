@@ -67,6 +67,7 @@ const BlogCreateButton = ({ setReload}) => {
     } catch (error) {
       toast.error(error.message || "An unexpected error occurred");
       console.error("Error:", error);
+      toast.error(error?.message)
     } finally {
       toast.dismiss(toastId);
       setLoading(false);
@@ -95,6 +96,15 @@ const BlogCreateButton = ({ setReload}) => {
               type="text"
               name="title"
               value={formData.headline}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <Label className="mb-2 block">Description</Label>
+            <Textarea
+              type="te"
+              name="description"
               onChange={handleInputChange}
               required
             />

@@ -9,64 +9,79 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-// import {  useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
 import { FaPlusCircle } from "react-icons/fa";
 import CreateClient from "./CreateClient";
 import SingleClient from "./SingleClient";
+import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
+import { useSearchParams } from "next/navigation";
 
 const AllClients = () => {
-//   const [clients, setClients] = useState([]);
-//   const [reload, setReload] = useState(0);
-//   const [loading, setLoading] = useState(true);
+  const searchParams = useSearchParams()
+  const [clients, setClients] = useState([]);
+  const [page, setPage] = useState(searchParams.get('page') || 1)
+  const [limit, setLimit] = useState(searchParams.get('limit') || 5)
+  const [totalClient, setTotalClient] = useState(0)
+  const [reload, setReload] = useState(0);
+  const [loading, setLoading] = useState(true);
 
 
 
-//   useEffect(() => {
-//     const fetchClients = async () => {
-//       console.log(reload);
-//       try {
-//         setLoading(true);
-//         const response = await fetch(
-//           `http://localhost:5000/api/v1/client`
-//         );
-//         const data = await response.json();
+  useEffect(() => {
+    const fetchClients = async () => {
+      console.log(reload);
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `http://localhost:5000/api/v1/client?page=${page}&limit=${limit}`
+        );
+        const data = await response.json();
 
-//         setClients(data?.data);
-//         // console.log(data.data);
-//       } catch (error) {
-//         console.error("Error fetching :", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchClients();
-//   }, [reload]);
+        setClients(data?.data.result);
+        setTotalClient(data?.data?.total)
+        // console.log(data.data);
+      } catch (error) {
+        console.error("Error fetching :", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchClients();
+  }, [reload ,page, limit,loading]);
+
+
+  
+  const totalPage = Math.ceil(totalClient / limit)
+  
 
 
 
-    const ClientsInfo = [
-        {
-            img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
-            clientName: "FH Plastic Industry",
-            details: "https://www.google.com/"
-        },
-        {
-            img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
-            clientName: "FH Plastic Industry",
-            details: "https://www.google.com/"
-        },
-        {
-            img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
-            clientName: "FH Plastic Industry",
-            details: "https://www.google.com/"
-        },
-        {
-            img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
-            clientName: "FH Plastic Industry",
-            details: "https://www.google.com/"
-        },
-    ];
+
+
+
+  // const ClientsInfo = [
+  //     {
+  //         img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
+  //         clientName: "FH Plastic Industry",
+  //         details: "https://www.google.com/"
+  //     },
+  //     {
+  //         img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
+  //         clientName: "FH Plastic Industry",
+  //         details: "https://www.google.com/"
+  //     },
+  //     {
+  //         img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
+  //         clientName: "FH Plastic Industry",
+  //         details: "https://www.google.com/"
+  //     },
+  //     {
+  //         img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
+  //         clientName: "FH Plastic Industry",
+  //         details: "https://www.google.com/"
+  //     },
+  // ];
 
   // loading skeleton
   const skeleton = new Array(10).fill(Math.random());
@@ -101,7 +116,7 @@ const AllClients = () => {
 
                       <AlertDialogContent className="max-w-4xl">
                         <CreateClient />
-                        
+
                         <AlertDialogFooter>
                           <AlertDialogCancel className="hover:bg-si-primary hover:text-white">
                             Close
@@ -120,36 +135,38 @@ const AllClients = () => {
                       <th className="px-4 py-2">No</th>
                       <th className="pl-16 py-2">Image</th>
                       <th className="pl-16 py-2">Title</th>
-                      <th className="pl-16 py-2">Details</th>
+                      <th className="pl-12 py-2">Details</th>
                       <th className="px-4 py-2">Actions</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                    {/* {loading
+                    {loading
                       ? skeleton?.map((item, idx) => (
-                          <tr className="mb-10 gap-5" key={idx}>
-                            <td
-                              colSpan={3}
-                              className={`w-full animate-pulse h-14 rounded-sm ${
-                                idx % 2 == 0 ? "bg-gray-200 " : "bg-white "
+                        <tr className="mb-10 gap-5" key={idx}>
+                          <td
+                            colSpan={3}
+                            className={`w-full animate-pulse h-14 rounded-sm ${idx % 2 == 0 ? "bg-gray-200 " : "bg-white "
                               }`}
-                            ></td>
-                          </tr>
-                        ))
-                      :  */}
-                     { ClientsInfo?.map((client, index) => (
-                          <SingleClient
-                            key={ClientsInfo?._id}
-                            index={index}
-                            clientData={client}
-                    
-                          ></SingleClient>
-                        ))}
+                          ></td>
+                        </tr>
+                      ))
+                      :
+                      clients?.map((client, index) => (
+                        <SingleClient
+                          key={clients?._id}
+                          index={index}
+                          clientData={client}
+
+                        ></SingleClient>
+                      ))}
                   </tbody>
                 </table>
               }
             </div>
+            {!loading && <div className="mt-8">
+            <PaginationBlog data={{ page, limit, totalPage}} />
+            </div>}
           </div>
         </div>
       </div>
