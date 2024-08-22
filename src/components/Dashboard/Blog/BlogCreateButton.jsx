@@ -14,11 +14,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { CgSpinnerTwoAlt } from "react-icons/cg";
 import { FaPlusCircle } from "react-icons/fa";
+import { toast } from "sonner";
 
-const BlogCreateButton = ({ setReload}) => {
+const BlogCreateButton = ({ setReload }) => {
   const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -62,12 +62,12 @@ const BlogCreateButton = ({ setReload}) => {
       if (data?.status === "success") {
         toast.success("Article submitted successfully");
         e.target.reset();
-        setReload(prev => prev + 1)
+        setReload((prev) => prev + 1);
       }
     } catch (error) {
       toast.error(error.message || "An unexpected error occurred");
       console.error("Error:", error);
-      toast.error(error?.message)
+      toast.error(error?.message);
     } finally {
       toast.dismiss(toastId);
       setLoading(false);
@@ -109,7 +109,7 @@ const BlogCreateButton = ({ setReload}) => {
               required
             />
           </div>
-         
+
           <div className="mb-4">
             <Label className="mb-2 block">Blog Thumbnail</Label>
             <Input
