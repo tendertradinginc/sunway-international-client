@@ -11,7 +11,8 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-const MedicalCategoryPage = ({ params }) => {
+const MedicalCategoryPage =  ({ params }) => {
+ 
   return (
     <MaxWidthWrapper>
       <h2 className="mt-3 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
