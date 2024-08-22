@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 
+
 const BlogTable =  () => {
 const searchParams = useSearchParams()
 const [loading, setLoading] = useState(true)
@@ -25,6 +26,7 @@ useEffect(()=>{
     setTolatBlog(data?.data?.totlaBlogs)
     setLoading(false)
 console.log(limit)
+
  
   })
   .catch(err => toast.error(err.message))

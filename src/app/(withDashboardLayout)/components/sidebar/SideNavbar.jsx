@@ -25,6 +25,39 @@ const SideNavbar = () => {
     // await logout();
   };
 
+  const links = [
+    { id: 1, href: "/", label: "Home" },
+    { id: 2, href: "/dashboard", label: "Dashboard" },
+    {
+      id: 3,
+      href: "/dashboard/office-equipment-table",
+      label: "Office Equipment",
+    },
+    {
+      id: 4,
+      href: "/dashboard/add-office-equipment",
+      label: "Add Office Equipment",
+    },
+    {
+      id: 5,
+      href: "/dashboard/medical-equipment-table",
+      label: "Medical Equipment",
+    },
+    {
+      id: 6,
+      href: "/dashboard/add-medical-equipment",
+      label: "Add Medical Equipment",
+    },
+    { id: 7, href: "/dashboard/create-product", label: "Create Product" },
+    { id: 8, href: "/dashboard/blog-page", label: "Blog" },
+    { id: 9, href: "/dashboard/create-blog", label: "Create Blog" },
+    {
+      id: 10,
+      href: "/dashboard/medical-category-page",
+      label: "Medical Category",
+    },
+  ];
+
   return (
     <>
       <section className="sticky top-0 z-50 hidden min-h-screen w-[250px] min-w-[250px] border-r px-2.5 py-5 md:min-h-screen lg:block">
@@ -37,37 +70,18 @@ const SideNavbar = () => {
           </Avatar>
         </div>
 
+        {/* Mapping over links */}
         <div className="flex flex-col gap-2">
-          <Button variant="secondary">
-            <Link href="/">Home</Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard">dashboard</Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/add-office-equipment">
-              Add Office Equipment
-            </Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/add-medical-equipment">
-              Add Medical Equipment
-            </Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/create-product">Create Product</Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/blog-page">blog</Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/create-blog">Create blog</Link>
-          </Button>
-          <Button variant="secondary">
-            <Link href="/dashboard/medical-category-page">
-              Medical Category{" "}
-            </Link>
-          </Button>
+          {links.map((link) => (
+            <Button
+              key={link.id}
+              variant="secondary"
+              asChild
+              className="justify-start"
+            >
+              <Link href={link.href}>{link.label}</Link>
+            </Button>
+          ))}
         </div>
 
         <Button
