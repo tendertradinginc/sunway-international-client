@@ -11,7 +11,7 @@ import { uploadImageToImgBB } from "@/utils/imageUpload";
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { toast } from "react-toastify";
+import { Toaster } from "sonner";
 
 const EditClientModal = ({ data, setReload }) => {
     const { name, _id, image, details } = data;
@@ -52,8 +52,8 @@ const EditClientModal = ({ data, setReload }) => {
             );
 
             if (response.ok) {
-                toast.dismiss(toastId);
-                toast.success("Success");
+                Toaster.dismiss(toastId);
+                Toaster.success("Success");
                 setIsOpen(false);
                 setLoading(false);
                 setReload((prevReload) => prevReload + 1);
@@ -62,12 +62,12 @@ const EditClientModal = ({ data, setReload }) => {
                 throw new Error(errorData.message || "An unexpected error occurred");
             }
         } catch (error) {
-            toast.dismiss(toastId);
+            Toaster.dismiss(toastId);
             setLoading(false);
-            toast.error(error.message || "An unexpected error occurred");
+            Toaster.error(error.message || "An unexpected error occurred");
             console.error("Error:", error);
         } finally {
-            toast.dismiss(toastId);
+            Toaster.dismiss(toastId);
         }
     };
 

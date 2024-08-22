@@ -93,7 +93,7 @@ const CreateClient = () => {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-h-[600px]">
       <Card className="shadow-none border-none outline-none">
         <CardContent>
           <form className="max-w-2xl mx-auto p-4" onSubmit={handleSubmit}>

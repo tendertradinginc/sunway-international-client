@@ -2,14 +2,14 @@ import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescript
 import axios from "axios";
 import { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
-import { toast } from "react-toastify";
+import { Toaster } from "sonner";
 
 
 const DeleteClientModal = ({ data, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryDelete = async (id) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = Toaster.loading("Loading...");
 
     try {
       const response = await axios.delete(
@@ -17,15 +17,15 @@ const DeleteClientModal = ({ data, setReload }) => {
       );
       if (response.status === 200) {
         setIsOpen(false);
-        toast.dismiss(toastId);
-        toast.success("success");
+        Toaster.dismiss(toastId);
+        Toaster.success("success");
       }
     } catch (error) {
-      toast.dismiss(toastId);
-      toast.error(error.message || "An unexpected error occurred");
+      Toaster.dismiss(toastId);
+      Toaster.error(error.message || "An unexpected error occurred");
       console.error("Error:", error);
     } finally {
-      toast.dismiss(toastId);
+      Toaster.dismiss(toastId);
       setReload((prevReload) => prevReload + 1);
     }
   };
