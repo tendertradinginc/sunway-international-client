@@ -25,7 +25,7 @@ useEffect(()=>{
     setBlogs(data?.data?.allBlogs)
     setTolatBlog(data?.data?.totlaBlogs)
     setLoading(false)
-console.log(limit)
+// console.log(limit)
 
  
   })

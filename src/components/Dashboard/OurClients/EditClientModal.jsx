@@ -11,7 +11,7 @@ import { uploadImageToImgBB } from "@/utils/imageUpload";
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { toast } from "react-toastify";
+import { Toaster } from "sonner";
 
 const EditClientModal = ({ data, setReload }) => {
     const { name, _id, image, details } = data;
@@ -52,8 +52,8 @@ const EditClientModal = ({ data, setReload }) => {
             );
 
             if (response.ok) {
-                toast.dismiss(toastId);
-                toast.success("Success");
+                Toaster.dismiss(toastId);
+                Toaster.success("Success");
                 setIsOpen(false);
                 setLoading(false);
                 setReload((prevReload) => prevReload + 1);
@@ -62,12 +62,12 @@ const EditClientModal = ({ data, setReload }) => {
                 throw new Error(errorData.message || "An unexpected error occurred");
             }
         } catch (error) {
-            toast.dismiss(toastId);
+            Toaster.dismiss(toastId);
             setLoading(false);
-            toast.error(error.message || "An unexpected error occurred");
+            Toaster.error(error.message || "An unexpected error occurred");
             console.error("Error:", error);
         } finally {
-            toast.dismiss(toastId);
+            Toaster.dismiss(toastId);
         }
     };
 
@@ -78,13 +78,15 @@ const EditClientModal = ({ data, setReload }) => {
                     <CiEdit className="inline m-1 text-3xl font-bold"></CiEdit>
                 </div>
             </AlertDialogTrigger>
-            <AlertDialogContent className="max-w-3xl">
+            <AlertDialogContent className="max-w-3xl max-h-[600px] overflow-y-scroll">
                 <AlertDialogHeader>
-                    <hr />
-                    <AlertDialogDescription className=" min-h-[70vh] overflow-y-auto p-4 customScrollbar">
-                        <form
+                    
+                    <AlertDialogDescription className="  overflow-y-auto p-4 customScrollbar">
+                        
+                    </AlertDialogDescription>
+                    <form
                             onSubmit={handleSubmit}
-                            className="max-w-2xl mx-auto py-4 space-y-10"
+                            className="w-full mx-auto py-4 space-y-10"
                         >
                             <div className="mb-5">
                                 <Label className="block mb-2">Title</Label>
@@ -161,7 +163,6 @@ const EditClientModal = ({ data, setReload }) => {
                                 </div>
                             </div>
                         </form>
-                    </AlertDialogDescription>
                 </AlertDialogHeader>
 
                 <AlertDialogFooter>
