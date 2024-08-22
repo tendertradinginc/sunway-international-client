@@ -48,13 +48,16 @@ const SideNavbar = () => {
       href: "/dashboard/add-medical-equipment",
       label: "Add Medical Equipment",
     },
-    { id: 7, href: "/dashboard/create-product", label: "Create Product" },
-    { id: 8, href: "/dashboard/blog-page", label: "Blog" },
-    { id: 9, href: "/dashboard/create-blog", label: "Create Blog" },
+    { id: 7, href: "/dashboard/blog-page", label: "Blog" },
     {
-      id: 10,
+      id: 8,
       href: "/dashboard/medical-category-page",
       label: "Medical Category",
+    },
+    {
+      id: 9,
+      href: "/dashboard/clients-page",
+      label: "Clients",
     },
   ];
 
