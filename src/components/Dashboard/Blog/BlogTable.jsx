@@ -12,8 +12,8 @@ const BlogTable =  () => {
 const searchParams = useSearchParams()
 const [loading, setLoading] = useState(true)
 const [blogs, setBlogs] = useState([])
-const [page, setPage] = useState(searchParams.get('page' || 1))
-const [limit, setLimit] = useState(searchParams.get('limit' || 10))
+const [page, setPage] = useState(searchParams.get('page') || 1)
+const [limit, setLimit] = useState(searchParams.get('limit') || 10)
 const [totalBlog, setTolatBlog] = useState(0)
 const [reload, setReload] = useState(0)
 
@@ -24,7 +24,7 @@ useEffect(()=>{
     setBlogs(data?.data?.allBlogs)
     setTolatBlog(data?.data?.totlaBlogs)
     setLoading(false)
-
+console.log(limit)
  
   })
   .catch(err => toast.error(err.message))
@@ -46,7 +46,7 @@ const totalPage = Math.ceil(totalBlog / limit)
                   <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
                   Blog List
                 </h2>
-                <BlogCreateButton />
+                <BlogCreateButton  setReload={setReload} />
               </div>
               <hr />
              
