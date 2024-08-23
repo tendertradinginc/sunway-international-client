@@ -8,7 +8,7 @@ const TotalMedicalEquipments = () => {
                 <FaStethoscope className="text-6xl text-si-white mb-2" />
                 <div className="">
                     <h1 className=" text-center text-black text-base font-semibold">Medical Equipment</h1>
-                    <p className="flex justify-center items-center text-center text-white text-base font-semibold">500</p>
+                    <p className="flex justify-center items-center text-center text-white text-base font-semibold">800</p>
                 </div>
             </div>
         </div>
