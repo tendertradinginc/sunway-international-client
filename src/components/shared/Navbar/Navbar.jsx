@@ -17,7 +17,7 @@ const Navbar = () => {
       <MaxWidthWrapper className="flex justify-between items-center">
         <Link href="/">
           <h3 className="text-xl xl:text-2xl font-bold">
-            Sunway International
+            Twin Trade Int.
           </h3>
         </Link>
 
