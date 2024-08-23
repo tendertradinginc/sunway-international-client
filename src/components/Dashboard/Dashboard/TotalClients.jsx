@@ -8,7 +8,7 @@ const TotalClients = () => {
             <FaUsers className="text-7xl text-si-white mb-2" />
             <div className="">
             <h1 className=" text-center text-black text-lg font-semibold">Clients</h1>
-            <p className=" text-center text-white text-base font-semibold">50</p>
+            <p className=" text-center text-white text-base font-semibold">80</p>
             </div>
         </div>
     </div>
