@@ -57,7 +57,7 @@ export function ProductCategoryCombobox({ value, setValue }) {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search category" className="h-9" />
+        <CommandInput placeholder="Search Category..." />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandList>
             <CommandGroup>
