@@ -15,10 +15,10 @@ import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
+import { toast } from "sonner";
 
-const BlogUpdate = ({ data,setReload }) => {
+const BlogUpdate = ({ data, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDisbaled, setIsdisabled] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -59,9 +59,8 @@ const BlogUpdate = ({ data,setReload }) => {
         toast.success("Success");
         setIsdisabled(true);
         setLoading(false);
-        setReload(prev => prev +1)
+        setReload((prev) => prev + 1);
         setIsOpen(false);
-        
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || "An unexpected error occurred");
@@ -87,7 +86,10 @@ const BlogUpdate = ({ data,setReload }) => {
         <AlertDialogTitle></AlertDialogTitle>
 
         <AlertDialogDescription className=" "></AlertDialogDescription>
-        <form onSubmit={handleSubmit} className="mx-auto w-full p-5 space-y-10 py-4">
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto w-full space-y-10 p-5 py-4"
+        >
           <div className="mb-5">
             <Image
               height={400}

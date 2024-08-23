@@ -1,44 +1,51 @@
-import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import axios from "axios";
 import { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
-import { Toaster } from "sonner";
-
+import { toast } from "sonner";
 
 const DeleteClientModal = ({ data, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryDelete = async (id) => {
-    const toastId = Toaster.loading("Loading...");
+    const toastId = toast.loading("Loading...");
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/client/${id}`
+        `http://localhost:5000/api/v1/client/${id}`,
       );
       if (response.status === 200) {
         setIsOpen(false);
-        Toaster.dismiss(toastId);
-        Toaster.success("success");
+        toast.dismiss(toastId);
+        toast.success("success");
       }
     } catch (error) {
-      Toaster.dismiss(toastId);
-      Toaster.error(error.message || "An unexpected error occurred");
+      toast.dismiss(toastId);
+      toast.error(error.message || "An unexpected error occurred");
       console.error("Error:", error);
     } finally {
-      Toaster.dismiss(toastId);
+      toast.dismiss(toastId);
       setReload((prevReload) => prevReload + 1);
     }
   };
   return (
     <AlertDialog open={isOpen} onClose={() => setIsOpen(false)}>
       <AlertDialogTrigger>
-        <div onClick={() => setIsOpen(true)} className="text-si-primary   py-1 ">
-          <MdDeleteOutline className="inline m-1 text-3xl text-red-800"></MdDeleteOutline>
+        <div onClick={() => setIsOpen(true)} className="py-1 text-si-primary">
+          <MdDeleteOutline className="m-1 inline text-3xl text-red-800"></MdDeleteOutline>
         </div>
       </AlertDialogTrigger>
       <AlertDialogContent className="max-w-xl">
         <AlertDialogHeader>
-          <AlertDialogDescription className="max-h-[70vh] overflow-y-auto p-4 space-y-5 customScrollbar text-center text-gray-900">
+          <AlertDialogDescription className="customScrollbar max-h-[70vh] space-y-5 overflow-y-auto p-4 text-center text-gray-900">
             <h3 className="text-2xl font-bold">Are Your sure ?</h3>
             <h3 className="text-lg font-semibold">
               Once you delete You Can not get it back

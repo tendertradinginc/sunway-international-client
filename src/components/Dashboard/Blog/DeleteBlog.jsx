@@ -12,8 +12,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import axios from "axios";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { MdDeleteOutline } from "react-icons/md";
+import { toast } from "sonner";
 
 const DeleteBlog = ({ id, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ const DeleteBlog = ({ id, setReload }) => {
         setIsOpen(false);
         toast.dismiss(toastId);
         toast.success("success");
-        setReload(prev => prev + 1)
+        setReload((prev) => prev + 1);
       }
     } catch (error) {
       toast.dismiss(toastId);

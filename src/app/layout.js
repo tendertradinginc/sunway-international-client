@@ -1,7 +1,6 @@
 import { Open_Sans } from "next/font/google";
-// import { Toaster } from "sonner";
+import { Toaster } from "sonner";
 import "./globals.css";
-import { Toaster } from "react-hot-toast";
 
 const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
@@ -15,8 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={openSans.className}>
         <main className="min-h-screen">{children}</main>
-        {/* <Toaster richColors position="top-right" /> */}
-        <Toaster position="top-center" reverseOrder={false} />
+        <Toaster richColors position="top-right" duration={4000} />
       </body>
     </html>
   );
