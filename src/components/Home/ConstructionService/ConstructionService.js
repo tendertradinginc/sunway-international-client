@@ -47,7 +47,7 @@ const ConstructionService = () => {
             />
             <p className="mt-2 text-muted">Contruction</p>
             <h1 className="text-3xl font-semibold text-gray-700">
-              Sunway International - Contact Us
+              Twin Trade Int. - Contact Us
             </h1>
           </div>
         </div>

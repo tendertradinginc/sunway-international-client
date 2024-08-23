@@ -23,10 +23,11 @@ const Footer = () => {
                 <Image
                   height={50}
                   width={100}
-                  alt="sunway international logo footer"
+                  alt="Twin Trade Int. logo footer"
                   src="https://i.postimg.cc/8C7Cvrf1/imagessunwayfakelogo-removebg-preview.png"
                 />{" "}
-                Sunway <br /> International
+                Twind 
+                 <br /> Trade Int
               </li>
               <li className="max-w-80 ">
                 <p className="font-medium text-gray-300 mt-5 leading-7">
@@ -106,7 +107,7 @@ const Footer = () => {
                 className="mt-2"
                 height={50}
                 width={220}
-                alt="sunway international logo footer"
+                alt="Twin Trade Int. logo footer"
                 src="https://i.postimg.cc/Pfbh7MmL/download-removebg-preview.png"
               />
               <li className="flex gap-4 mt-5">

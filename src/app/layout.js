@@ -5,7 +5,7 @@ import "./globals.css";
 const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  title: "Sunway International",
+  title: "Twin Trade Int.",
   description: "Created by TTI Developers.",
 };
 
