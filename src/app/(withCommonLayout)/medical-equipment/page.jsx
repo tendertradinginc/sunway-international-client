@@ -22,7 +22,7 @@ const MedicalEquipmentPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/v1/medical-category")
+    fetch("http://localhost:5000/api/v1/medical-category", {cache:"no-cache"})
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
