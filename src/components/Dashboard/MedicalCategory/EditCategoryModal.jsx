@@ -20,7 +20,7 @@ import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import { toast } from "sonner";
 
-const EditCategoryModal = ({ data, setReload }) => {
+const EditCategoryModal = ({ data, setReload, pathName }) => {
   const { name, _id, image } = data;
   const [loading, setLoading] = useState(false);
   const [updatedName, setUpdatedName] = useState(name);
@@ -44,7 +44,7 @@ const EditCategoryModal = ({ data, setReload }) => {
       };
 
       const response = await fetch(
-        `http://localhost:5000/api/v1/medical-category/${_id}`,
+        `http://localhost:5000/api/v1/${pathName}/${_id}`,
         {
           method: "PUT",
           headers: {

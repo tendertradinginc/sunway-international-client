@@ -7,20 +7,21 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Pagination } from "@/components/ui/pagination";
 
+import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
 import { useEffect, useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
 import { FaPlusCircle } from "react-icons/fa";
 import CreateCategory from "./CreateCategory";
 import SingleCategory from "./SingleCategory";
 
-const MedicalCategory = () => {
+const MedicalCategory = ({ details }) => {
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageLimit, setPageLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
   const [reload, setReload] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [totalBlog, setTolatBlog] = useState(0);
 
   //* Fetching Data
 
@@ -28,19 +29,20 @@ const MedicalCategory = () => {
     setLoading(true);
     async function fetchData() {
       const res = await fetch(
-        `http://localhost:5000/api/v1/medical-category?page=${currentPage}&limit=${pageLimit}`,
+        `http://localhost:5000/api/v1/${details?.pathName}?page=${page}&limit=${limit}`,
       );
       const result = await res.json();
 
       setData(result?.data?.result);
-      console.log(result?.data?.result);
+      setTolatBlog(result?.data?.total);
       setLoading(false);
     }
 
     fetchData();
-  }, [currentPage, pageLimit, reload]);
+  }, [page, limit, reload]);
   // loading skeleton
-  const skeleton = new Array(pageLimit).fill(Math.random());
+  const skeleton = new Array(limit).fill(Math.random());
+  const totalPage = Math.ceil(totalBlog / limit);
 
   return (
     <div>
@@ -53,7 +55,7 @@ const MedicalCategory = () => {
               <div className="flex items-center justify-between pb-6">
                 <h2 className="text-2xl font-semibold text-si-primary">
                   <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
-                  Medical Category List
+                  {details?.pageName} Category List
                 </h2>
                 <div className="mt-4 flex items-center justify-between px-2">
                   <div>
@@ -63,7 +65,7 @@ const MedicalCategory = () => {
                           className="cursor-pointer rounded-lg border bg-si-primary px-3 py-1 text-base font-semibold text-white duration-500 hover:bg-si-primary hover:text-gray-400"
                           variant="outline"
                         >
-                          Create Medical Category{" "}
+                          Create {details?.pageName} Category{" "}
                           <span className="ml-2">
                             <FaPlusCircle className="inline" />
                           </span>{" "}
@@ -71,7 +73,10 @@ const MedicalCategory = () => {
                       </AlertDialogTrigger>
 
                       <AlertDialogContent className="max-w-4xl rounded-lg">
-                        <CreateCategory setReload={setReload}></CreateCategory>
+                        <CreateCategory
+                          setReload={setReload}
+                          pathName={details?.pathName}
+                        ></CreateCategory>
                         <AlertDialogFooter>
                           <AlertDialogCancel className="hover:bg-red-700 hover:text-white">
                             Close
@@ -111,6 +116,7 @@ const MedicalCategory = () => {
                           key={category?._id}
                           index={index}
                           data={category}
+                          pathName={details?.pathName}
                           setReload={setReload}
                         ></SingleCategory>
                       ))}
@@ -122,16 +128,9 @@ const MedicalCategory = () => {
       </div>
 
       <div className="px-12 py-10">
-        <Pagination
-          data={{
-            pageLimit,
-            setCurrentPage,
-            setPageLimit,
-            // articlesCount: organizationNamesCount,
-            currentPage,
-            defaultPageLimit: 10,
-          }}
-        />
+        <div className="mt-5">
+          <PaginationBlog data={{ setPage, page, limit, totalPage }} />
+        </div>
       </div>
     </div>
   );

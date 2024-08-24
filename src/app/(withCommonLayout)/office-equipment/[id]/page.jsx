@@ -1,7 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +12,7 @@ import {
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 
 const OfficeEqipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
@@ -43,30 +43,25 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Card className="mt-5 rounded-none">
-        <CardContent className="flex flex-col gap-0 p-0 lg:flex-row lg:gap-5">
-          <section className="w-full lg:w-1/2">
-            <div className="relative mx-auto min-h-[500px] w-full">
-              <Image
-                src={product?.images[0] || ""}
-                alt={product?.productName || "Product Image"}
-                fill
-                className="object-cover object-center"
-              />
-            </div>
+      <Card className="mt-5 min-h-[600px] rounded-none">
+        <CardContent className="flex flex-col gap-5 p-0 lg:flex-row lg:gap-0">
+          <section className="lg:w-1/2">
+            <ProductImageCarousel images={product?.images || []} />
           </section>
 
           <section className="w-full p-5 lg:w-1/2">
-            <h2 className="text-2xl font-semibold">{product?.productName}</h2>
-            <p className="">
-              <span className="font-semibold">Model No:</span>{" "}
+            <h2 className="text-2xl font-bold lg:text-3xl">
+              {product?.productName}
+            </h2>
+            <p className="my-2">
+              <span className="font-semibold">Model No: </span>
               {product?.modelNumber}
             </p>
             <p className="">{product?.shortDescription}</p>
 
             <div className="mt-5 space-y-1">
               <h4 className="font-bold">Product Details</h4>
-              <Markdown className="prose" remarkPlugins={[remarkGfm]}>
+              <Markdown className="prose w-full" remarkPlugins={[remarkGfm]}>
                 {product?.description}
               </Markdown>
             </div>

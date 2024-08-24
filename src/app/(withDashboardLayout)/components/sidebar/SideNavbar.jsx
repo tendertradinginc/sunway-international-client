@@ -56,6 +56,11 @@ const SideNavbar = () => {
     },
     {
       id: 9,
+      href: "/dashboard/office-category-page",
+      label: "Office Category",
+    },
+    {
+      id: 10,
       href: "/dashboard/clients-page",
       label: "Clients",
     },

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import EqipmentCard from "@/components/shared/EqipmentCard/EqipmentCard";
 import {
   Carousel,
   CarouselContent,
@@ -21,6 +20,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { LuLampDesk } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
+import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
 
 const OfficeEquipmentPage = () => {
   const [products, setProducts] = useState([]);
@@ -181,15 +181,17 @@ const OfficeEquipmentPage = () => {
         </div>
       </MaxWidthWrapper>
 
-      <MaxWidthWrapper className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
-        {products?.map((product, index) => (
-          <div key={product.id || index}>
-            <EqipmentCard
-              navigateTo={`/office-equipment/${product._id}`}
-              data={product}
-            />
-          </div>
-        ))}
+      <MaxWidthWrapper className="pb-10">
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
+          {products?.map((product, index) => (
+            <div key={product.id || index}>
+              <EquipmentCard
+                navigateTo={`/office-equipment/${product._id}`}
+                data={product}
+              />
+            </div>
+          ))}
+        </div>
       </MaxWidthWrapper>
     </div>
   );
