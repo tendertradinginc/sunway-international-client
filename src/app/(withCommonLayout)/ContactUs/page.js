@@ -34,9 +34,11 @@ const ContactUs = () => {
 
     return (
         <section className="my-10">
-            <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
-                Contact Us
-            </h1>
+            <div className="max-w-6xl mx-auto">
+                <h1 className=" text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
+                    Contact Us
+                </h1>
+            </div>
             <div className="bg-secondary">
                 <div className="max-w-6xl mx-auto  flex flex-col lg:flex-row justify-center items-start lg:items-stretch gap-5 lg:gap-10">
                     <div className="py-10 flex-1">
