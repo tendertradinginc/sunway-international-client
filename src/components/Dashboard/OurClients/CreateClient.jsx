@@ -59,21 +59,21 @@ const CreateClient = () => {
       const response = await fetch("http://localhost:5000/api/v1/client/create", {
         method: "POST",
         headers: {
-          "Content-type": "application/json;",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(clientsData),
       });
 
       // Check if the response was successful
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Failed to submit data: ${errorText}`);
-      }
+      // if (!response.ok) {
+      //   const errorText = await response.text();
+      //   throw new Error(`Failed to submit data: ${errorText}`);
+      // }
 
       const data = await response.json();
-
+      console.log(data)
       // Handle success or failure based on the response data
-      if (data.status === "success") {
+      if (data.success === true) {
         toast.success("Client created successfully!");
         setFormData({
           name: "",

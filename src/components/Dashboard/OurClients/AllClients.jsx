@@ -144,6 +144,7 @@ const AllClients = () => {
                           key={clients?._id}
                           index={index}
                           clientData={client}
+                          setReload={setReload}
                         />
                       ))
                     ) : (
