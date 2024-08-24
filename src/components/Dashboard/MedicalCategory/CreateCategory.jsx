@@ -7,7 +7,7 @@ import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const CreateCategory = ({ setReload }) => {
+const CreateCategory = ({ setReload, pathName }) => {
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const CreateCategory = ({ setReload }) => {
         image: imageUrl,
       };
       const response = await fetch(
-        "http://localhost:5000/api/v1/medical-category/create",
+        `http://localhost:5000/api/v1/${pathName}/create`,
         {
           method: "POST",
           headers: {

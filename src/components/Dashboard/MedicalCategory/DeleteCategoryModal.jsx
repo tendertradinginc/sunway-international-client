@@ -14,13 +14,13 @@ import { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { toast } from "sonner";
 
-const DeleteCategoryModal = ({ data, setReload }) => {
+const DeleteCategoryModal = ({ data, setReload, pathName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/medical-category/${id}`,
+        `http://localhost:5000/api/v1/${pathName}/${id}`,
       );
       console.log(response);
       if (response.status === 200) {

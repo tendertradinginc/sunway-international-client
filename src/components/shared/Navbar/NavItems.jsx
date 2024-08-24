@@ -22,7 +22,7 @@ const NavItems = ({ className }) => {
     { id: 3, url: "#", label: "Gallery" },
     { id: 4, url: "/services", label: "Services" },
     { id: 5, url: "/blog", label: "Blog" },
-    { id: 5, url: "/dashboard", label: "Dashboard" },
+    { id: 6, url: "/dashboard", label: "Dashboard" },
   ];
 
   return (
