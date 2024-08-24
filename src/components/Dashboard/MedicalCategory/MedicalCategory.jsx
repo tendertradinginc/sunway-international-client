@@ -114,6 +114,7 @@ const MedicalCategory = ({ details }) => {
                           key={category?._id}
                           index={index}
                           data={category}
+                          pathName={details?.pathName}
                           setReload={setReload}
                         ></SingleCategory>
                       ))}
