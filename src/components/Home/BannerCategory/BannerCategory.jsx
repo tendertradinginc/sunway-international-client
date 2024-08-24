@@ -1,13 +1,15 @@
+"use client"
 import { MdBathtub, MdOutlineListAlt } from "react-icons/md";
 import { RiFirstAidKitFill } from "react-icons/ri";
 import { PiBedBold } from "react-icons/pi";
 import { TfiWheelchair } from "react-icons/tfi";
 import { MdAddShoppingCart } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const BannerCategory = () => {
     return (
-        <section >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 border-b mb-8 ">
+        <section className="overflow-x-hidden" >
+            <motion.div initial={{ x:1000 }} transition={{duration:1.2}} whileInView={{x:0}}  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 border-b mb-8 ">
 
                 {/* category 1 */}
                 <div className=" flex justify-center items-center flex-col h-36 duration-500 hover:bg-gradient-to-r from-[#fbbe24d3]  to-[#faca5083] text-white border-r">
@@ -40,7 +42,7 @@ const BannerCategory = () => {
                     <h1 className="text-center text-black text-md font-semibold">Accessories</h1>
                 </div>
 
-            </div>
+            </motion.div>
         </section>
     );
 };
