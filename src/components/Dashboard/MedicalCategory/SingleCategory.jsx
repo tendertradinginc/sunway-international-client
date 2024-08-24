@@ -28,6 +28,7 @@ const SingleCategory = ({ data, index, setReload, pathName }) => {
             setReload={setReload}
           ></EditCategoryModal>
           <DeleteCategoryModal
+            pathName={pathName}
             data={data}
             setReload={setReload}
           ></DeleteCategoryModal>
