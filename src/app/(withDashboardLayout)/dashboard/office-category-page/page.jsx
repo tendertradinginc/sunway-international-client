@@ -1,9 +1,11 @@
 import MedicalCategory from "@/components/Dashboard/MedicalCategory/MedicalCategory";
 
 const page = () => {
+  let pathName = "office-equipment-category";
+  let pageName = "Office";
   return (
     <div>
-      <MedicalCategory></MedicalCategory>
+      <MedicalCategory details={{ pathName, pageName }}> </MedicalCategory>
     </div>
   );
 };

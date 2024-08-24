@@ -15,7 +15,8 @@ import { FaPlusCircle } from "react-icons/fa";
 import CreateCategory from "./CreateCategory";
 import SingleCategory from "./SingleCategory";
 
-const MedicalCategory = () => {
+const MedicalCategory = ({ details }) => {
+  console.log(details);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
@@ -28,7 +29,7 @@ const MedicalCategory = () => {
     setLoading(true);
     async function fetchData() {
       const res = await fetch(
-        `http://localhost:5000/api/v1/medical-category?page=${currentPage}&limit=${pageLimit}`,
+        `http://localhost:5000/api/v1/${details?.pathName}?page=${currentPage}&limit=${pageLimit}`,
       );
       const result = await res.json();
 
@@ -53,7 +54,7 @@ const MedicalCategory = () => {
               <div className="flex items-center justify-between pb-6">
                 <h2 className="text-2xl font-semibold text-si-primary">
                   <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
-                  Medical Category List
+                  {details?.pageName} Category List
                 </h2>
                 <div className="mt-4 flex items-center justify-between px-2">
                   <div>
@@ -63,7 +64,7 @@ const MedicalCategory = () => {
                           className="cursor-pointer rounded-lg border bg-si-primary px-3 py-1 text-base font-semibold text-white duration-500 hover:bg-si-primary hover:text-gray-400"
                           variant="outline"
                         >
-                          Create Medical Category{" "}
+                          Create {details?.pageName} Category{" "}
                           <span className="ml-2">
                             <FaPlusCircle className="inline" />
                           </span>{" "}
