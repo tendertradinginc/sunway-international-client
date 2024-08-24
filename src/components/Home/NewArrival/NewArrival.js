@@ -1,14 +1,16 @@
+"use client"
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const NewArrival = () => {
   return (
-    <MaxWidthWrapper className="py-16">
+    <MaxWidthWrapper className="py-16 overflow-x-hidden">
       <h1 className="text-3xl md:text-5xl font-semibold text-si-primary">
         Latest Innovations
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-14 gap-x-10 mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#faca503b]">
+        <motion.div initial={{ x:-300 }} whileInView={{x:0}} transition={{duration:1}} className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#faca503b]">
           <div className="p-8">
             <button className="bg-[#fbbe24d3] rounded-sm px-3 p-1 font-semibold text-white">
               New Arrival
@@ -29,9 +31,9 @@ const NewArrival = () => {
               src="https://i.postimg.cc/1Rd5JDfq/imagesgun-removebg-preview.png"
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#16a24934]">
+        <motion.div initial={{ x:300 }} whileInView={{x:0}} transition={{duration:1}} className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#16a24934]">
           <div className="p-8">
             <button className="bg-[#16a249d3] rounded-sm px-3 p-1 font-semibold text-white">
               New Arrival
@@ -52,7 +54,7 @@ const NewArrival = () => {
               src="https://i.postimg.cc/1Rd5JDfq/imagesgun-removebg-preview.png"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </MaxWidthWrapper>
   );
