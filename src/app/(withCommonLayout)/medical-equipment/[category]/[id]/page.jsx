@@ -112,7 +112,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                 )}
               </div>
 
-              <Markdown className="prose w-full" remarkPlugins={[remarkGfm]}>
+              <Markdown className="prose whitespace-nowrap" remarkPlugins={[remarkGfm]}>
                 {product?.description}
               </Markdown>
 

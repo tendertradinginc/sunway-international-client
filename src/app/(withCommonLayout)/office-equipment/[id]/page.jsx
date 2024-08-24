@@ -61,7 +61,7 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
 
             <div className="mt-5 space-y-1">
               <h4 className="font-bold">Product Details</h4>
-              <Markdown className="prose w-full" remarkPlugins={[remarkGfm]}>
+              <Markdown className="prose whitespace-nowrap" remarkPlugins={[remarkGfm]}>
                 {product?.description}
               </Markdown>
             </div>
