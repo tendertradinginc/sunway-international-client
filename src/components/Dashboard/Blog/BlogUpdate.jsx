@@ -139,9 +139,8 @@ const BlogUpdate = ({ data, setReload }) => {
 
           <div className=" ">
             <div
-              className={`flex h-10 items-center justify-center rounded font-semibold text-white hover:text-black ${
-                isDisbaled ? "bg-[#91AADF]" : "bg-si-primary"
-              }`}
+              className={`flex h-10 items-center justify-center rounded font-semibold text-white hover:text-black ${isDisbaled ? "bg-[#91AADF]" : "bg-si-primary"
+                }`}
             >
               <button
                 disabled={isDisbaled}
