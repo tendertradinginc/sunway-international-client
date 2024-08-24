@@ -7,8 +7,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Pagination } from "@/components/ui/pagination";
 
+import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
 import { useEffect, useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
 import { FaPlusCircle } from "react-icons/fa";
@@ -17,10 +17,11 @@ import SingleCategory from "./SingleCategory";
 
 const MedicalCategory = ({ details }) => {
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageLimit, setPageLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
   const [reload, setReload] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [totalBlog, setTolatBlog] = useState(0);
 
   //* Fetching Data
 
@@ -28,19 +29,20 @@ const MedicalCategory = ({ details }) => {
     setLoading(true);
     async function fetchData() {
       const res = await fetch(
-        `http://localhost:5000/api/v1/${details?.pathName}?page=${currentPage}&limit=${pageLimit}`,
+        `http://localhost:5000/api/v1/${details?.pathName}?page=${page}&limit=${limit}`,
       );
       const result = await res.json();
 
       setData(result?.data?.result);
-      console.log(result?.data?.result);
+      setTolatBlog(result?.data?.total);
       setLoading(false);
     }
 
     fetchData();
-  }, [currentPage, pageLimit, reload]);
+  }, [page, limit, reload]);
   // loading skeleton
-  const skeleton = new Array(pageLimit).fill(Math.random());
+  const skeleton = new Array(limit).fill(Math.random());
+  const totalPage = Math.ceil(totalBlog / limit);
 
   return (
     <div>
@@ -126,16 +128,9 @@ const MedicalCategory = ({ details }) => {
       </div>
 
       <div className="px-12 py-10">
-        <Pagination
-          data={{
-            pageLimit,
-            setCurrentPage,
-            setPageLimit,
-            // articlesCount: organizationNamesCount,
-            currentPage,
-            defaultPageLimit: 10,
-          }}
-        />
+        <div className="mt-5">
+          <PaginationBlog data={{ setPage, page, limit, totalPage }} />
+        </div>
       </div>
     </div>
   );
