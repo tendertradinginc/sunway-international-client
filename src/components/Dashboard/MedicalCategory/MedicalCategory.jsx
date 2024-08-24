@@ -16,7 +16,6 @@ import CreateCategory from "./CreateCategory";
 import SingleCategory from "./SingleCategory";
 
 const MedicalCategory = ({ details }) => {
-  console.log(details);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
@@ -72,7 +71,10 @@ const MedicalCategory = ({ details }) => {
                       </AlertDialogTrigger>
 
                       <AlertDialogContent className="max-w-4xl rounded-lg">
-                        <CreateCategory setReload={setReload}></CreateCategory>
+                        <CreateCategory
+                          setReload={setReload}
+                          pathName={details?.pathName}
+                        ></CreateCategory>
                         <AlertDialogFooter>
                           <AlertDialogCancel className="hover:bg-red-700 hover:text-white">
                             Close
