@@ -26,13 +26,13 @@ const MedicalEquipmentPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
-        setCategories(data.data.result)
+        setCategories(data.data.result);
         console.log(data.data.result);
       });
   }, []);
   // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
-  if(loading){
-    return
+  if (loading) {
+    return;
   }
   return (
     <div className="bg-secondary">
@@ -61,14 +61,17 @@ const MedicalEquipmentPage = () => {
                 className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
               >
                 <span className="inline-flex items-center p-2 font-semibold">
-                  <Image className="h-7 w-7 mr-3" height={25} width={25} alt="category icon" src={item?.image} />  {item?.name}
+                  <Image
+                    className="mr-3 h-7 w-7"
+                    height={25}
+                    width={25}
+                    alt="category icon"
+                    src={item?.image}
+                  />{" "}
+                  {item?.name}
                 </span>
               </Link>
             ))}
-
-        
-
-         
           </div>
         </div>
         <div className="flex w-full flex-col gap-5">

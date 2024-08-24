@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import axios from "axios";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import EqipmentCard from "@/components/shared/EqipmentCard/EqipmentCard";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,15 +14,39 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
 
-const MedicalCategoryPage =  ({ params }) => {
- 
+const MedicalCategoryPage = ({ params }) => {
+  const [equipment, setEquipment] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Decode the category name
+  const decodedCategory = decodeURIComponent(params.category);
+
+  useEffect(() => {
+    const fetchEquipment = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/v1/medicalEquipment/category?category=${params.category}`,
+        );
+        setEquipment(response?.data?.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEquipment();
+  }, [params.category]);
+
   return (
     <MaxWidthWrapper>
       <h2 className="mt-3 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
-        {params?.category}
+        {decodedCategory}
       </h2>
-      <div className="w-full flex justify-between items-center">
+      <div className="flex w-full items-center justify-between">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -34,7 +62,7 @@ const MedicalCategoryPage =  ({ params }) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Category</BreadcrumbPage>
+              <BreadcrumbPage>{decodedCategory}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -43,18 +71,29 @@ const MedicalCategoryPage =  ({ params }) => {
           type="text"
           name="search"
           placeholder="Search For Products..."
-          className="bg-background max-w-[185px] lg:max-w-[250px]"
+          className="max-w-[185px] bg-background lg:max-w-[250px]"
         />
       </div>
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
-        {Array.from({ length: 12 }).map((_, index) => {
-          return (
-            <div key={index}>
-              <EqipmentCard navigateTo={`/medical-equipment/linen/${index}`} />
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p className="col-span-4 text-center text-red-500">{error}</p>
+        ) : equipment.length > 0 ? (
+          equipment.map((item) => (
+            <div key={item._id}>
+              <EquipmentCard
+                data={item}
+                navigateTo={`/medical-equipment/${params.category}/${item._id}`}
+              />
             </div>
-          );
-        })}
+          ))
+        ) : (
+          <p className="col-span-4 text-center">
+            No equipment found in this category.
+          </p>
+        )}
       </div>
     </MaxWidthWrapper>
   );

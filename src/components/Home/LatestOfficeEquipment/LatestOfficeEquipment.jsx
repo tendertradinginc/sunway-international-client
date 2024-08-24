@@ -1,5 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import EqipmentCard from "@/components/shared/EqipmentCard/EqipmentCard";
+import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
 import React from "react";
 
 const LatestOfficeEquipment = () => {
@@ -13,7 +13,7 @@ const LatestOfficeEquipment = () => {
         {Array.from({ length: 4 }).map((_, index) => {
           return (
             <div key={index}>
-              <EqipmentCard navigateTo={`/office-equipment/${index}`} />
+              <EquipmentCard navigateTo={`/office-equipment/${index}`} />
             </div>
           );
         })}
