@@ -16,7 +16,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useRouter, useSearchParams } from "next/navigation";
 import { DatePicker } from "@/components/custom/DatePicker";
-import { ProductCategoryCombobox } from "@/components/custom/ProductCategoryCombobox";
+import { MedicalCategoryCombobox } from "@/components/custom/MedicalCategoryCombobox";
 
 const UpdateMedicalEquipmentPage = () => {
   const router = useRouter();
@@ -169,7 +169,7 @@ const UpdateMedicalEquipmentPage = () => {
                 {/* Category */}
                 <div>
                   <Label className="mb-2 block">Category</Label>
-                  <ProductCategoryCombobox
+                  <MedicalCategoryCombobox
                     value={category}
                     setValue={setCategory}
                   />

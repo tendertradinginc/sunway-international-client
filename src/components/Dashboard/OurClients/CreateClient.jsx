@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const CreateClient = () => {
   const [imageFile, setImageFile] = useState(null);

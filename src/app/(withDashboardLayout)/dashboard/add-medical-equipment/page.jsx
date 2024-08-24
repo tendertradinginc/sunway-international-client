@@ -9,13 +9,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { FaSpinner } from "react-icons/fa6";
 import Image from "next/image";
-import { ProductCategoryCombobox } from "@/components/custom/ProductCategoryCombobox";
 import { DatePicker } from "@/components/custom/DatePicker";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import { toast } from "sonner";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { MedicalCategoryCombobox } from "@/components/custom/MedicalCategoryCombobox";
 
 const AddMedicalEquipmentPage = () => {
   const [category, setCategory] = useState("");
@@ -144,7 +144,7 @@ const AddMedicalEquipmentPage = () => {
                 {/* Category */}
                 <div>
                   <Label className="mb-2 block">Category</Label>
-                  <ProductCategoryCombobox
+                  <MedicalCategoryCombobox
                     value={category}
                     setValue={setCategory}
                   />

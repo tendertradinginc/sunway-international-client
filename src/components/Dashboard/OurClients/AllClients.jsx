@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   AlertDialog,
@@ -16,30 +16,28 @@ import CreateClient from "./CreateClient";
 import SingleClient from "./SingleClient";
 import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
 import { useSearchParams } from "next/navigation";
+import { CgSpinnerAlt } from "react-icons/cg";
 
 const AllClients = () => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
   const [clients, setClients] = useState([]);
-  const [page, setPage] = useState(searchParams.get('page') || 1)
-  const [limit, setLimit] = useState(searchParams.get('limit') || 5)
-  const [totalClient, setTotalClient] = useState(0)
+  const [page, setPage] = useState(searchParams.get("page") || 1);
+  const [limit, setLimit] = useState(searchParams.get("limit") || 5);
+  const [totalClient, setTotalClient] = useState(0);
   const [reload, setReload] = useState(0);
   const [loading, setLoading] = useState(true);
 
-
-
   useEffect(() => {
     const fetchClients = async () => {
-      console.log(reload);
+      setLoading(true);
       try {
-        setLoading(true);
         const response = await fetch(
-          `http://localhost:5000/api/v1/client?page=${page}&limit=${limit}`
+          `http://localhost:5000/api/v1/client?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
 
         setClients(data?.data.result);
-        setTotalClient(data?.data?.total)
+        setTotalClient(data?.data?.total);
         // console.log(data.data);
       } catch (error) {
         console.error("Error fetching :", error);
@@ -48,17 +46,9 @@ const AllClients = () => {
       }
     };
     fetchClients();
-  }, [reload ,page, limit,loading]);
+  }, [reload, page, limit]);
 
-
-  
-  const totalPage = Math.ceil(totalClient / limit)
-  
-
-
-
-
-
+  const totalPage = Math.ceil(totalClient / limit);
 
   // const ClientsInfo = [
   //     {
@@ -88,23 +78,23 @@ const AllClients = () => {
 
   return (
     <div>
-      <div className="min-h-[80vh] ">
-        <div className="container px-10 mx-auto ">
+      <div className="min-h-[80vh]">
+        <div className="container mx-auto px-10">
           <br />
 
-          <div className="w-full max-w-screen-lg mx-auto bg-white  ">
-            <div className="overflow-x-auto sm:px-1 ">
-              <div className="pb-6 flex justify-between items-center">
-                <h2 className="text-si-primary font-semibold text-2xl ">
-                  <AiFillDatabase className="inline mb-1"></AiFillDatabase>
+          <div className="mx-auto w-full max-w-screen-lg bg-white">
+            <div className="overflow-x-auto sm:px-1">
+              <div className="flex items-center justify-between pb-6">
+                <h2 className="text-2xl font-semibold text-si-primary">
+                  <AiFillDatabase className="mb-1 inline"></AiFillDatabase>
                   Clients List
                 </h2>
-                <div className="flex items-center justify-between mt-4 px-2">
+                <div className="mt-4 flex items-center justify-between px-2">
                   <div>
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
                         <Button
-                          className="border bg-si-primary hover:bg-si-secondary duration-500 hover:text-black text-white px-3 text-base py-1 font-semibold rounded-lg cursor-pointer"
+                          className="cursor-pointer rounded-lg border bg-si-primary px-3 py-1 text-base font-semibold text-white duration-500 hover:bg-si-secondary hover:text-black"
                           variant="outline"
                         >
                           Create Client{" "}
@@ -128,45 +118,46 @@ const AllClients = () => {
                 </div>
               </div>
               <hr />
-              {
+
+              {loading ? (
+                <div className="flex min-h-[50vh] items-center justify-center">
+                  <span className="animate-spin text-si-primary">
+                    <CgSpinnerAlt className="h-10 w-10" />
+                  </span>
+                </div>
+              ) : (
                 <table className="w-full table-auto">
-                  <thead className="bg-gradient-to-r from-si-primary to-si-secondary  text-white ">
+                  <thead className="bg-gradient-to-r from-si-primary to-si-secondary text-white">
                     <tr className="text-left">
                       <th className="px-4 py-2">No</th>
-                      <th className="pl-16 py-2">Image</th>
-                      <th className="pl-16 py-2">Title</th>
-                      <th className="pl-12 py-2">Details</th>
+                      <th className="py-2 pl-16">Image</th>
+                      <th className="py-2 pl-16">Title</th>
+                      <th className="py-2 pl-12">Details</th>
                       <th className="px-4 py-2">Actions</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                    {loading
-                      ? skeleton?.map((item, idx) => (
-                        <tr className="mb-10 gap-5" key={idx}>
-                          <td
-                            colSpan={3}
-                            className={`w-full animate-pulse h-14 rounded-sm ${idx % 2 == 0 ? "bg-gray-200 " : "bg-white "
-                              }`}
-                          ></td>
-                        </tr>
-                      ))
-                      :
+                    {clients.length > 0 ? (
                       clients?.map((client, index) => (
                         <SingleClient
                           key={clients?._id}
                           index={index}
                           clientData={client}
-
-                        ></SingleClient>
-                      ))}
+                        />
+                      ))
+                    ) : (
+                      <p>No Clients Available.</p>
+                    )}
                   </tbody>
                 </table>
-              }
+              )}
             </div>
-            {!loading && <div className="mt-8">
-            <PaginationBlog data={{ page, limit, totalPage}} />
-            </div>}
+            {!loading && (
+              <div className="mt-8">
+                <PaginationBlog data={{ page, limit, totalPage }} />
+              </div>
+            )}
           </div>
         </div>
       </div>
