@@ -14,8 +14,10 @@ import { toast } from "sonner";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { OfficeCategoryCombobox } from "@/components/custom/OfficeCategoryCombobox";
 
 const AddOfficeEquipmentPage = () => {
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -72,6 +74,8 @@ const AddOfficeEquipmentPage = () => {
           shortDescription: "",
           description: "",
         });
+
+        setCategory("");
       }
     } catch (error) {
       toast.error("Failed to add product. Please try again.");
@@ -117,8 +121,9 @@ const AddOfficeEquipmentPage = () => {
                 </div>
               </div>
 
-              {/* Short Description */}
-              <div className="mb-4">
+             <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
+               {/* Short Description */}
+               <div className="mb-4">
                 <Label className="mb-2 block">Short Description</Label>
                 <Input
                   type="text"
@@ -129,6 +134,16 @@ const AddOfficeEquipmentPage = () => {
                   maxLength={150}
                 />
               </div>
+
+              {/* category */}
+              <div>
+                <Label className="mb-2 block">Category</Label>
+                <OfficeCategoryCombobox
+                  value={category}
+                  setValue={setCategory}
+                />
+              </div>
+             </div>
 
               {/* Full Description */}
               <div className="mb-4">
