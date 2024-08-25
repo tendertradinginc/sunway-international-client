@@ -1,4 +1,3 @@
-import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 import ContactUs from "../ContactUs/page";
 
@@ -49,20 +48,27 @@ const AboutUs = () => {
                                 Mission
                             </h1>
                             <p className="mt-2">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium rerum nihil est quidem cumque! Mollitia illo aliquam error odio, voluptatibus distinctio fugiat. Dicta facilis perferendis repudiandae!
+                                Elevating standards with top-tier products and services—universally embraced and accessible. Setting the benchmark for excellence in affordability.
                             </p>
                             <h1 className="text-xl md:text-2xl font-semibold text-si-primary pt-4">
                                 Vision
                             </h1>
                             <p className="mt-2">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium rerum nihil est quidem cumque! Mollitia illo aliquam error odio, distinctio fugiat. Dicta facilis perferendis repudiandae!
+                                Striving to be the forefront authority in global healthcare solutions – setting new standards in products and services.
                             </p>
                             <h1 className="text-xl md:text-2xl font-semibold text-si-primary pt-4">
-                                Values
+                                Strategy
                             </h1>
                             <p className="mt-2 ">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium rerum nihil est quidem cumque! Mollitia illo odio. Dicta facilis perferendis repudiandae!
+                                Striving for continuous improvement in product quality and innovation through better services.
                             </p>
+                            <h1 className="text-xl md:text-2xl font-semibold text-si-primary pt-4">
+                                Goals
+                            </h1>
+                            <p className="mt-2 ">
+                                Designing, developing, and marketing proprietary products and services employing, exploiting, and harnessing advanced and state-of-the-art technological solutions.
+                            </p>
+
                         </div>
 
                         <div className="flex-1 flex justify-center text-justify order-first lg:order-last">
@@ -103,7 +109,7 @@ const AboutUs = () => {
                             </h1>
                             <h2 className="font-medium ">CEO At Twin Trade Int..</h2>
                             <p className="mt-4">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium rerum nihil est quidem cumque! Mollitia illo aliquam error odio,porro facilis, at eligendi in, sint aliquid nesciunt optio fuga aliquam a libero labore placeat! Quae excepturi expedita placeat at hic, aliquid maiores necessitatibus, a dolorem quo magnam error laudantium perferendis similique, doloribus sint rem? Ex esse temporibus corporis dolore, veniam totam sapiente, iste facere. Tenetur harum sint nesciunt deleniti saepe suscipit, ea asperiores facere laboriosam illo quaerat, iusto maxime cupiditate dolore reprehenderit quasi et nisi ab facilis maiores exercitationem? Minus provident, exercitationem eos culpa voluptatibus distinctio fugiat. Dicta facilis perferendis repudiandae!
+                                With a modest beginning in the trade and business in 2000, Twin Trade International has transformed itself into a conglomerate boasting 14 companies within its fold over time. These companies are now engaged in diverse areas of business, commerce, and industries. Twin Trade International has been consistently striving hard to become the market leader in hospital furniture, medical devices, pharmaceutical, agro-business, veterinary, fashion, furniture, engineering, and media industries. Indeed, in some of the areas, it acted as the pioneer and prime mover and is recognized as the leading brand. It excelled in quality, services, and commitment towards the stakeholders, and obtained and secured ISO, CE, and FDA certifications for its concerns. It tirelessly strived to equip a new breed of entrepreneurs in the import substitution medical equipment and devices sector. It played catalytic roles and worked with the government in recognizing and including medical device manufacturing in the National Industrial Policy 2022.
                             </p>
                         </div>
                     </div>
