@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
+import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AiFillDatabase } from "react-icons/ai";
+import { CgSpinnerAlt } from "react-icons/cg";
 import { FaPlusCircle } from "react-icons/fa";
 import CreateClient from "./CreateClient";
 import SingleClient from "./SingleClient";
-import PaginationBlog from "@/components/shared/pagination/PaginationShadcn";
-import { useSearchParams } from "next/navigation";
-import { CgSpinnerAlt } from "react-icons/cg";
 
 const AllClients = () => {
   const searchParams = useSearchParams();
@@ -32,7 +32,7 @@ const AllClients = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/client?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/client?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
 

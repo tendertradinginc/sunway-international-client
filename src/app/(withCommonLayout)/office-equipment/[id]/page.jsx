@@ -1,6 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,14 +8,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 
 const OfficeEqipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
 
   const product = data?.data || {};
@@ -61,7 +61,10 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
 
             <div className="mt-5 space-y-1">
               <h4 className="font-bold">Product Details</h4>
-              <Markdown className="prose whitespace-nowrap" remarkPlugins={[remarkGfm]}>
+              <Markdown
+                className="prose whitespace-nowrap"
+                remarkPlugins={[remarkGfm]}
+              >
                 {product?.description}
               </Markdown>
             </div>

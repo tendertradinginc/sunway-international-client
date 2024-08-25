@@ -29,7 +29,7 @@ const MedicalCategory = ({ details }) => {
     setLoading(true);
     async function fetchData() {
       const res = await fetch(
-        `http://localhost:5000/api/v1/${details?.pathName}?page=${page}&limit=${limit}`,
+        `https://sunway-international-server.vercel.app/api/v1/${details?.pathName}?page=${page}&limit=${limit}`,
       );
       const result = await res.json();
 

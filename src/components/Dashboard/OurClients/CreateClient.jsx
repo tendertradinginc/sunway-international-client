@@ -56,13 +56,16 @@ const CreateClient = () => {
 
       console.log("Submitting data:", clientsData); // Check the data being sent
 
-      const response = await fetch("http://localhost:5000/api/v1/client/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://sunway-international-server.vercel.app/api/v1/client/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(clientsData),
         },
-        body: JSON.stringify(clientsData),
-      });
+      );
 
       // Check if the response was successful
       // if (!response.ok) {
@@ -71,7 +74,7 @@ const CreateClient = () => {
       // }
 
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       // Handle success or failure based on the response data
       if (data.success === true) {
         toast.success("Client created successfully!");
@@ -93,15 +96,17 @@ const CreateClient = () => {
   };
 
   return (
-    <div className="w-full mx-auto max-h-[600px]">
-      <Card className="shadow-none border-none outline-none">
+    <div className="mx-auto max-h-[600px] w-full">
+      <Card className="border-none shadow-none outline-none">
         <CardContent>
-          <form className="max-w-2xl mx-auto p-4" onSubmit={handleSubmit}>
-            <h2 className="text-2xl text-center font-bold mb-6">Client Details</h2>
+          <form className="mx-auto max-w-2xl p-4" onSubmit={handleSubmit}>
+            <h2 className="mb-6 text-center text-2xl font-bold">
+              Client Details
+            </h2>
 
             {/* File Upload */}
             <div className="mb-4">
-              <Label className="block mb-2">Image</Label>
+              <Label className="mb-2 block">Image</Label>
               <Input
                 type="file"
                 accept="image/*"
@@ -112,7 +117,7 @@ const CreateClient = () => {
             </div>
 
             <div className="mb-4">
-              <Label className="block mb-2">Title</Label>
+              <Label className="mb-2 block">Title</Label>
               <Input
                 type="text"
                 name="name"
