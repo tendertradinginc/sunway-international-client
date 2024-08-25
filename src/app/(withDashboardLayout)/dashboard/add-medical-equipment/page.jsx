@@ -108,14 +108,14 @@ const AddMedicalEquipmentPage = () => {
   return (
     <div className="min-h-screen w-full bg-secondary">
       <MaxWidthWrapper className="py-5 lg:py-10">
-        <Card className="mx-auto max-w-3xl rounded-none border-2">
+        <Card className="rounded-none border-2">
           <CardHeader>
             <CardTitle className="text-center text-4xl">
               Add Medical Equipment
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <form className="mx-auto max-w-2xl p-4" onSubmit={handleSubmit}>
+            <form className="p-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Product Name */}
                 <div>
@@ -237,7 +237,10 @@ const AddMedicalEquipmentPage = () => {
                   required
                   className="min-h-64"
                 />
-                <Markdown className="prose" remarkPlugins={[remarkGfm]}>
+                <Markdown
+                  className="prose whitespace-nowrap"
+                  remarkPlugins={[remarkGfm]}
+                >
                   {formData.description}
                 </Markdown>
               </div>

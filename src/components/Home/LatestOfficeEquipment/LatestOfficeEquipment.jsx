@@ -1,7 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
-
-import React from "react";
+import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
 
 const LatestOfficeEquipment = async () => {
   const res = await fetch("http://localhost:5000/api/v1/officeEquipment/all", {
