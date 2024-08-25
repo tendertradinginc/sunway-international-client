@@ -57,7 +57,7 @@ const CreateClient = () => {
       console.log("Submitting data:", clientsData); // Check the data being sent
 
       const response = await fetch(
-        "https://sunway-international-server.vercel.app/api/v1/client/create",
+        "http://localhost:5000/api/v1/client/create",
         {
           method: "POST",
           headers: {

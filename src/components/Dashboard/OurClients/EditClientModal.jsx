@@ -43,7 +43,7 @@ const EditClientModal = ({ data, setReload }) => {
       };
 
       const response = await fetch(
-        `https://sunway-international-server.vercel.app/api/v1/client/${_id}`,
+        `http://localhost:5000/api/v1/client/${_id}`,
         {
           method: "PUT",
           headers: {

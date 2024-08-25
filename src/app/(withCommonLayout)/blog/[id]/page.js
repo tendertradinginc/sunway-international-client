@@ -2,12 +2,9 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 
 const page = async ({ params }) => {
-  const res = await fetch(
-    `https://sunway-international-server.vercel.app/api/v1/blogs/${params?.id}`,
-    {
-      cache: "no-store",
-    },
-  );
+  const res = await fetch(`http://localhost:5000/api/v1/blogs/${params?.id}`, {
+    cache: "no-store",
+  });
   const data = await res.json();
   const blog = data?.data;
 

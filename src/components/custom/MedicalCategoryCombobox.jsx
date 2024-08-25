@@ -27,7 +27,7 @@ export function MedicalCategoryCombobox({ value, setValue }) {
       setLoading(true);
       try {
         const res = await fetch(
-          "https://sunway-international-server.vercel.app/api/v1/medical-category",
+          "http://localhost:5000/api/v1/medical-category",
         );
         const data = await res.json();
         setCategories(data.data.result);
