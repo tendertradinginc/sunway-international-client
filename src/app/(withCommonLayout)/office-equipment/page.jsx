@@ -20,7 +20,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { LuLampDesk } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
-import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
+import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const OfficeEquipmentPage = () => {
   const [products, setProducts] = useState([]);

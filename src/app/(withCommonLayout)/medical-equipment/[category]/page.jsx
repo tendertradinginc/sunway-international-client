@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import EquipmentCard from "@/components/shared/EqipmentCard/EquipmentCard";
+import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const MedicalCategoryPage = ({ params }) => {
   const [equipment, setEquipment] = useState([]);

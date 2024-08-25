@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import EquipmentCard from "../shared/EqipmentCard/EquipmentCard";
+import EquipmentCard from "../shared/EquipmentCard/EquipmentCard";
+
 
 const MedicalCategoryCard = () => {
   // TODO: replace the links with the actual category
