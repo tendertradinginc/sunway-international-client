@@ -1,3 +1,4 @@
+
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 

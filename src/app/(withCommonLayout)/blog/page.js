@@ -1,7 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
-// import blogs from "@/lib/blogs";
+
 
 const Page = async () => {
   const res = await fetch(
