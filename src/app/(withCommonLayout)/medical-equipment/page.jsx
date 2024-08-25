@@ -1,20 +1,20 @@
 "use client";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import MedicalCategoryCard from "@/components/custom/MedicalCategoryCard";
-import { TbAirConditioning } from "react-icons/tb";
-import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
-import { GiMedicalDrip } from "react-icons/gi";
-import { PiFaceMaskLight } from "react-icons/pi";
-import { TbAirConditioningDisabled } from "react-icons/tb";
-import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Image from "next/image";
+import { customLoader } from "@/utils/customLoader";
+import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { GiMedicalDrip } from "react-icons/gi";
+import { PiFaceMaskLight } from "react-icons/pi";
+import { TbAirConditioning, TbAirConditioningDisabled } from "react-icons/tb";
 
 const MedicalEquipmentPage = () => {
   const [categories, setCategories] = useState([]);
@@ -22,7 +22,9 @@ const MedicalEquipmentPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/v1/medical-category", {cache:"no-cache"})
+    fetch("http://localhost:5000/api/v1/medical-category", {
+      cache: "no-cache",
+    })
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -62,6 +64,7 @@ const MedicalEquipmentPage = () => {
               >
                 <span className="inline-flex items-center p-2 font-semibold">
                   <Image
+                    loader={customLoader}
                     className="mr-3 h-7 w-7"
                     height={25}
                     width={25}

@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import Link from "next/link";
 
 const EquipmentCard = ({ navigateTo = "", data }) => {
-  console.log("Equipment card: ", data);
   return (
     <div className="min-h-[400px] bg-background">
       <div className="relative mx-auto h-[250px] w-full">
@@ -11,7 +11,8 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
           src={data ? data?.images[0] : ""}
           alt={data?.productName || "Product"}
           fill
-          className="object-contain object-center"
+          className="h-auto w-auto object-contain object-center"
+          loader={customLoader}
         />
       </div>
       <div className="text-balance px-2.5 py-3 text-left">
