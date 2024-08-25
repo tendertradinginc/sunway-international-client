@@ -1,20 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { FaSpinner } from "react-icons/fa6";
-import Image from "next/image";
-import axios from "axios";
-import { toast } from "sonner";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
+import axios from "axios";
+import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { useRouter, useSearchParams } from "next/navigation";
+import { toast } from "sonner";
 
 const UpdateOfficeEquipmentPage = () => {
   const router = useRouter();
@@ -37,7 +37,7 @@ const UpdateOfficeEquipmentPage = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/officeEquipment/${id}`,
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
         );
         const data = response?.data?.data;
 
@@ -93,7 +93,7 @@ const UpdateOfficeEquipmentPage = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/v1/officeEquipment/${id}`,
+        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
         formData,
       );
 

@@ -1,19 +1,19 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
 
 const MedicalEquipmentCard = ({data}) => {
     const {productName, images, shortDescription} = data
+ 
     return (
         <div>
             <Image
-                src={images[0]}
-                alt="medical equipment"
-                height="100"
-                width="200"
-                className="w-96"
-            />
+          height={300}
+          width={400}
+          alt="construction"
+          className="h-64 w-full"
+          src={images[0]}
+        />
             <h3 className="text-lg mt-4 hover:underline">
                 <b>Product Name:</b> {productName}
             </h3>

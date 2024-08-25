@@ -1,15 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { Input } from "@/components/ui/input";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { LuLampDesk } from "react-icons/lu";
 import {
   PiDesk,
   PiMonitor,
@@ -17,10 +21,6 @@ import {
   PiPrinter,
   PiProjectorScreenChart,
 } from "react-icons/pi";
-import Autoplay from "embla-carousel-autoplay";
-import { LuLampDesk } from "react-icons/lu";
-import { Input } from "@/components/ui/input";
-import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const OfficeEquipmentPage = () => {
   const [products, setProducts] = useState([]);
@@ -29,7 +29,7 @@ const OfficeEquipmentPage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/v1/officeEquipment/all?search=&limit=&page=",
+          "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all?search=&limit=&page=",
         );
         const data = await response.json();
         setProducts(data?.data?.result || []);

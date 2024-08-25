@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { DatePicker } from "@/components/custom/DatePicker";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { MedicalCategoryCombobox } from "@/components/custom/MedicalCategoryCombobox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { FaSpinner } from "react-icons/fa6";
-import Image from "next/image";
-import { DatePicker } from "@/components/custom/DatePicker";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
-import { toast } from "sonner";
+import Image from "next/image";
+import { useState } from "react";
+import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { MedicalCategoryCombobox } from "@/components/custom/MedicalCategoryCombobox";
+import { toast } from "sonner";
 
 const AddMedicalEquipmentPage = () => {
   const [category, setCategory] = useState("");
@@ -73,7 +73,7 @@ const AddMedicalEquipmentPage = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:5000/api/v1/medicalEquipment/create",
+        "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/create",
         completeFormData,
       );
 

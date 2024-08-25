@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { OfficeCategoryCombobox } from "@/components/custom/OfficeCategoryCombobox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { FaSpinner } from "react-icons/fa6";
-import Image from "next/image";
-import axios from "axios";
-import { toast } from "sonner";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
+import axios from "axios";
+import Image from "next/image";
+import { useState } from "react";
+import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { OfficeCategoryCombobox } from "@/components/custom/OfficeCategoryCombobox";
+import { toast } from "sonner";
 
 const AddOfficeEquipmentPage = () => {
   const [category, setCategory] = useState("");
@@ -60,7 +60,7 @@ const AddOfficeEquipmentPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/officeEquipment/create",
+        "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
         formData,
       );
 
@@ -121,29 +121,29 @@ const AddOfficeEquipmentPage = () => {
                 </div>
               </div>
 
-             <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
-               {/* Short Description */}
-               <div className="mb-4">
-                <Label className="mb-2 block">Short Description</Label>
-                <Input
-                  type="text"
-                  name="shortDescription"
-                  value={formData.shortDescription}
-                  onChange={handleInputChange}
-                  required
-                  maxLength={150}
-                />
-              </div>
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {/* Short Description */}
+                <div className="mb-4">
+                  <Label className="mb-2 block">Short Description</Label>
+                  <Input
+                    type="text"
+                    name="shortDescription"
+                    value={formData.shortDescription}
+                    onChange={handleInputChange}
+                    required
+                    maxLength={150}
+                  />
+                </div>
 
-              {/* category */}
-              <div>
-                <Label className="mb-2 block">Category</Label>
-                <OfficeCategoryCombobox
-                  value={category}
-                  setValue={setCategory}
-                />
+                {/* category */}
+                <div>
+                  <Label className="mb-2 block">Category</Label>
+                  <OfficeCategoryCombobox
+                    value={category}
+                    setValue={setCategory}
+                  />
+                </div>
               </div>
-             </div>
 
               {/* Full Description */}
               <div className="mb-4">

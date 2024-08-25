@@ -1,14 +1,14 @@
 "use client";
-import { AiFillDatabase } from "react-icons/ai";
-import PaginationBlog from "../../shared/pagination/PaginationShadcn";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import MedicalEquipmentTableRow from "./MedicalEquipmentTableRow";
 import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { AiFillDatabase } from "react-icons/ai";
 import { CgSpinnerAlt } from "react-icons/cg";
+import { toast } from "sonner";
+import PaginationBlog from "../../shared/pagination/PaginationShadcn";
+import MedicalEquipmentTableRow from "./MedicalEquipmentTableRow";
 
 const MedicalEquipmentTable = () => {
   const searchParams = useSearchParams();
@@ -24,7 +24,7 @@ const MedicalEquipmentTable = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/medicalEquipment/all?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
         setProducts(data?.data?.result);
