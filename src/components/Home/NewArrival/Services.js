@@ -32,6 +32,7 @@ const data = [
     description:
       " Contruction in the process of constructing a building or  infrastructure. Contruction differs from manufacturing typically involves mass production of similar items a designated purchaser.",
     url: "",
+    imageUrl:"https://www.bls.gov/spotlight/2022/the-construction-industry-labor-force-2003-to-2020/images/cover-image.jpg",
   },
   {
     icon: <FaStethoscope />,
@@ -43,6 +44,7 @@ const data = [
     description:
       " Contruction in the process of constructing a building or  infrastructure. Contruction differs from manufacturing typically involves mass production of similar items a designated purchaser.",
     url: "",
+    imageUrl:"https://i.postimg.cc/6pXVVBS1/marcel-scholte-LPur-Jnihm-QI-unsplash.jpg",
   },
   {
     icon: <FaWheelchair />,
@@ -54,5 +56,6 @@ const data = [
     description:
       " Contruction in the process of constructing a building or  infrastructure. Contruction differs from manufacturing typically involves mass production of similar items a designated purchaser.",
     url: "",
+    imageUrl:"https://i.postimg.cc/jddtDfq8/pexels-fotios-photos-1957478-2-1.jpg",
   },
 ];

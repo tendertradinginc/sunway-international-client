@@ -65,7 +65,7 @@ export function Hero() {
           <CarouselItem key={slide.id}>
             <div className="relative h-svh w-full bg-si-secondary">
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover"
                 style={{
                   backgroundImage: `url(${slide.imageUrl})`,
                 }}
