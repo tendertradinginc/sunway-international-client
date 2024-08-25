@@ -2,17 +2,21 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import MedicalEquipmentCard from "@/components/shared/MedicalEquipmentCard/MedicalEquipmentCard";
 
 
-const MedicalEquipments = () => {
+const MedicalEquipments = async () => {
+    const res = await fetch("http://localhost:5000/api/v1/medicalEquipment/all", {cache:"no-store"})
+    const data = await res.json()
+    const blogs = data?.data?.result?.slice(0,4)
+
     return (
         <MaxWidthWrapper className="py-16">
             <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
                 Medical Equipments
             </h1>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-                {Array.from({ length: 4 }).map((_, index) => {
+                {blogs.map((item, index) => {
                     return (
                         <div key={index}>
-                            <MedicalEquipmentCard />
+                            <MedicalEquipmentCard data={item} />
                         </div>
                     );
                 })}

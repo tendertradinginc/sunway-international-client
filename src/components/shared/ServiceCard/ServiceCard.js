@@ -17,8 +17,8 @@ const ServiceCard = ({ data }) => {
           height={300}
           width={400}
           alt="construction"
-          className="w-full"
-          src="https://www.bls.gov/spotlight/2022/the-construction-industry-labor-force-2003-to-2020/images/cover-image.jpg"
+          className="w-full h-64"
+          src={data?.imageUrl}
         />
         <div
           className={`absolute h-full flex flex-col justify-center w-full px-8  left-0 top-0 duration-500   ${
