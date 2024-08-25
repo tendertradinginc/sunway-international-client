@@ -1,11 +1,10 @@
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import EquipmentCard from "../shared/EquipmentCard/EquipmentCard";
-
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const MedicalCategoryCard = () => {
   // TODO: replace the links with the actual category
@@ -14,9 +13,12 @@ const MedicalCategoryCard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/medicalEquipment/all-category", {
-      cache: "no-store",
-    })
+    fetch(
+      "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all-category",
+      {
+        cache: "no-store",
+      },
+    )
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -52,7 +54,7 @@ const MedicalCategoryCard = () => {
                 </Button>
               </div>
             </CardHeader>
-            <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <CardContent className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
               {items.map((item, index) => {
                 return (
                   <div key={index}>

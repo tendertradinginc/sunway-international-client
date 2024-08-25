@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,7 +15,6 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const MedicalCategoryPage = ({ params }) => {
   const [equipment, setEquipment] = useState([]);
@@ -28,7 +28,7 @@ const MedicalCategoryPage = ({ params }) => {
     const fetchEquipment = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/medicalEquipment/category?category=${params.category}`,
+          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${params.category}`,
         );
         setEquipment(response?.data?.data);
       } catch (err) {

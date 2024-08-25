@@ -5,7 +5,6 @@ import {
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
@@ -44,7 +43,7 @@ const BlogUpdate = ({ data, setReload }) => {
       };
 
       const response = await fetch(
-        `http://localhost:5000/api/v1/blogs/${_id}`,
+        `https://sunway-international-server.vercel.app/api/v1/blogs/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -139,8 +138,9 @@ const BlogUpdate = ({ data, setReload }) => {
 
           <div className=" ">
             <div
-              className={`flex h-10 items-center justify-center rounded font-semibold text-white hover:text-black ${isDisbaled ? "bg-[#91AADF]" : "bg-si-primary"
-                }`}
+              className={`flex h-10 items-center justify-center rounded font-semibold text-white hover:text-black ${
+                isDisbaled ? "bg-[#91AADF]" : "bg-si-primary"
+              }`}
             >
               <button
                 disabled={isDisbaled}

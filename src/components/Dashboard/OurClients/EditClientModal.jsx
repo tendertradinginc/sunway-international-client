@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { CiEdit } from "react-icons/ci";
-import blue from "./blue.gif";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -10,11 +7,14 @@ import {
   AlertDialogHeader,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import Image from "next/image";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { CiEdit } from "react-icons/ci";
 import { toast } from "sonner";
+import blue from "./blue.gif";
 
 const EditClientModal = ({ data, setReload }) => {
   const { name, _id, image, details } = data;
@@ -43,7 +43,7 @@ const EditClientModal = ({ data, setReload }) => {
       };
 
       const response = await fetch(
-        `http://localhost:5000/api/v1/client/${_id}`,
+        `https://sunway-international-server.vercel.app/api/v1/client/${_id}`,
         {
           method: "PUT",
           headers: {

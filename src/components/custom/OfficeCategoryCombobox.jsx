@@ -27,7 +27,7 @@ export function OfficeCategoryCombobox({ value, setValue }) {
       setLoading(true);
       try {
         const res = await fetch(
-          "http://localhost:5000/api/v1/office-equipment-category",
+          "https://sunway-international-server.vercel.app/api/v1/office-equipment-category",
         );
         const data = await res.json();
         setCategories(data.data.result);

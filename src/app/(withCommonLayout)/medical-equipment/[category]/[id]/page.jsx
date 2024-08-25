@@ -1,6 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,14 +8,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const MedicalEquipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/medicalEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${params?.id}`,
   ).then((res) => res.json());
   const product = data?.data || {};
 
@@ -112,7 +112,10 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                 )}
               </div>
 
-              <Markdown className="prose whitespace-nowrap" remarkPlugins={[remarkGfm]}>
+              <Markdown
+                className="prose whitespace-nowrap"
+                remarkPlugins={[remarkGfm]}
+              >
                 {product?.description}
               </Markdown>
 

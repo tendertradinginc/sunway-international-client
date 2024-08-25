@@ -1,7 +1,4 @@
-import axios from "axios";
 import { Button } from "@/components/ui/button";
-import { Eye, Pencil, Trash } from "lucide-react";
-import Link from "next/link";
 import {
   Dialog,
   DialogClose,
@@ -12,11 +9,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { toast } from "sonner";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import axios from "axios";
+import { Eye, Pencil, Trash } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "next/image";
+import { toast } from "sonner";
 
 const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   const {
@@ -30,7 +30,9 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/officeEquipment/${id}`);
+      await axios.delete(
+        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
+      );
       // Revalidate the data after deletion
       setReload(true);
       toast.success("Product Deleted Successfully!");
