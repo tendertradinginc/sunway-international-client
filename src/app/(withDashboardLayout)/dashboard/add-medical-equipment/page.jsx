@@ -73,7 +73,7 @@ const AddMedicalEquipmentPage = () => {
       };
 
       const res = await axios.post(
-        "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/create",
+        "http://localhost:5000/api/v1/medicalEquipment/create",
         completeFormData,
       );
 

@@ -30,9 +30,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
-      );
+      await axios.delete(`http://localhost:5000/api/v1/officeEquipment/${id}`);
       // Revalidate the data after deletion
       setReload(true);
       toast.success("Product Deleted Successfully!");

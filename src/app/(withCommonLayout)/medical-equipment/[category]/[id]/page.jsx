@@ -16,7 +16,7 @@ import remarkGfm from "remark-gfm";
 
 const MedicalEquipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${params?.id}`,
+    `http://localhost:5000/api/v1/medicalEquipment/${params?.id}`,
   ).then((res) => res.json());
   const product = data?.data || {};
 

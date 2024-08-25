@@ -37,9 +37,7 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
-      );
+      await axios.delete(`http://localhost:5000/api/v1/medicalEquipment/${id}`);
       setReload(true);
       toast.success("Product Deleted Successfully!");
     } catch (error) {
