@@ -4,10 +4,12 @@ import Link from "next/link";
 // import blogs from "@/lib/blogs";
 
 const Page = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs", {cache:"no-cache"});
+  const res = await fetch("http://localhost:5000/api/v1/blogs", {
+    cache: "no-cache",
+  });
   const data = await res.json();
   const blogs = data?.data?.allBlogs;
-  console.log(blogs)
+  console.log(blogs);
 
   return (
     <MaxWidthWrapper className="py-10">
@@ -41,7 +43,7 @@ const Page = async () => {
             </p>
             <Link href={`/blog/${blogs[0]._id}`}>
               {" "}
-              <button className="mt-4 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+              <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
                 Read More
               </button>
             </Link>
@@ -71,7 +73,7 @@ const Page = async () => {
                 </p>
                 <Link href={`/blog/${item?._id}`}>
                   {" "}
-                  <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+                  <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
                     Read More
                   </button>
                 </Link>
@@ -101,7 +103,7 @@ const Page = async () => {
               </p>
               <Link href={`/blog/${item?._id}`}>
                 {" "}
-                <button className="mt-1 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+                <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
                   Read More
                 </button>
               </Link>
