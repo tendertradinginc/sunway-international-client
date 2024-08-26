@@ -42,10 +42,10 @@ const MedicalEquipmentPage = () => {
         Medical Equipment
       </h2>
 
-      <MaxWidthWrapper className="flex flex-col items-center justify-between gap-5 lg:flex-row lg:items-start">
+      <MaxWidthWrapper className=" grid grid-cols-12 grid-rows-12 items-center justify-between gap-5  lg:items-start">
         {/* Category selector */}
-        <div className="size-[350px]">
-          <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
+        <div className=" col-span-12 lg:col-span-3 row-span-12 h-full bg-background">
+          <div className="flex flex-col items-start  bg-si-secondary  bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
             <Link
               href="/#"
@@ -55,7 +55,7 @@ const MedicalEquipmentPage = () => {
             </Link>
           </div>
 
-          <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
+          <div className="flex  flex-col ">
             {categories?.map((item) => (
               <Link
                 key={item?._id}
@@ -77,7 +77,8 @@ const MedicalEquipmentPage = () => {
             ))}
           </div>
         </div>
-        <div className="flex w-full flex-col gap-5">
+
+        <div className="flex w-full flex-col col-span-12 lg:col-span-9 row-span-12 gap-5 ">
           {/* Advertisement Carousel */}
           <Carousel
             opts={{ loop: true }}
@@ -86,16 +87,16 @@ const MedicalEquipmentPage = () => {
                 delay: 4500,
               }),
             ]}
-            className="w-full"
+            className="w-full h-3/4"
           >
-            <CarouselContent className="w-full">
-              <CarouselItem className="h-[300px] w-full">
+            <CarouselContent className="w-full ">
+              <CarouselItem className=" w-full">
                 <div className="relative h-[300px] w-full">
                   <Image
                     src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
                     alt="Advertisement"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center h-full"
                   />
                 </div>
               </CarouselItem>
@@ -113,7 +114,7 @@ const MedicalEquipmentPage = () => {
           </Carousel>
 
           {/* small cards */}
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 ">
             <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
               <TbAirConditioning className="size-10 text-primary" />
               <h5 className="text-wrap text-center font-semibold">
