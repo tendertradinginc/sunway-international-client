@@ -87,16 +87,16 @@ const MedicalEquipmentPage = () => {
                 delay: 4500,
               }),
             ]}
-            className="w-full h-3/4"
+            className="w-full"
           >
-            <CarouselContent className="w-full ">
-              <CarouselItem className=" w-full">
+            <CarouselContent className="w-full ml-0">
+              <CarouselItem className=" p-0 ">
                 <div className="relative h-[300px] w-full">
                   <Image
                     src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
                     alt="Advertisement"
                     fill
-                    className="object-cover object-center h-full"
+                    className="object-cover object-center h-full w-full"
                   />
                 </div>
               </CarouselItem>
