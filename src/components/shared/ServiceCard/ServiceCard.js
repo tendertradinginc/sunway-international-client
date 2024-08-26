@@ -10,13 +10,13 @@ const ServiceCard = ({ data, index }) => {
   const scrollRef = useRef(null);
   return (
     <motion.div
-      initial={{ y: 300 }}
+      initial={{ y: 150 }}
       whileInView={{  y: 0 }}
       transition={{
         duration: (index+1) * .5,
         ease: [0, .71, .71, 1.01],
       }}
-      className="rounded-md border-2 border-t-0 shadow-2xl"
+      className="rounded-md  shadow-xl"
     >
       <div
         className="relative"
