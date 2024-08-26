@@ -8,7 +8,7 @@ const MedicalEquipments = async () => {
     const blogs = data?.data?.result?.slice(0,4)
 
     return (
-        <MaxWidthWrapper className="py-20 mt-20">
+        <MaxWidthWrapper className="py-20 mt-20 overflow-x-hidden">
             <h1 className="mb-12 text-3xl font-semibold text-si-primary md:text-5xl">
                 Medical Equipments
             </h1>

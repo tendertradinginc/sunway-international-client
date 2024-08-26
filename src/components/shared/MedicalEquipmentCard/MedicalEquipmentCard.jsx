@@ -1,12 +1,18 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion"
 
 const MedicalEquipmentCard = ({ data }) => {
   const { productName, images, shortDescription } = data;
   return (
-    <div className="h-full  flex flex-col">
+    <motion.div
+      initial={{ opacity: 0, scale: 1.1 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.2 }}
+      className="flex h-full flex-col"
+    >
       <Image
         loader={customLoader}
         src={images[0]}
@@ -15,11 +21,11 @@ const MedicalEquipmentCard = ({ data }) => {
         width="200"
         className="w-96"
       />
-      <div className="flex flex-col shadow-md flex-1 p-3">
+      <div className="flex flex-1 flex-col p-3 shadow-md">
         <h3 className="mt-7 text-lg hover:underline">
           <b>Product Name:</b> {productName}
         </h3>
-        <p className="mt-1 line-clamp-2 text-sm flex-grow">
+        <p className="mt-1 line-clamp-2 flex-grow text-sm">
           <b>Short Description:</b> {shortDescription}
         </p>
         {/* <Link href={"/"} className="text-si-accent pa font-bold">Explore More</Link> */}
@@ -29,7 +35,7 @@ const MedicalEquipmentCard = ({ data }) => {
           </button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const NewArrival = () => {
   return (
-    <MaxWidthWrapper className="py-16 overflow-x-hidden">
+    <MaxWidthWrapper className="py-16 mt-7 overflow-x-hidden">
       <h1 className="text-3xl md:text-5xl font-semibold text-si-primary">
         Latest Innovations
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-14 gap-x-10 mt-10 ">
-        <motion.div initial={{ x:-300 }} whileInView={{x:0}} transition={{duration:1}} className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#faca503b]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-14 gap-x-10 mt-12 ">
+        <motion.div initial={{ x:-300 }} whileInView={{x:0}} transition={{duration:1}}   className="grid grid-cols-1 md:grid-cols-2  rounded-sm shadow-2xl bg-[#faca503b]">
           <div className="p-8">
             <button className="bg-[#fbbe24d3] rounded-sm px-3 p-1 font-semibold text-white">
               New Arrival
