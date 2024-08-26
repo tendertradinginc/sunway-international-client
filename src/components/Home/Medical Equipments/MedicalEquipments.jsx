@@ -8,11 +8,11 @@ const MedicalEquipments = async () => {
     const blogs = data?.data?.result?.slice(0,4)
 
     return (
-        <MaxWidthWrapper className="py-16">
-            <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
+        <MaxWidthWrapper className="py-20 mt-20">
+            <h1 className="mb-12 text-3xl font-semibold text-si-primary md:text-5xl">
                 Medical Equipments
             </h1>
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
                 {blogs.map((item, index) => {
                     return (
                         <div key={index}>
