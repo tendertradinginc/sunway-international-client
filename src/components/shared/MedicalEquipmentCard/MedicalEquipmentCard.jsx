@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 
 const MedicalEquipmentCard = ({ data }) => {
   const { productName, images, shortDescription } = data;
+  console.log(data);
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.1 }}
