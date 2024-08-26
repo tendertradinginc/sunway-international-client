@@ -1,11 +1,15 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import Link from "next/link";
-
+import { motion } from "framer-motion"
 const EquipmentCard = ({ navigateTo = "", data }) => {
   return (
-    <div className="min-h-[400px] bg-background">
+    <motion.div  initial={{ opacity: 0, scale: 1.1 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.2 }} className="min-h-[400px] bg-background ">
       <div className="relative mx-auto h-[250px] w-full">
         <Image
           src={data ? data?.images[0] : ""}
@@ -25,7 +29,7 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
           <Link href={navigateTo}>View Details</Link>
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

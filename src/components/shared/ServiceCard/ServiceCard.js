@@ -10,7 +10,7 @@ const ServiceCard = ({ data, index }) => {
   const scrollRef = useRef(null);
   return (
     <motion.div
-      initial={{ y: 300 }}
+      initial={{ y: 150 }}
       whileInView={{  y: 0 }}
       transition={{
         duration: (index+1) * .5,

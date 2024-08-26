@@ -9,7 +9,7 @@ const LatestOfficeEquipment = async () => {
   const blogs = data?.data?.result?.slice(0, 4);
   console.log(blogs);
   return (
-    <MaxWidthWrapper className="py-16">
+    <MaxWidthWrapper className="py-20 mt-10 overflow-x-hidden">
       <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
         Latest Office Eqipment
       </h1>
