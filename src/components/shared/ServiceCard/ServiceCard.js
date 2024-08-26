@@ -16,7 +16,7 @@ const ServiceCard = ({ data, index }) => {
         duration: (index+1) * .5,
         ease: [0, .71, .71, 1.01],
       }}
-      className="rounded-md border-2 border-t-0 shadow-2xl"
+      className="rounded-md  shadow-xl"
     >
       <div
         className="relative"
