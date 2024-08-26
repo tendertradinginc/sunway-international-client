@@ -2,6 +2,8 @@
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -29,10 +31,11 @@ const OfficeEquipmentPage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/v1/officeEquipment/all?search=&limit=&page=",
+          "http://localhost:5000/api/v1/officeEquipment/all-category",
         );
         const data = await response.json();
-        setProducts(data?.data?.result || []);
+        setProducts(data?.data || []);
+   
       } catch (error) {
         console.error("Error fetching office equipment data:", error);
       }
@@ -181,7 +184,45 @@ const OfficeEquipmentPage = () => {
         </div>
       </MaxWidthWrapper>
 
-      <MaxWidthWrapper className="pb-10">
+      <MaxWidthWrapper className="min-h-[50vh] py-16 overflow-x-hidden">
+        {products?.slice(0, 4).map((categoryObj, index) => {
+          // Access the keys of each object (category name)
+          const categoryName = Object.keys(categoryObj)[0];
+          const items = categoryObj[categoryName];
+          console.log({ categoryName, items });
+          return (
+            <Card key={index} className="mb-16 w-full">
+              <CardHeader>
+                <div className="flex items-center justify-between border-b-2 pb-1">
+                  <CardTitle className="text-xl md:text-2xl lg:text-4xl">
+                    {categoryName}
+                  </CardTitle>
+                  <Button asChild>
+                    <Link href={`/medical-equipment/${categoryName}`}>
+                      View More <DoubleArrowRightIcon className="ml-2 size-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+                {items.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <EquipmentCard
+                        data={item}
+                        navigateTo={`/medical-equipment/${categoryName}/${item?._id}`}
+                      />
+                    </div>
+                  );
+                })}
+              </CardContent>
+            </Card>
+          );
+        })}
+        ;
+      </MaxWidthWrapper>
+
+      {/* <MaxWidthWrapper className="pb-10">
         <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {products?.map((product, index) => (
             <div key={product.id || index}>
@@ -192,7 +233,7 @@ const OfficeEquipmentPage = () => {
             </div>
           ))}
         </div>
-      </MaxWidthWrapper>
+      </MaxWidthWrapper> */}
     </div>
   );
 };
