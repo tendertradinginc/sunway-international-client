@@ -29,7 +29,7 @@ const MedicalEquipmentPage = () => {
       .then((data) => {
         setLoading(false);
         setCategories(data.data.result);
-        console.log(data.data.result);
+
       });
   }, []);
   // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
