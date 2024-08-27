@@ -10,6 +10,7 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 import LatestOfficeEquipment from "@/components/Home/LatestOfficeEquipment/LatestOfficeEquipment";
 import { Hero } from "@/components/Home/Hero/Hero";
 import CompanyCertification from "@/components/Home/CompanyCertification/CompanyCertification";
+import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <Testimonials />
       <CompanyCertification />
       <ProjectShowcase />
+      <AuthorizeDistribution />
       <OurClients />
     </div>
   );
