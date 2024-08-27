@@ -9,6 +9,7 @@ import ProjectShowcase from "@/components/Home/ProjectShowcase/ProjectShowcase";
 import Testimonials from "@/components/Home/Testimonials/Testimonials";
 import LatestOfficeEquipment from "@/components/Home/LatestOfficeEquipment/LatestOfficeEquipment";
 import { Hero } from "@/components/Home/Hero/Hero";
+import OurCertification from "@/components/Home/OurCertification/OurCertification";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <MedicalEquipments />
       <ConstructionService />
       <Testimonials />
+      <OurCertification />
       <ProjectShowcase />
       <OurClients />
     </div>
