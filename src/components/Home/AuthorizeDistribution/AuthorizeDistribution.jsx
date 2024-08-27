@@ -1,63 +1,46 @@
-"use client";
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import { MdBathtub } from "react-icons/md";
-import { RiFirstAidKitFill } from "react-icons/ri";
-import { PiBedBold } from "react-icons/pi";
-import { TfiWheelchair } from "react-icons/tfi";
+import AuthorizeDistributionCard from "@/components/shared/AuthorizeDistributionCard/AuthorizeDistributionCard";
 
-
-import { motion } from "framer-motion";
 
 const AuthorizeDistribution = () => {
+
+
+    const authorizers = [
+        {
+            image: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png"
+        },
+        {
+            image: "https://i.postimg.cc/v8nY2Zv4/PBRI-1.png"
+        },
+        {
+            image: "https://i.postimg.cc/52hp3p9Y/ROMIX-1.png"
+        },
+        {
+            image: "https://i.postimg.cc/ryfJbqFL/Nippon-800-x-221-2-1024x283-1.png"
+        },
+    ];
+
+
+
+
     return (
-        <MaxWidthWrapper className="my-20">
-            <h1 className="text-3xl font-semibold text-si-primary md:text-5xl my-12">
+        <div className="my-20">
+            <MaxWidthWrapper className="text-3xl font-semibold text-si-primary md:text-5xl my-12">
                 Authorize Distribution
-            </h1>
+            </MaxWidthWrapper>
+            <div
+                className="flex flex-col items-center justify-center rounded-lg bg-[url('https://i.postimg.cc/mgp5mzsg/pexels-eric-mufasa-578798-1350789-1.jpg')] bg-cover bg-center text-black">
 
-            <motion.div
-
-                // initial={{ y: 150 }}
-                // whileInView={{ y: 0 }}
-                // transition={{
-                //     duration: (index + 1) * .5,
-                //     ease: [0, .71, .71, 1.01],
-                // }}
-
-                className="">
-                <div className="mb-8 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-2">
-                    {/* category 1 */}
-                    <div className="flex w-80 h-36 flex-col items-center justify-center  from-[#fbbe24d3] to-[#faca5083] text-white duration-500 bg-gradient-to-r">
-                        <RiFirstAidKitFill className="mb-2 text-6xl text-si-primary" />
-                        <h1 className="text-md text-center font-semibold text-black">
-                            Walking Aids Series
-                        </h1>
-                    </div>
-                    {/* category 2 */}
-                    <div className="flex w-80 h-36 flex-col items-center justify-center  from-[#fbbe24d3] to-[#faca5083] text-white duration-500 bg-gradient-to-r">
-                        <MdBathtub className="mb-2 text-6xl text-si-primary" />
-                        <h1 className="text-md text-center font-semibold text-black">
-                            Bathroom Safety Series
-                        </h1>
-                    </div>
-                    {/* category 3 */}
-                    <div className="flex w-80 h-36 flex-col items-center justify-center  from-[#fbbe24d3] to-[#faca5083] text-white duration-500 bg-gradient-to-r">
-                        <TfiWheelchair className="mb-2 text-6xl text-si-primary" />
-                        <h1 className="text-md text-center font-semibold text-black">
-                            Wheelchair Series
-                        </h1>
-                    </div>
-                    {/* category 4 */}
-                    <div className="flex w-80 h-36 flex-col items-center justify-center  from-[#fbbe24d3] to-[#faca5083] text-white duration-500 bg-gradient-to-r">
-                        <PiBedBold className="mb-2 text-6xl text-si-primary" />
-                        <h1 className="text-md text-center font-semibold text-black">
-                            Hospital Bed Series
-                        </h1>
-                    </div>
+                <div className="bg-[#fbbe24da] py-16 " >
+                    <MaxWidthWrapper className="mb-8 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-2">
+                        {authorizers?.map((authorizer, index) => (
+                            <AuthorizeDistributionCard index={index} key={index} authorizer={authorizer} />
+                        ))}
+                    </MaxWidthWrapper>
                 </div>
-            </motion.div>
-        </MaxWidthWrapper>
+            </div>
+        </div>
     );
 };
 
