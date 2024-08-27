@@ -19,7 +19,7 @@ const NavItems = ({ className }) => {
 
   const navLinks = [
     { id: 2, url: "/AboutUs", label: "About Us" },
-    { id: 3, url: "#", label: "Gallery" },
+    { id: 3, url: "/gallery", label: "Gallery" },
     { id: 4, url: "/services", label: "Services" },
     { id: 5, url: "/blog", label: "Blog" },
     { id: 6, url: "/dashboard", label: "Dashboard" },
