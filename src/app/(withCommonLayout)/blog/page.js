@@ -8,7 +8,6 @@ const Page = async () => {
   });
   const data = await res.json();
   const blogs = data?.data?.allBlogs;
-  console.log(blogs);
 
   return (
     <MaxWidthWrapper className="py-10">
