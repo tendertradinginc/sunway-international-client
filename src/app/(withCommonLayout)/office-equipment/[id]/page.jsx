@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -69,7 +70,15 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
               </Markdown>
             </div>
 
-            <Button className="mt-5">Contact For Price</Button>
+            <div className="flex flex-wrap items-center gap-5 mt-5">
+              <Button className="mt-5">
+                Contact For Price <PhoneIcon className="ml-2 size-5" />
+              </Button>
+              <Button className="mt-5">
+                Download Catalogue{" "}
+                <ArrowDownToLineIcon className="ml-2 size-5" />
+              </Button>
+            </div>
           </section>
         </CardContent>
       </Card>
