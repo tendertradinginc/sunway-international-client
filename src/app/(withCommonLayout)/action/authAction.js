@@ -40,3 +40,12 @@ export async function loginUser(pre, fromData) {
     throw error;
   }
 }
+
+export async function logOut() {
+  try {
+    console.log("object");
+    cookies().delete("accessToken");
+  } catch (error) {
+    throw error;
+  }
+}
