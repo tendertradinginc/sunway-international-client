@@ -12,7 +12,6 @@ const RegistrationForm = () => {
 
   useEffect(() => {
     if (state && state.success) {
-      console.log(state);
       toast("successfully sign up");
       ref.current?.reset();
     }

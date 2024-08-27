@@ -12,7 +12,6 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (state && state.success) {
-      console.log(state);
       toast("successfully login");
       ref.current?.reset();
       router.push("/");

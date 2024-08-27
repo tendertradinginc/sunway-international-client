@@ -23,10 +23,8 @@ const BlogTable = () => {
         setBlogs(data?.data?.allBlogs);
         setTolatBlog(data?.data?.totlaBlogs);
         setLoading(false);
-        // console.log(limit)
       })
       .catch((err) => toast.error(err.message));
-    console.log(reload);
   }, [page, limit, loading, reload]);
 
   const totalPage = Math.ceil(totalBlog / limit);

@@ -1,12 +1,12 @@
 "use client";
 import { customLoader } from "@/utils/customLoader";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion"
 
 const MedicalEquipmentCard = ({ data }) => {
   const { productName, images, shortDescription } = data;
-  console.log(data);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.1 }}

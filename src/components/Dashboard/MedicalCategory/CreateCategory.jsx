@@ -52,7 +52,6 @@ const CreateCategory = ({ setReload, pathName }) => {
           body: JSON.stringify(categoryData),
         },
       );
-      console.log(response);
 
       if (response?.ok) {
         toast("Category Created successfully");

@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={openSans.className}>
         <main className="min-h-screen">{children}</main>
-        <Toaster richColors position="top-right" duration={4000} />
+        <Toaster richColors position="top-right" duration={1000} />
       </body>
     </html>
   );

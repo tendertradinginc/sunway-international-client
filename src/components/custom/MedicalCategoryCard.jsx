@@ -20,7 +20,7 @@ const MedicalCategoryCard = () => {
       .then((data) => {
         setLoading(false);
         setData(data.data);
-        console.log(data?.data);
+
         const test = data?.data?.map((item, idx) => {
           const categoryName = Object.keys(item)[0];
           setCategories(categoryName);

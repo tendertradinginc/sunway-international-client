@@ -77,8 +77,6 @@ const AddMedicalEquipmentPage = () => {
         completeFormData,
       );
 
-      console.log(res);
-
       if (res.status === 201) {
         toast.success("Medical Equipment Added Successfully!");
 
