@@ -7,7 +7,13 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const CompanyCertification = () => {
     return (
-        <MaxWidthWrapper>
+        <MaxWidthWrapper className="my-20">
+
+
+            <h1 className="text-3xl font-semibold text-si-primary md:text-5xl my-12">
+                Company Certification
+            </h1>
+
             <div className="relative flex flex-col lg:flex-row justify-center lg:justify-end items-center shadow-none">
 
                 {/* Right Section with Content */}
@@ -18,7 +24,7 @@ const CompanyCertification = () => {
                             Our Company offers a variety of services to meet your project's needs, from collaboration meetings all the way to ribbon-cutting and beyond.
                         </p>
                         <div className="pt-3 flex items-center lg:items-end justify-center lg:justify-end">
-                            <button className="flex gap-3 bg-[#fbbe24d3] rounded-sm px-4 lg:px-6 py-1 font-semibold text-white">
+                            <button className="flex gap-3 bg-si-accent hover:bg-[#b9af21] duration-700 rounded-sm px-3 lg:px-6 py-2 font-semibold text-white">
                                 Explore More
                                 <FaArrowRightLong className="text-lg lg:text-2xl" />
                             </button>
