@@ -189,7 +189,7 @@ const OfficeEquipmentPage = () => {
           // Access the keys of each object (category name)
           const categoryName = Object.keys(categoryObj)[0];
           const items = categoryObj[categoryName];
-          console.log({ categoryName, items });
+      
           return (
             <Card key={index} className="mb-16 w-full">
               <CardHeader>
