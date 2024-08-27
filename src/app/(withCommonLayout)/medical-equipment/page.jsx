@@ -12,6 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CgSpinnerAlt } from "react-icons/cg";
 import { GiMedicalDrip } from "react-icons/gi";
 import { PiFaceMaskLight } from "react-icons/pi";
 import { TbAirConditioning, TbAirConditioningDisabled } from "react-icons/tb";
@@ -29,12 +30,16 @@ const MedicalEquipmentPage = () => {
       .then((data) => {
         setLoading(false);
         setCategories(data.data.result);
-
       });
   }, []);
-  // TODO: Get api to send data in 4 seperate chunks like Linen:[{obj}, {obj}, {obj}] , Wheelchair:[{obj}, {obj}, {obj}]. Map that and show category cards
   if (loading) {
-    return;
+    return (
+      <div className="flex h-full w-full items-center justify-center">
+        <span className="animate-spin">
+          <CgSpinnerAlt className="size-10" />
+        </span>
+      </div>
+    );
   }
   return (
     <div className="bg-secondary">
@@ -42,10 +47,10 @@ const MedicalEquipmentPage = () => {
         Medical Equipment
       </h2>
 
-      <MaxWidthWrapper className=" grid grid-cols-12 grid-rows-12 items-center justify-between gap-5  lg:items-start">
+      <MaxWidthWrapper className="grid grid-cols-12 grid-rows-12 items-center justify-between gap-5 lg:items-start">
         {/* Category selector */}
-        <div className=" col-span-12 lg:col-span-3 row-span-12 h-full bg-background">
-          <div className="flex flex-col items-start  bg-si-secondary  bg-opacity-55 p-4 pl-6">
+        <div className="col-span-12 row-span-12 h-full bg-background lg:col-span-3">
+          <div className="flex flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
             <Link
               href="/#"
@@ -55,11 +60,11 @@ const MedicalEquipmentPage = () => {
             </Link>
           </div>
 
-          <div className="flex  flex-col ">
+          <div className="flex flex-col">
             {categories?.map((item) => (
               <Link
                 key={item?._id}
-                href="/#"
+                href={`/medical-equipment/${item?.name}`}
                 className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
               >
                 <span className="inline-flex items-center p-2 font-semibold">
@@ -78,7 +83,7 @@ const MedicalEquipmentPage = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col col-span-12 lg:col-span-9 row-span-12 gap-5 ">
+        <div className="col-span-12 row-span-12 flex w-full flex-col gap-5 lg:col-span-9">
           {/* Advertisement Carousel */}
           <Carousel
             opts={{ loop: true }}
@@ -89,18 +94,18 @@ const MedicalEquipmentPage = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent className="w-full ml-0">
-              <CarouselItem className=" p-0 ">
+            <CarouselContent className="ml-0 w-full">
+              <CarouselItem className="p-0">
                 <div className="relative h-[300px] w-full">
                   <Image
                     src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
                     alt="Advertisement"
                     fill
-                    className="object-cover object-center h-full w-full"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
               </CarouselItem>
-              <CarouselItem className="h-[300px] w-full">
+              <CarouselItem className="p-0">
                 <div className="relative h-[300px] w-full">
                   <Image
                     src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
@@ -114,7 +119,7 @@ const MedicalEquipmentPage = () => {
           </Carousel>
 
           {/* small cards */}
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 ">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
               <TbAirConditioning className="size-10 text-primary" />
               <h5 className="text-wrap text-center font-semibold">
