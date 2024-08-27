@@ -5,7 +5,7 @@ import EditCategoryModal from "./EditCategoryModal";
 
 const SingleCategory = ({ data, index, setReload, pathName }) => {
   const { name, image } = data;
-  console.log(pathName);
+
   return (
     <tr className={index % 2 === 1 ? "bg-[#f2f2f2]" : ""}>
       <td className="px-4 py-1">{index + 1}</td>

@@ -41,7 +41,6 @@ const UpdateOfficeEquipmentPage = () => {
         );
         const data = response?.data?.data;
 
-        console.log("Data?: ", data);
         setFormData({
           modelNumber: data.modelNumber || "",
           productName: data.productName || "",

@@ -23,7 +23,6 @@ const BlogTable = () => {
         setBlogs(data?.data?.allBlogs);
         setTolatBlog(data?.data?.totlaBlogs);
         setLoading(false);
-        // console.log(limit)
       })
       .catch((err) => toast.error(err.message));
   }, [page, limit, loading, reload]);

@@ -24,9 +24,7 @@ export async function middleware(request) {
 
   let decodedData = null;
   try {
-    console.log("token", accessToken);
     decodedData = jwtDecode(accessToken);
-    console.log("decoder", decodedData);
   } catch (error) {
     console.error("Invalid token:", error);
     return NextResponse.redirect(new URL("/login", request.url));

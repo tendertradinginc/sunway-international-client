@@ -38,7 +38,6 @@ const AllClients = () => {
 
         setClients(data?.data.result);
         setTotalClient(data?.data?.total);
-        // console.log(data.data);
       } catch (error) {
         console.error("Error fetching :", error);
       } finally {

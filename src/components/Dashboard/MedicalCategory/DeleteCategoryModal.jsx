@@ -22,7 +22,7 @@ const DeleteCategoryModal = ({ data, setReload, pathName }) => {
       const response = await axios.delete(
         `http://localhost:5000/api/v1/${pathName}/${id}`,
       );
-      console.log(response);
+
       if (response.status === 200) {
         setIsOpen(false);
 
