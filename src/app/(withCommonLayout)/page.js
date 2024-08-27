@@ -11,6 +11,7 @@ import LatestOfficeEquipment from "@/components/Home/LatestOfficeEquipment/Lates
 import { Hero } from "@/components/Home/Hero/Hero";
 
 import CompanyCertification from "@/components/Home/CompanyCertification/CompanyCertification";
+import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
 
 import Chatbot from "@/components/Home/Chatbot/Chatbot";
 
@@ -29,6 +30,7 @@ export default function Home() {
       <Testimonials />
       <CompanyCertification />
       <ProjectShowcase />
+      <AuthorizeDistribution />
       <OurClients />
       <Chatbot />
     </div>
