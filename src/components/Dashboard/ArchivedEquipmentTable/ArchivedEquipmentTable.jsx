@@ -25,7 +25,7 @@ const ArchivedEquipmentTable = () => {
           `http://localhost:5000/api/v1/officeEquipment/archive?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
-        setProducts(data?.data?.result);
+        setProducts(data?.data);
         setTotalProducts(data?.data?.totalArchivedEquipment);
       } catch (err) {
         toast.error(err.message);

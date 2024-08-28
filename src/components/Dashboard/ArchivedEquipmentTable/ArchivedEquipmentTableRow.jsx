@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { Eye, RotateCw, Trash } from "lucide-react";
+import { Eye, RotateCwIcon, Trash } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
@@ -47,12 +48,14 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleRestore = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/v1/medicalEquipment/restore/${id}`);
+      await axios.put(`http://localhost:5000/api/v1/medicalEquipment/${id}`, {
+        archived: false,
+      });
       setReload(true);
-      toast.success("Product Restored Successfully!");
+      toast.success("Product Archived Successfully!");
     } catch (error) {
-      toast.error("Failed to restore the item. Try again later.");
-      console.error("Failed to restore the item:", error);
+      toast.error("Failed to Restore the item. Try again later.");
+      console.error("Failed to Restore the item:", error);
     }
   };
 
@@ -138,14 +141,36 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
         </Dialog>
 
         {/* Restore Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="hover:text-green-500"
-          onClick={() => handleRestore(_id)}
-        >
-          <RotateCw className="size-5" />
-        </Button>
+
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:text-green-500"
+            >
+              <RotateCwIcon className="size-5" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Restore this product?</DialogTitle>
+              <DialogDescription>
+                This will move the product to the regular equipment section.
+              </DialogDescription>
+            </DialogHeader>
+
+            <DialogFooter className="sm:justify-start">
+              <DialogClose asChild>
+                <Button variant="destructive">Cancel</Button>
+              </DialogClose>
+
+              <DialogClose asChild>
+                <Button onClick={() => handleRestore(_id)}>Restore</Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
 
         {/* Delete Button */}
         <Dialog>
