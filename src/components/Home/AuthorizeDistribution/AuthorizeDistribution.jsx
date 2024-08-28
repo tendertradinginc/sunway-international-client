@@ -32,8 +32,8 @@ const AuthorizeDistribution = () => {
             <div
                 className="flex flex-col items-center justify-center rounded-lg bg-[url('https://i.postimg.cc/mgp5mzsg/pexels-eric-mufasa-578798-1350789-1.jpg')] bg-cover bg-center text-black">
 
-                <div className="bg-[#fbbe24da] py-16 " >
-                    <MaxWidthWrapper className="mb-8 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-2">
+                <div className="bg-[#fbbe24da] w-full py-24" >
+                    <MaxWidthWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         {authorizers?.map((authorizer, index) => (
                             <AuthorizeDistributionCard index={index} key={index} authorizer={authorizer} />
                         ))}
