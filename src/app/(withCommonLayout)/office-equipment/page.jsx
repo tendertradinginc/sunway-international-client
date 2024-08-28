@@ -213,27 +213,16 @@ const OfficeEquipmentPage = () => {
                         navigateTo={`/medical-equipment/${categoryName}/${item?._id}`}
                       />
                     </div>
-                  );
+                  )
                 })}
               </CardContent>
             </Card>
-          );
+          )
         })}
-        ;
+        
       </MaxWidthWrapper>
 
-      {/* <MaxWidthWrapper className="pb-10">
-        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
-          {products?.map((product, index) => (
-            <div key={product.id || index}>
-              <EquipmentCard
-                navigateTo={`/office-equipment/${product._id}`}
-                data={product}
-              />
-            </div>
-          ))}
-        </div>
-      </MaxWidthWrapper> */}
+    
     </div>
   );
 };
