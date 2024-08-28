@@ -185,7 +185,7 @@ const OfficeEquipmentPage = () => {
       </MaxWidthWrapper>
 
       <MaxWidthWrapper className="min-h-[50vh] py-16 overflow-x-hidden">
-        {products?.slice(0, 4).map((categoryObj, index) => {
+        {products.map((categoryObj, index) => {
           // Access the keys of each object (category name)
           const categoryName = Object.keys(categoryObj)[0];
           const items = categoryObj[categoryName];

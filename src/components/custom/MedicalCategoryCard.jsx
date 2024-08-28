@@ -32,7 +32,7 @@ const MedicalCategoryCard = () => {
 
   return (
     <MaxWidthWrapper className="min-h-[50vh] py-16">
-      {data?.slice(0, 4).map((categoryObj, index) => {
+      {data.map((categoryObj, index) => {
         // Access the keys of each object (category name)
         const categoryName = Object.keys(categoryObj)[0];
         const items = categoryObj[categoryName];
