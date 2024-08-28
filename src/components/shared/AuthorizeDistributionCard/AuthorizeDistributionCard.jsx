@@ -16,7 +16,7 @@ const AuthorizeDistributionCard = ({ authorizer, index }) => {
 
             className="">
 
-            <div className="flex w-80 h-36 flex-col items-center justify-center  text-white duration-500 bg-white">
+            <div className="flex lg:w-80 h-36 flex-col items-center justify-center  text-white duration-500 bg-white">
                 <Image
                     src={authorizer?.image}
                     alt="Authorize Distribution"
