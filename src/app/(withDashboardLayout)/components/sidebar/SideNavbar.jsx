@@ -40,6 +40,7 @@ const SideNavbar = () => {
       href: "/dashboard/office-equipment-table",
       label: "Office Equipment",
     },
+
     {
       id: 4,
       href: "/dashboard/add-office-equipment",
@@ -54,6 +55,11 @@ const SideNavbar = () => {
       id: 6,
       href: "/dashboard/add-medical-equipment",
       label: "Add Medical Equipment",
+    },
+    {
+      id: 34,
+      href: "/dashboard/archived-equipment-table",
+      label: "Archived Equipment",
     },
     { id: 7, href: "/dashboard/blog-page", label: "Blog" },
     {
