@@ -11,56 +11,60 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { Eye, Pencil, Trash, Archive } from "lucide-react";
+import { Eye, RotateCwIcon, Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
+const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
   const {
     _id,
     productName,
-    modelNumber,
+    model,
+    category,
     images,
     shortDescription,
     description,
+    serialNumber,
+    manufacturer,
+    regulatoryApproval,
+    maintenanceSchedule,
+    dateOfManufacture,
+    warrantyPeriod,
   } = data;
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/officeEquipment/${id}`);
+      await axios.delete(`http://localhost:5000/api/v1/medicalEquipment/${id}`);
       setReload(true);
-      toast.success("Product Deleted Successfully!");
+      toast.success("Archived Product Deleted Successfully!");
     } catch (error) {
-      toast.error("Failed to delete the item. Try again later.");
+      toast.error("Failed to delete the archived item. Try again later.");
       console.error("Failed to delete the item:", error);
     }
   };
 
-  const handleArchive = async (id) => {
+  const handleRestore = async (id) => {
     try {
-      const res = await axios.put(
-        `http://localhost:5000/api/v1/officeEquipment/${id}`,
-        {
-          archived: true,
-        },
-      );
-      console.log(res);
+      await axios.put(`http://localhost:5000/api/v1/medicalEquipment/${id}`, {
+        archived: false,
+      });
       setReload(true);
       toast.success("Product Archived Successfully!");
     } catch (error) {
-      toast.error("Failed to archive the item. Try again later.");
-      console.error("Failed to archive the item:", error);
+      toast.error("Failed to Restore the item. Try again later.");
+      console.error("Failed to Restore the item:", error);
     }
   };
 
   return (
-    <tr className={` ${index % 2 === 1 ? "bg-[#f2f2f2]" : ""}`}>
+    <tr className={`${index % 2 === 1 ? "bg-[#f2f2f2]" : ""}`}>
       <td className="px-4 py-1">{index + 1}</td>
       <td className="px-4 py-1 text-left font-semibold">{productName}</td>
-      <td className="px-4 py-1 text-left font-semibold">{modelNumber}</td>
+      <td className="px-4 py-1 text-left font-semibold">{model}</td>
+      <td className="px-4 py-1 text-left font-semibold">{category}</td>
 
       <td className="space-x-3 md:px-4">
         {/* Preview Button */}
@@ -75,9 +79,33 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
               <div className="mt-5">
                 <h2 className="text-2xl font-semibold">{productName}</h2>
                 <p>
-                  <span className="font-semibold">Model No:</span> {modelNumber}
+                  <span className="font-semibold">Model No:</span> {model}
                 </p>
-                <p>{shortDescription}</p>
+                <p>
+                  <span className="font-semibold">Serial Number:</span>{" "}
+                  {serialNumber}
+                </p>
+                <p>
+                  <span className="font-semibold">Manufacturer:</span>{" "}
+                  {manufacturer}
+                </p>
+                <p>
+                  <span className="font-semibold">Regulatory Approval:</span>{" "}
+                  {regulatoryApproval}
+                </p>
+                <p>
+                  <span className="font-semibold">Maintenance Schedule:</span>{" "}
+                  {maintenanceSchedule}
+                </p>
+                <p>
+                  <span className="font-semibold">Date of Manufacture:</span>{" "}
+                  {dateOfManufacture}
+                </p>
+                <p>
+                  <span className="font-semibold">Warranty Period:</span>{" "}
+                  {warrantyPeriod}
+                </p>
+                <p className="mt-5">{shortDescription}</p>
 
                 <div className="mt-5 space-y-1">
                   <h4 className="font-bold">Product Details</h4>
@@ -103,7 +131,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
                 </section>
 
                 <Button asChild className="mt-5">
-                  <Link href={`/dashboard/update-office-equipment?id=${_id}`}>
+                  <Link href={`/dashboard/update-medical-equipment?id=${_id}`}>
                     Update Product
                   </Link>
                 </Button>
@@ -112,46 +140,33 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
           </DialogContent>
         </Dialog>
 
-        {/* Update Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="hover:text-si-primary"
-          asChild
-        >
-          <Link href={`/dashboard/update-office-equipment?id=${_id}`}>
-            <Pencil className="size-5" />
-          </Link>
-        </Button>
+        {/* Restore Button */}
 
-        {/* Archive Button */}
         <Dialog>
           <DialogTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="hover:text-yellow-500"
+              className="hover:text-green-500"
             >
-              <Archive className="size-5" />
+              <RotateCwIcon className="size-5" />
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Archive this product?</DialogTitle>
+              <DialogTitle>Restore this product?</DialogTitle>
               <DialogDescription>
-                This will move the product to the archived section.
+                This will move the product to the regular equipment section.
               </DialogDescription>
             </DialogHeader>
 
             <DialogFooter className="sm:justify-start">
               <DialogClose asChild>
-                <Button>Cancel</Button>
+                <Button variant="destructive">Cancel</Button>
               </DialogClose>
 
               <DialogClose asChild>
-                <Button variant="custom" onClick={() => handleArchive(_id)}>
-                  Archive
-                </Button>
+                <Button onClick={() => handleRestore(_id)}>Restore</Button>
               </DialogClose>
             </DialogFooter>
           </DialogContent>
@@ -173,7 +188,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
               <DialogTitle>Are you absolutely sure?</DialogTitle>
               <DialogDescription>
                 This action cannot be undone. This will permanently delete the
-                office equipment from the database.
+                archived medical equipment from the database.
               </DialogDescription>
             </DialogHeader>
 
@@ -181,6 +196,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
               <DialogClose asChild>
                 <Button>Cancel</Button>
               </DialogClose>
+
               <DialogClose asChild>
                 <Button variant="destructive" onClick={() => handleDelete(_id)}>
                   Delete
@@ -194,4 +210,4 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   );
 };
 
-export default OfficeEquipmentTableRow;
+export default ArchivedEquipmentTableRow;

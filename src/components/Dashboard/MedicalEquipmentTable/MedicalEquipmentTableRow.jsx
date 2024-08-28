@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { Eye, Pencil, Trash } from "lucide-react";
+import { Eye, Pencil, Trash, Archive } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -43,6 +43,19 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
     } catch (error) {
       toast.error("Failed to delete the item. Try again later.");
       console.error("Failed to delete the item:", error);
+    }
+  };
+
+  const handleArchive = async (id) => {
+    try {
+      await axios.put(`http://localhost:5000/api/v1/medicalEquipment/${id}`, {
+        archived: true,
+      });
+      setReload(true);
+      toast.success("Product Archived Successfully!");
+    } catch (error) {
+      toast.error("Failed to archive the item. Try again later.");
+      console.error("Failed to archive the item:", error);
     }
   };
 
@@ -167,6 +180,39 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
               <DialogClose asChild>
                 <Button variant="destructive" onClick={() => handleDelete(_id)}>
                   Delete
+                </Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* Archive Button */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hover:text-yellow-500"
+            >
+              <Archive className="size-5" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Archive this product?</DialogTitle>
+              <DialogDescription>
+                This will move the product to the archived section.
+              </DialogDescription>
+            </DialogHeader>
+
+            <DialogFooter className="sm:justify-start">
+              <DialogClose asChild>
+                <Button>Cancel</Button>
+              </DialogClose>
+
+              <DialogClose asChild>
+                <Button variant="custom" onClick={() => handleArchive(_id)}>
+                  Archive
                 </Button>
               </DialogClose>
             </DialogFooter>
