@@ -14,7 +14,7 @@ const LatestOfficeEquipment = async () => {
   return (
     <MaxWidthWrapper className="mt-10 overflow-x-hidden py-20">
       <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
-        Latest Office Eqipment
+        Latest Office Eqipment lalalal
       </h1>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -23,7 +23,7 @@ const LatestOfficeEquipment = async () => {
             <div key={index}>
               <EquipmentCard
                 data={item}
-                navigateTo={`/office-equipment/${index}`}
+                navigateTo={`/office-equipment/${item?.category}/${item?._id}`}
               />
             </div>
           );
