@@ -2,9 +2,12 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const LatestOfficeEquipment = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/officeEquipment/all", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all",
+    {
+      cache: "no-store",
+    },
+  );
   const data = await res.json();
   const blogs = data?.data?.result?.slice(0, 4);
 

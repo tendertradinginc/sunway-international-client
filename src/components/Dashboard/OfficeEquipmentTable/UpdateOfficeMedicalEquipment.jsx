@@ -1,7 +1,6 @@
 "use client";
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import { OfficeCategoryCombobox } from "@/components/custom/OfficeCategoryCombobox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,15 +9,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
-
-const AddOfficeEquipmentPage = () => {
-  const [category, setCategory] = useState("");
+const UpdateOfficeMedicalEquipment = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
+
+  const id = searchParams.get("id");
 
   const [formData, setFormData] = useState({
     modelNumber: "",
@@ -27,6 +29,35 @@ const AddOfficeEquipmentPage = () => {
     shortDescription: "",
     description: "",
   });
+
+  // Fetch data and populate form
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
+        );
+        const data = response?.data?.data;
+
+        setFormData({
+          modelNumber: data.modelNumber || "",
+          productName: data.productName || "",
+          images: data.images || [],
+          shortDescription: data.shortDescription || "",
+          description: data.description || "",
+        });
+      } catch (error) {
+        toast.error("Failed to load product data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchData();
+    }
+  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +68,7 @@ const AddOfficeEquipmentPage = () => {
   };
 
   const handleImageUpload = async (e) => {
-    setLoading(true); // Start loading before image upload
+    setLoading(true);
     try {
       const files = Array.from(e.target.files);
       const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
@@ -50,7 +81,7 @@ const AddOfficeEquipmentPage = () => {
     } catch (error) {
       toast.error("Failed to upload images. Please try again.");
     } finally {
-      setLoading(false); // Stop loading after image upload is complete
+      setLoading(false);
     }
   };
 
@@ -59,26 +90,17 @@ const AddOfficeEquipmentPage = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
+      const res = await axios.put(
+        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
         formData,
       );
 
-      if (res.status === 201) {
-        toast.success("Product Added Successfully!");
-        // Reset form data
-        setFormData({
-          modelNumber: "",
-          productName: "",
-          images: [],
-          shortDescription: "",
-          description: "",
-        });
-
-        setCategory("");
+      if (res.status === 200) {
+        router.push("/dashboard/office-equipment-table");
+        toast.success("Product Updated Successfully!");
       }
     } catch (error) {
-      toast.error("Failed to add product. Please try again.");
+      toast.error("Failed to update product. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -90,7 +112,7 @@ const AddOfficeEquipmentPage = () => {
         <Card className="rounded-none border-2">
           <CardHeader>
             <CardTitle className="text-center text-4xl">
-              Add Office Equipment
+              Update Office Equipment
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -121,28 +143,17 @@ const AddOfficeEquipmentPage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                {/* Short Description */}
-                <div className="mb-4">
-                  <Label className="mb-2 block">Short Description</Label>
-                  <Input
-                    type="text"
-                    name="shortDescription"
-                    value={formData.shortDescription}
-                    onChange={handleInputChange}
-                    required
-                    maxLength={150}
-                  />
-                </div>
-
-                {/* category */}
-                <div>
-                  <Label className="mb-2 block">Category</Label>
-                  <OfficeCategoryCombobox
-                    value={category}
-                    setValue={setCategory}
-                  />
-                </div>
+              {/* Short Description */}
+              <div className="mb-4">
+                <Label className="mb-2 block">Short Description</Label>
+                <Input
+                  type="text"
+                  name="shortDescription"
+                  value={formData.shortDescription}
+                  onChange={handleInputChange}
+                  required
+                  maxLength={150}
+                />
               </div>
 
               {/* Full Description */}
@@ -200,13 +211,13 @@ const AddOfficeEquipmentPage = () => {
               >
                 {loading ? (
                   <>
-                    Processing
+                    Updating
                     <span className="animate-spin">
                       <FaSpinner size={18} />
                     </span>
                   </>
                 ) : (
-                  "Submit"
+                  "Update"
                 )}
               </Button>
             </form>
@@ -217,4 +228,4 @@ const AddOfficeEquipmentPage = () => {
   );
 };
 
-export default AddOfficeEquipmentPage;
+export default UpdateOfficeMedicalEquipment;

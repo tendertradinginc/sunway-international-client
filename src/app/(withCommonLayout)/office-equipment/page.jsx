@@ -31,11 +31,10 @@ const OfficeEquipmentPage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/v1/officeEquipment/all-category",
+          "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
         );
         const data = await response.json();
         setProducts(data?.data || []);
-   
       } catch (error) {
         console.error("Error fetching office equipment data:", error);
       }
@@ -184,12 +183,12 @@ const OfficeEquipmentPage = () => {
         </div>
       </MaxWidthWrapper>
 
-      <MaxWidthWrapper className="min-h-[50vh] py-16 overflow-x-hidden">
+      <MaxWidthWrapper className="min-h-[50vh] overflow-x-hidden py-16">
         {products.map((categoryObj, index) => {
           // Access the keys of each object (category name)
           const categoryName = Object.keys(categoryObj)[0];
           const items = categoryObj[categoryName];
-      
+
           return (
             <Card key={index} className="mb-16 w-full">
               <CardHeader>
@@ -213,16 +212,13 @@ const OfficeEquipmentPage = () => {
                         navigateTo={`/medical-equipment/${categoryName}/${item?._id}`}
                       />
                     </div>
-                  )
+                  );
                 })}
               </CardContent>
             </Card>
-          )
+          );
         })}
-        
       </MaxWidthWrapper>
-
-    
     </div>
   );
 };

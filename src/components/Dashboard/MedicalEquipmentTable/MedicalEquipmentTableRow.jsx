@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { Eye, Pencil, Trash, Archive } from "lucide-react";
+import { Archive, Eye, Pencil, Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -37,7 +37,9 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/medicalEquipment/${id}`);
+      await axios.delete(
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+      );
       setReload(true);
       toast.success("Product Deleted Successfully!");
     } catch (error) {
@@ -48,9 +50,12 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleArchive = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/v1/medicalEquipment/${id}`, {
-        archived: true,
-      });
+      await axios.put(
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+        {
+          archived: true,
+        },
+      );
       setReload(true);
       toast.success("Product Archived Successfully!");
     } catch (error) {

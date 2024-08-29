@@ -17,7 +17,9 @@ const BlogTable = () => {
   const [reload, setReload] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/blogs?page=${page}&limit=${limit}`)
+    fetch(
+      `https://sunway-international-server.vercel.app/api/v1/blogs?page=${page}&limit=${limit}`,
+    )
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data?.data?.allBlogs);

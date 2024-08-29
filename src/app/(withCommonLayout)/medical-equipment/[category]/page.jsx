@@ -28,7 +28,7 @@ const MedicalCategoryPage = ({ params }) => {
     const fetchEquipment = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/medicalEquipment/category?category=${params.category}`,
+          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${params.category}`,
         );
         setEquipment(response?.data?.data);
       } catch (err) {

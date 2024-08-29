@@ -13,9 +13,12 @@ const MedicalCategoryCard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/medicalEquipment/all-category", {
-      cache: "no-store",
-    })
+    fetch(
+      "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all-category",
+      {
+        cache: "no-store",
+      },
+    )
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);

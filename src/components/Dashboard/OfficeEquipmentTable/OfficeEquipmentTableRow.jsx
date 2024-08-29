@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import axios from "axios";
-import { Eye, Pencil, Trash, Archive } from "lucide-react";
+import { Archive, Eye, Pencil, Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -30,7 +30,9 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/officeEquipment/${id}`);
+      await axios.delete(
+        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
+      );
       setReload(true);
       toast.success("Product Deleted Successfully!");
     } catch (error) {
@@ -42,7 +44,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   const handleArchive = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/v1/officeEquipment/${id}`,
+        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
         {
           archived: true,
         },

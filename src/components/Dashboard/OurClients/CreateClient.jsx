@@ -55,7 +55,7 @@ const CreateClient = () => {
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/v1/client/create",
+        "https://sunway-international-server.vercel.app/api/v1/client/create",
         {
           method: "POST",
           headers: {

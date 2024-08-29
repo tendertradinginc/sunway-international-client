@@ -1,13 +1,12 @@
 import AllClients from "@/components/Dashboard/OurClients/AllClients";
 
-// import CreateClient from "@/components/Dashboard/OurClients/CreateClient";
-
+import { Suspense } from "react";
 const ClientsPage = () => {
-
-
   return (
     <div>
-     <AllClients /> 
+      <Suspense fallback={<div>Loading...</div>}>
+        <AllClients />
+      </Suspense>
     </div>
   );
 };

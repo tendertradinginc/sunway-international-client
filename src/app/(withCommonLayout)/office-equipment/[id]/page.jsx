@@ -17,7 +17,7 @@ import remarkGfm from "remark-gfm";
 
 const OfficeEqipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
 
   const product = data?.data || {};
@@ -70,7 +70,7 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
               </Markdown>
             </div>
 
-            <div className="flex flex-wrap items-center gap-5 mt-5">
+            <div className="mt-5 flex flex-wrap items-center gap-5">
               <Button className="mt-5">
                 Contact For Price <PhoneIcon className="ml-2 size-5" />
               </Button>

@@ -1,9 +1,9 @@
 "use client";
 
-import { AiFillDatabase } from "react-icons/ai";
-import { CgSpinnerAlt } from "react-icons/cg";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { AiFillDatabase } from "react-icons/ai";
+import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "sonner";
 import PaginationBlog from "../../shared/pagination/PaginationShadcn";
 import ArchivedEquipmentTableRow from "./ArchivedEquipmentTableRow";
@@ -22,7 +22,7 @@ const ArchivedEquipmentTable = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/officeEquipment/archive?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/archive?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
         setProducts(data?.data);

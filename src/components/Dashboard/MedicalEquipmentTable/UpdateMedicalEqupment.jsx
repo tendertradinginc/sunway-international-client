@@ -11,16 +11,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const AddMedicalEquipmentPage = () => {
-  const [category, setCategory] = useState("");
-  const [dateOfManufacture, setDateOfManufacture] = useState("");
+const UpdateMedicalEqupment = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
+
+  const id = searchParams.get("id");
 
   const [formData, setFormData] = useState({
     productName: "",
@@ -35,6 +38,45 @@ const AddMedicalEquipmentPage = () => {
     warrantyPeriod: "",
   });
 
+  const [category, setCategory] = useState("");
+  const [dateOfManufacture, setDateOfManufacture] = useState("");
+
+  // Fetch data and populate form
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+        );
+        const data = response?.data?.data;
+
+        setFormData({
+          productName: data.productName || "",
+          model: data.model || "",
+          serialNumber: data.serialNumber || "",
+          manufacturer: data.manufacturer || "",
+          regulatoryApproval: data.regulatoryApproval || "",
+          maintenanceSchedule: data.maintenanceSchedule || "",
+          images: data.images || [],
+          shortDescription: data.shortDescription || "",
+          description: data.description || "",
+          warrantyPeriod: data.warrantyPeriod || "",
+        });
+        setCategory(data.category || "");
+        setDateOfManufacture(data.dateOfManufacture || "");
+      } catch (error) {
+        toast.error("Failed to load product data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchData();
+    }
+  }, [id]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -44,7 +86,7 @@ const AddMedicalEquipmentPage = () => {
   };
 
   const handleImageUpload = async (e) => {
-    setLoading(true); // Start loading before image upload
+    setLoading(true);
     try {
       const files = Array.from(e.target.files);
       const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
@@ -57,7 +99,7 @@ const AddMedicalEquipmentPage = () => {
     } catch (error) {
       toast.error("Failed to upload images. Please try again.");
     } finally {
-      setLoading(false); // Stop loading after image upload is complete
+      setLoading(false);
     }
   };
 
@@ -72,32 +114,17 @@ const AddMedicalEquipmentPage = () => {
         dateOfManufacture,
       };
 
-      const res = await axios.post(
-        "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/create",
+      const res = await axios.put(
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
         completeFormData,
       );
 
-      if (res.status === 201) {
-        toast.success("Medical Equipment Added Successfully!");
-
-        // Reset form data
-        setFormData({
-          productName: "",
-          model: "",
-          serialNumber: "",
-          manufacturer: "",
-          regulatoryApproval: "",
-          maintenanceSchedule: "",
-          images: [],
-          shortDescription: "",
-          description: "",
-          warrantyPeriod: "",
-        });
-        setCategory("");
-        setDateOfManufacture("");
+      if (res.status === 200) {
+        router.push("/dashboard/medical-equipment-table");
+        toast.success("Product Updated Successfully!");
       }
     } catch (error) {
-      toast.error("Failed to add medical equipment. Please try again.");
+      toast.error("Failed to update product. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -109,7 +136,7 @@ const AddMedicalEquipmentPage = () => {
         <Card className="rounded-none border-2">
           <CardHeader>
             <CardTitle className="text-center text-4xl">
-              Add Medical Equipment
+              Update Medical Equipment
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -207,6 +234,7 @@ const AddMedicalEquipmentPage = () => {
                   <Input
                     type="text"
                     name="warrantyPeriod"
+                    value={formData.warrantyPeriod}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -235,6 +263,7 @@ const AddMedicalEquipmentPage = () => {
                   required
                   className="min-h-64"
                 />
+
                 <Markdown
                   className="prose whitespace-nowrap"
                   remarkPlugins={[remarkGfm]}
@@ -254,9 +283,9 @@ const AddMedicalEquipmentPage = () => {
                   onChange={handleImageUpload}
                 />
                 <div className="mt-2">
-                  {formData?.images.length > 0 && (
+                  {formData.images.length > 0 && (
                     <div className="grid grid-cols-3 gap-4">
-                      {formData?.images.map((url, index) => (
+                      {formData.images.map((url, index) => (
                         <div key={index}>
                           <Image
                             src={url}
@@ -279,13 +308,13 @@ const AddMedicalEquipmentPage = () => {
               >
                 {loading ? (
                   <>
-                    Processing
+                    Updating
                     <span className="animate-spin">
-                      <FaSpinner size={18} />
+                      <FaSpinner />
                     </span>
                   </>
                 ) : (
-                  "Submit"
+                  "Update"
                 )}
               </Button>
             </form>
@@ -296,4 +325,4 @@ const AddMedicalEquipmentPage = () => {
   );
 };
 
-export default AddMedicalEquipmentPage;
+export default UpdateMedicalEqupment;
