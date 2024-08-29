@@ -1,10 +1,10 @@
-import UpdateOfficeMedicalEquipment from "@/components/Dashboard/OfficeEquipmentTable/UpdateOfficeMedicalEquipment";
+import UpdateOfficeEquipmentForm from "@/components/Dashboard/OfficeEquipmentTable/UpdateOfficeEquipmentForm";
 import { Suspense } from "react";
 const page = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <UpdateOfficeMedicalEquipment></UpdateOfficeMedicalEquipment>
+        <UpdateOfficeEquipmentForm />
       </Suspense>
     </div>
   );
