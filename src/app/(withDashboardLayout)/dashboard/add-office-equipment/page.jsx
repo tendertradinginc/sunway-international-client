@@ -37,7 +37,7 @@ const AddOfficeEquipmentPage = () => {
   };
 
   const handleImageUpload = async (e) => {
-    setLoading(true); // Start loading before image upload
+    setLoading(true);
     try {
       const files = Array.from(e.target.files);
       const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
@@ -50,7 +50,7 @@ const AddOfficeEquipmentPage = () => {
     } catch (error) {
       toast.error("Failed to upload images. Please try again.");
     } finally {
-      setLoading(false); // Stop loading after image upload is complete
+      setLoading(false);
     }
   };
 
@@ -59,9 +59,14 @@ const AddOfficeEquipmentPage = () => {
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        category: category,
+      };
+
       const res = await axios.post(
         "http://localhost:5000/api/v1/officeEquipment/create",
-        formData,
+        updatedFormData,
       );
 
       if (res.status === 201) {

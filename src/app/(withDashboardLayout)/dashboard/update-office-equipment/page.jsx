@@ -1,6 +1,7 @@
 "use client";
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { OfficeCategoryCombobox } from "@/components/custom/OfficeCategoryCombobox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,6 +21,7 @@ const UpdateOfficeEquipmentPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState("");
 
   const id = searchParams.get("id");
 
@@ -42,12 +44,14 @@ const UpdateOfficeEquipmentPage = () => {
         const data = response?.data?.data;
 
         setFormData({
-          modelNumber: data.modelNumber || "",
-          productName: data.productName || "",
-          images: data.images || [],
-          shortDescription: data.shortDescription || "",
-          description: data.description || "",
+          modelNumber: data?.modelNumber || "",
+          productName: data?.productName || "",
+          images: data?.images || [],
+          shortDescription: data?.shortDescription || "",
+          description: data?.description || "",
         });
+
+        setCategory(data?.category || "");
       } catch (error) {
         toast.error("Failed to load product data.");
       } finally {
@@ -91,9 +95,14 @@ const UpdateOfficeEquipmentPage = () => {
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        category: category,
+      };
+
       const res = await axios.put(
         `http://localhost:5000/api/v1/officeEquipment/${id}`,
-        formData,
+        updatedFormData,
       );
 
       if (res.status === 200) {
@@ -144,17 +153,28 @@ const UpdateOfficeEquipmentPage = () => {
                 </div>
               </div>
 
-              {/* Short Description */}
-              <div className="mb-4">
-                <Label className="mb-2 block">Short Description</Label>
-                <Input
-                  type="text"
-                  name="shortDescription"
-                  value={formData.shortDescription}
-                  onChange={handleInputChange}
-                  required
-                  maxLength={150}
-                />
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {/* Short Description */}
+                <div className="mb-4">
+                  <Label className="mb-2 block">Short Description</Label>
+                  <Input
+                    type="text"
+                    name="shortDescription"
+                    value={formData.shortDescription}
+                    onChange={handleInputChange}
+                    required
+                    maxLength={150}
+                  />
+                </div>
+
+                {/* category */}
+                <div>
+                  <Label className="mb-2 block">Category</Label>
+                  <OfficeCategoryCombobox
+                    value={category}
+                    setValue={setCategory}
+                  />
+                </div>
               </div>
 
               {/* Full Description */}
@@ -212,13 +232,13 @@ const UpdateOfficeEquipmentPage = () => {
               >
                 {loading ? (
                   <>
-                    Updating
+                    Processing
                     <span className="animate-spin">
                       <FaSpinner size={18} />
                     </span>
                   </>
                 ) : (
-                  "Update"
+                  "Submit"
                 )}
               </Button>
             </form>
