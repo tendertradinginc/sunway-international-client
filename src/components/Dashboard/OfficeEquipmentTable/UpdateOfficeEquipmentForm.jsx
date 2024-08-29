@@ -94,9 +94,14 @@ const UpdateOfficeEquipmentForm = () => {
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        category: category,
+      };
+
       const res = await axios.put(
         `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
-        formData,
+        updatedFormData,
       );
 
       if (res.status === 200) {

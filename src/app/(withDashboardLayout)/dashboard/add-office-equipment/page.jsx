@@ -59,9 +59,14 @@ const AddOfficeEquipmentPage = () => {
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        category: category,
+      };
+
       const res = await axios.post(
         "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
-        formData,
+        updatedFormData,
       );
 
       if (res.status === 201) {
