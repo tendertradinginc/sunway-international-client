@@ -19,8 +19,7 @@ const NewArrival = () => {
               Digital Thermometer Gun For Covid - 19
             </h1>
             <p className="">
-              Accurately measure body temperature with our Digital Thermometer
-              Gun, designed for quick, contactless readings.
+            A cardiopulmonary monitor displaying vital signs for heart and lung function in critical care.
             </p>
           </div>
           <div className="bg-[#faca5083] rounded-t-full md:rounded-l-full md:rounded-r-none flex justify-center items-center ">
@@ -28,7 +27,7 @@ const NewArrival = () => {
               height={100}
               width={200}
               alt="Covid 19 gun"
-              src="https://i.postimg.cc/1Rd5JDfq/imagesgun-removebg-preview.png"
+              src="https://i.postimg.cc/nVvKKm68/y-Fp-OUyfj-JOEk-ZA-XYZxyu-transformed.webp"
             />
           </div>
         </motion.div>
@@ -39,11 +38,10 @@ const NewArrival = () => {
               New Arrival
             </button>
             <h1 className="text-2xl font-semibold my-3">
-              Digital Thermometer Gun For Covid - 19
+            Infant Phototherapy Incubator
             </h1>
             <p className="">
-              Accurately measure body temperature with our Digital Thermometer
-              Gun, designed for quick, contactless readings.
+            An infant phototherapy incubator providing controlled light therapy for treating newborn jaundice.
             </p>
           </div>
           <div className="bg-[#16a2494d] rounded-t-full md:rounded-l-full md:rounded-r-none flex justify-center items-center ">
@@ -51,7 +49,7 @@ const NewArrival = () => {
               height={100}
               width={200}
               alt="Covid 19 gun"
-              src="https://i.postimg.cc/1Rd5JDfq/imagesgun-removebg-preview.png"
+              src="https://i.postimg.cc/W3dWb43N/5s1-Yb74-Jzqy-YWE3-Nt-AAjz-transformed.webp"
             />
           </div>
         </motion.div>
