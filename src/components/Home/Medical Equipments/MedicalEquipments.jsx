@@ -18,7 +18,10 @@ const MedicalEquipments = async () => {
         {blogs.map((item, index) => {
           return (
             <div key={index}>
-              <MedicalEquipmentCard data={item} />
+              <MedicalEquipmentCard
+                data={item}
+                navigateTo={`/medical-equipment/${item?.category}/${item?._id}`}
+              />
             </div>
           );
         })}

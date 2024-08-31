@@ -31,7 +31,7 @@ const OfficeEquipmentPage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
+          "http://localhost:5000/api/v1/officeEquipment/all-category",
         );
         const data = await response.json();
         setProducts(data?.data || []);
@@ -197,7 +197,7 @@ const OfficeEquipmentPage = () => {
                     {categoryName}
                   </CardTitle>
                   <Button asChild>
-                    <Link href={`/medical-equipment/${categoryName}`}>
+                    <Link href={`/office-equipment/${categoryName}`}>
                       View More <DoubleArrowRightIcon className="ml-2 size-5" />
                     </Link>
                   </Button>
@@ -209,7 +209,7 @@ const OfficeEquipmentPage = () => {
                     <div key={index}>
                       <EquipmentCard
                         data={item}
-                        navigateTo={`/medical-equipment/${categoryName}/${item?._id}`}
+                        navigateTo={`/office-equipment/${categoryName}/${item?._id}`}
                       />
                     </div>
                   );

@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-const MedicalCategoryPage = ({ params }) => {
+const OfficeEquipmentCategoryPage = ({ params }) => {
   const [equipment, setEquipment] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,7 +28,7 @@ const MedicalCategoryPage = ({ params }) => {
     const fetchEquipment = async () => {
       try {
         const response = await axios.get(
-          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${params.category}`,
+          `http://localhost:5000/api/v1/officeEquipment/category/${params.category}`,
         );
         setEquipment(response?.data?.data);
       } catch (err) {
@@ -57,7 +57,7 @@ const MedicalCategoryPage = ({ params }) => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/medical-equipment">Medical Equipment</Link>
+                <Link href="/office-equipment">Office Equipment</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -80,17 +80,17 @@ const MedicalCategoryPage = ({ params }) => {
           <p>Loading...</p>
         ) : error ? (
           <p className="col-span-4 text-center text-red-500">{error}</p>
-        ) : equipment.length > 0 ? (
-          equipment.map((item) => (
+        ) : equipment?.length > 0 ? (
+          equipment?.map((item) => (
             <div key={item._id}>
               <EquipmentCard
                 data={item}
-                navigateTo={`/medical-equipment/${params.category}/${item._id}`}
+                navigateTo={`/office-equipment/${params.category}/${item._id}`}
               />
             </div>
           ))
         ) : (
-          <p className="col-span-4 min-h-56 text-center text-xl font-bold">
+          <p className="col-span-4 text-center min-h-56 text-xl font-bold">
             No equipment found in this category.
           </p>
         )}
@@ -99,4 +99,4 @@ const MedicalCategoryPage = ({ params }) => {
   );
 };
 
-export default MedicalCategoryPage;
+export default OfficeEquipmentCategoryPage;

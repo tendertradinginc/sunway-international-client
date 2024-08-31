@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const MedicalEquipmentCard = ({ data }) => {
+const MedicalEquipmentCard = ({ data, navigateTo }) => {
   const { productName, images, shortDescription } = data;
 
   return (
@@ -30,9 +30,9 @@ const MedicalEquipmentCard = ({ data }) => {
           <b>Short Description:</b> {shortDescription}
         </p>
         {/* <Link href={"/"} className="text-si-accent pa font-bold">Explore More</Link> */}
-        <Link href={"/"}>
+        <Link href={navigateTo}>
           <button className="mt-2 rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-black">
-            Explore More
+            View Details
           </button>
         </Link>
       </div>
