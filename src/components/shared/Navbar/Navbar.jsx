@@ -13,7 +13,7 @@ import { RiMenu3Line } from "react-icons/ri";
 
 const Navbar = () => {
   return (
-    <nav className="py-2.5 border-b bg-si-secondary bg-opacity-20">
+    <nav className="py-2.5 border-b ">
       <MaxWidthWrapper className="flex justify-between items-center">
         <Link href="/">
           <h3 className="text-xl xl:text-2xl font-bold">
