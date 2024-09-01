@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 const slides = [
@@ -14,36 +15,39 @@ const slides = [
     id: 2,
     title: "Build a Hospital In Bangladesh",
     subtitle: ["Are You Planning To", "Contact World Renowed Health Care Consultant"],
-    imageUrl: "https://i.postimg.cc/xdmjW7Ph/pexels-gustavo-fring-4173251.jpg",
+    imageUrl: "https://i.postimg.cc/4N1cbFTV/image-5.jpg",
+    link:"/services"
   },
   {
     id: 1,
     title: "Innovative Medical Solutions",
     subtitle:
       ["","Leading the way in healthcare with advanced medical equipment and cutting-edge hospital construction."],
-    imageUrl: "/national-cancer-institute-oCLuFi9GYNA-unsplash.jpg",
+    imageUrl: "https://i.postimg.cc/s2v2tTGB/artbreeder-image-2024-09-01-T09-02-20-937-Z.jpg",
+    link:"/medical-equipment"
   },
   {
     id: 3,
     title: "Office Equipment Excellence",
     subtitle:
      ["", "Supplying high-quality office equipment designed to enhance productivity and comfort."],
-    imageUrl: "/benjamin-child-0sT9YhNgSEs-unsplash.jpg",
+    imageUrl: "https://i.postimg.cc/3r9ZBRht/artbreeder-image-2024-09-01-T08-57-20-589-Z.jpg",
+    link:"/office-equipment"
   },
-  {
-    id: 4,
-    title: "Custom Healthcare Solutions",
-    subtitle:
-    [ "", "Tailoring healthcare environments to meet the unique needs of each client."],
-    imageUrl: "/adhy-savala-zbpgmGe27p8-unsplash.jpg",
-  },
-  {
-    id: 5,
-    title: "Transforming Workspaces",
-    subtitle:
-     [ "","Providing ergonomic office solutions that improve well-being and efficiency."],
-    imageUrl: "/adolfo-felix-PG8NyM_Mcts-unsplash.jpg",
-  },
+  // {
+  //   id: 4,
+  //   title: "Custom Healthcare Solutions",
+  //   subtitle:
+  //   [ "", "Tailoring healthcare environments to meet the unique needs of each client."],
+  //   imageUrl: "/adhy-savala-zbpgmGe27p8-unsplash.jpg",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Transforming Workspaces",
+  //   subtitle:
+  //    [ "","Providing ergonomic office solutions that improve well-being and efficiency."],
+  //   imageUrl: "/adolfo-felix-PG8NyM_Mcts-unsplash.jpg",
+  // },
 ];
 
 export function Hero() {
@@ -65,13 +69,13 @@ export function Hero() {
           <CarouselItem key={slide.id}>
             <div className="relative h-svh w-full bg-si-secondary">
               <div
-                className="absolute inset-0 bg-cover"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${slide.imageUrl})`,
                 }}
               />
               {/* Black overlay */}
-              <div className="absolute inset-0 bg-black opacity-50"></div>
+              <div className="absolute inset-0 bg-black opacity-40"></div>
               {/* Content */}
               <div className="relative flex h-full flex-col items-center justify-center gap-5 text-center">
                 <h4 className="mx-auto max-w-sm  text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
@@ -84,7 +88,7 @@ export function Hero() {
                   {slide.subtitle[1]}
                 </h4>
                 <div>
-                  <Button>Get Started</Button>
+                 <Link href={slide.link}> <Button>Get Started</Button></Link>
                 </div>
               </div>
             </div>
