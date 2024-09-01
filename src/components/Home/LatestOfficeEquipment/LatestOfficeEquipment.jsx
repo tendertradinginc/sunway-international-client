@@ -13,9 +13,12 @@ const LatestOfficeEquipment = async () => {
 
   return (
     <MaxWidthWrapper className="mt-10 overflow-x-hidden py-20">
-      <h1 className="mb-10 text-3xl font-semibold text-si-primary md:text-5xl">
-        Latest Office Eqipment lalalal
-      </h1>
+      <br />
+      <div className="mb-12">
+        <h1 className="mb-2 text-3xl font-semibold text-si-primary md:text-5xl">
+          Hospital <span className="text-[#fbbf24]"> Furniture</span>
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
         {blogs.map((item, index) => {
