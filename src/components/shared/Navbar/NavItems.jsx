@@ -18,11 +18,12 @@ const NavItems = ({ className }) => {
   const pathname = usePathname();
 
   const navLinks = [
+    { id: 1, url: "/", label: "Home" },
     { id: 2, url: "/AboutUs", label: "About Us" },
     { id: 3, url: "/gallery", label: "Gallery" },
     { id: 4, url: "/services", label: "Services" },
     { id: 5, url: "/blog", label: "Blog" },
-    { id: 6, url: "/dashboard", label: "Dashboard" },
+    // { id: 6, url: "/dashboard", label: "Dashboard" },
   ];
 
   return (
@@ -35,7 +36,7 @@ const NavItems = ({ className }) => {
             key={link.id}
             className={cn(pathname === link.url ? "underline" : "")}
           >
-            <Link href={link.url}>{link.label}</Link>
+            <Link href={link.url} className="font-semibold">{link.label}</Link>
           </Button>
         ))}
       </div>
