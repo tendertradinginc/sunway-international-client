@@ -1,38 +1,55 @@
 "use client";
-import * as React from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
 
 const slides = [
   {
     id: 2,
-    title: "Build a Hospital In Bangladesh",
-    subtitle: ["Are You Planning To", "Contact World Renowed Health Care Consultant"],
-    imageUrl: "https://i.postimg.cc/4N1cbFTV/image-5.jpg",
-    link:"/services"
+    title: (
+      <>
+        Build a Hospital In <br /> Bangladesh
+      </>
+    ),
+    subtitle: [
+      "Are You Planning To",
+      "Contact World Renowed Health Care Consultant",
+    ],
+    imageUrl: "https://i.ibb.co/G5tsH67/20228616454220.jpg",
+    link: "/services",
   },
   {
     id: 1,
-    title: "Innovative Medical Solutions",
-    subtitle:
-      ["","Leading the way in healthcare with advanced medical equipment and cutting-edge hospital construction."],
-    imageUrl: "https://i.postimg.cc/s2v2tTGB/artbreeder-image-2024-09-01-T09-02-20-937-Z.jpg",
-    link:"/medical-equipment"
+    title: (
+      <>
+        Innovative Medical <br /> Solutions
+      </>
+    ),
+    subtitle: [
+      "",
+      "Leading the way in healthcare with advanced medical equipment and cutting-edge hospital construction.",
+    ],
+    imageUrl: "https://i.ibb.co/zV4TCVB/ynclean-cleanroom-manufacturer.webp",
+    link: "/medical-equipment",
   },
   {
     id: 3,
-    title: "Office Equipment Excellence",
-    subtitle:
-     ["", "Supplying high-quality office equipment designed to enhance productivity and comfort."],
-    imageUrl: "https://i.postimg.cc/3r9ZBRht/artbreeder-image-2024-09-01-T08-57-20-589-Z.jpg",
-    link:"/office-equipment"
+    title: (
+      <>
+        Hospital Furtinure <br /> Excellence
+      </>
+    ),
+    subtitle: [
+      "",
+      "Supplying high-quality hospital furtinure designed to enhance productivity and comfort.",
+    ],
+    imageUrl:
+      "https://i.ibb.co/r79Hvqg/pexels-tima-miroshnichenko-9574568-1.jpg",
+    link: "/office-equipment",
   },
   // {
   //   id: 4,
@@ -67,7 +84,7 @@ export function Hero() {
       <CarouselContent>
         {slides?.map((slide) => (
           <CarouselItem key={slide.id}>
-            <div className="relative h-svh w-full bg-si-secondary">
+            <div className="relative h-[90vh] w-full bg-[#1C4759]">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -75,20 +92,25 @@ export function Hero() {
                 }}
               />
               {/* Black overlay */}
-              <div className="absolute inset-0 bg-black opacity-40"></div>
+              <div className="absolute inset-0 bg-[#1c4759b8] opacity-70"></div>
               {/* Content */}
-              <div className="relative flex h-full flex-col items-center justify-center gap-5 text-center">
-                <h4 className="mx-auto max-w-sm  text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
-                {slide.subtitle[0]}
+              <div className="relative mx-auto flex h-full max-w-[1400px] flex-col items-start justify-center gap-5">
+                <h4 className="max-w-sm text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
+                  {slide.subtitle[0]}
                 </h4>
-                <h2 className="text-balance text-3xl  font-semibold text-muted md:text-5xl lg:text-6xl">
+                <h2 className="text-balance text-4xl font-bold text-[#fbbe24] md:text-5xl lg:text-6xl">
                   {slide.title}
                 </h2>
-                <h4 className="mx-auto max-w-sm text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
+                <h4 className="max-w-sm text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
                   {slide.subtitle[1]}
                 </h4>
                 <div>
-                 <Link href={slide.link}> <Button>Get Started</Button></Link>
+                  <Link href={slide.link}>
+                    {" "}
+                    <button className="mt-8 rounded-md border-2 border-si-accent p-2 px-5 text-si-accent duration-300 hover:bg-si-accent hover:text-white">
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

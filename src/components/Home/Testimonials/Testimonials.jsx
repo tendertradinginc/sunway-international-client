@@ -1,20 +1,20 @@
 "use client";
 
-import { PiQuotes } from "react-icons/pi";
-import * as React from "react";
-import Autoplay from "embla-carousel-autoplay";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { PiQuotes } from "react-icons/pi";
 
 export default function Testimonials() {
   const companyQuotes = [
@@ -70,9 +70,7 @@ export default function Testimonials() {
 
   return (
     <MaxWidthWrapper className="py-16">
-      <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-10">
-        Customer Reviews
-      </h1>
+      <SectionTitle title1={"Customer"} title2={"Reviews"}></SectionTitle>
       <Carousel
         opts={{ loop: true }}
         plugins={[
@@ -91,7 +89,7 @@ export default function Testimonials() {
                 <CardContent>
                   <p>{quote.quote}</p>
                 </CardContent>
-                <CardFooter className="flex flex-wrap gap-2 text-nowrap overflow-hidden">
+                <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap">
                   <h5 className="font-medium">- {quote.quoter}</h5>
                   <span>|</span>
                   <p>{quote.date}</p>

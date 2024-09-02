@@ -1,10 +1,9 @@
 "use client";
-import { MdBathtub, MdOutlineListAlt } from "react-icons/md";
-import { RiFirstAidKitFill } from "react-icons/ri";
-import { PiBedBold } from "react-icons/pi";
-import { TfiWheelchair } from "react-icons/tfi";
-import { MdAddShoppingCart } from "react-icons/md";
 import { motion } from "framer-motion";
+import { MdAddShoppingCart, MdBathtub, MdOutlineListAlt } from "react-icons/md";
+import { PiBedBold } from "react-icons/pi";
+import { RiFirstAidKitFill } from "react-icons/ri";
+import { TfiWheelchair } from "react-icons/tfi";
 
 const BannerCategory = () => {
   return (
@@ -12,19 +11,18 @@ const BannerCategory = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
-
         transition={{ duration: 1.2 }}
         className="mb-8 grid grid-cols-1 border-b md:grid-cols-2 lg:grid-cols-6"
       >
         {/* category 1 */}
-        <div className="flex h-36 flex-col items-center justify-center border-r from-[#fbbe24d3] to-[#faca5083] text-white duration-500 hover:bg-gradient-to-r">
+        <div className="duration- flex h-36 flex-col items-center justify-center border-r from-[#fbbe24d3] to-[#faca5083] text-white hover:bg-gradient-to-r">
           <RiFirstAidKitFill className="mb-2 text-6xl text-si-primary" />
           <h1 className="text-md text-center font-semibold text-black">
             Walking Aids Series
           </h1>
         </div>
         {/* category 2 */}
-        <div className="flex h-36 flex-col items-center justify-center border-r from-[#fbbe24d3] to-[#faca5083] text-white duration-500 hover:bg-gradient-to-r">
+        <div className="duration- flex h-36 flex-col items-center justify-center border-r from-[#fbbe24d3] to-[#faca5083] text-white hover:bg-gradient-to-r">
           <MdBathtub className="mb-2 text-6xl text-si-primary" />
           <h1 className="text-md text-center font-semibold text-black">
             Bathroom Safety Series
