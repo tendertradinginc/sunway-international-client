@@ -49,7 +49,7 @@ const BlogCreateButton = ({ setReload }) => {
       const blogData = { ...formData, image: imageUrl };
       console.log(blogData);
       const response = await fetch(
-        "https://sunway-international-server.vercel.app/api/v1/blogs/create-blog",
+        "http://localhost:5000/api/v1/blogs/create-blog",
         {
           method: "POST",
           headers: {

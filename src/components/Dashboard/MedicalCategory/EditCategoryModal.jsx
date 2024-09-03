@@ -44,7 +44,7 @@ const EditCategoryModal = ({ data, setReload, pathName }) => {
       };
 
       const response = await fetch(
-        `https://sunway-international-server.vercel.app/api/v1/${pathName}/${_id}`,
+        `http://localhost:5000/api/v1/${pathName}/${_id}`,
         {
           method: "PUT",
           headers: {

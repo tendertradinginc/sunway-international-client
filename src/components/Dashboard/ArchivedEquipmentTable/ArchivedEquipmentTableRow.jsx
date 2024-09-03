@@ -38,7 +38,7 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+        `http://localhost:5000/api/v1/medicalEquipment/${id}`,
       );
       setReload(true);
       toast.success("Archived Product Deleted Successfully!");
@@ -51,7 +51,7 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
   const handleRestore = async (id) => {
     try {
       await axios.put(
-        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+        `http://localhost:5000/api/v1/medicalEquipment/${id}`,
         {
           archived: false,
         },

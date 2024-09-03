@@ -24,7 +24,7 @@ const MedicalEquipmentPage = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      "https://sunway-international-server.vercel.app/api/v1/medical-category",
+      "http://localhost:5000/api/v1/medical-category",
       {
         cache: "no-cache",
       },

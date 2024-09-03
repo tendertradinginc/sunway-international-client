@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const page = async ({ params }) => {
   const res = await fetch(
-    `https://sunway-international-server.vercel.app/api/v1/blogs/${params?.id}`,
+    `http://localhost:5000/api/v1/blogs/${params?.id}`,
     {
       cache: "no-store",
     },

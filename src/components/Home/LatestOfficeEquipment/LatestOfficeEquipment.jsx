@@ -3,7 +3,7 @@ import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
 const LatestOfficeEquipment = async () => {
   const res = await fetch(
-    "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all",
+    "http://localhost:5000/api/v1/officeEquipment/all",
     {
       cache: "no-store",
     },

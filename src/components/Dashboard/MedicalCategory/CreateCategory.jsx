@@ -43,7 +43,7 @@ const CreateCategory = ({ setReload, pathName }) => {
         image: imageUrl,
       };
       const response = await fetch(
-        `https://sunway-international-server.vercel.app/api/v1/${pathName}/create`,
+        `http://localhost:5000/api/v1/${pathName}/create`,
         {
           method: "POST",
           headers: {

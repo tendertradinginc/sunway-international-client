@@ -43,7 +43,7 @@ const BlogUpdate = ({ data, setReload }) => {
       };
 
       const response = await fetch(
-        `https://sunway-international-server.vercel.app/api/v1/blogs/${_id}`,
+        `http://localhost:5000/api/v1/blogs/${_id}`,
         {
           method: "PUT",
           headers: {
