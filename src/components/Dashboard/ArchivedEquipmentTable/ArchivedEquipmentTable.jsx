@@ -22,7 +22,7 @@ const ArchivedEquipmentTable = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/archive?page=${page}&limit=${limit}`,
+          `http://localhost:5000/api/v1/officeEquipment/archive?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
         setProducts(data?.data);

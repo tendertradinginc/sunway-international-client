@@ -31,7 +31,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
+        `http://localhost:5000/api/v1/officeEquipment/${id}`,
       );
       setReload(true);
       toast.success("Product Deleted Successfully!");
@@ -44,7 +44,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   const handleArchive = async (id) => {
     try {
       const res = await axios.put(
-        `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${id}`,
+        `http://localhost:5000/api/v1/officeEquipment/${id}`,
         {
           archived: true,
         },

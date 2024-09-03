@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <UpdateMedicalEqupment></UpdateMedicalEqupment>
+        <UpdateMedicalEqupment />
       </Suspense>
     </div>
   );

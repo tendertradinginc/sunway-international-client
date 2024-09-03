@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Page = async () => {
   const res = await fetch(
-    "https://sunway-international-server.vercel.app/api/v1/blogs",
+    "http://localhost:5000/api/v1/blogs",
     {
       cache: "no-cache",
     },

@@ -5,7 +5,7 @@ export async function signUpUser(pre, fromData) {
     const formattedData = JSON.stringify(Object.fromEntries(fromData));
 
     const res = await fetch(
-      `https://sunway-international-server.vercel.app/api/v1/users/createuser`,
+      `http://localhost:5000/api/v1/users/createuser`,
       {
         method: "POST",
         headers: {
@@ -26,7 +26,7 @@ export async function loginUser(pre, fromData) {
     const formattedData = JSON.stringify(Object.fromEntries(fromData));
 
     const res = await fetch(
-      `https://sunway-international-server.vercel.app/api/v1/users/login`,
+      `http://localhost:5000/api/v1/users/login`,
       {
         method: "POST",
         headers: {

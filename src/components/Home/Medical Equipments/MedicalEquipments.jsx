@@ -3,7 +3,7 @@ import MedicalEquipmentCard from "@/components/shared/MedicalEquipmentCard/Medic
 
 const MedicalEquipments = async () => {
   const res = await fetch(
-    "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all",
+    "http://localhost:5000/api/v1/medicalEquipment/all",
     { cache: "no-store" },
   );
   const data = await res.json();
