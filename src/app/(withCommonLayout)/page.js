@@ -28,10 +28,10 @@ export default function Home() {
       <MedicalEquipments />
       <ConstructionService />
       <Testimonials />
+      <OurClients />
       <CompanyCertification />
       <ProjectShowcase />
       <AuthorizeDistribution />
-      <OurClients />
       <Chatbot />
     </div>
   );
