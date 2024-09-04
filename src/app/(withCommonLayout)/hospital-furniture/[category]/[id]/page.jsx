@@ -45,12 +45,12 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
       </Breadcrumb>
 
       <Card className="mt-5 min-h-[600px] rounded-none">
-        <CardContent className="flex flex-col gap-5 p-0 lg:flex-row lg:gap-0">
-          <section className="lg:w-1/2">
+        <CardContent className="flex flex-col gap-5">
+          <section className="w-full">
             <ProductImageCarousel images={product?.images || []} />
           </section>
 
-          <section className="w-full p-5 lg:w-1/2">
+          <section className="w-full p-5">
             <h2 className="text-2xl font-bold lg:text-3xl">
               {product?.productName}
             </h2>
@@ -61,9 +61,9 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
             <p className="">{product?.shortDescription}</p>
 
             <div className="mt-5 space-y-1">
-              <h4 className="font-bold">Product Details</h4>
+              <h4 className="font-bold text-lg">Product Details</h4>
               <Markdown
-                className="prose whitespace-nowrap"
+                className="prose max-w-none whitespace-normal break-words"
                 remarkPlugins={[remarkGfm]}
               >
                 {product?.description}
