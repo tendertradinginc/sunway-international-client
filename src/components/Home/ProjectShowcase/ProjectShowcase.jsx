@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -36,24 +37,22 @@ const ProjectShowcase = () => {
   return (
     <div className="py-16">
       <MaxWidthWrapper>
-        <h1 className="text-3xl md:text-5xl font-semibold text-si-primary mb-10">
-          Featured Projects
-        </h1>
+        <SectionTitle title1={"Featured"} title2={"Projects"}></SectionTitle>
       </MaxWidthWrapper>
 
       <div className="relative min-h-[600px] w-full">
         <div
-          className="absolute inset-0 top-0 left-0 bg-cover bg-center bg-fixed w-full h-full bg-no-repeat"
+          className="absolute inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(/solen-feyissa-jGmBZypoFPc-unsplash.jpg)`,
           }}
         >
-          <MaxWidthWrapper className="w-full h-full">
-            <section className="grid grid-cols-2 lg:gap-0 lg:grid-cols-4 h-full w-full p-[5%]">
+          <MaxWidthWrapper className="h-full w-full">
+            <section className="grid h-full w-full grid-cols-2 p-[5%] lg:grid-cols-4 lg:gap-0">
               {projects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-green-500 relative h-full w-full"
+                  className="relative h-full w-full bg-green-500"
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -63,10 +62,10 @@ const ProjectShowcase = () => {
                   >
                     {/* Black overlay */}
                     <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <section className="relative flex flex-col justify-evenly p-6 pt-10 text-muted h-full lg:h-1/2">
+                    <section className="relative flex h-full flex-col justify-evenly p-6 pt-10 text-muted lg:h-1/2">
                       <div className="space-y-1">
                         <p className="text-sm md:text-base">{project.title}</p>
-                        <h4 className="text-base md:text-lg xl:text-xl font-medium">
+                        <h4 className="text-base font-medium md:text-lg xl:text-xl">
                           {project.description}
                         </h4>
                       </div>

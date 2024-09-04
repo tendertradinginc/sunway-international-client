@@ -1,27 +1,26 @@
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { customLoader } from "@/utils/customLoader";
+import Image from "next/image";
 import Link from "next/link";
+import { RiMenu3Line } from "react-icons/ri";
 import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
 import NavItems from "./NavItems";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { RiMenu3Line } from "react-icons/ri";
 
 const Navbar = () => {
   return (
-    <nav className="py-2.5 border-b ">
-      <MaxWidthWrapper className="flex justify-between items-center">
+    <nav className="border-b py-2.5">
+      <MaxWidthWrapper className="flex items-center justify-between">
         <Link href="/">
-          <h3 className="text-xl xl:text-2xl font-bold">
-            Twin Trade Int.
-          </h3>
+          <Image
+            loader={customLoader}
+            src="https://i.ibb.co/MZfwXL1/7-removebg-preview.png"
+            width={80}
+            height={80}
+            alt=""
+          />
         </Link>
 
-        <div className="hidden md:block">
+        <div clasName="hidden md:block">
           <NavItems />
         </div>
 
@@ -30,7 +29,7 @@ const Navbar = () => {
             <RiMenu3Line className="size-5" />
           </SheetTrigger>
           <SheetContent>
-            <NavItems/>
+            <NavItems />
           </SheetContent>
         </Sheet>
       </MaxWidthWrapper>
