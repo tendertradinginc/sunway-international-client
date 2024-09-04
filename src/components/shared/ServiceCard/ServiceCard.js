@@ -53,12 +53,8 @@ const ServiceCard = ({ data, index }) => {
           </div>
         </div>
       </div>
-      <div className="bg-secondary px-2 py-8 text-justify font-medium text-si-text">
-        <h2 className="py-2 text-xl font-bold text-si-primary">
-          {" "}
-          {data?.title2}
-        </h2>
-        <p>{data?.description}</p>
+      <div className="bg-secondary p-8 font-medium text-si-text">
+        <p className=" line-clamp-4">{data?.description}</p>
       </div>
     </motion.div>
   );

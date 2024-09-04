@@ -14,15 +14,7 @@ const ContructionService = () => {
             Hospital Construction Solutions
           </h1>
           <p className="text-justify mt-8 text-si-text font-medium ">
-            Here is a comprehensive description for the hospital construction
-            section: Comprehensive Hospital Construction Solutions At Sunrise
-            International, we specialize in delivering end-to-end hospital
-            construction services that meet the highest standards of healthcare
-            infrastructure. From initial planning and design to construction and
-            final handover, our experienced team ensures that every project is
-            tailored to the specific needs of healthcare providers. We focus on
-            creating functional, safe, and sustainable environments that enhance
-            patient care and operational efficiency. 
+          <span className="text-si-accent font-bold">Twin Trade International's</span> Hospital construction services is a specialized division focused on enhancing the physical environment of healthcare facilities. This service oversees building construction, ensuring that new hospital infrastructures are developed with state-of-the-art technology and adhere to rigorous safety standards. It collaborates closely with architectural design experts to create spaces that are both functional and aesthetically pleasing, supporting the complex needs of healthcare providers and patients. This includes everything from the layout of patient rooms and operating theaters to the design of communal areas that promote healing and well-being.
           </p>
           <ul className="mt-5 max-w-96">
             <li className="flex items-center text-xl font-semibold py-3 border-b border-gray-300 gap-2"> <FaRegArrowAltCircleRight className="text-si-accent text-2xl" /> Bulding Contruction</li>
@@ -40,7 +32,7 @@ const ContructionService = () => {
                 height={700}
                 width={700}
                 className="ml-10 md:ml-20 h-[90%] w-[85%]"
-                src="https://i.postimg.cc/B6QtzWFQ/daniel-hay-7-B5-UEn4al-LU-unsplash-1.jpg"
+                src="https://i.postimg.cc/LsMTW5YQ/Gemini-Generated-Image-abdmh9abdmh9abdm.jpg"
                 alt="contruction image"
               />
             </div>
