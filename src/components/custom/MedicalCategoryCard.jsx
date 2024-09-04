@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+
 import EquipmentCard from "../shared/EquipmentCard/EquipmentCard";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 

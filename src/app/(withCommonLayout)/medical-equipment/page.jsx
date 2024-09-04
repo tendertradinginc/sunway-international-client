@@ -15,15 +15,18 @@ import { TbAirConditioning, TbAirConditioningDisabled } from "react-icons/tb";
 
 const MedicalEquipmentPage = async () => {
   //* Fetching Category data
-  let res = await fetch("http://localhost:5000/api/v1/medical-category", {
-    cache: "no-store",
-  });
+  let res = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/medical-category",
+    {
+      cache: "no-store",
+    },
+  );
   const data = await res.json();
   const categories = await data?.data?.result;
 
   //* Fetching MAIN Data
   let res2 = await fetch(
-    "http://localhost:5000/api/v1/medicalEquipment/all-category",
+    "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all-category",
     {
       cache: "no-store",
     },
@@ -32,7 +35,6 @@ const MedicalEquipmentPage = async () => {
   const res2Json = await res2.json();
   const mainData = res2Json?.data;
 
-  console.log(categories[0]);
 
   return (
     <div className="bg-secondary">
