@@ -8,9 +8,9 @@ import { AiFillDatabase } from "react-icons/ai";
 import { CgSpinnerAlt } from "react-icons/cg";
 import { toast } from "sonner";
 import PaginationBlog from "../../shared/pagination/PaginationShadcn";
-import OfficeEquipmentTableRow from "./OfficeEquipmentTableRow";
+import HospitalFurnitureTableRow from "./HospitalFurnitureTableRow";
 
-const OfficeEquipmentTable = () => {
+const HospitalFurnitureTable = () => {
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ const OfficeEquipmentTable = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
         setProducts(data?.data?.result);
@@ -50,11 +50,11 @@ const OfficeEquipmentTable = () => {
             <div className="flex items-center justify-between pb-6">
               <h2 className="text-2xl font-semibold text-si-primary">
                 <AiFillDatabase className="mb-1 inline" />
-                Office Equipment List
+                Hospital Furniture List
               </h2>
               <Button asChild>
-                <Link href="/dashboard/add-office-equipment">
-                  Add Office Equipment{" "}
+                <Link href="/dashboard/add-hospital-furniture">
+                  Add Hospital Furniture
                   <PlusCircleIcon className="ml-2 size-5" />
                 </Link>
               </Button>
@@ -82,7 +82,7 @@ const OfficeEquipmentTable = () => {
                   <tbody className="border text-center">
                     {products?.length > 0
                       ? products.map((product, index) => (
-                          <OfficeEquipmentTableRow
+                          <HospitalFurnitureTableRow
                             key={product?._id}
                             index={index}
                             data={product}
@@ -114,4 +114,4 @@ const OfficeEquipmentTable = () => {
   );
 };
 
-export default OfficeEquipmentTable;
+export default HospitalFurnitureTable;

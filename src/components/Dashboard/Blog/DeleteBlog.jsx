@@ -21,7 +21,7 @@ const DeleteBlog = ({ id, setReload }) => {
     const toastId = toast.loading("Loading...");
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/blogs/${id}`,
+        `https://sunway-international-server.vercel.app/api/v1/blogs/${id}`,
       );
       if (response.status === 200) {
         setIsOpen(false);

@@ -10,13 +10,16 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { format } from "date-fns";
+import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const MedicalEquipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/medicalEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${params?.id}`,
   ).then((res) => res.json());
   const product = data?.data || {};
 
@@ -56,7 +59,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                 {product?.productName}
               </h2>
 
-              <div className="mt-4 space-y-2 text-foreground">
+              <div className="my-5 grid grid-cols-1 space-y-2 break-all text-foreground md:grid-cols-2 lg:grid-cols-4">
                 <p>
                   <span className="font-bold">Unique ID:</span>{" "}
                   {product?.uniqueId}
@@ -95,7 +98,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                 {product?.dateOfManufacture && (
                   <p>
                     <span className="font-bold">Date of Manufacture:</span>{" "}
-                    {new Date(product?.dateOfManufacture).toLocaleDateString()}
+                    {format(product?.dateOfManufacture, "dd MMM, yyyy")}
                   </p>
                 )}
                 {product?.warrantyPeriod && (
@@ -113,13 +116,33 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
               </div>
 
               <Markdown
-                className="prose whitespace-nowrap"
+                className="prose max-w-none whitespace-normal break-words"
                 remarkPlugins={[remarkGfm]}
               >
                 {product?.description}
               </Markdown>
 
-              <Button className="mt-5">Contact For Price</Button>
+              <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+                {product?.productTable && (
+                  <Markdown
+                    className="prose whitespace-nowrap p-2"
+                    remarkPlugins={[remarkGfm]}
+                  >
+                    {product?.productTable}
+                  </Markdown>
+                )}
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+
+              <div className="mt-5 flex flex-wrap items-center gap-5">
+                <Button className="mt-5">
+                  Contact For Price <PhoneIcon className="ml-2 size-5" />
+                </Button>
+                <Button className="mt-5">
+                  Download Catalogue{" "}
+                  <ArrowDownToLineIcon className="ml-2 size-5" />
+                </Button>
+              </div>
             </section>
           </CardContent>
         </Card>

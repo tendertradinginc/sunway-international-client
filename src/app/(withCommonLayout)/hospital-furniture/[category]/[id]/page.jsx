@@ -10,13 +10,14 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const OfficeEqipmentDetailsPage = async ({ params }) => {
+const HospitalFurnitureDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
 
   const product = data?.data || {};
@@ -33,7 +34,7 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/office-equipment">Office Equipment</Link>
+              <Link href="/hospital-furniture">Hospital Furniture</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
@@ -69,7 +70,15 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
               </Markdown>
             </div>
 
-            <Button className="mt-5">Contact For Price</Button>
+            <div className="mt-5 flex flex-wrap items-center gap-5">
+              <Button className="mt-5">
+                Contact For Price <PhoneIcon className="ml-2 size-5" />
+              </Button>
+              <Button className="mt-5">
+                Download Catalogue{" "}
+                <ArrowDownToLineIcon className="ml-2 size-5" />
+              </Button>
+            </div>
           </section>
         </CardContent>
       </Card>
@@ -77,4 +86,4 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
   );
 };
 
-export default OfficeEqipmentDetailsPage;
+export default HospitalFurnitureDetailsPage;

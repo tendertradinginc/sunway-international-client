@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
@@ -28,6 +29,7 @@ const AddMedicalEquipmentPage = () => {
     serialNumber: "",
     manufacturer: "",
     regulatoryApproval: "",
+    productTable: "",
     maintenanceSchedule: "",
     images: [],
     shortDescription: "",
@@ -73,11 +75,9 @@ const AddMedicalEquipmentPage = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:5000/api/v1/medicalEquipment/create",
+        "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/create",
         completeFormData,
       );
-
-      console.log(res);
 
       if (res.status === 201) {
         toast.success("Medical Equipment Added Successfully!");
@@ -90,6 +90,7 @@ const AddMedicalEquipmentPage = () => {
           manufacturer: "",
           regulatoryApproval: "",
           maintenanceSchedule: "",
+          productTable: "",
           images: [],
           shortDescription: "",
           description: "",
@@ -227,8 +228,9 @@ const AddMedicalEquipmentPage = () => {
                 />
               </div>
 
-              {/* Full Description */}
+              {/* Description */}
               <div className="mt-4">
+                {/* Full Description */}
                 <Label className="mb-2 block">Description</Label>
                 <Textarea
                   name="description"
@@ -237,12 +239,38 @@ const AddMedicalEquipmentPage = () => {
                   required
                   className="min-h-64"
                 />
+
+                {/* Description Table */}
+                <Label className="mb-2 mt-4 block">Description Table</Label>
+                <Textarea
+                  name="productTable"
+                  value={formData.productTable}
+                  onChange={handleInputChange}
+                  required
+                  className="min-h-64"
+                />
+              </div>
+
+              {/* Markdown render */}
+              <div className="mt-5">
                 <Markdown
-                  className="prose whitespace-nowrap"
+                  className="prose max-w-none whitespace-normal break-words"
                   remarkPlugins={[remarkGfm]}
                 >
-                  {formData.description}
+                  {formData?.description}
                 </Markdown>
+
+                <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+                  {formData?.productTable && (
+                    <Markdown
+                      className="prose whitespace-nowrap p-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {formData?.productTable}
+                    </Markdown>
+                  )}
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
               </div>
 
               {/* Image Upload */}

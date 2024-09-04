@@ -1,9 +1,12 @@
+"use client";
 import BlogTable from "@/components/Dashboard/Blog/BlogTable";
-
+import { Suspense } from "react";
 const blogPage = () => {
   return (
     <div className="w-full p-5 md:p-10">
-      <BlogTable />
+      <Suspense fallback={<div>Loading...</div>}>
+        <BlogTable />
+      </Suspense>
     </div>
   );
 };

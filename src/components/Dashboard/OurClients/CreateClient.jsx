@@ -54,10 +54,8 @@ const CreateClient = () => {
         image: imageUrl,
       };
 
-      console.log("Submitting data:", clientsData); // Check the data being sent
-
       const response = await fetch(
-        "http://localhost:5000/api/v1/client/create",
+        "https://sunway-international-server.vercel.app/api/v1/client/create",
         {
           method: "POST",
           headers: {
@@ -74,7 +72,7 @@ const CreateClient = () => {
       // }
 
       const data = await response.json();
-      console.log(data);
+
       // Handle success or failure based on the response data
       if (data.success === true) {
         toast.success("Client created successfully!");

@@ -1,3 +1,5 @@
+"use client";
+import { logOut } from "@/app/(withCommonLayout)/action/authAction";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,19 +12,24 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 // import { usePathname } from "next/navigation";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoIosLogOut } from "react-icons/io";
 
 const SideNavbar = () => {
   // const pathname = usePathname();
+  const router = useRouter();
   let user;
   const isDropdownItemActive = (dropdownItems) => {
     return dropdownItems.some((item) => location.pathname === item.href);
   };
 
   const handleLogOut = async () => {
-    // await logout();
+    console.log("object");
+    await logOut();
+    // setUser(null);
+    router.push("/");
   };
 
   const links = [
@@ -30,13 +37,14 @@ const SideNavbar = () => {
     { id: 2, href: "/dashboard", label: "Dashboard" },
     {
       id: 3,
-      href: "/dashboard/office-equipment-table",
-      label: "Office Equipment",
+      href: "/dashboard/hospital-furniture-table",
+      label: "Hospital Furniture",
     },
+
     {
       id: 4,
-      href: "/dashboard/add-office-equipment",
-      label: "Add Office Equipment",
+      href: "/dashboard/add-hospital-furniture",
+      label: "Add Hospital Furniture",
     },
     {
       id: 5,
@@ -47,6 +55,11 @@ const SideNavbar = () => {
       id: 6,
       href: "/dashboard/add-medical-equipment",
       label: "Add Medical Equipment",
+    },
+    {
+      id: 34,
+      href: "/dashboard/archived-equipment-table",
+      label: "Archived Equipment",
     },
     { id: 7, href: "/dashboard/blog-page", label: "Blog" },
     {
@@ -95,7 +108,7 @@ const SideNavbar = () => {
         <Button
           className="mt-5 w-full gap-2"
           variant="destructive"
-          // onClick={handleLogOut}
+          onClick={handleLogOut}
         >
           Logout <IoIosLogOut size={25} />
         </Button>
@@ -119,7 +132,7 @@ const SideNavbar = () => {
               <Button
                 className="my-5 w-full gap-2"
                 variant="destructive"
-                // onClick={logout}
+                onClick={handleLogOut}
               >
                 Logout <IoIosLogOut size={25} />
               </Button>
@@ -159,7 +172,7 @@ const SideNavbar = () => {
                 <Button
                   className="my-1 w-full gap-2"
                   variant="destructive"
-                  // onClick={logout}
+                  onClick={handleLogOut}
                 >
                   Logout <IoIosLogOut size={25} />
                 </Button>

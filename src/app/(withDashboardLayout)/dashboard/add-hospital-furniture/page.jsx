@@ -16,7 +16,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const AddOfficeEquipmentPage = () => {
+const AddHospitalFurniturePage = () => {
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -59,9 +59,14 @@ const AddOfficeEquipmentPage = () => {
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        category: category,
+      };
+
       const res = await axios.post(
-        "http://localhost:5000/api/v1/officeEquipment/create",
-        formData,
+        "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
+        updatedFormData,
       );
 
       if (res.status === 201) {
@@ -90,7 +95,7 @@ const AddOfficeEquipmentPage = () => {
         <Card className="rounded-none border-2">
           <CardHeader>
             <CardTitle className="text-center text-4xl">
-              Add Office Equipment
+              Add Hospital Furniture
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -217,4 +222,4 @@ const AddOfficeEquipmentPage = () => {
   );
 };
 
-export default AddOfficeEquipmentPage;
+export default AddHospitalFurniturePage;

@@ -43,7 +43,7 @@ const CreateCategory = ({ setReload, pathName }) => {
         image: imageUrl,
       };
       const response = await fetch(
-        `http://localhost:5000/api/v1/${pathName}/create`,
+        `https://sunway-international-server.vercel.app/api/v1/${pathName}/create`,
         {
           method: "POST",
           headers: {
@@ -52,7 +52,6 @@ const CreateCategory = ({ setReload, pathName }) => {
           body: JSON.stringify(categoryData),
         },
       );
-      console.log(response);
 
       if (response?.ok) {
         toast("Category Created successfully");

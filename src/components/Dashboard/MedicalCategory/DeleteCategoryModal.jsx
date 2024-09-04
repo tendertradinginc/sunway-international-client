@@ -20,9 +20,9 @@ const DeleteCategoryModal = ({ data, setReload, pathName }) => {
   const handleCategoryDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/v1/${pathName}/${id}`,
+        `https://sunway-international-server.vercel.app/api/v1/${pathName}/${id}`,
       );
-      console.log(response);
+
       if (response.status === 200) {
         setIsOpen(false);
 
