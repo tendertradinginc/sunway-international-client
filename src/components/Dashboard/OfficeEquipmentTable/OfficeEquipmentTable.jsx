@@ -24,7 +24,7 @@ const OfficeEquipmentTable = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/all?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
         setProducts(data?.data?.result);

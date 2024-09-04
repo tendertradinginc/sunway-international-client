@@ -14,7 +14,7 @@ const MedicalCategoryCard = () => {
 
   useEffect(() => {
     fetch(
-      "http://localhost:5000/api/v1/medicalEquipment/all-category",
+      "https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all-category",
       {
         cache: "no-store",
       },
