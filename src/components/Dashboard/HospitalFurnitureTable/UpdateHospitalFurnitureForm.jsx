@@ -16,7 +16,9 @@ import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
-const UpdateOfficeEquipmentForm = () => {
+
+
+const UpdateHospitalFurnitureForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
@@ -121,7 +123,7 @@ const UpdateOfficeEquipmentForm = () => {
         <Card className="rounded-none border-2">
           <CardHeader>
             <CardTitle className="text-center text-4xl">
-              Update Office Equipment
+              Update Hospital Furniture
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -249,4 +251,4 @@ const UpdateOfficeEquipmentForm = () => {
   );
 };
 
-export default UpdateOfficeEquipmentForm;
+export default UpdateHospitalFurnitureForm;

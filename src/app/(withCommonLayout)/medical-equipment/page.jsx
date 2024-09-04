@@ -35,6 +35,7 @@ const MedicalEquipmentPage = async () => {
   const res2Json = await res2.json();
   const mainData = res2Json?.data;
 
+
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
@@ -63,12 +64,12 @@ const MedicalEquipmentPage = async () => {
               >
                 <span className="inline-flex items-center p-2 font-semibold">
                   <Image
+                    src={item?.image}
+                    alt="category icon"
                     loader={customLoader}
                     className="mr-3 h-7 w-7"
                     height={25}
                     width={25}
-                    alt="category icon"
-                    src={item?.image}
                   />{" "}
                   {item?.name}
                 </span>
