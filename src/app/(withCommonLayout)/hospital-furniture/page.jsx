@@ -9,7 +9,6 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { Input } from "@/components/ui/input";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -24,7 +23,7 @@ import {
   PiProjectorScreenChart,
 } from "react-icons/pi";
 
-const OfficeEquipmentPage = () => {
+const HospitalFurniturePage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -46,7 +45,7 @@ const OfficeEquipmentPage = () => {
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
-        Office Equipment
+        Hospital Furniture
       </h2>
 
       {/* Advertisement section */}
@@ -114,73 +113,63 @@ const OfficeEquipmentPage = () => {
             </Link>
           </div>
         </div>
-        <div className="flex w-full flex-col gap-5">
-          {/* Advertisement Carousel */}
-          <Carousel
-            opts={{ loop: true }}
-            plugins={[
-              Autoplay({
-                delay: 4500,
-              }),
-            ]}
-            className="w-full"
-          >
-            <CarouselContent className="ml-0 w-full">
-              <CarouselItem className="h-[300px] w-full pl-0">
-                <div className="relative h-[300px] w-full">
-                  <Image
-                    src="/DALL·E 2024-08-20 11.18.51 - An advertisement image promoting an ergonomic office chair. The chair is modern and sleek with adjustable features and lumbar support, designed for co.webp"
-                    alt="Advertisement"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-              </CarouselItem>
 
-              <CarouselItem className="h-[300px] w-full pl-0">
-                <div className="relative h-[300px] w-full">
-                  <Image
-                    src="/DALL·E 2024-08-20 11.18.53 - An advertisement image promoting a modern office desk. The desk is sleek with a minimalist design, featuring a large workspace, integrated cable manag.webp"
-                    alt="Advertisement"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-              </CarouselItem>
+        {/* Advertisement Carousel */}
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 4500,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="ml-0 w-full">
+            <CarouselItem className="h-[350px] w-full pl-0">
+              <div className="relative h-[350px] w-full">
+                <Image
+                  src="/DALL·E 2024-08-20 11.18.51 - An advertisement image promoting an ergonomic office chair. The chair is modern and sleek with adjustable features and lumbar support, designed for co.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
 
-              <CarouselItem className="h-[300px] w-full pl-0">
-                <div className="relative h-[300px] w-full">
-                  <Image
-                    src="/DALL·E 2024-08-20 11.42.33 - A professional advertisement poster focused on a high-quality projector in a modern office setting. The projector is placed on one side of the poster,.webp"
-                    alt="Advertisement"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-              </CarouselItem>
+            <CarouselItem className="h-[350px] w-full pl-0">
+              <div className="relative h-[350px] w-full">
+                <Image
+                  src="/DALL·E 2024-08-20 11.18.53 - An advertisement image promoting a modern office desk. The desk is sleek with a minimalist design, featuring a large workspace, integrated cable manag.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
 
-              <CarouselItem className="h-[300px] w-full pl-0">
-                <div className="relative h-[300px] w-full">
-                  <Image
-                    src="/DALL·E 2024-08-20 11.42.39 - A sleek advertisement poster for office equipment featuring high-quality projectors and printers. The scene showcases a modern office setting with the.webp"
-                    alt="Advertisement"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-          </Carousel>
+            <CarouselItem className="h-[350px] w-full pl-0">
+              <div className="relative h-[350px] w-full">
+                <Image
+                  src="/DALL·E 2024-08-20 11.42.33 - A professional advertisement poster focused on a high-quality projector in a modern office setting. The projector is placed on one side of the poster,.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
 
-          {/* Search bar */}
-
-          <Input
-            type="text"
-            name="search"
-            placeholder="Search For Products..."
-            className="bg-background"
-          />
-        </div>
+            <CarouselItem className="h-[350px] w-full pl-0">
+              <div className="relative h-[350px] w-full">
+                <Image
+                  src="/DALL·E 2024-08-20 11.42.39 - A sleek advertisement poster for office equipment featuring high-quality projectors and printers. The scene showcases a modern office setting with the.webp"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </MaxWidthWrapper>
 
       <MaxWidthWrapper className="min-h-[50vh] overflow-x-hidden py-16">
@@ -197,7 +186,7 @@ const OfficeEquipmentPage = () => {
                     {categoryName}
                   </CardTitle>
                   <Button asChild>
-                    <Link href={`/office-equipment/${categoryName}`}>
+                    <Link href={`/hospital-furniture/${categoryName}`}>
                       View More <DoubleArrowRightIcon className="ml-2 size-5" />
                     </Link>
                   </Button>
@@ -209,7 +198,7 @@ const OfficeEquipmentPage = () => {
                     <div key={index}>
                       <EquipmentCard
                         data={item}
-                        navigateTo={`/office-equipment/${categoryName}/${item?._id}`}
+                        navigateTo={`/hospital-furniture/${categoryName}/${item?._id}`}
                       />
                     </div>
                   );
@@ -223,4 +212,4 @@ const OfficeEquipmentPage = () => {
   );
 };
 
-export default OfficeEquipmentPage;
+export default HospitalFurniturePage;

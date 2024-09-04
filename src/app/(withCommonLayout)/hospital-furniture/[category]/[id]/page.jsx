@@ -15,7 +15,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const OfficeEqipmentDetailsPage = async ({ params }) => {
+const HospitalFurnitureDetailsPage = async ({ params }) => {
   const data = await fetch(
     `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
@@ -34,7 +34,7 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/office-equipment">Office Equipment</Link>
+              <Link href="/hospital-furniture">Hospital Furniture</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
@@ -86,4 +86,4 @@ const OfficeEqipmentDetailsPage = async ({ params }) => {
   );
 };
 
-export default OfficeEqipmentDetailsPage;
+export default HospitalFurnitureDetailsPage;

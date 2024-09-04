@@ -26,7 +26,7 @@ const LatestOfficeEquipment = async () => {
             <div key={index}>
               <EquipmentCard
                 data={item}
-                navigateTo={`/office-equipment/${item?.category}/${item?._id}`}
+                navigateTo={`/hospital-furniture/${item?.category}/${item?._id}`}
               />
             </div>
           );

@@ -36,7 +36,9 @@ const NavItems = ({ className }) => {
             key={link.id}
             className={cn(pathname === link.url ? "underline" : "")}
           >
-            <Link href={link.url} className="font-semibold">{link.label}</Link>
+            <Link href={link.url} className="font-semibold">
+              {link.label}
+            </Link>
           </Button>
         ))}
       </div>
@@ -46,7 +48,7 @@ const NavItems = ({ className }) => {
           <Button
             variant="link"
             className={cn(
-              pathname === "/office-equipment" ||
+              pathname === "/hospital-furniture" ||
                 pathname === "/medical-equipment"
                 ? "underline"
                 : "",
@@ -57,7 +59,7 @@ const NavItems = ({ className }) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem asChild>
-            <Link href="/office-equipment">Office Equipment</Link>
+            <Link href="/hospital-furniture">Hospital Furniture</Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>

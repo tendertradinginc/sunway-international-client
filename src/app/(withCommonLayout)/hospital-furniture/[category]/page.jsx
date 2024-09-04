@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-const OfficeEquipmentCategoryPage = ({ params }) => {
+const HospitalFurnitureCategoryPage = ({ params }) => {
   const [equipment, setEquipment] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,7 +57,7 @@ const OfficeEquipmentCategoryPage = ({ params }) => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/office-equipment">Office Equipment</Link>
+                <Link href="/hospital-furniture">Hospital Furniture</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -85,7 +85,7 @@ const OfficeEquipmentCategoryPage = ({ params }) => {
             <div key={item._id}>
               <EquipmentCard
                 data={item}
-                navigateTo={`/office-equipment/${params.category}/${item._id}`}
+                navigateTo={`/hospital-furniture/${params.category}/${item._id}`}
               />
             </div>
           ))
@@ -99,4 +99,4 @@ const OfficeEquipmentCategoryPage = ({ params }) => {
   );
 };
 
-export default OfficeEquipmentCategoryPage;
+export default HospitalFurnitureCategoryPage;
