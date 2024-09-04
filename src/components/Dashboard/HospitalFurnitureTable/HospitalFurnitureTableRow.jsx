@@ -18,7 +18,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
+const HospitalFurnitureTableRow = ({ data, index, setReload }) => {
   const {
     _id,
     productName,
@@ -105,7 +105,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
                 </section>
 
                 <Button asChild className="mt-5">
-                  <Link href={`/dashboard/update-office-equipment?id=${_id}`}>
+                  <Link href={`/dashboard/update-hospital-furniture?id=${_id}`}>
                     Update Product
                   </Link>
                 </Button>
@@ -121,7 +121,7 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
           className="hover:text-si-primary"
           asChild
         >
-          <Link href={`/dashboard/update-office-equipment?id=${_id}`}>
+          <Link href={`/dashboard/update-hospital-furniture?id=${_id}`}>
             <Pencil className="size-5" />
           </Link>
         </Button>
@@ -196,4 +196,4 @@ const OfficeEquipmentTableRow = ({ data, index, setReload }) => {
   );
 };
 
-export default OfficeEquipmentTableRow;
+export default HospitalFurnitureTableRow;

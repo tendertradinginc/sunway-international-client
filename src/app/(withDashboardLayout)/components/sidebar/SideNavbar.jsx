@@ -37,14 +37,14 @@ const SideNavbar = () => {
     { id: 2, href: "/dashboard", label: "Dashboard" },
     {
       id: 3,
-      href: "/dashboard/office-equipment-table",
-      label: "Office Equipment",
+      href: "/dashboard/hospital-furniture-table",
+      label: "Hospital Furniture",
     },
 
     {
       id: 4,
-      href: "/dashboard/add-office-equipment",
-      label: "Add Office Equipment",
+      href: "/dashboard/add-hospital-furniture",
+      label: "Add Hospital Furniture",
     },
     {
       id: 5,

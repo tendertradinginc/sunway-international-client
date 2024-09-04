@@ -1,7 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 
-const LatestOfficeEquipment = async () => {
+const LatestHospitalFurniture = async () => {
   const res = await fetch(
     "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all",
     {
@@ -36,4 +36,4 @@ const LatestOfficeEquipment = async () => {
   );
 };
 
-export default LatestOfficeEquipment;
+export default LatestHospitalFurniture;
