@@ -1,4 +1,3 @@
-"use client";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import MedicalCategoryCard from "@/components/custom/MedicalCategoryCard";
 import {
@@ -8,42 +7,31 @@ import {
 } from "@/components/ui/carousel";
 import { customLoader } from "@/utils/customLoader";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { CgSpinnerAlt } from "react-icons/cg";
 import { GiMedicalDrip } from "react-icons/gi";
 import { PiFaceMaskLight } from "react-icons/pi";
 import { TbAirConditioning, TbAirConditioningDisabled } from "react-icons/tb";
 
-const MedicalEquipmentPage = () => {
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(false);
+const MedicalEquipmentPage = async () => {
+  //* Fetching Category data
+  let res = await fetch("http://localhost:5000/api/v1/medical-category", {
+    cache: "no-store",
+  });
+  const data = await res.json();
+  const categories = await data?.data?.result;
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(
-      "http://localhost:5000/api/v1/medical-category",
-      {
-        cache: "no-cache",
-      },
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setCategories(data.data.result);
-      });
-  }, []);
-  if (loading) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <span className="animate-spin">
-          <CgSpinnerAlt className="size-10" />
-        </span>
-      </div>
-    );
-  }
+  //* Fetching MAIN Data
+  let res2 = await fetch(
+    "http://localhost:5000/api/v1/medicalEquipment/all-category",
+    {
+      cache: "no-store",
+    },
+  );
+
+  const res2Json = await res2.json();
+  const mainData = res2Json?.data;
+
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
@@ -88,15 +76,7 @@ const MedicalEquipmentPage = () => {
 
         <div className="col-span-12 row-span-12 flex w-full flex-col gap-5 lg:col-span-9">
           {/* Advertisement Carousel */}
-          <Carousel
-            opts={{ loop: true }}
-            plugins={[
-              Autoplay({
-                delay: 4500,
-              }),
-            ]}
-            className="w-full"
-          >
+          <Carousel opts={{ loop: true }} autoplay className="w-full">
             <CarouselContent className="ml-0 w-full">
               <CarouselItem className="p-0">
                 <div className="relative h-[300px] w-full">
@@ -152,7 +132,7 @@ const MedicalEquipmentPage = () => {
         </div>
       </MaxWidthWrapper>
 
-      <MedicalCategoryCard />
+      <MedicalCategoryCard data={mainData} />
     </div>
   );
 };
