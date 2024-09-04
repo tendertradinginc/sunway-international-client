@@ -29,12 +29,19 @@ export default function Home() {
       <Services />
       <hr />
       <ConstructionService />
+      <hr />
       <CountUP />
+      <hr />
       <Testimonials />
+      <hr />
       <CompanyCertification />
+      <hr />
       <ProjectShowcase />
+      <hr />
       <AuthorizeDistribution />
+      <hr />
       <OurClients />
+      <hr />
       <Chatbot />
     </div>
   );

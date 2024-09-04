@@ -43,8 +43,7 @@ const data = [
     description:
       " Contruction in the process of constructing a building or  infrastructure. Contruction differs from manufacturing typically involves mass production of similar items a designated purchaser.",
     url: "",
-    imageUrl:
-      "https://i.postimg.cc/6pXVVBS1/marcel-scholte-LPur-Jnihm-QI-unsplash.jpg",
+    imageUrl: "https://i.ibb.co/HpmNXzG/Medical-Devices.jpg",
   },
   {
     icon: <FaWheelchair />,
@@ -57,6 +56,6 @@ const data = [
     description:
       " Contruction in the process of constructing a building or  infrastructure. Contruction differs from manufacturing typically involves mass production of similar items a designated purchaser.",
     url: "",
-    imageUrl: "https://i.ibb.co/yNrVjVL/pexels-pixabay-236380-1.jpg",
+    imageUrl: "https://i.ibb.co/xG2JvQf/Hospital-Furniture.jpg",
   },
 ];
