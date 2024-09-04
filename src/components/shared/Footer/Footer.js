@@ -24,7 +24,7 @@ const Footer = () => {
                   height={50}
                   width={100}
                   alt="Twin Trade Int. logo footer"
-                  src="https://i.postimg.cc/8C7Cvrf1/imagessunwayfakelogo-removebg-preview.png"
+                  src="https://i.ibb.co/MZfwXL1/7-removebg-preview.png"
                 />{" "}
                 Twind
                 <br /> Trade Int
