@@ -52,7 +52,7 @@ const ServiceCard = ({ data, index }) => {
         </div>
       </div>
       <div className="bg-secondary p-8 font-medium text-si-text">
-        <p>{data?.description}</p>
+        <p className=" line-clamp-4">{data?.description}</p>
       </div>
     </motion.div>
   );
