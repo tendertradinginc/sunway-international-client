@@ -15,39 +15,43 @@ const MedicalInstrument = () => {
   const products = [
     {
       name: "",
+      image:
+        "https://i.postimg.cc/5NhTxxQL/Gemini-Generated-Image-50apzz50apzz50ap.jpg",
+    },
+
+    {
+      name: "",
+      image: "https://i.postimg.cc/CxbKLd4w/ot-Table-1.jpg",
+    },
+    {
+      name: "",
+      image:
+        "https://i.postimg.cc/nVvKKm68/y-Fp-OUyfj-JOEk-ZA-XYZxyu-transformed.webp",
+    },
+    {
+      name: "",
+      image:
+        "https://i.postimg.cc/XvfbMr2r/Gemini-Generated-Image-axc54waxc54waxc5.jpg",
+    },
+    {
+      name: "",
+      image:
+        "https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+
+    {
+      name: "",
+      image:
+        "https://i.postimg.cc/FsYXrWW5/Gemini-Generated-Image-qtn41hqtn41hqtn4.jpg",
+    },
+    {
+      name: "",
       image: "https://i.postimg.cc/2643DDmR/pexels-pixabay-236380-1-1.jpg",
     },
     {
       name: "",
-      image: "https://i.postimg.cc/wT92nxHz/pexels-pixabay-40568-1.jpg",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/397978/pexels-photo-397978.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "",
-      image: "https://i.postimg.cc/2643DDmR/pexels-pixabay-236380-1-1.jpg",
-    },
-    {
-      name: "",
-      image: "https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:
+        "https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
   ];
 
@@ -57,25 +61,24 @@ const MedicalInstrument = () => {
         backgroundImage:
           "url('https://i.postimg.cc/vHrbjpP2/artbreeder-image-2024-09-01-T08-52-07-444-Z.jpg')",
       }}
-      className="min-h-[500px] w-full my-10 bg-cover bg-center bg-no-repeat bg-fixed mt-40"
+      className="my-10 mt-40 min-h-[500px] w-full bg-cover bg-fixed bg-center bg-no-repeat"
     >
       <div
         style={{ height: "100%", width: "100%" }}
-        className="bg-[#0000005e] min-h-[500px] h-full w-full backdrop-blur-sm  py-10"
+        className="h-full min-h-[500px] w-full bg-[#0000005e] py-10 backdrop-blur-sm"
       >
         <MaxWidthWrapper>
-          <div className="py-10 max-w-4xl mx-auto ">
-            <h1 className="text-3xl md:text-5xl font-bold  text-white text-center ">
-              Regular Equipment
+          <div className="mx-auto max-w-4xl py-10">
+            <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
+              Medical Equipment
             </h1>
-            <p className="text-center mt-5 text-gray-300  font-semibold ">
-              Here is a comprehensive description for the hospital construction
-              section: Comprehensive Hospital Construction Solutions At Sunrise
-              International, we specialize in delivering end-to-end hospital
-              construction services that meet the highest standards of
-              healthcare infrastructure. From initial planning and design to
-              construction and final handover, our experienced team ensures that
-              every project is
+            <p className="mt-5 text-center font-semibold text-gray-300">
+              Our hospital equipment service plays a crucial role in the
+              healthcare industry by ensuring that medical facilities have the
+              necessary tools and devices to provide quality patient care. This
+              service specializes in sourcing, distributing, and maintaining a
+              wide range of medical equipment, from basic diagnostic tools to
+              advanced surgical instruments.
             </p>
           </div>
         </MaxWidthWrapper>
@@ -87,30 +90,33 @@ const MedicalInstrument = () => {
               loop: true,
             }}
             plugins={[
-                Autoplay({
-                  delay: 4500,
-                }),
-              ]}
-            className="w-full max-w-64 md:max-w-xl lg:max-w-5xl mx-auto p-0 "
+              Autoplay({
+                delay: 4500,
+              }),
+            ]}
+            className="mx-auto w-full max-w-64 p-0 md:max-w-xl lg:max-w-5xl"
           >
             <CarouselContent>
               {products.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 bg-transparent ">
+                <CarouselItem
+                  key={index}
+                  className="bg-transparent md:basis-1/3 lg:basis-1/4"
+                >
                   <div className="">
                     <Card className="rounded-none border-0">
-                      <CardContent className="flex  items-center justify-center p-0">
-                      <Image
-                            src={item?.image}
-                            sizes="100vw"
-                            height={500}
-                            width={500}
-                            // Make the image display full width
-                            style={{
-                              width: "100%",
-                              height: "200px",
-                            }}
-                            alt={`product ${index + 1}`}
-                          />
+                      <CardContent className="flex items-center justify-center p-0">
+                        <Image
+                          src={item?.image}
+                          sizes="100vw"
+                          height={500}
+                          width={500}
+                          // Make the image display full width
+                          style={{
+                            width: "100%",
+                            height: "200px",
+                          }}
+                          alt={`product ${index + 1}`}
+                        />
                       </CardContent>
                     </Card>
                   </div>
