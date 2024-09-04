@@ -32,7 +32,7 @@ const ContructionService = () => {
                 height={700}
                 width={700}
                 className="ml-10 md:ml-20 h-[90%] w-[85%]"
-                src="https://i.postimg.cc/B6QtzWFQ/daniel-hay-7-B5-UEn4al-LU-unsplash-1.jpg"
+                src="https://i.postimg.cc/LsMTW5YQ/Gemini-Generated-Image-abdmh9abdmh9abdm.jpg"
                 alt="contruction image"
               />
             </div>
