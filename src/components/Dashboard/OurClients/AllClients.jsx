@@ -32,7 +32,7 @@ const AllClients = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/v1/client?page=${page}&limit=${limit}`,
+          `https://sunway-international-server.vercel.app/api/v1/client?page=${page}&limit=${limit}`,
         );
         const data = await response.json();
 

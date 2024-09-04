@@ -28,7 +28,7 @@ const OfficeEquipmentCategoryPage = ({ params }) => {
     const fetchEquipment = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/officeEquipment/category/${params.category}`,
+          `https://sunway-international-server.vercel.app/api/v1/officeEquipment/category/${params.category}`,
         );
         setEquipment(response?.data?.data);
       } catch (err) {
@@ -90,7 +90,7 @@ const OfficeEquipmentCategoryPage = ({ params }) => {
             </div>
           ))
         ) : (
-          <p className="col-span-4 text-center min-h-56 text-xl font-bold">
+          <p className="col-span-4 min-h-56 text-center text-xl font-bold">
             No equipment found in this category.
           </p>
         )}

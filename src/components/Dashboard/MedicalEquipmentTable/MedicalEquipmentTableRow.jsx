@@ -39,7 +39,9 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/medicalEquipment/${id}`);
+      await axios.delete(
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+      );
       setReload(true);
       toast.success("Product Deleted Successfully!");
     } catch (error) {
@@ -50,9 +52,12 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   const handleArchive = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/v1/medicalEquipment/${id}`, {
-        archived: true,
-      });
+      await axios.put(
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
+        {
+          archived: true,
+        },
+      );
       setReload(true);
       toast.success("Product Archived Successfully!");
     } catch (error) {
@@ -109,27 +114,26 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
                 </p>
                 <p className="mt-5">{shortDescription}</p>
 
-                
-                  <h4 className="font-bold my-5">Product Details</h4>
+                <h4 className="my-5 font-bold">Product Details</h4>
 
-                  <Markdown
-                    className="prose max-w-[450px] whitespace-normal break-words"
-                    remarkPlugins={[remarkGfm]}
-                  >
-                    {description}
-                  </Markdown>
+                <Markdown
+                  className="prose max-w-[450px] whitespace-normal break-words"
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {description}
+                </Markdown>
 
-                  <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
-                    {productTable && (
-                      <Markdown
-                        className="prose whitespace-nowrap p-2"
-                        remarkPlugins={[remarkGfm]}
-                      >
-                        {productTable}
-                      </Markdown>
-                    )}
-                    <ScrollBar orientation="horizontal" />
-                  </ScrollArea>
+                <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+                  {productTable && (
+                    <Markdown
+                      className="prose whitespace-nowrap p-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {productTable}
+                    </Markdown>
+                  )}
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
 
                 <section className="w-full">
                   {images?.map((image, idx) => (

@@ -49,7 +49,7 @@ const UpdateMedicalEqupment = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/medicalEquipment/${id}`,
+          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
         );
         const data = response?.data?.data;
 
@@ -118,7 +118,7 @@ const UpdateMedicalEqupment = () => {
       };
 
       const res = await axios.put(
-        `http://localhost:5000/api/v1/medicalEquipment/${id}`,
+        `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/${id}`,
         completeFormData,
       );
 
@@ -279,7 +279,6 @@ const UpdateMedicalEqupment = () => {
                 />
               </div>
 
-              
               {/* Markdown render */}
               <div className="mt-5">
                 <Markdown

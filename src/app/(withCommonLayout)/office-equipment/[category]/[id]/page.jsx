@@ -17,7 +17,7 @@ import remarkGfm from "remark-gfm";
 
 const OfficeEqipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/${params?.id}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/${params?.id}`,
   ).then((res) => res.json());
 
   const product = data?.data || {};
