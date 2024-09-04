@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import EquipmentCard from "../shared/EquipmentCard/EquipmentCard";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+
 
 const MedicalCategoryCard = () => {
   // TODO: replace the links with the actual category
@@ -32,6 +32,7 @@ const MedicalCategoryCard = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
 
   return (
     <MaxWidthWrapper className="min-h-[50vh] py-16">
