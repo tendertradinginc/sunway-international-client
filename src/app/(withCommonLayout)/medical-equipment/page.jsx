@@ -32,30 +32,7 @@ const MedicalEquipmentPage = async () => {
   const res2Json = await res2.json();
   const mainData = res2Json?.data;
 
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(
-      "https://sunway-international-server.vercel.app/api/v1/medical-category",
-      {
-        cache: "no-cache",
-      },
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setCategories(data.data.result);
-      });
-  }, []);
-  if (loading) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <span className="animate-spin">
-          <CgSpinnerAlt className="size-10" />
-        </span>
-      </div>
-    );
-  }
+  console.log(categories[0]);
 
   return (
     <div className="bg-secondary">
@@ -85,12 +62,12 @@ const MedicalEquipmentPage = async () => {
               >
                 <span className="inline-flex items-center p-2 font-semibold">
                   <Image
+                    src={item?.image}
+                    alt="category icon"
                     loader={customLoader}
                     className="mr-3 h-7 w-7"
                     height={25}
                     width={25}
-                    alt="category icon"
-                    src={item?.image}
                   />{" "}
                   {item?.name}
                 </span>
