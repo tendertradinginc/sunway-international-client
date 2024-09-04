@@ -55,7 +55,7 @@ const MedicalInstrument = () => {
     <div
       style={{
         backgroundImage:
-          "url('https://i.postimg.cc/wT92nxHz/pexels-pixabay-40568-1.jpg')",
+          "url('https://i.postimg.cc/vHrbjpP2/artbreeder-image-2024-09-01-T08-52-07-444-Z.jpg')",
       }}
       className="min-h-[500px] w-full my-10 bg-cover bg-center bg-no-repeat bg-fixed mt-40"
     >
