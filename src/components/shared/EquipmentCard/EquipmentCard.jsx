@@ -24,9 +24,11 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
       </div>
       <div className="text-balance border-b px-2.5 py-3 text-left shadow-xl shadow-green-100">
         <h3 className="line-clamp-1 text-lg font-bold">{data?.productName}</h3>
-
-        <p className="mx-auto my-2 line-clamp-2 text-wrap text-sm text-muted-foreground">
+        {/* <p className="mx-auto my-2 line-clamp-2 text-wrap text-sm text-muted-foreground">
           {data?.shortDescription}
+        </p> */}
+        <p className="mb-4 mt-1 line-clamp-2 flex-grow text-sm">
+          <span>Model:</span> <b>{data?.model}</b>
         </p>
         <Button asChild variant="custom">
           <Link href={navigateTo}>View Details</Link>
