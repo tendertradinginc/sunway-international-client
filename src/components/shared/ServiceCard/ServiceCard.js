@@ -29,7 +29,7 @@ const ServiceCard = ({ data, index }) => {
           height={300}
           width={400}
           alt="construction"
-          className="h-64 w-full rounded-tr-full shadow-xl"
+          className="h-64 w-full shadow-xl"
           src={data?.imageUrl}
         />
         <div
