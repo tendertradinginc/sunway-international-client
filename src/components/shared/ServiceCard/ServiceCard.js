@@ -17,7 +17,7 @@ const ServiceCard = ({ data, index }) => {
         duration: (index + 1) * 0.5,
         ease: [0, 0.71, 0.71, 1.01],
       }}
-      className="rounded-md shadow-xl"
+      className="rounded-md"
     >
       <div
         className="relative"
@@ -29,7 +29,7 @@ const ServiceCard = ({ data, index }) => {
           height={300}
           width={400}
           alt="construction"
-          className="h-64 w-full"
+          className="h-64 w-full rounded-full shadow-xl hover:rounded-none"
           src={data?.imageUrl}
         />
         <div
@@ -53,8 +53,10 @@ const ServiceCard = ({ data, index }) => {
           </div>
         </div>
       </div>
-      <div className="bg-secondary p-8 font-medium text-si-text">
-        <p className=" line-clamp-4">{data?.description}</p>
+      <div className="rounded-bl-full rounded-br-full border bg-secondary p-6 font-medium text-si-text shadow-xl">
+        <h2 className="line-clamp-4 text-center text-2xl font-bold text-si-primary">
+          {data?.title2}
+        </h2>
       </div>
     </motion.div>
   );

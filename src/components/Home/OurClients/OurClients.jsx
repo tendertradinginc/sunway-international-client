@@ -48,13 +48,13 @@ const OurClients = () => {
 
   return (
     <MaxWidthWrapper className="my-24">
-      <SectionTitle title1={"Our"} title2={"Clients"}></SectionTitle>
+      <SectionTitle title1={"Our"} title2={"Businesses"}></SectionTitle>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {ClientInfo.map((client, idx) => (
           <div
             key={idx}
-            className="relative mx-auto h-48 w-full cursor-pointer rounded-lg border-[2px] border-primary text-center shadow-xl duration-700 hover:-translate-y-3 md:h-32"
+            className="relative mx-auto h-56 w-full cursor-pointer rounded-2xl bg-green-50 text-center duration-700 hover:-translate-y-3 md:h-32"
           >
             <Image
               src={client.img}

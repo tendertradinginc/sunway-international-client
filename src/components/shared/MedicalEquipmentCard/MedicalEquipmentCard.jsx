@@ -12,7 +12,7 @@ const MedicalEquipmentCard = ({ data, navigateTo }) => {
       initial={{ opacity: 0, scale: 1.1 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.2 }}
-      className="flex h-full flex-col border shadow-inner"
+      className="flex h-full flex-col shadow-inner"
     >
       <Image
         loader={customLoader}
@@ -22,7 +22,7 @@ const MedicalEquipmentCard = ({ data, navigateTo }) => {
         width="200"
         className="w-96 grow"
       />
-      <div className="flex flex-1 flex-col p-3 shadow-md">
+      <div className="flex flex-1 flex-col border-b p-3 shadow-md shadow-green-100">
         <h3 className="mt-7 text-lg hover:underline">
           <b> {productName}</b>
         </h3>
