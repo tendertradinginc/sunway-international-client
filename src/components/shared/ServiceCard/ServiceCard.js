@@ -29,7 +29,7 @@ const ServiceCard = ({ data, index }) => {
           height={300}
           width={400}
           alt="construction"
-          className="h-64 w-full rounded-lg shadow-xl"
+          className="h-64 w-full rounded-tr-full shadow-xl"
           src={data?.imageUrl}
         />
         <div
@@ -53,7 +53,7 @@ const ServiceCard = ({ data, index }) => {
           </div>
         </div>
       </div>
-      <div className="rounded-full border bg-secondary p-6 font-medium text-si-text">
+      <div className="rounded-bl-full rounded-br-full border bg-secondary p-6 font-medium text-si-text shadow-xl">
         <h2 className="line-clamp-4 text-center text-2xl font-bold text-si-primary">
           {data?.title2}
         </h2>
