@@ -29,7 +29,7 @@ const ServiceCard = ({ data, index }) => {
           height={300}
           width={400}
           alt="construction"
-          className="h-64 w-full rounded-full shadow-xl hover:rounded-none"
+          className="shadow- h-64 w-full hover:rounded-none"
           src={data?.imageUrl}
         />
         <div
@@ -53,7 +53,7 @@ const ServiceCard = ({ data, index }) => {
           </div>
         </div>
       </div>
-      <div className="rounded-bl-full rounded-br-full border bg-secondary p-6 font-medium text-si-text shadow-xl">
+      <div className="border bg-secondary p-6 font-medium text-si-text">
         <h2 className="line-clamp-4 text-center text-2xl font-bold text-si-primary">
           {data?.title2}
         </h2>
