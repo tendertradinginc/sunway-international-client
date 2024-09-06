@@ -30,16 +30,15 @@ export default function Home() {
       <hr />
       <CountUP />
       <hr />
-      <Testimonials />
-      <hr />
       <CompanyCertification />
       <hr />
       <ProjectShowcase />
       <hr />
-      <OurClients />
-
+      <Testimonials />
       <hr />
       <AuthorizeDistribution />
+      <hr />
+      <OurClients />
       <hr />
       <Chatbot />
     </div>
