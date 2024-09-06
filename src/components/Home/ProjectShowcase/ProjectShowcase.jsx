@@ -39,7 +39,7 @@ const ProjectShowcase = () => {
     <div
       className="inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat py-16"
       style={{
-        backgroundImage: `linear-gradient(rgba(229, 231, 235, 0.5), rgba(229, 231, 235, 0.5)), url(/adhy-savala-zbpgmGe27p8-unsplash.jpg)`,
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co/zV4TCVB/ynclean-cleanroom-manufacturer.webp)`,
 
         backgroundPosition: "center",
         height: "100vh",
@@ -52,6 +52,7 @@ const ProjectShowcase = () => {
             <SectionTitle
               title1={"Featured"}
               title2={"Projects"}
+              cn={"text-white"}
             ></SectionTitle>
 
             <section className="grid h-full w-full grid-cols-2 gap-4 lg:grid-cols-4">
@@ -60,7 +61,7 @@ const ProjectShowcase = () => {
                   <div
                     className="h-full w-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.4), rgba(37, 99, 235, 0.4)),url(${project.imageUrl})`,
+                      backgroundImage: `linear-gradient(rgba(229, 231, 235, 0.1), rgba(229, 231, 235, 0.1)),url(${project.imageUrl})`,
                     }}
                   >
                     {/* Black overlay */}r

@@ -5,14 +5,28 @@ import { FaBuilding, FaStethoscope, FaWheelchair } from "react-icons/fa";
 
 const Services = () => {
   return (
-    <MaxWidthWrapper className="py-16">
-      <SectionTitle title1={"Our"} title2={"Services"}></SectionTitle>
-      <div className="grid grid-cols-1 gap-x-10 gap-y-14 overflow-hidden py-16 md:grid-cols-2 lg:grid-cols-3">
-        {data?.map((item, idx) => (
-          <ServiceCard index={idx} key={idx} data={item} />
-        ))}
-      </div>
-    </MaxWidthWrapper>
+    <div
+      className="inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat py-16"
+      style={{
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(/adhy-savala-zbpgmGe27p8-unsplash.jpg)`,
+
+        backgroundPosition: "center",
+        height: "100vh",
+      }}
+    >
+      <MaxWidthWrapper className="">
+        <SectionTitle
+          title1={"Our"}
+          title2={"Services"}
+          cn={"text-white"}
+        ></SectionTitle>
+        <div className="grid grid-cols-1 gap-x-10 gap-y-14 overflow-hidden py-16 md:grid-cols-2 lg:grid-cols-3">
+          {data?.map((item, idx) => (
+            <ServiceCard index={idx} key={idx} data={item} />
+          ))}
+        </div>
+      </MaxWidthWrapper>
+    </div>
   );
 };
 

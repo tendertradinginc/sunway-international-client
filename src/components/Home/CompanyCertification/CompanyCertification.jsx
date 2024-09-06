@@ -9,7 +9,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const CompanyCertification = () => {
   return (
     <MaxWidthWrapper className="my-20">
-      <SectionTitle title1={"Company"} title2={"Certification"}></SectionTitle>
+      <SectionTitle title1={"Our"} title2={"Achievement"}></SectionTitle>
       <div className="relative flex flex-col items-center justify-center shadow-none lg:flex-row lg:justify-end">
         {/* Right Section with Content */}
         <div className="order-2 min-h-[50vh] w-full bg-si-primary p-6 text-center lg:order-1 lg:min-h-[70vh] lg:w-8/12 lg:p-10">
