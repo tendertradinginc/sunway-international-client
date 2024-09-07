@@ -1,23 +1,29 @@
 "use client"
 import Image from "next/image";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
+import { customLoader } from "@/utils/customLoader";
 
 const AboutUs = () => {
     return (
         <div >
             <div>
                 <Image
-                    src="https://i.postimg.cc/zBbKB4Gg/about-us-1.png"
+                    src="https://i.ibb.co.com/N3KwnVr/phots1.png"
                     alt="About Us Image"
                     width={500}
                     height={300}
-                    className="w-full h-full"
+                    loader={customLoader}
+                    className="w-full h-full "
                 />
-
-                <section className="mb-32 bg-secondary ">
-                    <div className="max-w-6xl mx-auto py-10">
-                        <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8">
+            </div>
+            <div className="">
+                <section className="mb-16 ">
+                    <div className="max-w-6xl mx-auto py-8">
+                        {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8">
                             About Us
-                        </h1>
+                        </h1> */}
+
+                        <SectionTitle title1={"About"} title2={"Us"}></SectionTitle>
                         <p className="text-justify">
                             Twin Trade International had its humble beginning in 2000 with a start-up that was engaged in the trading business. The size, span, and activities were very limited. Over the years by dint of sheer hard work, commitment, and integrity towards contractual obligations, we have been able to create a niche market for our diverse business interests.
                         </p>
@@ -35,12 +41,14 @@ const AboutUs = () => {
                         </p>
                     </div>
                 </section>
+                <hr />
                 {/* vision section */}
-                <section className="my-32 bg-secondary">
-                    <div className="max-w-6xl mx-auto">
-                        <h1 className=" mx-auto text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
+                <section className="my-16">
+                    <div className="max-w-6xl mx-auto py-8">
+                        {/* <h1 className=" mx-auto text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
                             About Vision
-                        </h1>
+                        </h1> */}
+                        <SectionTitle title1={"About"} title2={"Vision"}></SectionTitle>
                     </div>
                     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-5 lg:gap-10  py-5">
                         <div className="flex-1  text-justify px-4">
@@ -73,39 +81,42 @@ const AboutUs = () => {
 
                         <div className="flex-1 flex justify-center text-justify order-first lg:order-last">
                             <Image
-                                src="https://i.postimg.cc/s2XsprSv/sec-1.png"
+                                src="https://i.ibb.co.com/xCDrgKj/hospitals.webp"
                                 alt="About Us Image"
                                 width={500}
                                 height={300}
+                                loader={customLoader}
                                 className=" w-full h-auto object-cover rounded-none "
                             />
                         </div>
                     </div>
                 </section>
 
+                <hr />
 
                 {/* about CEO section */}
-                <section className="mb-10 bg-secondary">
-                    <div className="max-w-6xl mx-auto">
-                        <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
+                <section className="my-16">
+                    <div className="max-w-6xl mx-auto py-8">
+                        {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
                             About CEO
-                        </h1>
+                        </h1> */}
+                        <SectionTitle title1={"About"} title2={"CEO"}></SectionTitle>
                     </div>
                     <div className=" max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-5 lg:gap-10 px-4 py-5">
 
                         <div className="flex-1 flex justify-center text-justify ">
                             <Image
-                                src="https://i.postimg.cc/Z56VVB8Q/ceo.jpg"
+                                src="https://i.postimg.cc/26cJFk8r/Whats-App-Image-2024-09-07-at-4-33-35-PM.jpg"
                                 alt="About Us Image"
                                 width={500}
                                 height={300}
-                                className=" w-full h-auto object-cover rounded-none "
+                                className=" w-96 h-auto object-cover rounded-full "
                             />
                         </div>
 
                         <div className="flex-1 text-justify ">
                             <h1 className="text-xl md:text-2xl font-semibold text-si-primary pt-3">
-                                Engr Sarwar Sumon
+                                Mohammad Abul Kalam Mozumder
                             </h1>
                             <h2 className="font-medium ">CEO At Twin Trade Int..</h2>
                             <p className="mt-4">
