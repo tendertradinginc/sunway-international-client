@@ -34,7 +34,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="my-16">
+        <section className="mt-16">
 
             <div className="max-w-6xl mx-auto py-8">
                 {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
