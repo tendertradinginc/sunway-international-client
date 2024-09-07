@@ -9,21 +9,15 @@ import Link from "next/link";
 
 const slides = [
   {
-    id: 2,
-    title: (
-      <>
-        Build a Hospital In <br /> Bangladesh
-      </>
-    ),
-    subtitle: [
-      "Are You Planning To",
-      "Contact World Renowed Health Care Consultant",
-    ],
-    imageUrl: "https://i.ibb.co/G5tsH67/20228616454220.jpg",
-    link: "/services",
+    id: 1,
+    title: "",
+    subtitle: ["", ""],
+    imageUrl: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
+    link: "",
+    bg_color: "bg-transparent",
   },
   {
-    id: 1,
+    id: 2,
     title: (
       <>
         Innovative Medical <br /> Solutions
@@ -35,14 +29,24 @@ const slides = [
     ],
     imageUrl: "https://i.ibb.co/zV4TCVB/ynclean-cleanroom-manufacturer.webp",
     link: "/medical-equipment",
+    bg_color: "bg-transparent",
   },
   {
     id: 3,
-    title: "",
-    subtitle: ["", ""],
-    imageUrl: "https://i.ibb.co/bJDx1R7/428ca6dd2a40444fe8425fd342ad54ee-1.jpg",
-    link: "",
+    title: (
+      <>
+        Build a Hospital In <br /> Bangladesh
+      </>
+    ),
+    subtitle: [
+      "Are You Planning To",
+      "Contact World Renowed Health Care Consultant",
+    ],
+    imageUrl: "https://i.ibb.co.com/jv767q3/201115-208-R2-161215.jpg",
+    link: "/services",
+    bg_color: "bg-[#10465bd7]",
   },
+
   // {
   //   id: 3,
   //   title: (
@@ -90,7 +94,7 @@ export function Hero() {
       <CarouselContent>
         {slides?.map((slide) => (
           <CarouselItem key={slide.id}>
-            <div className="relative h-[90vh] w-full bg-[#1C4759]">
+            <div className="relative h-[90vh] w-full bg-[#10465bd7]">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -98,7 +102,9 @@ export function Hero() {
                 }}
               />
               {/* Black overlay */}
-              <div className="absolute inset-0 bg-[#1c475995] opacity-70"></div>
+              <div
+                className={`absolute inset-0 ${slide?.bg_color} opacity-70`}
+              ></div>
               {/* Content */}
               <div className="relative mx-auto flex h-full max-w-[1400px] flex-col items-start justify-center gap-5">
                 {slide.subtitle[0] && (
@@ -106,7 +112,7 @@ export function Hero() {
                     {slide?.subtitle[0]}
                   </h4>
                 )}
-                <h2 className="text-balance border-l-4 border-l-si-primary pl-4 text-4xl font-bold text-[#fbbe24] md:text-5xl lg:text-6xl">
+                <h2 className="text-balance border-l-4 border-l-[#fbbe24] pl-4 text-4xl font-bold text-[#fbbe24] md:text-5xl lg:text-6xl">
                   {slide.title}
                 </h2>
                 <h4 className="max-w-sm text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
@@ -116,7 +122,7 @@ export function Hero() {
                   {slide?.link && (
                     <Link href={slide?.link}>
                       {" "}
-                      <button className="mt-8 rounded-md border-2 border-si-accent p-2 px-5 text-si-accent duration-300 hover:bg-si-accent hover:text-white">
+                      <button className="mt-8 rounded-md border-2 border-si-accent bg-si-accent p-2 px-5 text-white duration-300 hover:bg-transparent hover:text-si-accent">
                         Get Started
                       </button>
                     </Link>

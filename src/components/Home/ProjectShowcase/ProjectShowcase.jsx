@@ -61,20 +61,27 @@ const ProjectShowcase = () => {
                   <div
                     className="h-full w-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `linear-gradient(rgba(229, 231, 235, 0.1), rgba(229, 231, 235, 0.1)),url(${project.imageUrl})`,
+                      backgroundImage: `linear-gradient(rgba(229, 231, 235, 0.4), rgba(229, 231, 235, 0.4)),url(${project.imageUrl})`,
                     }}
                   >
                     {/* Black overlay */}r
                     {/* <div className="absolute left-0 top-0 h-full w-full bg-green-900 opacity-60"></div> */}
-                    <section className="flex h-full flex-col justify-evenly p-6 pt-10 text-muted">
+                    <section className="flex h-full flex-col justify-evenly p-6 pt-10 text-muted  ">
                       <div className="space-y-1">
-                        <p className="text-sm md:text-base">{project.title}</p>
-                        <h4 className="text-base font-medium md:text-lg xl:text-xl">
+                        <p className="text-sm text-black md:text-base">
+                          {project.title}
+                        </p>
+                        <h4 className="text-base font-medium text-black md:text-lg xl:text-xl">
                           {project.description}
                         </h4>
+                        <h6 className="text-xs text-black md:text-sm">
+                          {project?.location}
+                        </h6>
                       </div>
-                      <h6 className="text-xs md:text-sm">{project.location}</h6>
-                      <Button className="w-full md:w-1/2">View More</Button>
+
+                      <Button className="w-full text-white md:w-1/2">
+                        View More
+                      </Button>
                     </section>
                   </div>
                 </div>
