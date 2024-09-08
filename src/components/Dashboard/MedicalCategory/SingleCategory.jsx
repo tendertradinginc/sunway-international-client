@@ -1,3 +1,4 @@
+import { customLoader } from "@/utils/customLoader";
 import { AlertDialog } from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
 import DeleteCategoryModal from "./DeleteCategoryModal";
@@ -12,6 +13,7 @@ const SingleCategory = ({ data, index, setReload, pathName }) => {
       <td className="px-4 py-1 font-semibold text-blue-900">{name}</td>
       <td className="px-4 py-1 font-semibold text-blue-900">
         <Image
+          loader={customLoader}
           className="h-12 w-12"
           width={48}
           height={48}

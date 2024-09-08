@@ -1,5 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 
 const OurClients = () => {
@@ -57,6 +58,7 @@ const OurClients = () => {
             className="relative mx-auto h-56 w-full cursor-pointer rounded-2xl bg-green-50 text-center duration-700 hover:-translate-y-3 md:h-32"
           >
             <Image
+              loader={customLoader}
               src={client.img}
               alt={client.clientName}
               layout="fill"

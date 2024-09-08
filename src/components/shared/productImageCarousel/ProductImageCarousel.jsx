@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { customLoader } from "@/utils/customLoader";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
@@ -28,6 +29,7 @@ const ProductImageCarousel = ({ images }) => {
               <CarouselItem className="pl-0" key={src + idx}>
                 <div className="relative h-auto min-h-[500px] w-full">
                   <Image
+                    loader={customLoader}
                     src={src}
                     alt="Advertisement"
                     fill

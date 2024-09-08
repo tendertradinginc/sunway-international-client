@@ -1,4 +1,5 @@
 "use client";
+import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -15,6 +16,7 @@ const AuthorizeDistributionCard = ({ authorizer, index }) => {
     >
       <div className="flex h-36 flex-col items-center justify-center bg-white text-white duration-500 lg:w-80">
         <Image
+          loader={customLoader}
           src={authorizer?.image}
           alt="Authorize Distribution"
           height="100"

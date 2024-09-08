@@ -9,6 +9,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { customLoader } from "@/utils/customLoader";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -128,6 +129,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.18.51 - An advertisement image promoting an ergonomic office chair. The chair is modern and sleek with adjustable features and lumbar support, designed for co.webp"
                   alt="Advertisement"
                   fill
@@ -139,6 +141,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.18.53 - An advertisement image promoting a modern office desk. The desk is sleek with a minimalist design, featuring a large workspace, integrated cable manag.webp"
                   alt="Advertisement"
                   fill
@@ -150,6 +153,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.42.33 - A professional advertisement poster focused on a high-quality projector in a modern office setting. The projector is placed on one side of the poster,.webp"
                   alt="Advertisement"
                   fill
@@ -161,6 +165,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.42.39 - A sleek advertisement poster for office equipment featuring high-quality projectors and printers. The scene showcases a modern office setting with the.webp"
                   alt="Advertisement"
                   fill

@@ -35,7 +35,6 @@ const MedicalEquipmentPage = async () => {
   const res2Json = await res2.json();
   const mainData = res2Json?.data;
 
-
   return (
     <div className="bg-secondary">
       <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
@@ -85,6 +84,7 @@ const MedicalEquipmentPage = async () => {
               <CarouselItem className="p-0">
                 <div className="relative h-[300px] w-full">
                   <Image
+                    loader={customLoader}
                     src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
                     alt="Advertisement"
                     fill
@@ -95,6 +95,7 @@ const MedicalEquipmentPage = async () => {
               <CarouselItem className="p-0">
                 <div className="relative h-[300px] w-full">
                   <Image
+                    loader={customLoader}
                     src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
                     alt="Advertisement"
                     fill

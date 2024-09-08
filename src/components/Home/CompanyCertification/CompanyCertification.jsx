@@ -2,6 +2,7 @@
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -43,6 +44,7 @@ const CompanyCertification = () => {
           className="relative left-0 order-1 mb-4 w-full transform lg:absolute lg:order-2 lg:mb-0 lg:w-auto lg:translate-x-[10%]"
         >
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/SRvVNgcV/ct.png"
             alt="Certificate Image"
             width={500}

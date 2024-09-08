@@ -1,3 +1,4 @@
+import { customLoader } from "@/utils/customLoader";
 import { AlertDialog } from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
 import DeleteClientModal from "./DeleteClientModal";
@@ -12,6 +13,7 @@ const SingleClient = ({ clientData, index, setReload }) => {
 
       <td className="py-1 pl-16 text-gray-700">
         <Image
+          loader={customLoader}
           src={image}
           alt="client"
           height="56"

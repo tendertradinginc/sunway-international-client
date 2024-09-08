@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 
 const page = async ({ params }) => {
@@ -37,6 +38,7 @@ const page = async ({ params }) => {
         <div className="mx-auto min-h-[80vh]">
           <div className="pb-10">
             <Image
+              loader={customLoader}
               src={blog?.image}
               alt="Blog Details Thumbnail"
               height={500}

@@ -1,3 +1,4 @@
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaHome, FaInstagram, FaLinkedinIn } from "react-icons/fa";
@@ -21,6 +22,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               <li className="flex gap-2 text-3xl font-bold text-gray-300">
                 <Image
+                  loader={customLoader}
                   height={50}
                   width={100}
                   alt="Twin Trade Int. logo footer"
@@ -109,6 +111,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-y-3">
               <li className="text-2xl font-bold text-gray-300">Socials</li>
               <Image
+                loader={customLoader}
                 className="mt-2"
                 height={50}
                 width={220}

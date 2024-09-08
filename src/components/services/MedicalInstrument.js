@@ -1,5 +1,4 @@
 "use client";
-import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -8,8 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { customLoader } from "@/utils/customLoader";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const MedicalInstrument = () => {
   const products = [
@@ -106,6 +107,7 @@ const MedicalInstrument = () => {
                     <Card className="rounded-none border-0">
                       <CardContent className="flex items-center justify-center p-0">
                         <Image
+                          loader={customLoader}
                           src={item?.image}
                           sizes="100vw"
                           height={500}

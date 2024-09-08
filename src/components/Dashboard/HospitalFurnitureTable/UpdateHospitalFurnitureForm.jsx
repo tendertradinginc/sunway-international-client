@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import Image from "next/image";
@@ -16,7 +17,6 @@ import { FaSpinner } from "react-icons/fa6";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
-
 
 const UpdateHospitalFurnitureForm = () => {
   const router = useRouter();
@@ -214,6 +214,7 @@ const UpdateHospitalFurnitureForm = () => {
                       {formData.images.map((image, index) => (
                         <div key={index}>
                           <Image
+                            loader={customLoader}
                             src={image}
                             height={200}
                             width={200}

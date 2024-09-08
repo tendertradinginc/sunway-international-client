@@ -1,4 +1,5 @@
 "use client";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 
 const AboutUs = () => {
@@ -6,6 +7,7 @@ const AboutUs = () => {
     <div>
       <div>
         <Image
+          loader={customLoader}
           src="https://i.postimg.cc/zBbKB4Gg/about-us-1.png"
           alt="About Us Image"
           width={500}
@@ -124,6 +126,7 @@ const AboutUs = () => {
 
             <div className="order-first flex flex-1 justify-center text-justify lg:order-last">
               <Image
+                loader={customLoader}
                 src="https://i.postimg.cc/s2XsprSv/sec-1.png"
                 alt="About Us Image"
                 width={500}
@@ -144,6 +147,7 @@ const AboutUs = () => {
           <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10">
             <div className="flex flex-1 justify-center text-justify">
               <Image
+                loader={customLoader}
                 src="https://i.postimg.cc/Z56VVB8Q/ceo.jpg"
                 alt="About Us Image"
                 width={500}
