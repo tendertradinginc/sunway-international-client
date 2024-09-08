@@ -1,5 +1,6 @@
 "use client";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -30,6 +31,7 @@ const NewArrival = () => {
           </div>
           <div className="flex items-center justify-center rounded-t-full bg-[#faca5083] md:rounded-l-full md:rounded-r-none">
             <Image
+              loader={customLoader}
               height={100}
               width={200}
               alt="Covid 19 gun"
@@ -58,6 +60,7 @@ const NewArrival = () => {
           </div>
           <div className="flex items-center justify-center rounded-t-full bg-[#16a2494d] md:rounded-l-full md:rounded-r-none">
             <Image
+              loader={customLoader}
               height={100}
               width={200}
               alt="Covid 19 gun"

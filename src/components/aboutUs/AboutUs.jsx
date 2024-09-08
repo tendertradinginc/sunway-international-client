@@ -1,9 +1,11 @@
-"use client"
+"use client";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
 import { customLoader } from "@/utils/customLoader";
 
 const AboutUs = () => {
+
     return (
         <div >
             <div>
@@ -125,9 +127,13 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </section>
+
             </div>
-        </div>
-    );
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default AboutUs;

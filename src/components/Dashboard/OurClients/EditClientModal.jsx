@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import Image from "next/image";
 import { useState } from "react";
@@ -103,6 +104,7 @@ const EditClientModal = ({ data, setReload }) => {
               <Label className="mb-2 block">Image</Label>
 
               <Image
+                loader={customLoader}
                 src={img}
                 alt="client"
                 height="56"
@@ -143,6 +145,7 @@ const EditClientModal = ({ data, setReload }) => {
               >
                 <button className=" ">
                   <Image
+                    loader={customLoader}
                     src={blue}
                     alt="client"
                     height="56"

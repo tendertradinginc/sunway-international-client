@@ -1,5 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import { customLoader } from "@/utils/customLoader";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+
 import Image from "next/image";
 import Link from "next/link";
 const Page = async () => {
@@ -39,6 +41,7 @@ const Page = async () => {
         <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
           <div className="bg-secondary">
             <Image
+              loader={customLoader}
               alt="Blog Image 1"
               height={500}
               width={500}
@@ -68,6 +71,7 @@ const Page = async () => {
               >
                 <div>
                   <Image
+                    loader={customLoader}
                     alt="Blog Image 2"
                     height={500}
                     width={500}
@@ -99,6 +103,7 @@ const Page = async () => {
           {blogs?.slice(4, blogs.length).map((item, idx) => (
             <div key={idx} className="bg-secondary">
               <Image
+                loader={customLoader}
                 alt="Blog Image 1"
                 height={500}
                 width={500}
