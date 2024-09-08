@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
 const Page = async () => {
@@ -21,10 +22,14 @@ const Page = async () => {
       <MaxWidthWrapper className="py-10">
         {/* Title Section */}
         <div className="mx-auto max-w-2xl">
-          <h1 className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
+          {/* <h1 className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
             Wellness Journal
-          </h1>
-          <p className="mt-3 text-center font-semibold text-si-text">
+          </h1> */}
+          <div className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
+            <SectionTitle title1={"Wellness"} title2={"Journal"}></SectionTitle>
+          </div>
+
+          <p className="text-center font-semibold text-si-text">
             Stay informed with the latest health tips, medical news, and expert
             insights. Your go-to resource for staying healthy and well.
           </p>
