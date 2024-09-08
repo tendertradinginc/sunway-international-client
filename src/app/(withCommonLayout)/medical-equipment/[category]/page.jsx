@@ -19,7 +19,7 @@ const MedicalCategoryPage = async ({ params, searchParams }) => {
 
   //* Fetching MAIN Data
   let res = await fetch(
-    `http://localhost:5000/api/v1/medicalEquipment/category?category=${decodedCategory}${searchText ? `&search=${searchText}` : ""}`,
+    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${decodedCategory}${searchText ? `&search=${searchText}` : ""}`,
     {
       cache: "no-store",
     },

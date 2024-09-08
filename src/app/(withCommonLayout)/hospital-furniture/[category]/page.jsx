@@ -19,7 +19,7 @@ const HospitalFurnitureCategoryPage = async ({ params, searchParams }) => {
 
   //* Fetching MAIN Data
   let res = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/category/${decodedCategory}?search=${searchText ? searchText : ""}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/category/${decodedCategory}?search=${searchText ? searchText : ""}`,
     {
       cache: "no-store",
     },
