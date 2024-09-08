@@ -1,12 +1,16 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const Assembly = () => {
   return (
     <div>
-      <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
+      {/* <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
         Assembly Workshop
-      </h1>
+      </h1> */}
+      <div className="text-3xl font-semibold text-si-primary md:text-5xl">
+        <SectionTitle title1={"Assembly"} title2={"Workshop"}></SectionTitle>
+      </div>
       <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="">
           <Image

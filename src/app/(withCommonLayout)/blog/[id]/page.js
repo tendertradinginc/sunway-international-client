@@ -32,7 +32,7 @@ const page = async ({ params }) => {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content={`https://tander-trading-inc-next.vercel.app/news/${params.id}`}
+        content={`https://www.twintradeint.com/blog/${params.id}`}
       />
       <MaxWidthWrapper className="p-5 py-16 md:p-20">
         <div className="mx-auto min-h-[80vh]">

@@ -1,5 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import MedicalEquipmentCard from "@/components/shared/MedicalEquipmentCard/MedicalEquipmentCard";
+import MedicalEquipmentCardMeta from "@/components/shared/MedicalEquipmentCartMeta/MedicalEquipmentCardMeta";
 
 const MedicalEquipments = async () => {
   const res = await fetch(
@@ -16,16 +17,11 @@ const MedicalEquipments = async () => {
           Medical <span className="text-[#fbbf24]"> Equipments</span>
         </h1>
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
-          {blogs.map((item, index) => {
-            return (
-              <div key={index}>
-                <MedicalEquipmentCard
-                  data={item}
-                  navigateTo={`/medical-equipment/${item?.category}/${item?._id}`}
-                />
-              </div>
-            );
-          })}
+          {blogs.map((item, index) => (
+            <div key={index}>
+              <MedicalEquipmentCardMeta data={item} />
+            </div>
+          ))}
         </div>
       </MaxWidthWrapper>
     </div>

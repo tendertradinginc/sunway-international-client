@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaFacebook, FaHome, FaLinkedin, FaPhoneSquare, FaYoutube } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const ContactUs = () => {
     const [commentData, setCommentData] = useState({
@@ -33,12 +34,15 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="bg-secondary lg:mt-36">
-            <div className="max-w-6xl mx-auto">
-                <h1 className=" text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
-                    Contact Us
-                </h1>
+        <section className="mt-16">
+
+            <div className="max-w-6xl mx-auto py-8">
+                {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
+                            Contact Us
+                        </h1> */}
+                <SectionTitle title1={"Contact"} title2={"Us"}></SectionTitle>
             </div>
+
             <div className="max-w-6xl mx-auto  flex flex-col lg:flex-row justify-center items-start lg:items-stretch gap-5 lg:gap-10">
                 <div className="py-10 flex-1">
                     <h2 className="text-base font-semibold text-start pb-4">
@@ -136,7 +140,7 @@ const ContactUs = () => {
                         <li>
                             <h1 className="flex items-center gap-3">
                                 <MdEmail className="text-xl text-si-primary" />
-                                sunway-international@gmail.com
+                                twintradeint@gmail.com
                             </h1>
                         </li>
                     </ul>
