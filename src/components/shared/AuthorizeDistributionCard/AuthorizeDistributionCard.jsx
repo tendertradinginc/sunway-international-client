@@ -4,9 +4,7 @@ import Image from "next/image";
 
 const AuthorizeDistributionCard = ({ authorizer, index }) => {
     return (
-
         <motion.div
-
             initial={{ y: -150 }}
             whileInView={{ y: 0 }}
             transition={{
