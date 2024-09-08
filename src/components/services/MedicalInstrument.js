@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const MedicalInstrument = () => {
   const products = [
@@ -69,9 +70,14 @@ const MedicalInstrument = () => {
       >
         <MaxWidthWrapper>
           <div className="mx-auto max-w-4xl py-10">
-            <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
+            {/* <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
               Medical Equipment
-            </h1>
+            </h1> */}
+            <div
+              className="text-center text-3xl font-bold text-white md:text-5xl">
+              <SectionTitle title1={" Medical"} title2={"Equipment"}></SectionTitle>
+            </div>
+
             <p className="mt-5 text-center font-semibold text-gray-300">
               Our hospital equipment service plays a crucial role in the
               healthcare industry by ensuring that medical facilities have the
