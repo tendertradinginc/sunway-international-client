@@ -10,14 +10,6 @@ import {
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
-import { LuLampDesk } from "react-icons/lu";
-import {
-  PiDesk,
-  PiMonitor,
-  PiOfficeChair,
-  PiPrinter,
-  PiProjectorScreenChart,
-} from "react-icons/pi";
 
 const HospitalFurniturePage = async () => {
   //* Fetching MAIN Data
