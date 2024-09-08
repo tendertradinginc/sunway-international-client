@@ -1,12 +1,15 @@
 import Image from "next/image";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const Certification = () => {
   return (
     <div>
-      <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
+      {/* <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
         Certificate  Honor
-      </h1>
-
+      </h1> */}
+      <div className="text-3xl font-semibold text-si-primary md:text-5xl">
+        <SectionTitle title1={"Certificate"} title2={"Honor"}></SectionTitle>
+      </div>
       <p className="mt-5 text-si-text font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur eum magnam, commodi harum dolor qui dolorum perspiciatis placeat, explicabo minima aut est reiciendis. Cum, exercitationem necessitatibus? Saepe dignissimos non repellat facere, deserunt aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex quisquam expedita reiciendis nam nulla neque, amet ut molestias corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut corporis vitae architecto dolorum nemo at quaerat id consectetur neque.</p>
 
       <div className="mt-8 grid grid-cols-1 grid-rows-12 gap-y-10 md:grid-cols-2 md:gap-x-5 lg:gap-x-10">
