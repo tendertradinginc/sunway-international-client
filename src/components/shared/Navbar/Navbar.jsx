@@ -20,7 +20,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div clasName="hidden md:block">
+        <div className="hidden md:block">
           <NavItems />
         </div>
 
