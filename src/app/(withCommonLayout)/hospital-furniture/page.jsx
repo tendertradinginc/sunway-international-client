@@ -1,5 +1,3 @@
-"use client";
-
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 import { Button } from "@/components/ui/button";
@@ -11,37 +9,32 @@ import {
 } from "@/components/ui/carousel";
 import { customLoader } from "@/utils/customLoader";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { LuLampDesk } from "react-icons/lu";
-import {
-  PiDesk,
-  PiMonitor,
-  PiOfficeChair,
-  PiPrinter,
-  PiProjectorScreenChart,
-} from "react-icons/pi";
 
-const HospitalFurniturePage = () => {
-  const [products, setProducts] = useState([]);
+const HospitalFurniturePage = async () => {
+  //* Fetching MAIN Data
+  let res = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
+    {
+      cache: "no-store",
+    },
+  );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
-        );
-        const data = await response.json();
-        setProducts(data?.data || []);
-      } catch (error) {
-        console.error("Error fetching office equipment data:", error);
-      }
-    };
+  const productsJson = await res.json();
+  const products = productsJson?.data;
 
-    fetchData();
-  }, []);
+  //* Fething category data
+
+  let res2 = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/office-equipment-category?limit=6",
+    {
+      cache: "no-store",
+    },
+  );
+
+  const categoryJson = await res2.json();
+  const categories = categoryJson?.data?.result;
 
   return (
     <div className="bg-secondary">
@@ -64,67 +57,29 @@ const HospitalFurniturePage = () => {
           </div>
 
           <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiDesk className="mr-2 size-5" /> Office Tables
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiOfficeChair className="mr-2 size-6" /> Ergonomic Chairs
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiMonitor className="mr-2 size-6" /> Computer Monitors
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiPrinter className="mr-2 size-6" /> Office Printers
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiProjectorScreenChart className="mr-2 size-6" /> Projectors
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <LuLampDesk className="mr-2 size-6" /> Table Lamps
-              </span>
-            </Link>
+            {categories.map((category) => (
+              <Link
+                key={category._id}
+                href={`/hospital-furniture/${category?.name}`}
+                className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
+              >
+                <span className="inline-flex items-center p-2 font-semibold">
+                  <Image
+                    className="mr-2 size-5"
+                    src={category?.image}
+                    alt={category?.name}
+                    height={25}
+                    width={25}
+                  />
+                  {category?.name}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* Advertisement Carousel */}
-        <Carousel
-          opts={{ loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 4500,
-            }),
-          ]}
-          className="w-full"
-        >
+        <Carousel opts={{ loop: true }} autoplay className="w-full">
           <CarouselContent className="ml-0 w-full">
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
