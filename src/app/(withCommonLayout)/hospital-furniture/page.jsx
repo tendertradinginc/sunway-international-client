@@ -48,12 +48,12 @@ const HospitalFurniturePage = async () => {
         <div className="size-[350px]">
           <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
-            <Link
+            {/* <Link
               href="/#"
               className="mt-1 inline-flex items-center text-sm font-semibold text-primary underline-offset-2 hover:underline"
             >
               See All <DoubleArrowRightIcon className="ml-1 size-3" />
-            </Link>
+            </Link> */}
           </div>
 
           <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
@@ -65,6 +65,7 @@ const HospitalFurniturePage = async () => {
               >
                 <span className="inline-flex items-center p-2 font-semibold">
                   <Image
+                    loader={customLoader}
                     className="mr-2 size-5"
                     src={category?.image}
                     alt={category?.name}
