@@ -14,8 +14,6 @@ import Link from "next/link";
 const HospitalFurnitureCategoryPage = async ({ params, searchParams }) => {
   const searchText = searchParams.search;
 
-  console.log(searchText);
-
   // Decode the category name
   const decodedCategory = decodeURIComponent(params.category);
 
