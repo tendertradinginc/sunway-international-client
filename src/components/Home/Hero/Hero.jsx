@@ -106,7 +106,7 @@ export function Hero() {
                 className={`absolute inset-0 ${slide?.bg_color} opacity-70`}
               ></div>
               {/* Content */}
-              <div className="relative mx-auto flex h-full max-w-[1400px] flex-col items-start justify-center gap-5">
+              <div className="relative mx-auto flex h-full max-w-[1400px] flex-col lg:items-start items-center justify-center gap-5">
                 {slide.subtitle[0] && (
                   <h4 className="max-w-sm text-balance rounded-xl bg-si-primary px-2 py-1 text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
                     {slide?.subtitle[0]}
@@ -115,10 +115,10 @@ export function Hero() {
                 <h2 className="text-balance border-l-4 border-l-[#fbbe24] pl-4 text-4xl font-bold text-[#fbbe24] md:text-5xl lg:text-6xl">
                   {slide.title}
                 </h2>
-                <h4 className="max-w-sm text-balance text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
+                <h4 className="max-w-sm text-balance text-base lg:text-start text-center font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
                   {slide.subtitle[1]}
                 </h4>
-                <div>
+                <div className="flex items-center justify-center">
                   {slide?.link && (
                     <Link href={slide?.link}>
                       {" "}

@@ -5,7 +5,7 @@ import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
 
 const ConstructionService = () => {
   return (
-    <MaxWidthWrapper className="overflow-x-hidden py-16">
+    <MaxWidthWrapper className="overflow-x-hidden py-16 mt-10">
       <h1 className="mb-2 text-3xl font-semibold text-si-primary md:text-5xl">
         Hospital <span className="text-[#fbbf24]"> Renovation</span>
       </h1>

@@ -12,7 +12,7 @@ const BannerCategory = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="mb-8 grid grid-cols-1 border-b md:grid-cols-2 lg:grid-cols-6"
+        className="mb-8 grid grid-cols-2 border-b md:grid-cols-2 lg:grid-cols-6"
       >
         {/* category 1 */}
         <div className="duration- flex h-36 flex-col items-center justify-center border-r from-[#fbbe24d3] to-[#faca5083] text-white hover:bg-gradient-to-r">
