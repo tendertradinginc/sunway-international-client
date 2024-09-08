@@ -33,19 +33,27 @@ const slides = [
   },
   {
     id: 3,
-    title: (
-      <>
-        Build a Hospital In <br /> Bangladesh
-      </>
-    ),
-    subtitle: [
-      "Are You Planning To",
-      "Contact World Renowed Health Care Consultant",
-    ],
-    imageUrl: "https://i.ibb.co.com/jv767q3/201115-208-R2-161215.jpg",
-    link: "/services",
-    bg_color: "bg-[#10465bd7]",
+    title: "",
+    subtitle: "",
+    imageUrl: "https://i.ibb.co.com/KN4C1HC/phots12-1.jpg",
+    link: "",
+    bg_color: "bg-transparent",
   },
+  // {
+  //   id: 3,
+  //   title: (
+  //     <>
+  //       Build a Hospital In <br /> Bangladesh
+  //     </>
+  //   ),
+  //   subtitle: [
+  //     "Are You Planning To",
+  //     "Contact World Renowed Health Care Consultant",
+  //   ],
+  //   imageUrl: "https://i.ibb.co.com/KN4C1HC/phots12-1.jpg",
+  //   link: "/services",
+  //   bg_color: "bg-transparent",
+  // },
 
   // {
   //   id: 3,
@@ -94,7 +102,7 @@ export function Hero() {
       <CarouselContent>
         {slides?.map((slide) => (
           <CarouselItem key={slide.id}>
-            <div className="relative h-[90vh] w-full bg-[#10465bd7]">
+            <div className="relative h-[80vh] w-full bg-[#10465bd7]">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -106,7 +114,7 @@ export function Hero() {
                 className={`absolute inset-0 ${slide?.bg_color} opacity-70`}
               ></div>
               {/* Content */}
-              <div className="relative mx-auto flex h-full max-w-[1400px] flex-col lg:items-start items-center justify-center gap-5">
+              <div className="relative mx-auto flex h-full max-w-[1400px] flex-col items-center justify-center gap-5 lg:items-start">
                 {slide.subtitle[0] && (
                   <h4 className="max-w-sm text-balance rounded-xl bg-si-primary px-2 py-1 text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
                     {slide?.subtitle[0]}
@@ -115,7 +123,7 @@ export function Hero() {
                 <h2 className="text-balance border-l-4 border-l-[#fbbe24] pl-4 text-4xl font-bold text-[#fbbe24] md:text-5xl lg:text-6xl">
                   {slide.title}
                 </h2>
-                <h4 className="max-w-sm text-balance text-base lg:text-start text-center font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-xl">
+                <h4 className="max-w-sm text-balance text-center text-base font-medium text-muted md:max-w-lg lg:max-w-2xl lg:text-start lg:text-xl">
                   {slide.subtitle[1]}
                 </h4>
                 <div className="flex items-center justify-center">

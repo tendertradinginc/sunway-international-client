@@ -10,16 +10,16 @@ const ServiceCard = ({ data, index }) => {
   const [isShow, setIsShow] = useState(false);
   const scrollRef = useRef(null);
   return (
-    <Link href={data?.url}>
-      <motion.div
-        initial={{ y: 150 }}
-        whileInView={{ y: 0 }}
-        transition={{
-          duration: (index + 1) * 0.5,
-          ease: [0, 0.71, 0.71, 1.01],
-        }}
-        className="rounded-md"
-      >
+    <motion.div
+      initial={{ y: 150 }}
+      whileInView={{ y: 0 }}
+      transition={{
+        duration: (index + 1) * 0.5,
+        ease: [0, 0.71, 0.71, 1.01],
+      }}
+      className="rounded-md"
+    >
+      <Link href={data?.url}>
         <div
           className="relative"
           onMouseOver={() => setIsShow(true)}
@@ -59,8 +59,8 @@ const ServiceCard = ({ data, index }) => {
             {data?.title2}
           </h2>
         </div>
-      </motion.div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 };
 
