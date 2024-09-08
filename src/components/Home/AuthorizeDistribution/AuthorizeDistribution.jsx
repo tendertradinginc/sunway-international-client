@@ -19,25 +19,32 @@ const AuthorizeDistribution = () => {
   ];
 
   return (
-    <div className="my-20">
+    <div
+      className="inset-0 left-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat py-16"
+      style={{
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co/G5tsH67/20228616454220.jpg)`,
+
+        backgroundPosition: "center",
+      }}
+    >
       <MaxWidthWrapper className="my-12 text-3xl font-semibold text-si-primary md:text-5xl">
         <SectionTitle
           title1={"Authorize"}
           title2={"Distributor"}
+          cn={"text-white"}
         ></SectionTitle>
       </MaxWidthWrapper>
-      <div className="flex flex-col items-center justify-center rounded-lg bg-[url('https://i.postimg.cc/mgp5mzsg/pexels-eric-mufasa-578798-1350789-1.jpg')] bg-cover bg-center text-black">
-        <div className="w-full bg-[#fbbe24da] py-24">
-          <MaxWidthWrapper className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
-            {authorizers?.map((authorizer, index) => (
-              <AuthorizeDistributionCard
-                index={index}
-                key={index}
-                authorizer={authorizer}
-              />
-            ))}
-          </MaxWidthWrapper>
-        </div>
+
+      <div className="w-full py-24">
+        <MaxWidthWrapper className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+          {authorizers?.map((authorizer, index) => (
+            <AuthorizeDistributionCard
+              index={index}
+              key={index}
+              authorizer={authorizer}
+            />
+          ))}
+        </MaxWidthWrapper>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { customLoader } from "@/utils/customLoader";
 import axios from "axios";
 import { format } from "date-fns";
 import { Archive, Eye, Pencil, Trash } from "lucide-react";
@@ -142,6 +143,7 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
                       className="relative mx-auto mb-5 min-h-[500px] w-full max-w-[500px]"
                     >
                       <Image
+                        loader={customLoader}
                         src={image || ""}
                         alt={`${productName || "Product Image"} ${idx + 1}`}
                         fill

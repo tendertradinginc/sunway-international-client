@@ -41,21 +41,21 @@ const SideNavbar = () => {
       label: "Hospital Furniture",
     },
 
-    {
-      id: 4,
-      href: "/dashboard/add-hospital-furniture",
-      label: "Add Hospital Furniture",
-    },
+    // {
+    //   id: 4,
+    //   href: "/dashboard/add-hospital-furniture",
+    //   label: "Add Hospital Furniture",
+    // },
     {
       id: 5,
       href: "/dashboard/medical-equipment-table",
       label: "Medical Equipment",
     },
-    {
-      id: 6,
-      href: "/dashboard/add-medical-equipment",
-      label: "Add Medical Equipment",
-    },
+    // {
+    //   id: 6,
+    //   href: "/dashboard/add-medical-equipment",
+    //   label: "Add Medical Equipment",
+    // },
     {
       id: 34,
       href: "/dashboard/archived-equipment-table",
@@ -69,8 +69,8 @@ const SideNavbar = () => {
     },
     {
       id: 9,
-      href: "/dashboard/office-category-page",
-      label: "Office Category",
+      href: "/dashboard/hospital-furniture-category-page",
+      label: "Hospital Furniture Category",
     },
     {
       id: 10,

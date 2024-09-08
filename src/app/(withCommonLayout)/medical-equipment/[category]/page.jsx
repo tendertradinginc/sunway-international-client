@@ -1,10 +1,6 @@
-"use client";
-
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
+import Search from "@/components/shared/Search/Search";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,33 +9,24 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-const MedicalCategoryPage = ({ params }) => {
-  const [equipment, setEquipment] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const MedicalCategoryPage = async ({ params, searchParams }) => {
+  const searchText = searchParams.search || "";
 
   // Decode the category name
   const decodedCategory = decodeURIComponent(params.category);
 
-  useEffect(() => {
-    const fetchEquipment = async () => {
-      try {
-        const response = await axios.get(
-          `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${params.category}`,
-        );
-        setEquipment(response?.data?.data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //* Fetching MAIN Data
+  let res = await fetch(
+    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/category?category=${decodedCategory}${searchText ? `&search=${searchText}` : ""}`,
+    {
+      cache: "no-store",
+    },
+  );
 
-    fetchEquipment();
-  }, [params.category]);
+  const equipmentJson = await res.json();
+  const equipment = equipmentJson?.data;
 
   return (
     <MaxWidthWrapper>
@@ -67,20 +54,11 @@ const MedicalCategoryPage = ({ params }) => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <Input
-          type="text"
-          name="search"
-          placeholder="Search For Products..."
-          className="max-w-[185px] bg-background lg:max-w-[250px]"
-        />
+        <Search category={decodedCategory} pageName="medical-equipment" />
       </div>
 
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p className="col-span-4 text-center text-red-500">{error}</p>
-        ) : equipment.length > 0 ? (
+        {equipment.length > 0 ? (
           equipment.map((item) => (
             <div key={item._id}>
               <EquipmentCard

@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
+import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
 import Image from "next/image";
@@ -317,6 +318,7 @@ const UpdateMedicalEqupment = () => {
                       {formData.images.map((url, index) => (
                         <div key={index}>
                           <Image
+                            loader={customLoader}
                             src={url}
                             height={200}
                             width={200}

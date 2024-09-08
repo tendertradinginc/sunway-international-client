@@ -6,7 +6,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { customLoader } from "@/utils/customLoader";
-import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { GiMedicalDrip } from "react-icons/gi";
@@ -35,24 +34,24 @@ const MedicalEquipmentPage = async () => {
   const res2Json = await res2.json();
   const mainData = res2Json?.data;
 
-
   return (
     <div className="bg-secondary">
-      <h2 className="py-3 text-center text-2xl font-bold md:py-5 lg:text-4xl">
-        Medical Equipment
-      </h2>
-
+      <MaxWidthWrapper>
+        <h2 className="py-3 text-2xl font-bold md:py-5 lg:text-4xl">
+          Medical Equipment
+        </h2>
+      </MaxWidthWrapper>
       <MaxWidthWrapper className="grid grid-cols-12 grid-rows-12 items-center justify-between gap-5 lg:items-start">
         {/* Category selector */}
         <div className="col-span-12 row-span-12 h-full bg-background lg:col-span-3">
           <div className="flex flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
-            <Link
+            {/* <Link
               href="/#"
               className="mt-1 inline-flex items-center text-sm font-semibold text-primary underline-offset-2 hover:underline"
             >
               See All <DoubleArrowRightIcon className="ml-1 size-3" />
-            </Link>
+            </Link> */}
           </div>
 
           <div className="flex flex-col">
@@ -83,9 +82,10 @@ const MedicalEquipmentPage = async () => {
           <Carousel opts={{ loop: true }} autoplay className="w-full">
             <CarouselContent className="ml-0 w-full">
               <CarouselItem className="p-0">
-                <div className="relative h-[300px] w-full">
+                <div className="relative h-[400px] w-full">
                   <Image
-                    src="/file-jLjSYMkrwusYaZjPGDd8NA4z.webp"
+                    loader={customLoader}
+                    src="https://i.ibb.co.com/KN4C1HC/phots12-1.jpg"
                     alt="Advertisement"
                     fill
                     className="h-full w-full object-cover object-center"
@@ -93,8 +93,9 @@ const MedicalEquipmentPage = async () => {
                 </div>
               </CarouselItem>
               <CarouselItem className="p-0">
-                <div className="relative h-[300px] w-full">
+                <div className="relative h-[400px] w-full">
                   <Image
+                    loader={customLoader}
                     src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
                     alt="Advertisement"
                     fill

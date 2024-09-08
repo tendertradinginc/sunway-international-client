@@ -69,7 +69,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <MaxWidthWrapper className="py-16">
+    <MaxWidthWrapper className="py-20">
       <SectionTitle title1={"Customer"} title2={"Reviews"}></SectionTitle>
       <Carousel
         opts={{ loop: true }}

@@ -10,6 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
@@ -22,6 +23,7 @@ const ViewBlog = ({ data }) => {
       <AlertDialogContent className="max-w-2xl">
         <AlertDialogHeader>
           <Image
+            loader={customLoader}
             height={400}
             width={400}
             className="h-64 border shadow-md"

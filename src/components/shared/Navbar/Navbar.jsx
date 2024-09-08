@@ -1,14 +1,39 @@
+"use client";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { RiMenu3Line } from "react-icons/ri";
 import MaxWidthWrapper from "../../custom/MaxWidthWrapper";
 import NavItems from "./NavItems";
 
 const Navbar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // If scrolling down
+      setIsVisible(false);
+    } else {
+      // If scrolling up
+      setIsVisible(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
   return (
-    <nav className="border-b py-2.5">
+    <nav
+      className={`fixed z-50 w-full bg-white py-4 shadow-lg backdrop-blur-md duration-300 ${isVisible ? "top-0" : "-top-24"}`}
+    >
       <MaxWidthWrapper className="flex items-center justify-between">
         <Link href="/">
           <Image
@@ -20,7 +45,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div clasName="hidden md:block">
+        <div className="hidden md:block">
           <NavItems />
         </div>
 

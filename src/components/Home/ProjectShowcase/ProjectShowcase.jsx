@@ -4,19 +4,20 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    id: 1,
-    title: "Private Clinic",
-    description: "Healthcare Facility",
-    location: "Banani, Dhaka",
-    imageUrl: "/adhy-savala-zbpgmGe27p8-unsplash.jpg",
-  },
-  {
     id: 2,
     title: "Office Solutions",
     description: "Office Equipment Supply",
     location: "Gulshan, Dhaka",
     imageUrl: "/benjamin-child-0sT9YhNgSEs-unsplash.jpg",
   },
+  {
+    id: 1,
+    title: "Private Clinic",
+    description: "Healthcare Facility",
+    location: "Banani, Dhaka",
+    imageUrl: "/adhy-savala-zbpgmGe27p8-unsplash.jpg",
+  },
+
   {
     id: 3,
     title: "Medical Center",
@@ -35,42 +36,52 @@ const projects = [
 
 const ProjectShowcase = () => {
   return (
-    <div className="py-16">
-      <MaxWidthWrapper>
-        <SectionTitle title1={"Featured"} title2={"Projects"}></SectionTitle>
-      </MaxWidthWrapper>
+    <div
+      className="inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat py-16"
+      style={{
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co.com/KN4C1HC/phots12-1.jpg)`,
 
-      <div className="relative min-h-[600px] w-full">
-        <div
-          className="absolute inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(/solen-feyissa-jGmBZypoFPc-unsplash.jpg)`,
-          }}
-        >
+        backgroundPosition: "top right",
+        height: "100vh",
+      }}
+    >
+      <div className="min-h-[600px] w-full">
+        <div className="h-full">
+          {/* <div className="absolute inset-0 bg-[#1c475995] opacity-70"></div> */}
           <MaxWidthWrapper className="h-full w-full">
-            <section className="grid h-full w-full grid-cols-2 p-[5%] lg:grid-cols-4 lg:gap-0">
+            <SectionTitle
+              title1={"Featured"}
+              title2={"Projects"}
+              cn={"text-white"}
+            ></SectionTitle>
+
+            <section className="grid h-full w-full grid-cols-2 gap-4 lg:grid-cols-4">
               {projects.map((project) => (
-                <div
-                  key={project.id}
-                  className="relative h-full w-full bg-green-500"
-                >
+                <div key={project.id} className="h-[400px] w-full">
                   <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="h-full w-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${project.imageUrl})`,
+                      backgroundImage: `linear-gradient(rgba(229, 231, 235, 0.4), rgba(229, 231, 235, 0.4)),url(${project.imageUrl})`,
                     }}
                   >
-                    {/* Black overlay */}
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <section className="relative flex h-full flex-col justify-evenly p-6 pt-10 text-muted lg:h-1/2">
+                    {/* Black overlay */}r
+                    {/* <div className="absolute left-0 top-0 h-full w-full bg-green-900 opacity-60"></div> */}
+                    <section className="flex h-full flex-col justify-evenly p-6 pt-10 text-muted">
                       <div className="space-y-1">
-                        <p className="text-sm md:text-base">{project.title}</p>
-                        <h4 className="text-base font-medium md:text-lg xl:text-xl">
+                        <p className="text-sm text-black md:text-base">
+                          {project.title}
+                        </p>
+                        <h4 className="text-base font-medium text-black md:text-lg xl:text-xl">
                           {project.description}
                         </h4>
+                        <h6 className="text-xs text-black md:text-sm">
+                          {project?.location}
+                        </h6>
                       </div>
-                      <h6 className="text-xs md:text-sm">{project.location}</h6>
-                      <Button className="w-full md:w-1/2">View More</Button>
+
+                      <Button className="w-full text-white md:w-1/2">
+                        View More
+                      </Button>
                     </section>
                   </div>
                 </div>

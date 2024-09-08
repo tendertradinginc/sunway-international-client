@@ -2,6 +2,7 @@
 
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
+import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -9,7 +10,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const CompanyCertification = () => {
   return (
     <MaxWidthWrapper className="my-20">
-      <SectionTitle title1={"Company"} title2={"Certification"}></SectionTitle>
+      <SectionTitle title1={"Our"} title2={"Achievement"}></SectionTitle>
       <div className="relative flex flex-col items-center justify-center shadow-none lg:flex-row lg:justify-end">
         {/* Right Section with Content */}
         <div className="order-2 min-h-[50vh] w-full bg-si-primary p-6 text-center lg:order-1 lg:min-h-[70vh] lg:w-8/12 lg:p-10">
@@ -43,6 +44,7 @@ const CompanyCertification = () => {
           className="relative left-0 order-1 mb-4 w-full transform lg:absolute lg:order-2 lg:mb-0 lg:w-auto lg:translate-x-[10%]"
         >
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/SRvVNgcV/ct.png"
             alt="Certificate Image"
             width={500}

@@ -1,5 +1,3 @@
-"use client";
-
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
 import { Button } from "@/components/ui/button";
@@ -9,38 +7,34 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { customLoader } from "@/utils/customLoader";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { LuLampDesk } from "react-icons/lu";
-import {
-  PiDesk,
-  PiMonitor,
-  PiOfficeChair,
-  PiPrinter,
-  PiProjectorScreenChart,
-} from "react-icons/pi";
 
-const HospitalFurniturePage = () => {
-  const [products, setProducts] = useState([]);
+const HospitalFurniturePage = async () => {
+  //* Fetching MAIN Data
+  let res = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
+    {
+      cache: "no-store",
+    },
+  );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all-category",
-        );
-        const data = await response.json();
-        setProducts(data?.data || []);
-      } catch (error) {
-        console.error("Error fetching office equipment data:", error);
-      }
-    };
+  const productsJson = await res.json();
+  const products = productsJson?.data;
 
-    fetchData();
-  }, []);
+  //* Fething category data
+
+  let res2 = await fetch(
+    "https://sunway-international-server.vercel.app/api/v1/office-equipment-category?limit=6",
+    {
+      cache: "no-store",
+    },
+  );
+
+  const categoryJson = await res2.json();
+  const categories = categoryJson?.data?.result;
 
   return (
     <div className="bg-secondary">
@@ -54,80 +48,44 @@ const HospitalFurniturePage = () => {
         <div className="size-[350px]">
           <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
-            <Link
+            {/* <Link
               href="/#"
               className="mt-1 inline-flex items-center text-sm font-semibold text-primary underline-offset-2 hover:underline"
             >
               See All <DoubleArrowRightIcon className="ml-1 size-3" />
-            </Link>
+            </Link> */}
           </div>
 
           <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiDesk className="mr-2 size-5" /> Office Tables
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiOfficeChair className="mr-2 size-6" /> Ergonomic Chairs
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiMonitor className="mr-2 size-6" /> Computer Monitors
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiPrinter className="mr-2 size-6" /> Office Printers
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <PiProjectorScreenChart className="mr-2 size-6" /> Projectors
-              </span>
-            </Link>
-            <Link
-              href="/#"
-              className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
-            >
-              <span className="inline-flex items-center p-2 font-semibold">
-                <LuLampDesk className="mr-2 size-6" /> Table Lamps
-              </span>
-            </Link>
+            {categories.map((category) => (
+              <Link
+                key={category._id}
+                href={`/hospital-furniture/${category?.name}`}
+                className="scale-90 hover:scale-100 hover:text-primary hover:shadow-md"
+              >
+                <span className="inline-flex items-center p-2 font-semibold">
+                  <Image
+                    loader={customLoader}
+                    className="mr-2 size-5"
+                    src={category?.image}
+                    alt={category?.name}
+                    height={25}
+                    width={25}
+                  />
+                  {category?.name}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* Advertisement Carousel */}
-        <Carousel
-          opts={{ loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 4500,
-            }),
-          ]}
-          className="w-full"
-        >
+        <Carousel opts={{ loop: true }} autoplay className="w-full">
           <CarouselContent className="ml-0 w-full">
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.18.51 - An advertisement image promoting an ergonomic office chair. The chair is modern and sleek with adjustable features and lumbar support, designed for co.webp"
                   alt="Advertisement"
                   fill
@@ -139,6 +97,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.18.53 - An advertisement image promoting a modern office desk. The desk is sleek with a minimalist design, featuring a large workspace, integrated cable manag.webp"
                   alt="Advertisement"
                   fill
@@ -150,6 +109,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.42.33 - A professional advertisement poster focused on a high-quality projector in a modern office setting. The projector is placed on one side of the poster,.webp"
                   alt="Advertisement"
                   fill
@@ -161,6 +121,7 @@ const HospitalFurniturePage = () => {
             <CarouselItem className="h-[350px] w-full pl-0">
               <div className="relative h-[350px] w-full">
                 <Image
+                  loader={customLoader}
                   src="/DALL·E 2024-08-20 11.42.39 - A sleek advertisement poster for office equipment featuring high-quality projectors and printers. The scene showcases a modern office setting with the.webp"
                   alt="Advertisement"
                   fill

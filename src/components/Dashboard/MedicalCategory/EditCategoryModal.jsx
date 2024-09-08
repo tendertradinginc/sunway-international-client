@@ -17,6 +17,7 @@ import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import { toast } from "sonner";
 
@@ -98,7 +99,13 @@ const EditCategoryModal = ({ data, setReload, pathName }) => {
               </div>
               <div className="mb-4">
                 <Label className="mb-2 block">Category Image</Label>
-                <Image width={48} height={48} src={img} alt="" />
+                <Image
+                  loader={customLoader}
+                  width={48}
+                  height={48}
+                  src={img}
+                  alt=""
+                />
                 <Input
                   type="file"
                   accept="image/*"

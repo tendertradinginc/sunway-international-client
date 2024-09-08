@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
@@ -91,6 +92,7 @@ const BlogUpdate = ({ data, setReload }) => {
         >
           <div className="mb-5">
             <Image
+              loader={customLoader}
               height={400}
               width={400}
               className="h-64 border shadow-md"
