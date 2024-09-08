@@ -140,7 +140,7 @@ const ContactUs = () => {
                         <li>
                             <h1 className="flex items-center gap-3">
                                 <MdEmail className="text-xl text-si-primary" />
-                                sunway-international@gmail.com
+                                twintradeint@gmail.com
                             </h1>
                         </li>
                     </ul>
