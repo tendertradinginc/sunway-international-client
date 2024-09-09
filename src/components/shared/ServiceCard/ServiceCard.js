@@ -19,7 +19,7 @@ const ServiceCard = ({ data, index }) => {
       }}
       className="rounded-md"
     >
-      <Link href={data?.url}>
+      <div>
         <div
           className="relative"
           onMouseOver={() => setIsShow(true)}
@@ -59,7 +59,7 @@ const ServiceCard = ({ data, index }) => {
             {data?.title2}
           </h2>
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 };
