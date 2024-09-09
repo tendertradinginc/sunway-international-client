@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const ServiceCard = ({ data, index }) => {
   const [isShow, setIsShow] = useState(false);
@@ -47,10 +46,10 @@ const ServiceCard = ({ data, index }) => {
               <h1 className="my-5 text-2xl font-semibold text-white">
                 {data?.title}
               </h1>
-              <Link className="text-si-accent" href={data?.url}>
+              {/* <Link className="text-si-accent" href={data?.url}>
                 Read More &nbsp;{" "}
                 <FaArrowRight className="inline-block text-si-accent" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

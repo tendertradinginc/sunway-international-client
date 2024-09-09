@@ -13,6 +13,7 @@ const slides = [
     title: "",
     subtitle: ["", ""],
     imageUrl: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
+    imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
     link: "",
     bg_color: "bg-transparent",
   },
@@ -28,6 +29,8 @@ const slides = [
       "Leading the way in healthcare with advanced medical equipment and cutting-edge hospital construction.",
     ],
     imageUrl: "https://i.ibb.co/zV4TCVB/ynclean-cleanroom-manufacturer.webp",
+    imageUrlMobile:
+      "https://i.ibb.co/zV4TCVB/ynclean-cleanroom-manufacturer.webp",
     link: "/medical-equipment",
     bg_color: "bg-transparent",
   },
@@ -35,7 +38,8 @@ const slides = [
     id: 3,
     title: "",
     subtitle: "",
-    imageUrl: "https://i.ibb.co.com/KN4C1HC/phots12-1.jpg",
+    imageUrl: "https://i.ibb.co.com/kM6hsKS/phtos15.jpg",
+    imageUrlMobile: "https://i.ibb.co.com/XL79D4r/phtots16.jpg",
     link: "",
     bg_color: "bg-transparent",
   },
@@ -102,11 +106,17 @@ export function Hero() {
       <CarouselContent>
         {slides?.map((slide) => (
           <CarouselItem key={slide.id}>
-            <div className="relative h-[80vh] w-full bg-[#10465bd7]">
+            <div className="relative h-[95vh] w-full bg-[#10465bd7]">
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 hidden bg-cover bg-center md:block"
                 style={{
                   backgroundImage: `url(${slide.imageUrl})`,
+                }}
+              />
+              <div
+                className="absolute inset-0 block w-auto bg-cover bg-center md:hidden"
+                style={{
+                  backgroundImage: `url(${slide.imageUrlMobile})`,
                 }}
               />
               {/* Black overlay */}
