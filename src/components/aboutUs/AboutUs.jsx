@@ -149,9 +149,9 @@ const AboutUs = () => {
         <section className="my-16">
           <div className="mx-auto max-w-6xl py-8">
             {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
-                            About CEO
+                            Managing Partner
                         </h1> */}
-            <SectionTitle title1={"About"} title2={"CEO"}></SectionTitle>
+            <SectionTitle title1={"Managing"} title2={"Partner"}></SectionTitle>
           </div>
           <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10">
             <div className="flex flex-1 justify-center text-justify">
@@ -168,7 +168,7 @@ const AboutUs = () => {
               <h1 className="pt-3 text-xl font-semibold text-si-primary md:text-2xl">
                 Mohammad Abul Kalam Mozumder
               </h1>
-              <h2 className="font-medium">CEO At Twin Trade Int..</h2>
+              <h2 className="font-medium">Managing Partner At Twin Trade International</h2>
               <p className="mt-4">
                 With a modest beginning in the trade and business in 2000, Twin
                 Trade International has transformed itself into a conglomerate
@@ -187,6 +187,46 @@ const AboutUs = () => {
                 played catalytic roles and worked with the government in
                 recognizing and including medical device manufacturing in the
                 National Industrial Policy 2022.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        {/* about Partner section */}
+        <section className="my-16">
+          <div className="mx-auto max-w-6xl py-8">
+            {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
+                            Partner
+                        </h1> */}
+            <SectionTitle title1={"Part"} title2={"ner"}></SectionTitle>
+          </div>
+          <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10 ">
+            <div className="flex flex-1 justify-center text-justify">
+              <Image
+                src="https://i.postimg.cc/W15V5SJT/Whats-App-Image-2024-09-09-at-12-50-39-PM.jpg"
+                alt="About Us Image"
+                width={500}
+                height={300}
+                className="h-auto w-96 rounded-full object-cover "
+              />
+            </div>
+
+            <div className="flex-1 text-justify">
+              <h1 className="pt-3 text-xl font-semibold text-si-primary md:text-2xl">
+                Delwar Hossain
+              </h1>
+              <h2 className="font-medium">Partner At Twin Trade International</h2>
+              <p className="mt-4">
+                With a modest beginning in the trade and business in 2000, Twin
+                Trade International has transformed itself into a conglomerate
+                boasting 14 companies within its fold over time. These companies
+                are now engaged in diverse areas of business, commerce, and
+                industries. Twin Trade International has been consistently
+                striving hard to become the market leader in hospital furniture,
+                medical devices, pharmaceutical, agro-business, veterinary,
+                fashion, furniture, engineering, and media industries.
               </p>
             </div>
           </div>
