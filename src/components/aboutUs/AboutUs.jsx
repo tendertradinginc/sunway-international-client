@@ -168,7 +168,7 @@ const AboutUs = () => {
               <h1 className="pt-3 text-xl font-semibold text-si-primary md:text-2xl">
                 Mohammad Abul Kalam Mozumder
               </h1>
-              <h2 className="font-medium">CEO At Twin Trade International</h2>
+              <h2 className="font-medium">Managing Partner At Twin Trade International</h2>
               <p className="mt-4">
                 With a modest beginning in the trade and business in 2000, Twin
                 Trade International has transformed itself into a conglomerate
