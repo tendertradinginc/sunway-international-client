@@ -22,7 +22,7 @@ const AuthorizeDistribution = () => {
     <div
       className="inset-0 left-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat py-16"
       style={{
-        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co/G5tsH67/20228616454220.jpg)`,
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.9), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co/G5tsH67/20228616454220.jpg)`,
 
         backgroundPosition: "center",
       }}
@@ -31,7 +31,7 @@ const AuthorizeDistribution = () => {
         <SectionTitle
           title1={"Authorize"}
           title2={"Distributor"}
-          cn={"text-white"}
+          cn={"text-white"} 
         ></SectionTitle>
       </MaxWidthWrapper>
 
