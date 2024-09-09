@@ -22,7 +22,7 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
           loader={customLoader}
         />
       </div>
-      <div className="h-full flex-1 border-b px-2.5 py-3 text-left shadow-xl shadow-green-100">
+      <div className="h-full flex-1 border-b px-2.5 py-3 text-left shadow-xl shadow-green-100 mb-16">
         <div className="flex h-full flex-col items-start justify-between">
           <div className="flex-1">
             <h3 className="line-clamp-2 text-lg font-bold">
