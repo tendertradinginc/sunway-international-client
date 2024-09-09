@@ -18,7 +18,7 @@ const AboutUs = () => {
       </div>
       <div className="">
         <section className="mb-16">
-          <div className="mx-auto max-w-6xl py-8">
+          <div className="mx-auto max-w-6xl lg:py-8 p-6">
             {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8">
                             About Us
                         </h1> */}
