@@ -45,12 +45,12 @@ const ContactUs = () => {
 
             <div className="max-w-6xl mx-auto  flex flex-col lg:flex-row justify-center items-start lg:items-stretch gap-5 lg:gap-10">
                 <div className="py-10 flex-1">
-                    <h2 className="text-base font-semibold text-start pb-4">
+                    <h2 className="text-base font-semibold text-start lg:pb-4 p-4">
                         We cannot solve your problem if you do not tell us about it!{" "}
                     </h2>
                     <form
                         onSubmit={handleAddComment}
-                        className="max-w-5xl mx-auto rounded-lg"
+                        className="max-w-5xl mx-auto rounded-lg lg:p-0 p-6"
                     >
                         <div className="mb-4">
                             <label className="sr-only">Name</label>
@@ -117,7 +117,7 @@ const ContactUs = () => {
                     </form>
                 </div>
 
-                <div className="flex-1 py-20">
+                <div className="flex-1 lg:py-20 p-6">
                     <ul className="space-y-3 text-left lg:text-lg font-medium">
                         <li>
                             <h1 className="flex items-center gap-3">
