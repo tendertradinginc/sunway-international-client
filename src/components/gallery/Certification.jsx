@@ -1,20 +1,113 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
+import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const Certification = () => {
   return (
-    <div>
+    <MaxWidthWrapper className="my-20">
       {/* <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
         Certificate  Honor
       </h1> */}
-      <div className="text-3xl font-semibold text-si-primary md:text-5xl">
-        <SectionTitle title1={"Certificate"} title2={"Honor"}></SectionTitle>
+      <div className="text-center">
+        <SectionTitle title1={"Certificate Honor"}></SectionTitle>
+        <p className="mt-5 font-medium text-si-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur
+          eum magnam, commodi harum dolor qui dolorum perspiciatis placeat,
+          explicabo minima aut est reiciendis. Cum, exercitationem
+          necessitatibus? Saepe dignissimos non repellat facere, deserunt
+          aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit
+          dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex
+          quisquam expedita reiciendis nam nulla neque, amet ut molestias
+          corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut
+          corporis vitae architecto dolorum nemo at quaerat id consectetur
+          neque.
+        </p>
       </div>
-      <p className="mt-5 text-si-text font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur eum magnam, commodi harum dolor qui dolorum perspiciatis placeat, explicabo minima aut est reiciendis. Cum, exercitationem necessitatibus? Saepe dignissimos non repellat facere, deserunt aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex quisquam expedita reiciendis nam nulla neque, amet ut molestias corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut corporis vitae architecto dolorum nemo at quaerat id consectetur neque.</p>
 
+      <div className="my-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {/* Certificate 1 */}
+        <div>
+          <Image
+            src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
 
-      <div className="mt-8 grid grid-cols-1 grid-rows-12 gap-y-10 md:grid-cols-2 md:gap-x-5 lg:gap-x-10">
+        {/* Certificate 2 */}
+        <div>
+          <Image
+            src="https://i.postimg.cc/tRvJRWQY/Frame-170.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+        {/* Certificate 3 */}
+        <div>
+          <Image
+            src="https://i.postimg.cc/RhJWxZ0P/Frame-174.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+        {/* Certificate 4 */}
+        <div>
+          <Image
+            src="https://i.postimg.cc/4Nh9rB7J/Frame-163.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+         {/* Certificate 5 */}
+         <div>
+          <Image
+            src="https://i.postimg.cc/RhJWxZ0P/Frame-174.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+        {/* Certificate 6 */}
+        <div>
+          <Image
+            src="https://i.postimg.cc/4Nh9rB7J/Frame-163.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+         {/* Certificate 7 */}
+         <div>
+          <Image
+            src="https://i.postimg.cc/tRvJRWQY/Frame-170.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+
+         {/* Certificate 8 */}
+         <div>
+          <Image
+            src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
+            alt="certificate 1"
+            height={300}
+            width={300}
+          />
+        </div>
+      </div>
+
+      {/* <div className="mt-8 grid grid-cols-1 grid-rows-12 gap-y-10 md:grid-cols-2 md:gap-x-5 lg:gap-x-10">
         <div className="row-span-12 grid gap-5">
           <div className="col-span-4 grid">
             <Image
@@ -104,8 +197,8 @@ const Certification = () => {
             width={1400}
           />
         </div>
-      </div>
-    </div>
+      </div> */}
+    </MaxWidthWrapper>
   );
 };
 

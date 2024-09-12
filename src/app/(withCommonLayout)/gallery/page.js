@@ -9,8 +9,8 @@ const page = () => {
     <div>
       <GalleryBanner />
       <FFU />
-        <Assembly />
-        <Certification />
+      <Assembly />
+      <Certification />
     </div>
   );
 };
