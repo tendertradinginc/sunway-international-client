@@ -34,19 +34,74 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="mt-16">
+        <section className="mt-16 bg-[#F6F6F6]">
+            <div className="max-w-5xl mx-auto  flex flex-col lg:flex-row justify-center items-center  gap-5 ">
 
-            <div className="max-w-6xl mx-auto py-8">
-                {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
-                            Contact Us
-                        </h1> */}
-                <SectionTitle title1={"Contact"} title2={"Us"}></SectionTitle>
-            </div>
+                <div className="flex-1 flex flex-col justify-center items-start p-6">
+                    <h1 className="text-4xl font-bold text-si-primary mb-6">Contact Us</h1>
+                    <ul className="space-y-2 text-left lg:text-lg font-medium">
+                        <h2 className="text-lg mb-6">Email, call, or  complete the form to learn how snappy can solve your messaging problem.</h2>
+                        <li>
+                            <h1 className="flex items-center gap-3">
+                                <FaLocationDot className="text-base text-si-primary" />
+                                Dhaka, Bangladesh
+                            </h1>
+                        </li>
+                        <li>
+                            <h1 className="flex items-center gap-3">
+                                <FaHome className="text-base text-si-primary" />
+                                27 Saptak Square, Dhanmondi.
+                            </h1>
+                        </li>
+                        <li>
+                            <h1 className="flex items-center gap-3">
+                                <FaPhoneSquare className="text-base text-si-primary" />
+                                +880 1894982978
+                            </h1>
+                        </li>
+                        <li>
+                            <h1 className="flex items-center gap-3">
+                                <MdEmail className="text-base text-si-primary" />
+                                twintradeint@gmail.com
+                            </h1>
+                        </li>
+                    </ul>
+                    <div className="text-si-primary flex flex-col items-start mt-6">
+                        <div className="flex items-center gap-4">
+                            <a
+                                href="https://www.linkedin.com/company/tendertradinginc/mycompany/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaLinkedin className="text-2xl" />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/tendertradinginc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaFacebook className="text-2xl" />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/@TenderTradingInc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaYoutube className="text-4xl" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            <div className="max-w-6xl mx-auto  flex flex-col lg:flex-row justify-center items-start lg:items-stretch gap-5 lg:gap-10">
-                <div className="py-10 flex-1">
-                    <h2 className="text-base font-semibold text-start lg:pb-4 p-4">
+                <div className="my-16 flex-1 bg-white rounded-lg p-10">
+                    {/* <h2 className="text-base font-semibold text-start lg:pb-4 p-4">
                         We cannot solve your problem if you do not tell us about it!{" "}
+                    </h2> */}
+                    <h1 className="text-2xl font-semibold text-start mb-2">
+                        Get in Touch
+                    </h1>
+                    <h2 className="text-base font-semibold text-start mb-4">
+                        You can reach us anytime
                     </h2>
                     <form
                         onSubmit={handleAddComment}
@@ -117,62 +172,8 @@ const ContactUs = () => {
                     </form>
                 </div>
 
-                <div className="flex-1 lg:py-20 p-6">
-                    <ul className="space-y-3 text-left lg:text-lg font-medium">
-                        <li>
-                            <h1 className="flex items-center gap-3">
-                                <FaLocationDot className="text-xl text-si-primary" />
-                                Dhaka, Bangladesh
-                            </h1>
-                        </li>
-                        <li>
-                            <h1 className="flex items-center gap-3">
-                                <FaHome className="text-xl text-si-primary" />
-                                27 Saptak Square, Dhanmondi.
-                            </h1>
-                        </li>
-                        <li>
-                            <h1 className="flex items-center gap-3">
-                                <FaPhoneSquare className="text-xl text-si-primary" />
-                                +880 1894982978
-                            </h1>
-                        </li>
-                        <li>
-                            <h1 className="flex items-center gap-3">
-                                <MdEmail className="text-xl text-si-primary" />
-                                twintradeint@gmail.com
-                            </h1>
-                        </li>
-                    </ul>
-                    <div className="text-si-primary flex flex-col items-start mt-6">
-                        <div className="flex items-center gap-4">
-                            <a
-                                href="https://www.linkedin.com/company/tendertradinginc/mycompany/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaLinkedin className="text-4xl" />
-                            </a>
-                            <a
-                                href="https://www.facebook.com/tendertradinginc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaFacebook className="text-4xl" />
-                            </a>
-                            <a
-                                href="https://www.youtube.com/@TenderTradingInc"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaYoutube className="text-5xl" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 
