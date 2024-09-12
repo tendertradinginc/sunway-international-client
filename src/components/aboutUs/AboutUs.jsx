@@ -214,30 +214,15 @@ const AboutUs = () => {
         </section>
 
 
-        {/* about Partner section */}
+        {/* about partner section */}
         <section className="my-16">
-          <div className="mx-auto max-w-6xl py-8">
-            {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary py-8 px-4">
-                            Partner
-                        </h1> */}
-            <SectionTitle title1={"Part"} title2={"ner"}></SectionTitle>
-          </div>
-          <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10 ">
-            <div className="flex flex-1 justify-center text-justify">
-              <Image
-                src="https://i.postimg.cc/W15V5SJT/Whats-App-Image-2024-09-09-at-12-50-39-PM.jpg"
-                alt="About Us Image"
-                width={500}
-                height={300}
-                className="h-auto w-96 rounded-full object-cover "
-              />
-            </div>
+          <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10">
 
-            <div className="flex-1 text-justify">
-              <h1 className="pt-3 text-xl font-semibold text-si-primary md:text-2xl">
-                Delwar Hossain
+            <div className="flex-1 flex flex-col justify-center items-start text-justify">
+              <h1 className=" text-xl font-bold text-si-primary md:text-3xl">
+                Managing Partner
               </h1>
-              <h2 className="font-medium">Partner At Twin Trade International</h2>
+
               <p className="mt-4">
                 With a modest beginning in the trade and business in 2000, Twin
                 Trade International has transformed itself into a conglomerate
@@ -249,8 +234,26 @@ const AboutUs = () => {
                 fashion, furniture, engineering, and media industries.
               </p>
             </div>
+
+            <div className="flex-1 order-first flex flex-col justify-center text-justify lg:order-last">
+              <Image
+                src="https://i.postimg.cc/W15V5SJT/Whats-App-Image-2024-09-09-at-12-50-39-PM.jpg"
+                alt="About Us Image"
+                width={500}
+                height={300}
+                className="h-auto w-full rounded-none object-cover shadow-md"
+              />
+              <div className="relative z-10 bg-white w-max -mt-8 mx-auto p-2">
+                <h1 className="text-xl font-semibold text-si-primary md:text-xl text-center">
+                  Delwar Hossain
+                </h1>
+                <h2 className="font-medium text-sm">Partner At Twin Trade International</h2>
+              </div>
+
+            </div>
           </div>
         </section>
+
       </div>
     </div>
   );
