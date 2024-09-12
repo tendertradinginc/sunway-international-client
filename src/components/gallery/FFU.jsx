@@ -1,10 +1,11 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
+import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const FFU = () => {
   return (
-    <div className="mt-10">
+    <MaxWidthWrapper className="mt-20">
       {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary">FFU Workshop</h1> */}
       <div className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
         <SectionTitle
@@ -32,7 +33,7 @@ const FFU = () => {
         height={800}
         width={1400}
       />
-    </div>
+    </MaxWidthWrapper>
   );
 };
 

@@ -8,11 +8,9 @@ const page = () => {
   return (
     <div>
       <GalleryBanner />
-      <MaxWidthWrapper className="space-y-20 py-16">
-        <FFU />
+      <FFU />
         <Assembly />
         <Certification />
-      </MaxWidthWrapper>
     </div>
   );
 };
