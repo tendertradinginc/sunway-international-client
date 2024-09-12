@@ -7,14 +7,22 @@ const AboutUs = () => {
   return (
     <div>
       <div>
-        <Image
-          src="https://i.ibb.co.com/N3KwnVr/phots1.png"
-          alt="About Us Image"
-          width={500}
-          height={300}
-          loader={customLoader}
-          className="h-full w-full"
-        />
+        <div className="relative h-full w-full">
+          <Image
+            src="https://i.postimg.cc/c4fGqpTc/Downloader-La-463487-1.png"
+            alt="About Us Image"
+            width={500}
+            height={300}
+            loader={customLoader}
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-green-200 opacity-50"></div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+            <h1 className="text-5xl font-bold mb-2 text-si-primary ">About Us</h1>
+            <p className="text-base text-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto earum excepturi <br /> voluptatem doloribus. Recusandae beatae excepturi nisi sunt maxime similique.</p>
+          </div>
+        </div>
+
       </div>
       <div className="">
         <section className="mb-16">
