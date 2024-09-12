@@ -19,11 +19,11 @@ export default function Home() {
       <Hero />
       <BannerCategory />
       <NewArrival />
-      <hr />
+     
       <MedicalEquipments />
-      <hr />
+    
       <LatestHospitalFurniture />
-      <hr />
+
       <Services />
       <hr />
       <ConstructionService />
