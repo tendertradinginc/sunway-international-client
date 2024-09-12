@@ -17,16 +17,7 @@ const Assembly = () => {
             title2={""}
           ></SectionTitle>
           <p className="font-medium text-si-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            tenetur eum magnam, commodi harum dolor qui dolorum perspiciatis
-            placeat, explicabo minima aut est reiciendis. Cum, exercitationem
-            necessitatibus? Saepe dignissimos non repellat facere, deserunt
-            aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit
-            dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex
-            quisquam expedita reiciendis nam nulla neque, amet ut molestias
-            corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut
-            corporis vitae architecto dolorum nemo at quaerat id consectetur
-            neque.
+          Assembly Workshop focuses on teaching participants with the skills and knowledge to efficiently and effectively assemble products, from basic consumer goods to complex machinery. The workshop is designed to enhance understanding of assembly techniques, tools, safety procedures, and quality control measures essential for producing high-quality products for our customers that we supply to. 
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
