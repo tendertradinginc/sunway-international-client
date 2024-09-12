@@ -15,15 +15,7 @@ const FFU = () => {
         ></SectionTitle>
       </div>
       <p className="mx-auto mt-5 text-center font-medium text-si-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur
-        eum magnam, commodi harum dolor qui dolorum perspiciatis placeat,
-        explicabo minima aut est reiciendis. Cum, exercitationem necessitatibus?
-        Saepe dignissimos non repellat facere, deserunt aliquam, alias ea nobis
-        accusantium nihil mollitia dolores ipsa odit dicta inventore dolorem nam
-        voluptatem culpa natus? Eveniet totam ex quisquam expedita reiciendis
-        nam nulla neque, amet ut molestias corrupti earum quae maxime cumque et
-        deserunt iusto! Voluptatum aut corporis vitae architecto dolorum nemo at
-        quaerat id consectetur neque.
+      This workshop focuses on understanding, assembling, maintaining, and troubleshooting Fan Filter Units, which are an important part of cleanroom environments. FFUs are ceiling-mounted or standalone units that integrate a fan and a HEPA or ULPA filter to create a laminar flow of clean, filtered air, minimizing contamination in controlled environments such as laboratories, manufacturing facilities, and hospitals.
       </p>
       <Image
         loader={customLoader}

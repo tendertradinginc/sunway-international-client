@@ -25,21 +25,21 @@ export default function Home() {
       <LatestHospitalFurniture />
 
       <Services />
-      <hr />
+   
       <ConstructionService />
-      <hr />
+      
       <CountUP />
-      <hr />
+    
       <CompanyCertification />
-      <hr />
+     
       <ProjectShowcase />
-      <hr />
+      
       <Testimonials />
-      <hr />
+     
       <AuthorizeDistribution />
-      <hr />
+     
       <OurClients />
-      <hr />
+  
       <Chatbot />
     </div>
   );

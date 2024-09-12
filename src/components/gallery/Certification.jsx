@@ -12,16 +12,17 @@ const Certification = () => {
       <div className="text-center">
         <SectionTitle title1={"Certificate Honor"}></SectionTitle>
         <p className="mt-5 font-medium text-si-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur
-          eum magnam, commodi harum dolor qui dolorum perspiciatis placeat,
-          explicabo minima aut est reiciendis. Cum, exercitationem
-          necessitatibus? Saepe dignissimos non repellat facere, deserunt
-          aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit
-          dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex
-          quisquam expedita reiciendis nam nulla neque, amet ut molestias
-          corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut
-          corporis vitae architecto dolorum nemo at quaerat id consectetur
-          neque.
+          Twin Trade International is committed to maintaining the highest
+          industry standards, as evidenced by the numerous certifications we
+          have received. We are proud to be certified, demonstrating our
+          dedication to quality management systems that ensure efficient and
+          effective project delivery. Our safety practices are certified
+          reflecting our strong commitment to creating a safe work environment
+          for our employees and partners. Additionally, we comply with
+          environmental standards, ensuring sustainable practices in all our
+          projects. These certifications, alongside others from reputable
+          industry bodies, reflect our unwavering commitment to excellence,
+          safety, and sustainability in every supply project we undertake.
         </p>
       </div>
 
@@ -66,8 +67,8 @@ const Certification = () => {
           />
         </div>
 
-         {/* Certificate 5 */}
-         <div>
+        {/* Certificate 5 */}
+        <div>
           <Image
             src="https://i.postimg.cc/RhJWxZ0P/Frame-174.png"
             alt="certificate 1"
@@ -86,8 +87,8 @@ const Certification = () => {
           />
         </div>
 
-         {/* Certificate 7 */}
-         <div>
+        {/* Certificate 7 */}
+        <div>
           <Image
             src="https://i.postimg.cc/tRvJRWQY/Frame-170.png"
             alt="certificate 1"
@@ -96,8 +97,8 @@ const Certification = () => {
           />
         </div>
 
-         {/* Certificate 8 */}
-         <div>
+        {/* Certificate 8 */}
+        <div>
           <Image
             src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
             alt="certificate 1"
