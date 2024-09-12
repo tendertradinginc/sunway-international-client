@@ -1,20 +1,40 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
+import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const FFU = () => {
-    return (
-        <div>
-            {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary">FFU Workshop</h1> */}
-            <div className="text-3xl md:text-5xl font-semibold text-si-primary">
-                <SectionTitle title1={"FFU"} title2={"Workshop"}></SectionTitle>
-            </div>
-            <p className="mt-5 text-si-text font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur eum magnam, commodi harum dolor qui dolorum perspiciatis placeat, explicabo minima aut est reiciendis. Cum, exercitationem necessitatibus? Saepe dignissimos non repellat facere, deserunt aliquam, alias ea nobis accusantium nihil mollitia dolores ipsa odit dicta inventore dolorem nam voluptatem culpa natus? Eveniet totam ex quisquam expedita reiciendis nam nulla neque, amet ut molestias corrupti earum quae maxime cumque et deserunt iusto! Voluptatum aut corporis vitae architecto dolorum nemo at quaerat id consectetur neque.</p>
-            <Image  loader={customLoader} className="mt-8" src="https://i.postimg.cc/PrDdZJSG/tunnel-dryer-1.png" alt="FFU Workshop Image" height={800} width={1400} />
+  return (
+    <MaxWidthWrapper className="mt-20">
+      {/* <h1 className="text-3xl md:text-5xl font-semibold text-si-primary">FFU Workshop</h1> */}
+      <div className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
+        <SectionTitle
+          className="text-center mb-5"
+          title1={"FFU Workshop"}
 
-        </div>
-    );
-
+        ></SectionTitle>
+      </div>
+      <p className="mx-auto mt-5 text-center font-medium text-si-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tenetur
+        eum magnam, commodi harum dolor qui dolorum perspiciatis placeat,
+        explicabo minima aut est reiciendis. Cum, exercitationem necessitatibus?
+        Saepe dignissimos non repellat facere, deserunt aliquam, alias ea nobis
+        accusantium nihil mollitia dolores ipsa odit dicta inventore dolorem nam
+        voluptatem culpa natus? Eveniet totam ex quisquam expedita reiciendis
+        nam nulla neque, amet ut molestias corrupti earum quae maxime cumque et
+        deserunt iusto! Voluptatum aut corporis vitae architecto dolorum nemo at
+        quaerat id consectetur neque.
+      </p>
+      <Image
+        loader={customLoader}
+        className="mt-8"
+        src="https://i.postimg.cc/bwbsFWtP/Frame-149.png"
+        alt="FFU Workshop Image"
+        height={800}
+        width={1400}
+      />
+    </MaxWidthWrapper>
+  );
 };
 
 export default FFU;
