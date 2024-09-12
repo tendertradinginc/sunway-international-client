@@ -6,6 +6,7 @@ import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const CompanyCertification = () => {
   return (
@@ -24,10 +25,12 @@ const CompanyCertification = () => {
               and beyond.
             </p>
             <div className="flex items-center justify-center pt-3 lg:items-end lg:justify-end">
-              <button className="flex gap-3 rounded-sm bg-si-accent px-3 py-2 font-semibold text-white duration-700 hover:bg-[#b9af21] lg:px-6">
-                Explore More
-                <FaArrowRightLong className="text-lg lg:text-2xl" />
-              </button>
+              <Link href="/gallery">
+                <button className="flex gap-3 rounded-sm bg-si-accent px-3 py-2 font-semibold text-white duration-700 hover:bg-[#b9af21] lg:px-6">
+                  Explore More
+                  <FaArrowRightLong className="text-lg lg:text-2xl" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

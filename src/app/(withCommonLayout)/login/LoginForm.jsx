@@ -26,7 +26,7 @@ const LoginForm = () => {
       action={fromAction}
       className="justify-center rounded-lg md:m-0 md:flex"
     >
-      <div className="rounded-lg bg-white px-4 py-8 shadow-2xl shadow-[#001955] md:w-96">
+      <div className="rounded-lg bg-white px-4 py-8 shadow-2xl shadow-[#16a249] md:w-96">
         <div className="mb-3">
           <span className="mb-2 block font-semibold text-gray-600">Email</span>
           <input

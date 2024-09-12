@@ -39,7 +39,7 @@ const ProjectShowcase = () => {
     <div
       className="inset-0 left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat py-16"
       style={{
-        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co.com/KN4C1HC/phots12-1.jpg)`,
+        backgroundImage: `linear-gradient(rgba(232, 41, 89, 0.9), rgba(28, 71, 89, 0.9)), url(https://i.ibb.co.com/xCDrgKj/hospitals.webp)`,
 
         backgroundPosition: "top right",
         height: "100vh",
@@ -66,7 +66,7 @@ const ProjectShowcase = () => {
                   >
                     {/* Black overlay */}r
                     {/* <div className="absolute left-0 top-0 h-full w-full bg-green-900 opacity-60"></div> */}
-                    <section className="flex h-full flex-col justify-evenly p-6 pt-10 text-muted">
+                    <section className="flex h-full flex-col justify-evenly p-6 pt-10 font-semibold text-muted">
                       <div className="space-y-1">
                         <p className="text-sm text-black md:text-base">
                           {project.title}

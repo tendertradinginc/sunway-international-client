@@ -96,7 +96,18 @@ const MedicalEquipmentPage = async () => {
                 <div className="relative h-[400px] w-full">
                   <Image
                     loader={customLoader}
-                    src="/file-zT5yWezv2NDJtZBxzM4JFEZv.webp"
+                    src="https://i.ibb.co.com/gSzJXxM/photos14.jpg"
+                    alt="Advertisement"
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="p-0">
+                <div className="relative h-[400px] w-full">
+                  <Image
+                    loader={customLoader}
+                    src="https://i.ibb.co.com/zrXBgmn/Whats-App-Image-2024-09-09-at-4-14-30-PM.jpg"
                     alt="Advertisement"
                     fill
                     className="object-cover object-center"

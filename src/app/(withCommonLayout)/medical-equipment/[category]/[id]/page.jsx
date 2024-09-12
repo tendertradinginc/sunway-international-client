@@ -1,3 +1,4 @@
+import ContactDialog from "@/components/contactDialog/ContactDialog";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import {
@@ -8,14 +9,20 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { format } from "date-fns";
-import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
+// import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+
+
+
+
+
 
 const MedicalEquipmentDetailsPage = async ({ params }) => {
   const data = await fetch(
@@ -135,13 +142,16 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
               </ScrollArea>
 
               <div className="mt-5 flex flex-wrap items-center gap-5">
-                <Button className="mt-5">
+                {/* <Button className="mt-5">
                   Contact For Price <PhoneIcon className="ml-2 size-5" />
-                </Button>
-                <Button className="mt-5">
+                </Button> */}
+
+                <ContactDialog />
+
+                {/* <Button className="mt-5">
                   Download Catalogue{" "}
                   <ArrowDownToLineIcon className="ml-2 size-5" />
-                </Button>
+                </Button> */}
               </div>
             </section>
           </CardContent>

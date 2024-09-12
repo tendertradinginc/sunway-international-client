@@ -32,7 +32,7 @@ const Navbar = () => {
   }, [lastScrollY]);
   return (
     <nav
-      className={`fixed z-50 w-full bg-white py-4 shadow-lg backdrop-blur-md duration-300 ${isVisible ? "top-0" : "-top-24"}`}
+      className={`fixed z-50 w-full bg-white py-2 shadow-lg backdrop-blur-md duration-300 ${isVisible ? "top-0" : "-top-24"}`}
     >
       <MaxWidthWrapper className="flex items-center justify-between">
         <Link href="/">

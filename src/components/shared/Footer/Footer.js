@@ -21,15 +21,14 @@ const Footer = () => {
             {/* First Column */}
             <ul className="flex flex-col gap-3">
               <li className="flex gap-2 text-3xl font-bold text-gray-300">
-                <Image
+                {/* <Image
                   loader={customLoader}
                   height={50}
                   width={100}
                   alt="Twin Trade Int. logo footer"
                   src="https://i.ibb.co/MZfwXL1/7-removebg-preview.png"
-                />{" "}
-                Twind
-                <br /> Trade Int
+                />{" "} */}
+                Twin Trade Int
               </li>
               <li className="max-w-80">
                 <p className="mt-5 font-medium leading-7 text-gray-300">
@@ -55,7 +54,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="">
-                <Link href="/about-us" className="text-secondary">
+                <Link href="/AboutUs" className="text-secondary">
                   About Us
                 </Link>
               </li>
@@ -75,7 +74,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-secondary">
+                <Link href="/medical-equipment" className="text-secondary">
                   Products
                 </Link>
               </li>
@@ -95,15 +94,15 @@ const Footer = () => {
               </li>
               <li className="mt-5 flex gap-x-3 text-secondary">
                 <FaHome className="mt-1 text-xl text-gray-300" />
-                No. 58A, East Medison Street, <br /> Batilmor, MD, USA 480
+                HM Plaza, (13th Floor) Sector-03 <br /> Uttara, Dhaka-1230
               </li>
               <li className="flex gap-x-3 text-secondary">
                 <IoCall className="mt-1 text-xl text-gray-300" />
-                +880 1777452341
+                +880 1700978687
               </li>
               <li className="flex gap-x-3 text-secondary">
                 <IoMdMail className="mt-1 text-xl text-gray-300" />
-                sunwayInternation@gmail.com
+                twintradeinternational@gmail.com
               </li>
             </ul>
 
@@ -119,25 +118,25 @@ const Footer = () => {
                 src="https://i.postimg.cc/Pfbh7MmL/download-removebg-preview.png"
               />
               <li className="mt-5 flex gap-4">
-                <Link href="#">
+                <Link href="https://www.facebook.com/" target="_blank">
                   {" "}
                   <div className="rounded-sm bg-white p-1">
                     <FaFacebook className="text-2xl text-primary" />
                   </div>
                 </Link>
-                <Link href="#">
+                <Link href="https://www.linkedin.com/" target="_blank">
                   {" "}
                   <div className="rounded-sm bg-white p-1">
                     <FaLinkedinIn className="text-2xl text-primary" />
                   </div>
                 </Link>
-                <Link href="#">
+                <Link href="https://www.instagram.com/" target="_blank">
                   {" "}
                   <div className="rounded-sm bg-white p-1">
                     <FaInstagram className="text-2xl text-primary" />
                   </div>
                 </Link>
-                <Link href="#">
+                <Link href="https://x.com/" target="_blank">
                   {" "}
                   <div className="rounded-sm bg-white p-1">
                     <FaXTwitter className="text-2xl text-primary" />
@@ -150,7 +149,7 @@ const Footer = () => {
         <div className="border-t border-secondary p-5">
           <h1 className="text-center font-semibold text-gray-300">
             {" "}
-            sunwayinternational.com &copy; Designed & Developed by
+            twintradeinternational.com &copy; Designed & Developed by
             Tender-Trading-Inc.
           </h1>
         </div>
