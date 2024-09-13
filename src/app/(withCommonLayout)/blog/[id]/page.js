@@ -34,7 +34,7 @@ const page = async ({ params }) => {
         property="og:url"
         content={`https://www.twintradeint.com/blog/${params.id}`}
       />
-      <MaxWidthWrapper className="p-5 py-16 md:p-20">
+      <MaxWidthWrapper className="p-5 py-16 md:p-20 mt-16">
         <div className="mx-auto min-h-[80vh]">
           <div className="pb-10">
             <Image
