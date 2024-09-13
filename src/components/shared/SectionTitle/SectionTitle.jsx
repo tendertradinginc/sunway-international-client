@@ -1,13 +1,10 @@
-const SectionTitle = ({ title1, title2, cn }) => {
+export default function SectionTitle({ title, description }) {
   return (
-    <div>
-      <h1
-        className={`mb-12 text-3xl font-semibold text-si-primary md:text-5xl ${cn}`}
-      >
-        {title1} <span className="text-[#fbbf24]"> {title2}</span>
-      </h1>
+    <div className="mx-auto w-full max-w-4xl px-4 py-10 text-center">
+      <h2 className="mb-6 lg:text-5xl text-4xl font-bold text-si-primary">{title}</h2>
+      <p className="mx-auto max-w-3xl text-base lg:text-lg text-muted-foreground">
+        {description}
+      </p>
     </div>
   );
-};
-
-export default SectionTitle;
+}
