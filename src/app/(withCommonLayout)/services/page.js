@@ -1,13 +1,14 @@
-import ContructionService from "@/components/services/ContructionService";
-import MedicalInstrument from "@/components/services/MedicalInstrument";
-import RegularEquipment from "@/components/services/RegularEquipment";
+import ServiceBanner from "@/components/services/ServiceBanner";
+import ServiceMain from "@/components/services/ServiceMain";
 
 const page = () => {
   return (
     <div className="py-10">
-      <ContructionService />
+      {/* <ContructionService />
       <MedicalInstrument />
-      <RegularEquipment />
+      <RegularEquipment /> */}
+      <ServiceBanner />
+      <ServiceMain></ServiceMain>
     </div>
   );
 };
