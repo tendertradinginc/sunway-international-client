@@ -1,6 +1,6 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
-import MedicalEquipmentCard from "@/components/shared/MedicalEquipmentCard/MedicalEquipmentCard";
-import MedicalEquipmentCardMeta from "@/components/shared/MedicalEquipmentCartMeta/MedicalEquipmentCardMeta";
+import EquipmentCard from "@/components/shared/EquipmentCard/EquipmentCard";
+import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 
 const MedicalEquipments = async () => {
   const res = await fetch(
@@ -11,20 +11,22 @@ const MedicalEquipments = async () => {
   const blogs = data?.data?.result?.slice(0, 4);
 
   return (
-    <div className="">
-      <MaxWidthWrapper className="mt-20 overflow-x-hidden py-20">
-        <h1 className="mb-12 text-3xl font-semibold text-si-primary md:text-5xl">
-          Medical <span className="text-[#fbbf24]"> Equipments</span>
-        </h1>
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
-          {blogs.map((item, index) => (
-            <div key={index}>
-              <MedicalEquipmentCardMeta data={item} />
-            </div>
-          ))}
-        </div>
-      </MaxWidthWrapper>
-    </div>
+    <MaxWidthWrapper>
+      <SectionTitle
+        title="Medical Equipment"
+        description="Twin Trade International aims to create spaces that heal, supply tools that cure as we deliver excellence to your doorstep"
+      />
+      <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
+        {blogs.map((item, index) => (
+          <div key={index}>
+            <EquipmentCard
+              data={item}
+              navigateTo={`/medical-equipment/${item?.category}/${item?._id}`}
+            />
+          </div>
+        ))}
+      </div>
+    </MaxWidthWrapper>
   );
 };
 
