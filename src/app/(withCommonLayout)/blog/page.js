@@ -30,12 +30,9 @@ const Page = async () => {
           }
         ></PageBanner>
         <MaxWidthWrapper className="py-10">
-          {/* Title Section */}
-          <div className="mx-auto max-w-2xl">
-      
-              <SectionTitle title={"Wellness Journal"} description={"Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"}></SectionTitle>
 
-            
+          <div className="mx-auto max-w-2xl">
+              <SectionTitle title={"Wellness Journal"} description={"Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"}></SectionTitle>
           </div>
 
           {/* First Blog Section */}

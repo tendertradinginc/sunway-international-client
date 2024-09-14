@@ -69,8 +69,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <MaxWidthWrapper className="py-20">
-      <SectionTitle title1={"Customer"} title2={"Reviews"}></SectionTitle>
+    <div className="bg-secondary pb-10">
+      <MaxWidthWrapper className="py-20 ">
+      <SectionTitle title={"What Clients Say"} description={"Discover what our clients think about our services and how we've helped them achieve success."}></SectionTitle>
       <Carousel
         opts={{ loop: true }}
         plugins={[
@@ -81,18 +82,20 @@ export default function Testimonials() {
       >
         <CarouselContent>
           {companyQuotes.map((quote, idx) => (
-            <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl">
-              <Card>
+            <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10">
+              <Card className={` h-full py-10 bg-white`}>
                 <CardHeader>
-                  <PiQuotes size={50} />
+                <div className="bg-si-primary rounded-full p-3 w-max mx-auto">
+                <PiQuotes className=" text-white  font-bold mx-auto" size={25} />
+                </div>
                 </CardHeader>
                 <CardContent>
-                  <p>{quote.quote}</p>
+                  <p className="font-semibold text-center">{quote.quote}</p>
                 </CardContent>
-                <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap">
+                <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap justify-center">
                   <h5 className="font-medium">- {quote.quoter}</h5>
                   <span>|</span>
-                  <p>{quote.date}</p>
+                  <p className="">{quote.date}</p>
                 </CardFooter>
               </Card>
             </CarouselItem>
@@ -100,5 +103,6 @@ export default function Testimonials() {
         </CarouselContent>
       </Carousel>
     </MaxWidthWrapper>
+    </div>
   );
 }
