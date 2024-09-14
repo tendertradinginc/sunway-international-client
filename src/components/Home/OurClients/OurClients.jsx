@@ -1,9 +1,12 @@
-import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+"use client"
+import { useState } from "react";
+import OurClientCard from "./OurClientCard";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
-import { customLoader } from "@/utils/customLoader";
-import Image from "next/image";
 
-const OurClients = () => {
+const OurClient = () => {
+
+  const [loading, setLoading] = useState();
+
   const ClientInfo = [
     {
       img: "https://i.postimg.cc/4NmNs3Jb/FH-Plastic-1.png",
@@ -47,29 +50,39 @@ const OurClients = () => {
     },
   ];
 
-  return (
-    <MaxWidthWrapper className="my-24">
-      <SectionTitle title1={"Our"} title2={"Businesses"}></SectionTitle>
+  const skeleton = new Array(8).fill(0);
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {ClientInfo.map((client, idx) => (
-          <div
-            key={idx}
-            className="relative mx-auto h-56 w-full cursor-pointer rounded-2xl bg-green-50 text-center duration-700 hover:-translate-y-3 md:h-32"
-          >
-            <Image
-              loader={customLoader}
-              src={client.img}
-              alt={client.clientName}
-              layout="fill"
-              objectFit="contain"
-              className=""
-            />
-          </div>
-        ))}
+  return (
+    <div className="pt-16 px-5 xl:px-0 mb-6 poppins-semibold">
+      {/* <h1 className="text-si-primary lg:text-5xl text-3xl text-center font-semibold py-10 ">
+        Our Partners
+      </h1> */}
+      <SectionTitle title={"Our Partners"} ></SectionTitle>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
+        {loading
+          ? skeleton?.map((item, idx) => (
+            <div className="flex" key={idx}>
+              <svg
+                className="h-32 w-full text-gray-200 dark:text-gray-600"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 20"
+              >
+                <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+                <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+              </svg>
+            </div>
+          ))
+          : ClientInfo
+            ?.slice(0, 20)
+            ?.map((client, index) => (
+              <OurClientCard key={index} client={client}></OurClientCard>
+            ))}
       </div>
-    </MaxWidthWrapper>
+    </div>
   );
 };
 
-export default OurClients;
+export default OurClient;
