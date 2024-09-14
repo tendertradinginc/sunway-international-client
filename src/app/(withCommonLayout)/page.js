@@ -19,27 +19,28 @@ export default function Home() {
       <Hero />
       <BannerCategory />
       <NewArrival />
-     
+
       <MedicalEquipments />
-    
+
       <LatestHospitalFurniture />
 
       <Services />
-   
-      <ConstructionService />
-      
+      <div className="bg-gradient-to-r from-[#efefef52] to-[#efefef34]">
+        <ConstructionService />
+      </div>
+
       <CountUP />
-    
+
       <CompanyCertification />
-     
+
       <ProjectShowcase />
-      
+
       <Testimonials />
-     
+
       <AuthorizeDistribution />
-     
+
       <OurClients />
-  
+
       <Chatbot />
     </div>
   );
