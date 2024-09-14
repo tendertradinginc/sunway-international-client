@@ -4,6 +4,7 @@ import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 
 import Image from "next/image";
 import Link from "next/link";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 const Page = async () => {
   try {
     const res = await fetch(
@@ -21,66 +22,97 @@ const Page = async () => {
     const blogs = data?.data?.allBlogs;
 
     return (
-      <MaxWidthWrapper className="py-10">
-        {/* Title Section */}
-        <div className="mx-auto max-w-2xl">
-          {/* <h1 className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
-            Wellness Journal
-          </h1> */}
-          <div className="text-center text-3xl font-semibold text-si-primary md:text-5xl">
-            <SectionTitle title1={"Wellness"} title2={"Journal"}></SectionTitle>
+      <div className="mt-16">
+        <PageBanner
+          title={"Blog"}
+          description={
+            "Welcome to our blog, where we explore the latest in medical advancements, health tips, and wellness trends. Our expert contributors provide reliable, in-depth articles to help you stay informed and empowered on your health journey."
+          }
+        ></PageBanner>
+        <MaxWidthWrapper className="py-10">
+          {/* Title Section */}
+          <div className="mx-auto max-w-2xl">
+      
+              <SectionTitle title={"Wellness Journal"} description={"Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"}></SectionTitle>
+
+            
           </div>
 
-          <p className="text-center font-semibold text-si-text">
-            Stay informed with the latest health tips, medical news, and expert
-            insights. Your go-to resource for staying healthy and well.
-          </p>
-        </div>
-
-        {/* First Blog Section */}
-        <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
-          <div className="bg-secondary">
-            <Image
-              loader={customLoader}
-              alt="Blog Image 1"
-              height={500}
-              width={500}
-              src={blogs[0]?.image}
-              className="w-fit md:w-full"
-            />
-            <div className="px-3">
-              <h1 className="my-4 text-4xl font-semibold text-si-primary">
-                {blogs[0]?.title}
-              </h1>
-              <p className="line-clamp-4 text-justify font-medium text-si-text">
-                {blogs[0]?.description}
-              </p>
-              <Link href={`/blog/${blogs[0]._id}`}>
-                {" "}
-                <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
-                  Read More
-                </button>
-              </Link>
+          {/* First Blog Section */}
+          <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
+            <div className="bg-secondary">
+              <Image
+                loader={customLoader}
+                alt="Blog Image 1"
+                height={500}
+                width={500}
+                src={blogs[0]?.image}
+                className="w-fit md:w-full"
+              />
+              <div className="px-3">
+                <h1 className="my-4 text-4xl font-semibold text-si-primary">
+                  {blogs[0]?.title}
+                </h1>
+                <p className="line-clamp-4 text-justify font-medium text-si-text">
+                  {blogs[0]?.description}
+                </p>
+                <Link href={`/blog/${blogs[0]._id}`}>
+                  {" "}
+                  <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
+                    Read More
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-8">
+              {blogs?.slice(1, 4).map((item, idx) => (
+                <div
+                  key={idx}
+                  className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2"
+                >
+                  <div>
+                    <Image
+                      loader={customLoader}
+                      alt="Blog Image 2"
+                      height={500}
+                      width={500}
+                      src={item?.image}
+                      className="h-full w-fit"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
+                      {item?.title}
+                    </h1>
+                    <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
+                      {item?.description}
+                    </p>
+                    <Link href={`/blog/${item?._id}`}>
+                      {" "}
+                      <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="flex flex-col gap-y-8">
-            {blogs?.slice(1, 4).map((item, idx) => (
-              <div
-                key={idx}
-                className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2"
-              >
-                <div>
-                  <Image
-                    loader={customLoader}
-                    alt="Blog Image 2"
-                    height={500}
-                    width={500}
-                    src={item?.image}
-                    className="h-full w-fit"
-                  />
-                </div>
+
+          {/* Second Blog Section */}
+          <div className="mt-20 grid grid-cols-1 gap-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
+            {blogs?.slice(4, blogs.length).map((item, idx) => (
+              <div key={idx} className="bg-secondary">
+                <Image
+                  loader={customLoader}
+                  alt="Blog Image 1"
+                  height={500}
+                  width={500}
+                  src={item?.image}
+                  className="h-80 w-fit md:w-full"
+                />
                 <div className="p-3">
-                  <h1 className="line-clamp-2 text-2xl font-semibold text-si-primary">
+                  <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
                     {item?.title}
                   </h1>
                   <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
@@ -96,38 +128,8 @@ const Page = async () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Second Blog Section */}
-        <div className="mt-20 grid grid-cols-1 gap-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
-          {blogs?.slice(4, blogs.length).map((item, idx) => (
-            <div key={idx} className="bg-secondary">
-              <Image
-                loader={customLoader}
-                alt="Blog Image 1"
-                height={500}
-                width={500}
-                src={item?.image}
-                className="h-80 w-fit md:w-full"
-              />
-              <div className="p-3">
-                <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
-                  {item?.title}
-                </h1>
-                <p className="my-2 line-clamp-3 text-justify font-medium text-si-text">
-                  {item?.description}
-                </p>
-                <Link href={`/blog/${item?._id}`}>
-                  {" "}
-                  <button className="mt-4 rounded-sm border-2 border-primary bg-primary p-1 px-3 font-semibold text-white duration-200 hover:bg-transparent hover:text-si-primary">
-                    Read More
-                  </button>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </MaxWidthWrapper>
+        </MaxWidthWrapper>
+      </div>
     );
   } catch (error) {
     console.error("Error loading blog page:", error);
