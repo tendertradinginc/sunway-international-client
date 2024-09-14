@@ -33,7 +33,7 @@ export default function Home() {
 
       <CountUP />
 
-      {/* <CompanyCertification /> */}
+
 
       <div className="bg-gradient-to-r from-[#efefef52] to-[#efefef34]">
         <ConstructionService />
@@ -41,7 +41,7 @@ export default function Home() {
 
       <CountUP />
 
-      <CompanyCertification />
+      {/* <CompanyCertification /> */}
 
       <ProjectShowcase />
 
