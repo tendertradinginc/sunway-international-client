@@ -1,0 +1,10 @@
+.bg-container {
+  background-image: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.781)
+    ),
+    url("https://i.ibb.co/800ZWwh/photos-La-316210-1.png");
+  background-size: cover;
+  background-position: center center;
+}

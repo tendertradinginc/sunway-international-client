@@ -35,6 +35,13 @@ export default function Home() {
 
       {/* <CompanyCertification /> */}
 
+      <div className="bg-gradient-to-r from-[#efefef52] to-[#efefef34]">
+        <ConstructionService />
+      </div>
+
+      <CountUP />
+
+      <CompanyCertification />
 
       <ProjectShowcase />
 
