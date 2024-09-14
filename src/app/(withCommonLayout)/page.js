@@ -1,4 +1,6 @@
+// import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
 import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
+import AuthorizeDistributors from "@/components/Home/AuthorizeDistribution/AuthorizeDistributors";
 import BannerCategory from "@/components/Home/BannerCategory/BannerCategory";
 import Chatbot from "@/components/Home/Chatbot/Chatbot";
 // import CompanyCertification from "@/components/Home/CompanyCertification/CompanyCertification";
@@ -44,7 +46,8 @@ export default function Home() {
 
       <Testimonials />
 
-      <AuthorizeDistribution />
+      {/* <AuthorizeDistribution /> */}
+      <AuthorizeDistributors />
 
       <OurClients />
 
