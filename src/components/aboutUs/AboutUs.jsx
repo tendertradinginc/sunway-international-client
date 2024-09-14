@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
+    
     <div>
       <div>
         <div className="relative h-full w-full">

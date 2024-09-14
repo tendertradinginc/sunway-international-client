@@ -34,7 +34,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="mt-16 bg-[#F6F6F6]">
+        <section id="contact-section" className="mt-16 bg-[#F6F6F6]">
             <div className="max-w-5xl mx-auto  flex flex-col lg:flex-row justify-center items-center  gap-5 ">
 
                 <div className="flex-1 flex flex-col justify-center items-start p-6">

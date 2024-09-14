@@ -67,6 +67,10 @@ const NavItems = ({ className }) => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
+      <div className="block md:hidden mt-2  ">
+        <Link href="/AboutUs#contact-section">  <Button>Contact Us</Button></Link>
+        </div>
     </div>
   );
 };

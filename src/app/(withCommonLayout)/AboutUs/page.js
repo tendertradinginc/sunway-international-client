@@ -7,7 +7,7 @@ const AboutUsPage = () => {
     return (
         <div className="">
             <AboutUs />
-            < hr />
+      
             <ContactUs />
         </div>
     );
