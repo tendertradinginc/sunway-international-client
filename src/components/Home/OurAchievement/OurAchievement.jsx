@@ -15,15 +15,15 @@ const OurAchievement = () => {
                         width={500}
                         height={300}
                         loader={customLoader}
-                        className="h-auto w-full rounded-none object-cover"
+                        className="h-auto w-full px-3 md:px-4 lg:px-0 rounded-none object-cover"
                     />
 
-                    <div className='flex justify-end items-end flex-col -mt-20 -mr-10 '>
+                    <div className='flex lg:justify-end justify-center lg:items-end items-center flex-col -mt-20 -mr-10 '>
                         <p className='text-white text-sm bg-si-primary p-6'> <span className='text-4xl font-bold text-start text-white'>4+</span> <br /> Years <br /> Experience</p>
                     </div>
                 </div>
 
-                <div className="flex-1 pl-8 flex flex-col justify-center items-start text-justify">
+                <div className="flex-1 lg:pl-8 lg:px-0 md:px-4 px-3 flex flex-col justify-center items-start text-justify">
                     <h1 className="text-xl font-bold text-si-primary lg:text-3xl">
                         Our Achievement
                     </h1>

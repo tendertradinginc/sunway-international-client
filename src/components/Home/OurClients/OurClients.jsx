@@ -59,7 +59,7 @@ const OurClient = () => {
       </h1> */}
       <SectionTitle title={"Our Partners"} ></SectionTitle>
 
-      <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 ">
         {loading
           ? skeleton?.map((item, idx) => (
             <div className="flex" key={idx}>
