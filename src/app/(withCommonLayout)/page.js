@@ -27,21 +27,15 @@ export default function Home() {
 
       <Services />
 
-
       <ConstructionService />
 
       <OurAchievement />
 
       <CountUP />
 
-
-
       <div className="bg-gradient-to-r from-[#efefef52] to-[#efefef34]">
-
         <ConstructionService />
       </div>
-
-
 
       {/* <CompanyCertification /> */}
 
