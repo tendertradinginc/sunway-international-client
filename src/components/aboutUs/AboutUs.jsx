@@ -1,7 +1,7 @@
 "use client";
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
-import SectionTitle from "../shared/SectionTitle/SectionTitle";
+
 
 const AboutUs = () => {
   return (
@@ -22,12 +22,11 @@ const AboutUs = () => {
             <p className="text-base text-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto earum excepturi <br /> voluptatem doloribus. Recusandae beatae excepturi nisi sunt maxime similique.</p>
           </div>
         </div>
-
       </div>
-      <div className="">
 
-        <hr />
-        {/* vision section */}
+
+      <div >
+        {/* about our team section */}
         <section className="my-10">
           <div className="mx-auto max-w-6xl py-8">
           </div>
