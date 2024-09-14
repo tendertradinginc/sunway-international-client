@@ -5,6 +5,7 @@ import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const AboutUs = () => {
   return (
+    
     <div>
       <div>
         <div className="relative h-full w-full">
