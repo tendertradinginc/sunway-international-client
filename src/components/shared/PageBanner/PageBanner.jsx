@@ -9,7 +9,7 @@ const PageBanner = ({ title, description, banner }) => {
     >
       <MaxWidthWrapper>
         <div className="py-20 md:py-32">
-          <h1 className="my-2 text-center text-6xl font-bold text-[#16A249]">
+          <h1 className="my-2 text-center lg:text-6xl text-3xl font-bold text-[#16A249]">
             {title}
           </h1>
           <div className="mx-auto w-2/3 text-center font-semibold mt-2">{description}</div>

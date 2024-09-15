@@ -1,17 +1,18 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
-import SectionTitle from "../shared/SectionTitle/SectionTitle";
 import MaxWidthWrapper from "../custom/MaxWidthWrapper";
+import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
 const Certification = () => {
   return (
-    <MaxWidthWrapper className="my-20">
+    <MaxWidthWrapper className="lg:my-20">
       {/* <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
         Certificate  Honor
       </h1> */}
       <div className="text-center">
-        <SectionTitle title1={"Certificate Honor"}></SectionTitle>
-        <p className="mt-5 font-medium text-si-text">
+        <SectionTitle title={"Certificate Honor"}></SectionTitle>
+
+        <p className="lg:mt-5 font-medium text-si-text">
           Twin Trade International is committed to maintaining the highest
           industry standards, as evidenced by the numerous certifications we
           have received. We are proud to be certified, demonstrating our
@@ -28,12 +29,13 @@ const Certification = () => {
 
       <div className="my-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* Certificate 1 */}
-        <div>
+        <div >
           <Image
             src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -44,6 +46,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -54,6 +57,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -64,6 +68,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -74,6 +79,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -84,6 +90,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -94,6 +101,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
 
@@ -104,6 +112,7 @@ const Certification = () => {
             alt="certificate 1"
             height={300}
             width={300}
+            className="shadow-lg rounded-lg w-full"
           />
         </div>
       </div>
