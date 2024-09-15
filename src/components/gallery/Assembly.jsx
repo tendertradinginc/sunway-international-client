@@ -5,12 +5,12 @@ import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const Assembly = () => {
   return (
-    <div className="mt-20 bg-secondary py-5 pb-20">
+    <div className="lg:mt-20  bg-secondary lg:py-5 pb-20">
       {/* <h1 className="text-3xl font-semibold text-si-primary md:text-5xl">
         Assembly Workshop
       </h1> */}
       <MaxWidthWrapper>
-        <div className="pt-10 text-center">
+        <div className="lg:pt-10 text-center">
           <SectionTitle
             className=""
             title={"Assembly Workshop "}
