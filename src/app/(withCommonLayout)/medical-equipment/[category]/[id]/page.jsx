@@ -39,7 +39,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/medical-equipment">Medical Equipment</Link>
+              <Link href="/medical-equipment">Medical Equipment</Link>  
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
