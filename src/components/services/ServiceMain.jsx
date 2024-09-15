@@ -25,26 +25,31 @@ const ServiceMain = () => {
               Our Services
             </h2>
             <div className="my-16">
-              <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
-                Hospital Renovation{" "}
-                <span>
-                  <FaArrowRight />
-                </span>
-              </p>
-
-              <p className="my-1 flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
-                {" "}
-                Hospital Equipment
-                <span>
-                  <FaArrowRight />
-                </span>
-              </p>
-              <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
-                Hospital Furniture
-                <span>
-                  <FaArrowRight />
-                </span>
-              </p>
+              <a href="#renovation">
+                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                  Hospital Renovation{" "}
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                </p>
+              </a>
+              <a href="#renovation">
+                <p className="my-1 flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                  {" "}
+                  Hospital Equipment
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                </p>
+              </a>
+              <a href="#renovation">
+                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                  Hospital Furniture
+                  <span>
+                    <FaArrowRight />
+                  </span>
+                </p>
+              </a>
             </div>
             <div className="mt-16 md:mt-40">
               <h4 className="text-xl text-gray-700">Contact Us</h4>
@@ -92,7 +97,7 @@ const ServiceMain = () => {
                 className="mt-12 h-full w-fit md:mt-0"
               />
             </div>
-            <div className="mt-12">
+            <div className="mt-12" id="renovation">
               <h2 className="text-3xl font-semibold text-[#16A249] md:text-4xl">
                 Hospital Construction Solutions
               </h2>

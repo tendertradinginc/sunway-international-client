@@ -1,4 +1,3 @@
-"use client";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -26,7 +25,7 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
       </CardHeader>
 
       <CardFooter className="mt-auto">
-        <Button className="w-full" asChild>
+        <Button className="mx-auto" variant="seeThrough" asChild>
           <Link href={navigateTo}>View Details</Link>
         </Button>
       </CardFooter>

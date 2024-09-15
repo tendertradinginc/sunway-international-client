@@ -14,7 +14,7 @@ const CountUP = () => {
     <section
       className="inset-0 left-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat py-16"
       style={{
-        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.7), rgba(28, 71, 89, 0.7)), url(https://i.ibb.co/HpmNXzG/Medical-Devices.jpg)`,
+        backgroundImage: `linear-gradient(rgba(28, 71, 89, 0.9), rgba(28, 71, 89, 0.9)), url(https://i.ibb.co/HpmNXzG/Medical-Devices.jpg)`,
 
         backgroundPosition: "center",
       }}

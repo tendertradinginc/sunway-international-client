@@ -40,7 +40,9 @@ export default function Home() {
       <Testimonials />
 
       {/* <AuthorizeDistribution /> */}
+
       <AuthorizeDistributors />
+
 
       <OurClients />
 
