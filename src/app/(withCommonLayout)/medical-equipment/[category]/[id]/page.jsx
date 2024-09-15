@@ -1,5 +1,6 @@
 import ContactDialog from "@/components/contactDialog/ContactDialog";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import {
   Breadcrumb,
@@ -31,8 +32,8 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
   const product = data?.data || {};
 
   return (
-    <MaxWidthWrapper className="min-h-screen py-10">
-      <Breadcrumb>
+    <div className="min-h-screen  mt-12">
+      <PageBanner title="Medical Supplies" description={<> <Breadcrumb className="flex justify-center mt-5">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
@@ -52,10 +53,12 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
             </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
-      </Breadcrumb>
+      </Breadcrumb></>} />
 
-      <div className="py-10">
-        <Card className="rounded-none">
+     
+
+      <MaxWidthWrapper className="py-10">
+        <Card className="rounded-none border-none shadow-none">
           <CardContent className="flex flex-col p-0">
             <div className="h-full w-full">
               <ProductImageCarousel images={product?.images || []} />
@@ -156,8 +159,8 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
             </section>
           </CardContent>
         </Card>
-      </div>
-    </MaxWidthWrapper>
+      </MaxWidthWrapper>
+    </div>
   );
 };
 
