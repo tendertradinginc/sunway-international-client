@@ -39,8 +39,10 @@ export default function Home() {
 
       {/* <AuthorizeDistribution /> */}
 
-      <OurClients />
       <AuthorizeDistributors />
+
+
+      <OurClients />
 
       <Chatbot />
     </div>

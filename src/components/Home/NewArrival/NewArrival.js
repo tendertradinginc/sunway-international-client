@@ -1,5 +1,6 @@
 "use client";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
+import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import { customLoader } from "@/utils/customLoader";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import Image from "next/image";
 const NewArrival = () => {
   return (
     <div className="mt-16">
-      <div className="relative flex flex-col items-center  py-28 pb-56">
+      <div className="relative flex flex-col items-center py-28 pb-56">
         <Image
           src="https://i.postimg.cc/MpkRXPpH/new-arrival-bg.png"
           height={500}
@@ -16,13 +17,12 @@ const NewArrival = () => {
           className="absolute left-0 top-0 z-0 h-full w-full opacity-20"
         />
         <div className="z-10">
-          <h1 className="mb-5 text-center text-3xl font-semibold text-si-primary md:text-5xl">
-            Latest <span className="text-si-accent">Innovations</span>
-          </h1>
-          <p className="max-w-xl text-center font-semibold">
-            Committed to improving health outcomes through innovation. Explore
-            our latest medical equipment and discover the future of healthcare.
-          </p>
+          <SectionTitle
+            title={"Latest Innovations"}
+            description={
+              "  Committed to improving health outcomes through innovation. Explore  our latest medical equipment and discover the future of healthcare."
+            }
+          ></SectionTitle>
         </div>
       </div>
       <MaxWidthWrapper className="relative z-10 -mt-52 overflow-x-hidden py-5 pb-16">

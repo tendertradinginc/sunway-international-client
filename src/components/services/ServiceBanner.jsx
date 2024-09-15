@@ -6,8 +6,9 @@ const ServiceBanner = () => {
       <PageBanner
         title={"Services"}
         description={
-          "Lorem Ipsum is simply dummy text of the printing and typesetting  industry. Lorem Ipsum has been the industry's standard"
+          "Twin Trade International aims to create spaces that heal, supply tools that cure as we deliver excellence to your doorstep"
         }
+        banner={"https://i.ibb.co.com/Rh5jxqJ/Frame55.png"}
       ></PageBanner>
     </div>
   );

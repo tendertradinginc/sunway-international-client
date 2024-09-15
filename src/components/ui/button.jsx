@@ -21,6 +21,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         custom:
           "bg-si-accent font-semibold text-black shadow hover:bg-si-accent/80",
+        seeThrough:
+          "bg-transparent font-semibold text-si-primary shadow border border-si-primary hover:bg-si-secondary/40",
       },
       size: {
         default: "h-9 px-4 py-2",

@@ -20,10 +20,10 @@ const ContactDialog = () => {
         <div>
 
             <Dialog>
-                <DialogTrigger>
-                    <Button className="mt-5">
-                        Contact For Price <PhoneIcon className="ml-2 size-5" />
-                    </Button>
+                <DialogTrigger className="bg-si-primary flex items-center flex-wrap text-white p-[6px] px-4 rounded-md">
+                    <p className="">
+                        Contact For Price <PhoneIcon className="ml-2 size-5 inline-block" />
+                    </p>
                 </DialogTrigger>
                 <DialogContent>
                     <DialogHeader>
