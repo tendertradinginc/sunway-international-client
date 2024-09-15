@@ -36,7 +36,7 @@ const slides = [
         Build A Hospital In <br /> Bangladesh
       </>
     ),
-    subtitle: ["Are you planning to", " "],
+    subtitle: ["Hospital Revonation", " "],
     imageUrl: "https://i.postimg.cc/T1gR0K0J/Downloader-La-941904-1.png",
     imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
     link: "/services",
@@ -52,7 +52,7 @@ const slides = [
         Build A Hospital In <br /> Bangladesh
       </>
     ),
-    subtitle: ["Are you planning to", " "],
+    subtitle: ["Medical Equipment & Furniture", " "],
     imageUrl: "https://i.postimg.cc/T1P4hs1D/Downloader-La-232013-1.png",
     imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
     link: "/services",
