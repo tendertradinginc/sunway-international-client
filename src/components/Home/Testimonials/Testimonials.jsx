@@ -27,37 +27,37 @@ export default function Testimonials() {
     {
       quote:
         "The medical equipment provided by this company is top-notch. Our operations have become smoother, and patient care has improved significantly.",
-      quoter: "John Smith",
+      quoter: "A K M Sakil Sagor",
       date: "May, 2022",
     },
     {
       quote:
         "From initial consultation to final delivery, this company exceeded our expectations. Their team is knowledgeable and highly professional.",
-      quoter: "Sarah Johnson",
+      quoter: "Golam Sarwar",
       date: "July, 2022",
     },
     {
       quote:
         "Building our new healthcare facility was a daunting task, but this company made it look easy. Their expertise in hospital construction is evident in every detail.",
-      quoter: "Michael Lee",
+      quoter: "Nafiul Islam",
       date: "September, 2022",
     },
     {
       quote:
         "Our office's efficiency has drastically improved thanks to the state-of-the-art equipment provided by this company. They truly understand our needs.",
-      quoter: "Emily Davis",
+      quoter: "Hosneara Parvin",
       date: "November, 2022",
     },
     {
       quote:
         "This company is a trusted partner in our growth. Their medical supplies are of the highest quality, and their service is unparalleled.",
-      quoter: "Dr. Robert Patel",
+      quoter: "Halima Tus Sadia",
       date: "January, 2023",
     },
     {
       quote:
         "Their innovative solutions in medical and office equipment have revolutionized our operations. We couldn't have asked for a better partner.",
-      quoter: "Karen Wong",
+      quoter: "Niloy Das",
       date: "April, 2023",
     },
     {

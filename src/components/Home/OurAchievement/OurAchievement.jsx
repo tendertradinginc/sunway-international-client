@@ -1,3 +1,4 @@
+import MaxWidthWrapper from '@/components/custom/MaxWidthWrapper';
 import { customLoader } from '@/utils/customLoader';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,9 +7,9 @@ import React from 'react';
 const OurAchievement = () => {
     return (
         <section className="my-10">
-            <div className="mx-auto flex max-w-6xl flex-col justify-between gap-10 py-5 lg:flex-row lg:gap-16">
+            <MaxWidthWrapper className="mx-auto flex max-w-6xl flex-col justify-between  py-5 lg:flex-row lg:gap-16">
 
-                <div className="order-first flex flex-1 flex-col justify-center text-justify ">
+                <div className="order-first px-3 flex flex-1 flex-col justify-center text-justify ">
                     <Image
                         src="https://i.postimg.cc/Xv2MWhq1/Downloader-La-288044.png"
                         alt="About Us Image"
@@ -18,7 +19,7 @@ const OurAchievement = () => {
                         className="h-auto w-full px-3 md:px-4 lg:px-0 rounded-none object-cover"
                     />
 
-                    <div className='flex lg:justify-end justify-center lg:items-end items-center flex-col -mt-20 -mr-10 '>
+                    <div className='flex lg:justify-end justify-center lg:items-end items-center flex-col -mt-20 lg:-mr-10 '>
                         <p className='text-white text-sm bg-si-primary p-6'> <span className='text-4xl font-bold text-start text-white'>4+</span> <br /> Years <br /> Experience</p>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ const OurAchievement = () => {
 
 
 
-            </div>
+            </MaxWidthWrapper>
         </section>
     );
 };
