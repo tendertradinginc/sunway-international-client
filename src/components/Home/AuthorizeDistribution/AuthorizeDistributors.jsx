@@ -3,7 +3,7 @@ import AuthorizeDistributorCard from "@/components/shared/AuthorizeDistributorCa
 
 const AuthorizeDistributors = () => {
     return (
-        <section className="mt-36 py-16 bg-[#f6f6f6]">
+        <section className="my-6 py-16 bg-[#f6f6f6]">
             <div className="mx-auto flex max-w-6xl flex-col justify-between gap-10 py-5 lg:flex-row lg:gap-10">
 
                 <div className='flex lg:w-2/5 justify-center items-center flex-col '>
