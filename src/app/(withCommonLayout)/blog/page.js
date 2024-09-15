@@ -30,14 +30,7 @@ const Page = async () => {
           banner={"https://i.postimg.cc/zBv2qC5J/Downloader-La-463487-1.png"}
         ></PageBanner>
         <MaxWidthWrapper className="py-10">
-          {/* <div className="mx-auto max-w-2xl">
-            <SectionTitle
-              title={"Wellness Journal"}
-              description={
-                "Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"
-              }
-            ></SectionTitle>
-          </div> */}
+         
 
           {/* First Blog Section */}
           <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
@@ -50,11 +43,11 @@ const Page = async () => {
                 src={blogs[0]?.image}
                 className="w-fit md:w-full"
               />
-              <div className="px-3">
+              <div className="p-3">
                 <h1 className="my-4 text-4xl font-semibold text-si-primary">
                   {blogs[0]?.title}
                 </h1>
-                <p className="line-clamp-4 text-justify font-medium text-si-text">
+                <p className="line-clamp-4 text-justify font-medium text-si-text lg:mb-7">
                   {blogs[0]?.description}
                 </p>
                 <Link href={`/blog/${blogs[0]._id}`}>
@@ -78,7 +71,7 @@ const Page = async () => {
                       height={500}
                       width={500}
                       src={item?.image}
-                      className="h-full w-fit"
+                      className="h-full w-fit object-cover"
                     />
                   </div>
                   <div className="p-3">
@@ -110,7 +103,7 @@ const Page = async () => {
                   height={500}
                   width={500}
                   src={item?.image}
-                  className="h-80 w-fit md:w-full"
+                  className="h-80 w-fit md:w-full object-cover"
                 />
                 <div className="p-3">
                   <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
