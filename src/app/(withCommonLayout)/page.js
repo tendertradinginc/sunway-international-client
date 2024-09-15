@@ -1,7 +1,5 @@
 // import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
-import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
 import AuthorizeDistributors from "@/components/Home/AuthorizeDistribution/AuthorizeDistributors";
-import BannerCategory from "@/components/Home/BannerCategory/BannerCategory";
 import Chatbot from "@/components/Home/Chatbot/Chatbot";
 // import CompanyCertification from "@/components/Home/CompanyCertification/CompanyCertification";
 import ConstructionService from "@/components/Home/ConstructionService/ConstructionService";
@@ -20,24 +18,19 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <BannerCategory />
-      <NewArrival />
+      {/* <BannerCategory /> */}
 
       <MedicalEquipments />
 
       <LatestHospitalFurniture />
+      <CountUP />
 
       <Services />
 
+      <NewArrival />
       <ConstructionService />
 
       <OurAchievement />
-
-      <CountUP />
-
-      <div className="bg-gradient-to-r from-[#efefef52] to-[#efefef34]">
-        <ConstructionService />
-      </div>
 
       {/* <CompanyCertification /> */}
 
@@ -48,7 +41,6 @@ export default function Home() {
 
       {/* <AuthorizeDistribution /> */}
       <AuthorizeDistributors />
-
 
       <OurClients />
 
