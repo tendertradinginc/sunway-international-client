@@ -8,7 +8,7 @@ const PageBanner = ({ title, description }) => {
           <h1 className="text-[#16A249] my-2 text-center text-6xl font-bold">
             {title}
           </h1>
-          <p className="mx-auto w-2/3 text-center font-semibold mt-2">{description}</p>
+          <div className="mx-auto w-2/3 text-center font-semibold mt-2">{description}</div>
         </div>
       </MaxWidthWrapper>
     </div>
