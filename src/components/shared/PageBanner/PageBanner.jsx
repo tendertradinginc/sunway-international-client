@@ -13,9 +13,7 @@ const PageBanner = ({ title, description, banner }) => {
 
             {title}
           </h1>
-          <p className="mx-auto mt-2 w-2/3 text-center font-semibold">
-            {description}
-          </p>
+          <div className="mx-auto w-2/3 text-center font-semibold mt-2">{description}</div>
         </div>
       </MaxWidthWrapper>
     </div>
