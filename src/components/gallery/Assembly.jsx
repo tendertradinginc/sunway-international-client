@@ -13,11 +13,11 @@ const Assembly = () => {
         <div className="pt-10 text-center">
           <SectionTitle
             className=""
-            title1={"Assembly Workshop "}
+            title={"Assembly Workshop "}
             title2={""}
           ></SectionTitle>
           <p className="font-medium text-si-text">
-          Assembly Workshop focuses on teaching participants with the skills and knowledge to efficiently and effectively assemble products, from basic consumer goods to complex machinery. The workshop is designed to enhance understanding of assembly techniques, tools, safety procedures, and quality control measures essential for producing high-quality products for our customers that we supply to. 
+            Assembly Workshop focuses on teaching participants with the skills and knowledge to efficiently and effectively assemble products, from basic consumer goods to complex machinery. The workshop is designed to enhance understanding of assembly techniques, tools, safety procedures, and quality control measures essential for producing high-quality products for our customers that we supply to.
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
