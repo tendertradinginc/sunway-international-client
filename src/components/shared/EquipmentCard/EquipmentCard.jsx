@@ -1,5 +1,5 @@
-import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +25,11 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
       </CardHeader>
 
       <CardFooter className="mt-auto">
-        <Button className="mx-auto" variant="seeThrough" asChild>
+        <Button
+          className="mx-auto hover:bg-si-primary hover:text-white"
+          variant="seeThrough"
+          asChild
+        >
           <Link href={navigateTo}>View Details</Link>
         </Button>
       </CardFooter>
