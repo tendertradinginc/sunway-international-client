@@ -5,7 +5,7 @@
   user-select: none;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -73,4 +73,7 @@ html{
   body {
     @apply bg-background text-foreground;
   }
+}
+html {
+  scroll-behavior: smooth;
 }
