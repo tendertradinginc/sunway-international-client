@@ -12,14 +12,15 @@ import Link from "next/link";
 
 const slides = [
   {
-    id: 1,
+    id: 2,
     title: (
       <>
         Build A Hospital In <br /> Bangladesh
       </>
     ),
     subtitle: ["Are you planning to", " "],
-    imageUrl: "https://i.postimg.cc/T1P4hs1D/Downloader-La-232013-1.png",
+    imageUrl:
+      "https://i.postimg.cc/4dD1j3k3/Whats-App-Image-2024-09-14-at-19-15-16-9c4a91b1-1-1.png",
     imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
     link: "/services",
     divMain: "items-start",
@@ -27,7 +28,7 @@ const slides = [
     head: "text-[#fbbe24] text-left border-l-green-800",
     paragraph: "text-left text-gray-900",
   },
- 
+
   {
     id: 3,
     title: (
@@ -44,16 +45,15 @@ const slides = [
     head: "text-[#fbbe24] text-left border-l-green-800",
     paragraph: "text-left text-gray-900",
   },
-
   {
-    id: 2,
+    id: 1,
     title: (
       <>
         Build A Hospital In <br /> Bangladesh
       </>
     ),
     subtitle: ["Are you planning to", " "],
-    imageUrl: "https://i.postimg.cc/4dD1j3k3/Whats-App-Image-2024-09-14-at-19-15-16-9c4a91b1-1-1.png",
+    imageUrl: "https://i.postimg.cc/T1P4hs1D/Downloader-La-232013-1.png",
     imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
     link: "/services",
     divMain: "items-start",
@@ -61,7 +61,6 @@ const slides = [
     head: "text-[#fbbe24] text-left border-l-green-800",
     paragraph: "text-left text-gray-900",
   },
- 
 ];
 
 export function Hero() {
@@ -91,7 +90,7 @@ export function Hero() {
                   width={1400}
                   src={slide?.imageUrl}
                   alt="Home page banner"
-                  className="min-h-[90vh] w-full md:max-h-[90vh] object-cover"
+                  className="min-h-[90vh] w-full object-cover md:max-h-[90vh]"
                 />
               </div>
               <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center border-red-400 bg-gradient-to-r from-[#ffffff] via-transparent to-transparent md:max-h-[90vh]">
