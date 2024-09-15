@@ -32,7 +32,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
   const product = data?.data || {};
 
   return (
-    <div className="min-h-screen  mt-12">
+    <div className="min-h-screen  mt-16">
       <PageBanner title="Medical Supplies" description={<> <Breadcrumb className="flex justify-center mt-5">
         <BreadcrumbList>
           <BreadcrumbItem>

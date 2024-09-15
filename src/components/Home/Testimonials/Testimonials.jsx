@@ -69,7 +69,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="bg-secondary pb-10">
+    <div className=" pb-10">
       <MaxWidthWrapper className="py-20 ">
       <SectionTitle title={"What Clients Say"} description={"Discover what our clients think about our services and how we've helped them achieve success."}></SectionTitle>
       <Carousel
@@ -82,8 +82,8 @@ export default function Testimonials() {
       >
         <CarouselContent>
           {companyQuotes.map((quote, idx) => (
-            <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10">
-              <Card className={` h-full py-10 bg-white`}>
+            <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10 ">
+              <Card className={` h-full py-10 bg-gradient-to-r from-gray-100  to-transparent mx-1`}>
                 <CardHeader>
                 <div className="bg-si-primary rounded-full p-3 w-max mx-auto">
                 <PiQuotes className=" text-white  font-bold mx-auto" size={25} />
