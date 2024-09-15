@@ -36,15 +36,15 @@ const OurClient = () => {
       clientName: "FH Plastic Industry",
     },
     {
-      img: "https://i.postimg.cc/v8nY2Zv4/PBRI-1.png",
+      img: "https://i.ibb.co.com/8K4yDp6/welthungerlifelogo300.png",
       clientName: "FH Plastic Industry",
     },
     {
-      img: "https://i.postimg.cc/52hp3p9Y/ROMIX-1.png",
+      img: "https://i.ibb.co.com/jRBscm6/icddrblogo300.png",
       clientName: "FH Plastic Industry",
     },
     {
-      img: "https://i.postimg.cc/ryfJbqFL/Nippon-800-x-221-2-1024x283-1.png",
+      img: "https://i.ibb.co.com/hmSj6ZJ/cowaterlogo300.png",
       clientName: "FH Plastic Industry",
     },
   ];
