@@ -1,7 +1,5 @@
-// import AuthorizeDistribution from "@/components/Home/AuthorizeDistribution/AuthorizeDistribution";
-import AuthorizeDistributors from "@/components/Home/AuthorizeDistribution/AuthorizeDistributors";
+import AuthorizeDistributors from "@/components/Home/AuthorizeDistributior/AuthorizeDistributors";
 import Chatbot from "@/components/Home/Chatbot/Chatbot";
-// import CompanyCertification from "@/components/Home/CompanyCertification/CompanyCertification";
 import ConstructionService from "@/components/Home/ConstructionService/ConstructionService";
 import CountUP from "@/components/Home/CountUp/CountUp";
 import FeatureProject from "@/components/Home/FeatureProject/FeatureProject";
