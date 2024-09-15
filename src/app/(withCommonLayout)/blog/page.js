@@ -1,10 +1,9 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import { customLoader } from "@/utils/customLoader";
-import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 
+import PageBanner from "@/components/shared/PageBanner/PageBanner";
 import Image from "next/image";
 import Link from "next/link";
-import PageBanner from "@/components/shared/PageBanner/PageBanner";
 const Page = async () => {
   try {
     const res = await fetch(
@@ -22,18 +21,23 @@ const Page = async () => {
     const blogs = data?.data?.allBlogs;
 
     return (
-      <div className="mt-16">
+      <div className="">
         <PageBanner
           title={"Blog"}
           description={
             "Welcome to our blog, where we explore the latest in medical advancements, health tips, and wellness trends. Our expert contributors provide reliable, in-depth articles to help you stay informed and empowered on your health journey."
           }
+          banner={"https://i.postimg.cc/zBv2qC5J/Downloader-La-463487-1.png"}
         ></PageBanner>
         <MaxWidthWrapper className="py-10">
-
-          <div className="mx-auto max-w-2xl">
-              <SectionTitle title={"Wellness Journal"} description={"Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"}></SectionTitle>
-          </div>
+          {/* <div className="mx-auto max-w-2xl">
+            <SectionTitle
+              title={"Wellness Journal"}
+              description={
+                "Stay informed with the latest health tips, medical news, and expert insights. Your go-to resource for staying healthy and well"
+              }
+            ></SectionTitle>
+          </div> */}
 
           {/* First Blog Section */}
           <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">

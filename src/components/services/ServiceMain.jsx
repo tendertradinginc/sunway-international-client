@@ -26,7 +26,7 @@ const ServiceMain = () => {
             </h2>
             <div className="my-16">
               <a href="#renovation">
-                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold duration-200 hover:border-[#16A249] hover:text-[#16A249] hover:shadow-md md:w-2/3">
                   Hospital Renovation{" "}
                   <span>
                     <FaArrowRight />
@@ -34,7 +34,7 @@ const ServiceMain = () => {
                 </p>
               </a>
               <a href="#renovation">
-                <p className="my-1 flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                <p className="my-2 flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold duration-200 hover:border-[#16A249] hover:text-[#16A249] hover:shadow-md md:w-2/3">
                   {" "}
                   Hospital Equipment
                   <span>
@@ -43,7 +43,7 @@ const ServiceMain = () => {
                 </p>
               </a>
               <a href="#renovation">
-                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold hover:text-[#16A249] md:w-2/3">
+                <p className="flex w-full items-center justify-between gap-6 border px-5 py-3 text-2xl font-semibold duration-200 hover:border-[#16A249] hover:text-[#16A249] hover:shadow-md md:w-2/3">
                   Hospital Furniture
                   <span>
                     <FaArrowRight />
