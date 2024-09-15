@@ -29,7 +29,27 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
 
   return (
     <div className="mt-16 min-h-screen">
-      <PageBanner title="Medical Supplies" description={""} />
+      <PageBanner title="Medical Supplies" description={<> <Breadcrumb className="flex justify-center mt-5">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">Home</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/medical-equipment">Medical Equipment</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>
+              {product?.productName || "Product Details"}
+            </BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb></>} />
 
       <MaxWidthWrapper className="py-10">
         <Card className="rounded-none border-none shadow-none">
@@ -94,12 +114,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                     </p>
                   )}
                  </div>
-                  {/* {product?.shortDescription && (
-                  <p>
-                    <span className="font-bold">Short Description:</span>{" "}
-                    {product?.shortDescription}
-                  </p>
-                )} */}
+                  
                 </div>
 
                 <div className="mt-5 flex flex-wrap items-center gap-5">
@@ -115,14 +130,21 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
           </CardContent>
         </Card>
 
+        {product?.shortDescription && (
+                  <p>
+                    <span className="font-bold">Introduction</span>{" "}
+                    {product?.shortDescription}
+                  </p>
+                )}
+
         <Markdown
-          className="prose max-w-none whitespace-normal break-words"
+          className="prose max-w-none whitespace-normal break-words mt-5"
           remarkPlugins={[remarkGfm]}
         >
           {product?.description}
         </Markdown>
 
-        <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+        <ScrollArea className="mx-auto mt-12 max-w-[1300px] whitespace-nowrap rounded-md border ">
           {product?.productTable && (
             <Markdown
               className="prose whitespace-nowrap p-2"

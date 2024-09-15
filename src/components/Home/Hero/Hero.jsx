@@ -33,7 +33,7 @@ const slides = [
     id: 3,
     title: (
       <>
-        Build A Hospital In <br /> Bangladesh
+        Hospital Furniture <br /> Equipment
       </>
     ),
     subtitle: ["Hospital Revonation", " "],
@@ -49,7 +49,7 @@ const slides = [
     id: 1,
     title: (
       <>
-        Build A Hospital In <br /> Bangladesh
+        Purchase the best <br /> Medical Product
       </>
     ),
     subtitle: ["Medical Equipment & Furniture", " "],
