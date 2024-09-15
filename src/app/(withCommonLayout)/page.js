@@ -40,9 +40,9 @@ export default function Home() {
       <Testimonials />
 
       {/* <AuthorizeDistribution /> */}
-      <AuthorizeDistributors />
 
       <OurClients />
+      <AuthorizeDistributors />
 
       <Chatbot />
     </div>
