@@ -1,3 +1,4 @@
+import MedicalEquipmentService from "@/components/services/MedicalEquipmentService";
 import ServiceBanner from "@/components/services/ServiceBanner";
 import ServiceMain from "@/components/services/ServiceMain";
 
@@ -9,6 +10,7 @@ const page = () => {
       <RegularEquipment /> */}
       <ServiceBanner />
       <ServiceMain></ServiceMain>
+      <MedicalEquipmentService></MedicalEquipmentService>
     </div>
   );
 };
