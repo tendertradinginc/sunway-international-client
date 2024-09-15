@@ -4,13 +4,12 @@ const PageBanner = ({ title, description, banner }) => {
   console.log(banner);
   return (
     <div
-      className={`min-h-[364px] w-full bg-[url('/Frame55.png')] bg-cover bg-center`}
+      className={`min-h-[364px] w-full bg-cover bg-center`}
+      style={{ backgroundImage: `url(${banner})` }}
     >
       <MaxWidthWrapper>
         <div className="py-20 md:py-32">
-
           <h1 className="my-2 text-center text-6xl font-bold text-[#16A249]">
-
             {title}
           </h1>
           <p className="mx-auto mt-2 w-2/3 text-center font-semibold">
