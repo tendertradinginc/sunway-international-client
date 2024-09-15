@@ -7,7 +7,7 @@ const MedicalEquipmentService = () => {
       <MaxWidthWrapper>
         <div className="">
           <div className="grid grid-cols-12 items-center justify-center gap-0 md:gap-12">
-            <div className="col-span-6">
+            <div className="order-2 col-span-12 md:order-1 md:col-span-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Image
@@ -51,7 +51,10 @@ const MedicalEquipmentService = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-6" id="renovation">
+            <div
+              className="order-1 col-span-12 md:order-2 md:col-span-6"
+              id="renovation"
+            >
               <h2 className="pb-4 text-3xl font-semibold text-[#16A249] md:text-4xl">
                 Medical Equpment Solutions
               </h2>

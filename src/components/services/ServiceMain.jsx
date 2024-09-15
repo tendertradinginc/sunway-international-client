@@ -18,7 +18,7 @@ const ServiceMain = () => {
       <MaxWidthWrapper>
         <div className="">
           <div className="grid grid-cols-12 gap-0 md:gap-12">
-            <div className="col-span-5 my-16">
+            <div className="col-span-12 my-16 md:col-span-5">
               <h2 className="my-6 text-center text-4xl font-semibold text-[#16A249] md:text-left">
                 Our Services
               </h2>
@@ -48,7 +48,7 @@ const ServiceMain = () => {
                 </p>
               </a>
             </div>
-            <div className="col-span-7">
+            <div className="col-span-7 hidden md:block">
               <div>
                 <Image
                   loader={customLoader}
@@ -63,7 +63,7 @@ const ServiceMain = () => {
           </div>
         </div>
         <div className="mt-20 grid grid-cols-12 justify-center gap-6">
-          <div className="col-span-7 p-4" id="renovation">
+          <div className="col-span-12 p-4 md:col-span-7" id="renovation">
             <h2 className="pb-4 text-3xl font-semibold text-[#16A249] md:text-4xl">
               Hospital Construction Solutions
             </h2>
@@ -85,7 +85,7 @@ const ServiceMain = () => {
             </p>
           </div>
 
-          <div className="col-span-5 mt-16">
+          <div className="col-span-12 mt-4 md:col-span-5 md:mt-16">
             <div className="grid grid-cols-1 gap-x-12 gap-y-4 text-center text-lg text-black md:grid-cols-2 md:text-left">
               <div className="text-bl flex items-center justify-center gap-x-4 font-semibold md:justify-start">
                 <span className="font-bol text-4xl text-[#414243]">
