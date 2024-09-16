@@ -8,7 +8,7 @@ const PageBanner = ({ title, description, banner }) => {
       style={{ backgroundImage: `url(${banner})` }}
     >
       <MaxWidthWrapper>
-        <div className="py-20 md:py-32">
+        <div className="py-20 md:py-32 pb-10">
           <h1 className="my-2 text-center lg:text-6xl text-3xl font-bold text-[#16A249]">
             {title}
           </h1>
