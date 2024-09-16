@@ -18,8 +18,8 @@ const AboutUs = () => {
 
       <div>
         {/* about our team section */}
-        <section className="my-10">
-          <div className="mx-auto max-w-6xl py-8"></div>
+        <section className="lg:my-10">
+          <div className="mx-auto max-w-6xl lg:py-8"></div>
           <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 py-5 lg:flex-row lg:gap-16">
             <div className="order-first flex flex-1 justify-center text-justify">
               <Image
