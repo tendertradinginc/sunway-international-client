@@ -72,10 +72,10 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-5">
-              <Button className="">
+              {/* <Button className="">
                 Download Catalogue{" "}
                 <ArrowDownToLineIcon className="ml-2 size-5" />
-              </Button>
+              </Button> */}
 
               <ContactDialog />
             </div>

@@ -5,7 +5,7 @@ import ServiceMain from "@/components/services/ServiceMain";
 
 const page = () => {
   return (
-    <div className="py-10">
+    <div className="lg:py-10">
       {/* <ContructionService />
       <MedicalInstrument />
       <RegularEquipment /> */}

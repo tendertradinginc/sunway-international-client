@@ -56,20 +56,20 @@ const MedicalEquipmentService = () => {
               className="order-1 col-span-12 md:order-2 md:col-span-6"
               id="renovation"
             >
-              <h2 className="pb-4 text-3xl font-semibold text-[#16A249] md:text-4xl">
-                Medical Equpment Solutions
+              <h2 className="pb-4 text-3xl font-semibold text-[#16A249] md:text-4xl lg:text-start text-center">
+                Medical Equipment Solutions
               </h2>
-              <p className="my-4">
+              <p className="my-4 lg:text-start  text-justify">
                 <b> Twin Trade International's</b> Medical equipment service plays a crucial role in the healthcare industry by ensuring that medical facilities have the necessary tools and devices to provide quality patient care. This service specializes in sourcing, distributing, and maintaining a wide range of medical equipment, from basic diagnostic tools to advanced surgical instruments.
               </p>
-              <p className="">
+              <p className="lg:text-start  text-justify ">
                 In addition to equipment delivery, these services often provide ongoing support, including installation, training for healthcare professionals, and routine maintenance to ensure the equipment operates at peak performance. The service may also offer inventory management solutions, helping hospitals track and manage their equipment more effectively, reducing downtime and ensuring that critical tools are always available when needed.
               </p>
               <Link
                 href={"/medical-equipment"}
                 className="text-right flex lg:justify-start justify-center gap-2 items-center  text-si-primary font-semibold pt-8"
               >
-                <button className="border bg-si-primary hover:bg-white duration-500 text-white hover:text-si-primary px-12 text-sm py-2 rounded-md">
+                <button className="border-2 border-green-600 bg-si-primary hover:bg-white duration-500 text-white hover:text-si-primary px-12 text-sm py-2 rounded-md">
                   View Details
                 </button>
               </Link>

@@ -14,11 +14,11 @@ import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 const ServiceMain = () => {
   return (
-    <div className="py-12 md:py-20">
+    <div className="lg:py-12 md:py-20">
       <MaxWidthWrapper>
         <div className="">
           <div className="grid grid-cols-12 gap-0 md:gap-12">
-            <div className="col-span-12 my-16 md:col-span-5">
+            <div className="col-span-12 lg:my-16 my-6 md:col-span-5">
               <h2 className="my-6 text-center text-4xl font-semibold text-[#16A249] md:text-left">
                 Our Services
               </h2>
