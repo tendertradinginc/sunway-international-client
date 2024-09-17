@@ -1,6 +1,7 @@
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
 import MaxWidthWrapper from "../custom/MaxWidthWrapper";
+import Link from "next/link";
 const MedicalEquipmentService = () => {
   return (
     <div className="py-12">
@@ -59,21 +60,19 @@ const MedicalEquipmentService = () => {
                 Medical Equpment Solutions
               </h2>
               <p className="my-4">
-                <b> Twin Trade International's</b> Hospital construction
-                services is a specialized division focused on enhancing the
-                physical environment of healthcare facilities. This service
-                oversees building construction, ensuring that new hospital
-                infrastructures are developed with state-of-the-art technology
-                and adhere to rigorous safety standards.
+                <b> Twin Trade International's</b> Medical equipment service plays a crucial role in the healthcare industry by ensuring that medical facilities have the necessary tools and devices to provide quality patient care. This service specializes in sourcing, distributing, and maintaining a wide range of medical equipment, from basic diagnostic tools to advanced surgical instruments.
               </p>
               <p className="">
-                It collaborates closely with architectural design experts to
-                create spaces that are both functional and aesthetically
-                pleasing, supporting the complex needs of healthcare providers
-                and patients. This includes everything from the layout of
-                patient rooms and operating theaters to the design of communal
-                areas that promote healing and well-being.
+                In addition to equipment delivery, these services often provide ongoing support, including installation, training for healthcare professionals, and routine maintenance to ensure the equipment operates at peak performance. The service may also offer inventory management solutions, helping hospitals track and manage their equipment more effectively, reducing downtime and ensuring that critical tools are always available when needed.
               </p>
+              <Link
+                href={"/medical-equipment"}
+                className="text-right flex lg:justify-start justify-center gap-2 items-center  text-si-primary font-semibold pt-8"
+              >
+                <button className="border bg-si-primary hover:bg-white duration-500 text-white hover:text-si-primary px-12 text-sm py-2 rounded-md">
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         </div>
