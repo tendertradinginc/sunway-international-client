@@ -65,7 +65,7 @@ const cardData = [
   {
     id: 1,
     subTitle: "Renovation Solutions",
-    title: "Office Equipment Supply",
+    title: "Surgical suite installation for advanced care",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/gjG9LNF/Frame-42-2.png",
     description:
@@ -75,7 +75,7 @@ const cardData = [
   {
     id: 2,
     subTitle: "Room Solutions",
-    title: "Office Equipment Supply",
+    title: "Patient Care Setup & Outfitting",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/MSdXDSP/Frame-42-1.png",
     description:
@@ -85,7 +85,7 @@ const cardData = [
   {
     id: 3,
     subTitle: "Furniture Solutions",
-    title: "Office Equipment Supply",
+    title: "Custom-Fitted Neonatal ICU and Equipment",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/fxjCVk2/Frame-42.png",
     description:
