@@ -14,7 +14,7 @@ const MedicalEquipments = async () => {
   const blogs = data?.data?.result?.slice(0, 4);
 
   return (
-    <div className="border py-20">
+    <div className="py-20">
       <MaxWidthWrapper>
         <SectionTitle
           title="Medical Equipment"
