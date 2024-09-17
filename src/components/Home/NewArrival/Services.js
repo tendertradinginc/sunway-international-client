@@ -24,7 +24,7 @@ export default Services;
 const data = [
   {
     icon: <FaBuilding />,
-    title: <>Hospital Renovation</>,
+    title: <>HOSPITAL RENOVATION</>,
     title2: "Hospital Renovation",
     description:
       "Hospital construction services is a specialized division focused on enhancing the physical environment of healthcare facilities. This service oversees building construction, ensuring that new hospital infrastructures are developed with state-of-the-art technology and adhere to rigorous safety standards. It collaborates closely with architectural design experts to create spaces that are both functional and aesthetically pleasing, supporting the complex needs of healthcare providers and patients. This includes everything from the layout of patient rooms and operating theaters to the design of communal areas that promote healing and well-being.",
