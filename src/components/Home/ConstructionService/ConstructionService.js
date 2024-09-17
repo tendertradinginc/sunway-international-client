@@ -30,10 +30,7 @@ const ConstructionService = () => {
                 Latest ICU Room For <br /> Emergency
               </h2>
               <p className="my-6">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard Lorem
-                Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard
+              An Intensive Care Unit (ICU) is a specialized hospital room designed to provide critical care and monitoring for patients with life-threatening conditions. It is equipped with advanced medical technology, including ventilators, monitors, infusion pumps, and other vital equipment to support patients who may require constant attention and life support. The focus is on stabilizing and improving the patient's health in an environment that maximizes safety and support.
               </p>
               <button className="flex items-center gap-x-2 rounded-md border border-transparent text-lg font-semibold duration-300 hover:border-[#fff] hover:text-[#fff]">
                 <Link className="px-3 py-2" href="/services">
