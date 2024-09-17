@@ -40,7 +40,7 @@ const FeatureProject = () => {
                   <p className="my-4 line-clamp-4 text-gray-900">
                     {card?.description}
                   </p>
-                  <button className="flex items-center gap-x-2 rounded-md border border-si-primary bg-white pr-3 text-lg font-semibold text-si-primary duration-300 hover:border-si-primary hover:bg-si-primary hover:text-white">
+                  {/* <button className="flex items-center gap-x-2 rounded-md border border-si-primary bg-white pr-3 text-lg font-semibold text-si-primary duration-300 hover:border-si-primary hover:bg-si-primary hover:text-white">
                     <Link className="px-3 py-2" href={`/${card?.liveLInk}`}>
                       View more{" "}
                     </Link>
@@ -48,7 +48,7 @@ const FeatureProject = () => {
                       {" "}
                       <FaArrowRight className="" />
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
