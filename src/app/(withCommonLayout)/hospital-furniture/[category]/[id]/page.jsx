@@ -1,3 +1,4 @@
+import ContactDialog from "@/components/contactDialog/ContactDialog";
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import ProductImageCarousel from "@/components/shared/productImageCarousel/ProductImageCarousel";
 import {
@@ -10,7 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowDownToLineIcon, PhoneIcon } from "lucide-react";
+import { ArrowDownToLineIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -61,7 +62,7 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
             <p className="">{product?.shortDescription}</p>
 
             <div className="mt-5 space-y-1">
-              <h4 className="font-bold text-lg">Product Details</h4>
+              <h4 className="text-lg font-bold">Product Details</h4>
               <Markdown
                 className="prose max-w-none whitespace-normal break-words"
                 remarkPlugins={[remarkGfm]}
@@ -71,13 +72,12 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-5">
-              <Button className="mt-5">
-                Contact For Price <PhoneIcon className="ml-2 size-5" />
-              </Button>
-              <Button className="mt-5">
+              {/* <Button className="">
                 Download Catalogue{" "}
                 <ArrowDownToLineIcon className="ml-2 size-5" />
-              </Button>
+              </Button> */}
+
+              <ContactDialog />
             </div>
           </section>
         </CardContent>

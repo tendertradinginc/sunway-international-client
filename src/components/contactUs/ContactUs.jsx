@@ -42,25 +42,25 @@ const ContactUs = () => {
                     <ul className="space-y-2 text-left lg:text-lg font-medium">
                         <h2 className="text-lg mb-6">Email, call, or  complete the form to learn how snappy can solve your messaging problem.</h2>
                         <li>
-                            <h1 className="flex items-center gap-3">
+                            <h1 className="flex items-center gap-3 text-base">
                                 <FaLocationDot className="text-base text-si-primary" />
                                 Dhaka, Bangladesh
                             </h1>
                         </li>
                         <li>
-                            <h1 className="flex items-center gap-3">
-                                <FaHome className="text-base text-si-primary" />
-                                27 Saptak Square, Dhanmondi.
+                            <h1 className="flex items-start gap-3 text-base">
+                                <FaHome className="text-base mt-2 text-si-primary" />
+                                HM Plaza, (13th Floor) Sector-03 <br /> Uttara, Dhaka-1230
                             </h1>
                         </li>
                         <li>
-                            <h1 className="flex items-center gap-3">
+                            <h1 className="flex items-center gap-3 text-base">
                                 <FaPhoneSquare className="text-base text-si-primary" />
                                 +880 1894982978
                             </h1>
                         </li>
                         <li>
-                            <h1 className="flex items-center gap-3">
+                            <h1 className="flex items-center gap-3 text-base">
                                 <MdEmail className="text-base text-si-primary" />
                                 twintradeint@gmail.com
                             </h1>

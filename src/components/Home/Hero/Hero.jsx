@@ -66,7 +66,7 @@ const slides = [
 export function Hero() {
   return (
     <Carousel
-      className="mt-14 min-h-[90dvh] w-full md:max-h-[90vh]"
+      className="mt-14 max-h-[80vh] min-h-[90dvh] w-full md:max-h-[90vh]"
       opts={{
         align: "start",
         loop: true,

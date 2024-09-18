@@ -23,6 +23,7 @@ const LatestHospitalFurniture = async () => {
           description="Twin Trade International aims to create spaces that heal, supply tools that cure as we deliver excellence to your doorstep"
         />
 
+
 <div className=" flex justify-end mb-5">
           <Link href="/hospital-furniture">
             {" "}
@@ -36,6 +37,7 @@ const LatestHospitalFurniture = async () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+
           {blogs.map((item, index) => {
             return (
               <div key={index}>
