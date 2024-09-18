@@ -13,7 +13,7 @@ const CountUP = () => {
 
   return (
     <section
-      className="inset-0 left-0 top-0 h-full w-full bg-cover bg-[#8cd9a6c2] bg-center bg-no-repeat py-16 my-24 mt-32 bg-opacity-50"
+      className="inset-0 left-0 top-0 h-full w-full bg-cover bg-[#8cd9a6c2] bg-center bg-no-repeat lg:py-16 lg:my-24 mt-32 bg-opacity-50"
       style={{
         backgroundImage: `linear-gradient(#8cd9a6c2, #8cd9a6c2), url(https://i.ibb.co/HpmNXzG/Medical-Devices.jpg)`,
         backgroundPosition: "center",
