@@ -29,8 +29,8 @@ const MedicalCategoryPage = async ({ params, searchParams }) => {
   const equipment = equipmentJson?.data;
 
   return (
-    <MaxWidthWrapper>
-      <h2 className="mt-3 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
+    <MaxWidthWrapper className="mt-28">
+      <h2 className="mt-3 mb-8 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
         {decodedCategory}
       </h2>
       <div className="flex w-full items-center justify-between">
