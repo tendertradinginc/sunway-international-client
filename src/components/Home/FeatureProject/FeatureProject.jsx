@@ -40,7 +40,7 @@ const FeatureProject = () => {
                   <p className="my-4 line-clamp-4 text-gray-900">
                     {card?.description}
                   </p>
-                  <button className="flex items-center gap-x-2 rounded-md border border-si-primary bg-white pr-3 text-lg font-semibold text-si-primary duration-300 hover:border-si-primary hover:bg-si-primary hover:text-white">
+                  {/* <button className="flex items-center gap-x-2 rounded-md border border-si-primary bg-white pr-3 text-lg font-semibold text-si-primary duration-300 hover:border-si-primary hover:bg-si-primary hover:text-white">
                     <Link className="px-3 py-2" href={`/${card?.liveLInk}`}>
                       View more{" "}
                     </Link>
@@ -48,7 +48,7 @@ const FeatureProject = () => {
                       {" "}
                       <FaArrowRight className="" />
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -65,7 +65,7 @@ const cardData = [
   {
     id: 1,
     subTitle: "Renovation Solutions",
-    title: "Office Equipment Supply",
+    title: "Surgical suite installation for advanced care",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/gjG9LNF/Frame-42-2.png",
     description:
@@ -75,7 +75,7 @@ const cardData = [
   {
     id: 2,
     subTitle: "Room Solutions",
-    title: "Office Equipment Supply",
+    title: "Patient Care Setup & Outfitting",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/MSdXDSP/Frame-42-1.png",
     description:
@@ -85,7 +85,7 @@ const cardData = [
   {
     id: 3,
     subTitle: "Furniture Solutions",
-    title: "Office Equipment Supply",
+    title: "Custom-Fitted Neonatal ICU and Equipment",
     location: "Green corner, flat #g-1, green road, 1205, Gulshan, Dhaka",
     image: "https://i.ibb.co.com/fxjCVk2/Frame-42.png",
     description:

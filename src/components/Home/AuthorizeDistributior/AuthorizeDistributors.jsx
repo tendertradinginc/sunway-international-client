@@ -7,7 +7,7 @@ const AuthorizeDistributors = () => {
         <div className="flex flex-col items-center justify-center lg:w-2/5">
           <p className="p-4 text-center text-black">
             <span className="mb-3 text-3xl font-bold text-si-primary">
-              Authorize Distributor{" "}
+              Authorized Distributor{" "}
             </span>
             <br />
             <span className="mt-7 inline-block text-5xl font-bold text-si-primary">4+</span>
