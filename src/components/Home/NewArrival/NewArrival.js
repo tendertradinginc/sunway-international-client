@@ -38,7 +38,7 @@ const NewArrival = () => {
                 New Arrival
               </button>
               <h1 className="my-3 text-2xl font-semibold">
-                Digital Thermometer Gun For Covid - 19
+              Advanced Cardiac Monitoring 
               </h1>
               <p className="">
                 A cardiopulmonary monitor displaying vital signs for heart and

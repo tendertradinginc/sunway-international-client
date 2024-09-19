@@ -32,9 +32,9 @@ const Footer = () => {
               </li>
               <li className="max-w-80">
                 <p className="mt-5 font-medium leading-7 text-gray-300">
-                  We Reamin true to the same priciples on which our company was
-                  founded over a hundred years ago; providing superior service
-                  to our clients, putting safty first, creating opportunities
+                  We Reamain true to the same priciples on which our company was
+                  founded over 4 years ago; providing superior service
+                  to our clients, putting safety first, creating opportunities
                   for the people.
                 </p>
               </li>
@@ -48,11 +48,11 @@ const Footer = () => {
                   Login
                 </Link>
               </li>
-              <li className="mt-5">
+              {/* <li className="mt-5">
                 <Link href="/registration" className="text-secondary">
                   Registration
                 </Link>
-              </li>
+              </li> */}
               <li className="">
                 <Link href="/AboutUs" className="text-secondary">
                   About Us
