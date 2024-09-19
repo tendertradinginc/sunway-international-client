@@ -69,40 +69,40 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className=" pb-10">
-      <MaxWidthWrapper className="py-20 ">
-      <SectionTitle title={"What Clients Say"} description={"Discover what our clients think about our services and how we've helped them achieve success."}></SectionTitle>
-      <Carousel
-        opts={{ loop: true }}
-        plugins={[
-          Autoplay({
-            delay: 4500,
-          }),
-        ]}
-      >
-        <CarouselContent>
-          {companyQuotes.map((quote, idx) => (
-            <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10 ">
-              <Card className={` h-full py-10 bg-gradient-to-r from-gray-100  to-transparent mx-1`}>
-                <CardHeader>
-                <div className="bg-si-primary rounded-full p-3 w-max mx-auto">
-                <PiQuotes className=" text-white  font-bold mx-auto" size={25} />
-                </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-center">{quote.quote}</p>
-                </CardContent>
-                <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap justify-center">
-                  <h5 className="font-medium">- {quote.quoter}</h5>
-                  <span>|</span>
-                  <p className="">{quote.date}</p>
-                </CardFooter>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-    </MaxWidthWrapper>
+    <div className="lg:pb-10">
+      <MaxWidthWrapper className="lg:py-20 ">
+        <SectionTitle title={"What Clients Say"} description={"Discover what our clients think about our services and how we've helped them achieve success."}></SectionTitle>
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 4500,
+            }),
+          ]}
+        >
+          <CarouselContent>
+            {companyQuotes.map((quote, idx) => (
+              <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10 ">
+                <Card className={` h-full py-10 bg-gradient-to-r from-gray-100  to-transparent mx-1`}>
+                  <CardHeader>
+                    <div className="bg-si-primary rounded-full p-3 w-max mx-auto">
+                      <PiQuotes className=" text-white  font-bold mx-auto" size={25} />
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-semibold text-center">{quote.quote}</p>
+                  </CardContent>
+                  <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap justify-center">
+                    <h5 className="font-medium">- {quote.quoter}</h5>
+                    <span>|</span>
+                    <p className="">{quote.date}</p>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </MaxWidthWrapper>
     </div>
   );
 }
