@@ -64,6 +64,7 @@ const slides = [
 ];
 
 export function Hero() {
+  console.log("nothing for test");
   return (
     <Carousel
       className="mt-14 max-h-[80vh] min-h-[90dvh] w-full md:max-h-[90vh]"
