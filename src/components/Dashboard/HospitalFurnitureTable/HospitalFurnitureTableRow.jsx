@@ -50,7 +50,7 @@ const HospitalFurnitureTableRow = ({ data, index, setReload }) => {
           archived: true,
         },
       );
-      console.log(res);
+      
       setReload(true);
       toast.success("Product Archived Successfully!");
     } catch (error) {

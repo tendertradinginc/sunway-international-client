@@ -26,7 +26,6 @@ const SideNavbar = () => {
   };
 
   const handleLogOut = async () => {
-    console.log("object");
     await logOut();
     // setUser(null);
     router.push("/");

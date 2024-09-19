@@ -1,7 +1,7 @@
 import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 
 const PageBanner = ({ title, description, banner }) => {
-  console.log(banner);
+
   return (
     <div
       className={`min-h-[364px] w-full bg-cover bg-center`}

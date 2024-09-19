@@ -49,7 +49,7 @@ export async function loginUser(pre, fromData) {
 
 export async function logOut() {
   try {
-    console.log("object");
+   
     cookies().delete("accessToken");
   } catch (error) {
     throw error;
