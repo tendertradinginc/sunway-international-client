@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      {/* <BannerCategory /> */}
+
 
       <MedicalEquipments />
 
@@ -30,14 +30,13 @@ export default function Home() {
 
       <OurAchievement />
 
-      {/* <CompanyCertification /> */}
 
       <FeatureProject></FeatureProject>
-      {/* <ProjectShowcase /> */}
+
 
       <Testimonials />
 
-      {/* <AuthorizeDistribution /> */}
+
 
       <AuthorizeDistributors />
 
