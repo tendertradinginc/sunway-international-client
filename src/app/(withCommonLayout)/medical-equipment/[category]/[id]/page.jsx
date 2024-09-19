@@ -29,7 +29,7 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
 
   return (
     <div className="mt-16 min-h-screen">
-      <PageBanner title="Medical Supplies" description={<> <Breadcrumb className="flex justify-center mt-5">
+      <PageBanner title="Medical Supplies" banner="https://i.postimg.cc/c4fGqpTc/Downloader-La-463487-1.png" description={<> <Breadcrumb className="flex justify-center mt-5">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>

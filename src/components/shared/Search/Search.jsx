@@ -17,7 +17,7 @@ const Search = ({ category, pageName }) => {
       router.push(`/${pageName}/${category}?search=${query}`);
     }
 
-    console.log(query);
+  
   }, [query, router]);
   return (
     <div>

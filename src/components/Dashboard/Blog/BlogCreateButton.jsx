@@ -47,7 +47,7 @@ const BlogCreateButton = ({ setReload }) => {
     try {
       const imageUrl = await uploadImageToImgBB(imageFile);
       const blogData = { ...formData, image: imageUrl };
-      console.log(blogData);
+    
       const response = await fetch(
         "https://sunway-international-server.vercel.app/api/v1/blogs/create-blog",
         {

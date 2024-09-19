@@ -93,7 +93,7 @@ export function Hero() {
                   className="min-h-[90vh] w-full object-cover md:max-h-[90vh]"
                 />
               </div>
-              <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center border-red-400 bg-gradient-to-r from-[#ffffff] via-transparent to-transparent md:max-h-[90vh]">
+              <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center  bg-gradient-to-r from-[#ffffff] via-transparent to-transparent md:max-h-[90vh]">
                 <MaxWidthWrapper>
                   <p className="text-xl font-semibold text-si-primary">
                     {slide?.subtitle[0]}
