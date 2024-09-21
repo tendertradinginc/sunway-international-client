@@ -32,10 +32,10 @@ const Footer = () => {
               </li>
               <li className="max-w-80">
                 <p className="mt-5 font-medium leading-7 text-gray-300">
-                  We Reamain true to the same priciples on which our company was
-                  founded over 4 years ago; providing superior service
-                  to our clients, putting safety first, creating opportunities
-                  for the people.
+                  We remain true to the same principles on which our company was
+                  founded over four years ago: providing superior service to our
+                  clients, prioritizing safety, and creating opportunities for
+                  people.
                 </p>
               </li>
             </ul>
