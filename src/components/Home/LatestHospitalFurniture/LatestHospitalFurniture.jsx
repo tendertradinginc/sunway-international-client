@@ -16,7 +16,7 @@ const LatestHospitalFurniture = async () => {
   const blogs = data?.data?.result?.slice(0, 4);
 
   return (
-    <div className="lg:pb-20">
+    <div className="lg:pb-20 ">
       <MaxWidthWrapper>
         <SectionTitle
           title="Hospital Furniture"
