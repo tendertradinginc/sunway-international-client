@@ -16,16 +16,16 @@ export default function Home() {
   return (
     <div>
       <Hero />
-
-
+      {/* <BannerCategory /> */}
+      <NewArrival />
       <MedicalEquipments />
 
       <LatestHospitalFurniture />
-      <CountUP />
+      
 
       <Services />
 
-      <NewArrival />
+      
       <ConstructionService />
 
       <OurAchievement />
@@ -42,7 +42,7 @@ export default function Home() {
 
 
       <OurClients />
-
+      <CountUP />
       <Chatbot />
     </div>
   );

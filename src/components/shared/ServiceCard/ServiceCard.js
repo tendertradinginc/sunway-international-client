@@ -34,9 +34,9 @@ const ServiceCard = ({ data, index }) => {
             src={data?.imageUrl}
           />
           <div style={{borderRadius:"5px"}} className="mx-auto w-[90%] bg-white p-5 py-10 -mt-20 relative z-10 shadow-xl ">
-            <h1 className=" text-center text-2xl font-bold text-si-primary">
+            <Link href={data?.url} className=" text-center text-2xl font-bold text-si-primary block hover:underline">
               {data?.title}
-            </h1>
+            </Link>
             <p className="line-clamp-2 text-center  mx-auto my-3">{data?.description}</p>
            <Link href={data?.url}> <FaCircleArrowRight className="mx-auto bg-white text-si-primary rounded-full text-4xl" /></Link>
           </div>

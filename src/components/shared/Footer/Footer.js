@@ -146,7 +146,7 @@ const Footer = () => {
             </ul>
           </div>
         </MaxWidthWrapper>
-        <div className="border-t border-secondary p-5">
+        <div className="border-t bg-[#000000] border-secondary p-5">
           <h1 className="text-center font-semibold text-gray-300">
             {" "}
             twintradeinternational.com &copy; Designed & Developed by
