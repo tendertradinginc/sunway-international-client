@@ -8,15 +8,7 @@ import Image from "next/image";
 const NewArrival = () => {
   return (
     <div className="mt-16">
-      <div className="relative flex flex-col items-center py-28 pb-56">
-        <Image
-          src="https://i.postimg.cc/MpkRXPpH/new-arrival-bg.png"
-          height={500}
-          width={1400}
-          alt="new arrival background Image"
-          className="absolute left-0 top-0 z-0 h-full w-full opacity-20"
-        />
-        <div className="z-10">
+     <div className="z-10">
           <SectionTitle
             title={"Latest Innovations"}
             description={
@@ -24,20 +16,21 @@ const NewArrival = () => {
             }
           ></SectionTitle>
         </div>
-      </div>
-      <MaxWidthWrapper className="relative z-10 -mt-52 overflow-x-hidden py-5 pb-16">
+      <MaxWidthWrapper className="relative z-10  overflow-x-hidden py-5 pb-16">
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 lg:grid-cols-2">
           <motion.div
             initial={{ x: -300 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 1 }}
-            className="grid grid-cols-1 rounded-sm bg-[#FEF3D7] shadow-2xl md:grid-cols-2"
+            className="grid grid-cols-1 rounded-sm  bg-white border shadow-2xl md:grid-cols-2"
           >
+            {/* bg-[#FEF3D7] */}
             <div className="p-8 py-16">
-              <button className="rounded-sm bg-[#fbbe24d3] p-1 px-3 font-semibold text-white">
+              <button className="rounded-sm border p-1 px-3 font-semibold text-si-primary  bg-[#16a2494d]">
+              {/* bg-[#fbbe24d3] */}
                 New Arrival
               </button>
-              <h1 className="my-3 text-2xl font-semibold">
+              <h1 className="my-3 text-2xl font-bold text-si-primary">
               Advanced Cardiac Monitoring 
               </h1>
               <p className="">
@@ -45,7 +38,8 @@ const NewArrival = () => {
                 lung function in critical care.
               </p>
             </div>
-            <div className="flex items-center justify-center rounded-t-full bg-[#FCDE92] md:rounded-l-full md:rounded-r-none">
+            <div className="flex items-center justify-center rounded-t-full bg-secondary md:rounded-l-full md:rounded-r-none">
+            {/* bg-[#FCDE92] */}
               <Image
                 loader={customLoader}
                 height={100}
@@ -60,13 +54,14 @@ const NewArrival = () => {
             initial={{ x: 300 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 1 }}
-            className="grid grid-cols-1 rounded-sm bg-[#CFECDA] shadow-2xl md:grid-cols-2"
+            className="grid grid-cols-1 rounded-sm bg-white shadow-2xl md:grid-cols-2 border"
+            // bg-[#CFECDA]
           >
             <div className="p-8 py-16">
-              <button className="rounded-sm bg-[#16a249d3] p-1 px-3 font-semibold text-white">
+              <button className="rounded-sm text-si-primary  bg-[#16a2494d] p-1 px-3 font-semibold ">
                 New Arrival
               </button>
-              <h1 className="my-3 text-2xl font-semibold">
+              <h1 className="my-3 text-2xl font-bold text-si-primary">
                 Infant Phototherapy Incubator
               </h1>
               <p className="">
@@ -74,18 +69,31 @@ const NewArrival = () => {
                 therapy for treating newborn jaundice.
               </p>
             </div>
-            <div className="flex items-center justify-center rounded-t-full bg-[#16a2494d] md:rounded-l-full md:rounded-r-none">
+            <div className="flex items-center justify-center rounded-t-full bg-secondary  md:rounded-l-full md:rounded-r-none">
+            {/* bg-[#16a2494d] */}
               <Image
                 loader={customLoader}
                 height={100}
                 width={200}
                 alt="Covid 19 gun"
                 src="https://i.postimg.cc/W3dWb43N/5s1-Yb74-Jzqy-YWE3-Nt-AAjz-transformed.webp"
+                className="object-cover"
               />
             </div>
           </motion.div>
         </div>
       </MaxWidthWrapper>
+
+      <div className="relative flex flex-col items-center py-48 -mt-56">
+        <Image
+          src="https://i.postimg.cc/MpkRXPpH/new-arrival-bg.png"
+          height={500}
+          width={1400}
+          alt="new arrival background Image"
+          className="absolute left-0 bottom-0 z-0 h-full w-full opacity-20"
+        />
+        
+      </div>
     </div>
   );
 };
