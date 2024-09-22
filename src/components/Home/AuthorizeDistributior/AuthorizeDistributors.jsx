@@ -2,7 +2,7 @@ import AuthorizeDistributorCard from "@/components/shared/AuthorizeDistributorCa
 
 const AuthorizeDistributors = () => {
   return (
-    <section className="my-6 bg-[#f6f6f6] py-16">
+    <section className="my-6 bg-[#f6f6f6] lg:py-16">
       <div className="mx-auto flex max-w-6xl flex-col justify-between gap-10 py-5 lg:flex-row lg:gap-10">
         <div className="flex flex-col items-center justify-center lg:w-2/5">
           <p className="p-4 text-center text-black">
@@ -10,7 +10,7 @@ const AuthorizeDistributors = () => {
               Authorized Distributor{" "}
             </span>
             <br />
-            <span className="mt-7 inline-block text-5xl font-bold text-si-primary">4+</span>
+            <span className="mt-7 inline-block text-5xl font-bold  text-si-primary">4+</span>
             <br />
             around all over the world
           </p>

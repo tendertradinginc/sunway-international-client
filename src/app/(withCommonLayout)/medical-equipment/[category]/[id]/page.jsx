@@ -65,63 +65,63 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
                 </h2>
 
                 <div className=" mt-8 grid  break-all text-foreground flex-grow">
-                 <div className="space-y-2">
-                 <p>
-                    <span className="font-bold">Unique ID:</span>{" "}
-                    {product?.uniqueId}
-                  </p>
-                  <p>
-                    <span className="font-bold">Model:</span> {product?.model}
-                  </p>
-                  <p>
-                    <span className="font-bold">Category:</span>{" "}
-                    {product?.category}
-                  </p>
-                  {product?.serialNumber && (
+                  <div className="space-y-2">
                     <p>
-                      <span className="font-bold">Serial Number:</span>{" "}
-                      {product?.serialNumber}
+                      <span className="font-bold">Unique ID:</span>{" "}
+                      {product?.uniqueId}
                     </p>
-                  )}
-                  {product?.manufacturer && (
                     <p>
-                      <span className="font-bold">Manufacturer:</span>{" "}
-                      {product?.manufacturer}
+                      <span className="font-bold">Model:</span> {product?.model}
                     </p>
-                  )}
-                  {product?.regulatoryApproval && (
                     <p>
-                      <span className="font-bold">Regulatory Approval:</span>{" "}
-                      {product?.regulatoryApproval}
+                      <span className="font-bold">Category:</span>{" "}
+                      {product?.category}
                     </p>
-                  )}
-                  {product?.maintenanceSchedule && (
-                    <p>
-                      <span className="font-bold">Maintenance Schedule:</span>{" "}
-                      {product?.maintenanceSchedule}
-                    </p>
-                  )}
-                  {product?.dateOfManufacture && (
-                    <p>
-                      <span className="font-bold">Date of Manufacture:</span>{" "}
-                      {format(product?.dateOfManufacture, "dd MMM, yyyy")}
-                    </p>
-                  )}
-                  {product?.warrantyPeriod && (
-                    <p>
-                      <span className="font-bold">Warranty Period:</span>{" "}
-                      {product?.warrantyPeriod}
-                    </p>
-                  )}
-                 </div>
-                  
+                    {product?.serialNumber && (
+                      <p>
+                        <span className="font-bold">Serial Number:</span>{" "}
+                        {product?.serialNumber}
+                      </p>
+                    )}
+                    {product?.manufacturer && (
+                      <p>
+                        <span className="font-bold">Manufacturer:</span>{" "}
+                        {product?.manufacturer}
+                      </p>
+                    )}
+                    {product?.regulatoryApproval && (
+                      <p>
+                        <span className="font-bold">Regulatory Approval:</span>{" "}
+                        {product?.regulatoryApproval}
+                      </p>
+                    )}
+                    {product?.maintenanceSchedule && (
+                      <p>
+                        <span className="font-bold">Maintenance Schedule:</span>{" "}
+                        {product?.maintenanceSchedule}
+                      </p>
+                    )}
+                    {product?.dateOfManufacture && (
+                      <p>
+                        <span className="font-bold">Date of Manufacture:</span>{" "}
+                        {format(product?.dateOfManufacture, "dd MMM, yyyy")}
+                      </p>
+                    )}
+                    {product?.warrantyPeriod && (
+                      <p>
+                        <span className="font-bold">Warranty Period:</span>{" "}
+                        {product?.warrantyPeriod}
+                      </p>
+                    )}
+                  </div>
+
                 </div>
 
                 <div className="mt-5 flex flex-wrap items-center gap-5">
-                  <Button className="">
+                  {/* <Button className="">
                     Download Catalogue{" "}
                     <ArrowDownToLineIcon className="ml-2 size-5" />
-                  </Button>
+                  </Button> */}
 
                   <ContactDialog />
                 </div>
@@ -131,11 +131,11 @@ const MedicalEquipmentDetailsPage = async ({ params }) => {
         </Card>
 
         {product?.shortDescription && (
-                  <p>
-                    <span className="font-bold">Introduction</span>{" "}
-                    {product?.shortDescription}
-                  </p>
-                )}
+          <p>
+            <span className="font-bold">Introduction</span>{" "}
+            {product?.shortDescription}
+          </p>
+        )}
 
         <Markdown
           className="prose max-w-none whitespace-normal break-words mt-5"

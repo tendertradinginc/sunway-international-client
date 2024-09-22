@@ -30,14 +30,13 @@ export default function Home() {
 
       <OurAchievement />
 
-      {/* <CompanyCertification /> */}
 
       <FeatureProject></FeatureProject>
-      {/* <ProjectShowcase /> */}
+
 
       <Testimonials />
 
-      {/* <AuthorizeDistribution /> */}
+
 
       <AuthorizeDistributors />
 

@@ -29,8 +29,8 @@ const MedicalCategoryPage = async ({ params, searchParams }) => {
   const equipment = equipmentJson?.data;
 
   return (
-    <MaxWidthWrapper>
-      <h2 className="mt-3 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
+    <MaxWidthWrapper className="mt-28">
+      <h2 className="mt-3 mb-8 text-center text-2xl font-bold capitalize md:mt-5 lg:mt-5 lg:text-4xl">
         {decodedCategory}
       </h2>
       <div className="flex w-full items-center justify-between">
@@ -57,7 +57,7 @@ const MedicalCategoryPage = async ({ params, searchParams }) => {
         <Search category={decodedCategory} pageName="medical-equipment" />
       </div>
 
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:mt-10 lg:grid-cols-4">
+      <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:my-10 lg:grid-cols-4">
         {equipment.length > 0 ? (
           equipment.map((item) => (
             <div key={item._id}>
