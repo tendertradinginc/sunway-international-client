@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const OurClientCard = ({ client }) => {
   const { img } = client;
-  console.log(img);
+
   return (
     <div>
       <div className="flex h-36 cursor-pointer flex-col items-center justify-center rounded-lg bg-white text-white shadow-xl duration-700 hover:-translate-y-6">
