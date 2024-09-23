@@ -105,10 +105,17 @@ const HospitalFurniturePage = async () => {
               <div className="relative h-[350px] w-full">
                 <Image
                   loader={customLoader}
+                  src="https://i.postimg.cc/7LKHHsfW/Whats-App-Image-2024-09-23-at-12-10-17-PM.jpg"
+                  alt="Advertisement"
+                  fill
+                  className=" object-center lg:hidden"
+                />
+                <Image
+                  loader={customLoader}
                   src="https://i.ibb.co.com/zrXBgmn/Whats-App-Image-2024-09-09-at-4-14-30-PM.jpg"
                   alt="Advertisement"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center hidden lg:block"
                 />
               </div>
             </CarouselItem>
