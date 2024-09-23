@@ -2,8 +2,6 @@ import MaxWidthWrapper from "@/components/custom/MaxWidthWrapper";
 import SectionTitle from "@/components/shared/SectionTitle/SectionTitle";
 import { customLoader } from "@/utils/customLoader";
 import Image from "next/image";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 
 const FeatureProject = () => {
   return (
@@ -31,7 +29,7 @@ const FeatureProject = () => {
                 </div>
                 <div>
                   <h4 className="">{card?.subTitle}</h4>
-                  <h2 className="lead text-[32px] font-semibold">
+                  <h2 className="lead my-2 text-[28px] font-semibold">
                     {card?.title}
                   </h2>
                   <p className="text-sm font-semibold text-gray-700">
