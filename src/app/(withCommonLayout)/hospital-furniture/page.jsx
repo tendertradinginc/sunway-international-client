@@ -43,10 +43,10 @@ const HospitalFurniturePage = async () => {
       </h2>
 
       {/* Advertisement section */}
-      <MaxWidthWrapper className="flex flex-col items-center justify-between gap-5 lg:flex-row lg:items-start">
+      <MaxWidthWrapper className="flex flex-col  justify-between   gap-5 md:flex-row lg:items-start">
         {/* Category selector */}
-        <div className="size-[350px]">
-          <div className="flex h-1/4 flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
+        <div className="w-full md:w-[350px]  border-red-700">
+          <div className="flex  flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
             {/* <Link
               href="/#"
@@ -56,7 +56,7 @@ const HospitalFurniturePage = async () => {
             </Link> */}
           </div>
 
-          <div className="flex h-3/4 max-w-[350px] flex-col bg-background">
+          <div className="flex  max-w-[350px] flex-col bg-background">
             {categories.map((category) => (
               <Link
                 key={category._id}
@@ -86,10 +86,17 @@ const HospitalFurniturePage = async () => {
               <div className="relative h-[350px] w-full">
                 <Image
                   loader={customLoader}
+                  src="https://i.postimg.cc/KztMsh9M/Whats-App-Image-2024-09-23-at-12-09-01-PM.jpg"
+                  alt="Advertisement"
+                  fill
+                  className="object-cover object-center lg:hidden"
+                />
+                <Image
+                  loader={customLoader}
                   src="https://i.ibb.co.com/BtnbySp/Whats-App-Image-2024-09-09-at-6-44-54-PM.jpg"
                   alt="Advertisement"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center hidden lg:block"
                 />
               </div>
             </CarouselItem>
@@ -98,10 +105,17 @@ const HospitalFurniturePage = async () => {
               <div className="relative h-[350px] w-full">
                 <Image
                   loader={customLoader}
+                  src="https://i.postimg.cc/7LKHHsfW/Whats-App-Image-2024-09-23-at-12-10-17-PM.jpg"
+                  alt="Advertisement"
+                  fill
+                  className=" object-center lg:hidden"
+                />
+                <Image
+                  loader={customLoader}
                   src="https://i.ibb.co.com/zrXBgmn/Whats-App-Image-2024-09-09-at-4-14-30-PM.jpg"
                   alt="Advertisement"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center hidden lg:block"
                 />
               </div>
             </CarouselItem>
