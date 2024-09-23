@@ -158,6 +158,7 @@ const AboutUs = () => {
           <div className="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-4 py-5 lg:flex-row lg:gap-10">
             <div className="flex-1 text-justify">
               <Image
+                loader={customLoader}
                 src="https://i.postimg.cc/26cJFk8r/Whats-App-Image-2024-09-07-at-4-33-35-PM.jpg"
                 alt="About Us Image"
                 width={500}
@@ -228,6 +229,7 @@ const AboutUs = () => {
 
             <div className="order-first flex flex-1 flex-col justify-center text-justify lg:order-last">
               <Image
+                loader={customLoader}
                 src="https://i.postimg.cc/W15V5SJT/Whats-App-Image-2024-09-09-at-12-50-39-PM.jpg"
                 alt="About Us Image"
                 width={500}
