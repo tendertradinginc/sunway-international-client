@@ -12,7 +12,7 @@ const Certification = () => {
       <div className="text-center">
         <SectionTitle title={"Certificate Honor"}></SectionTitle>
 
-        <p className="lg:mt-5 font-medium text-si-text">
+        <p className="font-medium text-si-text lg:mt-5">
           Twin Trade International is committed to maintaining the highest
           industry standards, as evidenced by the numerous certifications we
           have received. We are proud to be certified, demonstrating our
@@ -29,90 +29,98 @@ const Certification = () => {
 
       <div className="my-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* Certificate 1 */}
-        <div >
+        <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 2 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/tRvJRWQY/Frame-170.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 3 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/RhJWxZ0P/Frame-174.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 4 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/4Nh9rB7J/Frame-163.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 5 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/RhJWxZ0P/Frame-174.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 6 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/4Nh9rB7J/Frame-163.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 7 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/tRvJRWQY/Frame-170.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         {/* Certificate 8 */}
         <div>
           <Image
+            loader={customLoader}
             src="https://i.postimg.cc/NMG8tB6m/Frame-173.png"
             alt="certificate 1"
             height={300}
             width={300}
-            className="shadow-lg rounded-lg w-full"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
       </div>
