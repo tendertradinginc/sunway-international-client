@@ -33,7 +33,9 @@ const CountUP = () => {
             }}
             className="flex flex-col items-center justify-center rounded-md bg-[url('https://i.postimg.cc/mgp5mzsg/pexels-eric-mufasa-578798-1350789-1.jpg')] bg-cover bg-center text-white"
           >
-            <div className="grid h-full w-full items-center rounded-md bg-[#fbbe24e1]">
+
+            <div className="grid h-full w-full items-center bg-[#fbbe24e1] py-7 rounded-md">
+
               <div className="text-center">
                 <div className="flex items-center justify-center gap-4 p-4">
                   <Image
@@ -66,7 +68,9 @@ const CountUP = () => {
             }}
             className="flex flex-col items-center justify-center rounded-md bg-[url('https://i.postimg.cc/CMDdYkP9/albero-furniture-bratislava-8-V-c-Ac-2-K08-unsplash-1.jpg')] bg-cover bg-center text-white"
           >
-            <div className="grid h-full w-full items-center rounded-md bg-[#fbbe24e1]">
+
+            <div className="grid h-full w-full items-center bg-[#fbbe24e1] py-7 rounded-md">
+
               <div className="text-center">
                 <div className="flex items-center justify-center gap-4 p-4">
                   <Image
@@ -99,7 +103,9 @@ const CountUP = () => {
             }}
             className="flex flex-col items-center justify-center rounded-md bg-[url('https://i.postimg.cc/XqxR3sTw/glenn-carstens-peters-RLw-UC03-Gwc-unsplash-1.jpg')] bg-cover bg-center text-white"
           >
-            <div className="grid h-full w-full items-center rounded-md bg-[#fbbe24e1]">
+
+            <div className="grid h-full w-full items-center bg-[#fbbe24e1] py-7 rounded-md">
+
               <div className="text-center">
                 <div className="flex items-center justify-center gap-4 p-4">
                   <Image
