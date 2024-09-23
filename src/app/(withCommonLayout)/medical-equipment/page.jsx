@@ -43,15 +43,9 @@ const MedicalEquipmentPage = async () => {
       </MaxWidthWrapper>
       <MaxWidthWrapper className="grid grid-cols-12 grid-rows-12 items-center justify-between gap-5 lg:items-start">
         {/* Category selector */}
-        <div className="col-span-12 row-span-12 h-full bg-background lg:col-span-3">
+        <div className="col-span-12 row-span-12 h-full bg-background md:col-span-4 lg:col-span-3">
           <div className="flex flex-col items-start bg-si-secondary bg-opacity-55 p-4 pl-6">
             <h4 className="text-lg font-semibold">Categories</h4>
-            {/* <Link
-              href="/#"
-              className="mt-1 inline-flex items-center text-sm font-semibold text-primary underline-offset-2 hover:underline"
-            >
-              See All <DoubleArrowRightIcon className="ml-1 size-3" />
-            </Link> */}
           </div>
 
           <div className="flex flex-col">
@@ -77,23 +71,14 @@ const MedicalEquipmentPage = async () => {
           </div>
         </div>
 
-        <div className="col-span-12 row-span-12 flex w-full flex-col gap-5 lg:col-span-9">
+        <div className="col-span-12 row-span-12 flex w-full flex-col gap-5 md:col-span-8 lg:col-span-9">
           {/* Advertisement Carousel */}
           <Carousel opts={{ loop: true }} autoplay className="w-full">
             <CarouselContent className="ml-0 w-full">
+              {/* First CarouselItem */}
               <CarouselItem className="p-0">
-                <div className="relative h-[400px] w-full">
-                  <Image
-                    loader={customLoader}
-                    src="https://i.ibb.co.com/KN4C1HC/phots12-1.jpg"
-                    alt="Advertisement"
-                    fill
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-              </CarouselItem>
-              <CarouselItem className="p-0">
-                <div className="relative h-[400px] w-full">
+                {/* Large screen image */}
+                <div className="relative h-[400px] w-full hidden lg:block md:hidden">
                   <Image
                     loader={customLoader}
                     src="https://i.ibb.co.com/gSzJXxM/photos14.jpg"
@@ -102,9 +87,22 @@ const MedicalEquipmentPage = async () => {
                     className="object-cover object-center"
                   />
                 </div>
+                {/* Mobile screen image */}
+                <div className="relative h-[400px] w-full block lg:hidden md:block">
+                  <Image
+                    loader={customLoader}
+                    src="https://i.postimg.cc/44Mf3QxP/Whats-App-Image-2024-09-23-at-12-12-26-PM.jpg"
+                    alt="Advertisement"
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
               </CarouselItem>
+
+              {/* Second CarouselItem */}
               <CarouselItem className="p-0">
-                <div className="relative h-[400px] w-full">
+                {/* Large screen image */}
+                <div className="relative h-[400px] w-full hidden lg:block md:hidden">
                   <Image
                     loader={customLoader}
                     src="https://i.ibb.co.com/zrXBgmn/Whats-App-Image-2024-09-09-at-4-14-30-PM.jpg"
@@ -113,11 +111,21 @@ const MedicalEquipmentPage = async () => {
                     className="object-cover object-center"
                   />
                 </div>
+                {/* Mobile screen image */}
+                <div className="relative h-[400px] w-full block lg:hidden md:block">
+                  <Image
+                    loader={customLoader}
+                    src="https://i.postimg.cc/1tGt65P9/Whats-App-Image-2024-09-23-at-12-10-17-PM.jpg"
+                    alt="Advertisement"
+                    fill
+                    className="object-cover  object-center"
+                  />
+                </div>
               </CarouselItem>
             </CarouselContent>
           </Carousel>
 
-          {/* small cards */}
+          {/* Small cards */}
           <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="flex flex-col items-center justify-center gap-3 bg-background p-4">
               <TbAirConditioning className="size-10 text-primary" />
