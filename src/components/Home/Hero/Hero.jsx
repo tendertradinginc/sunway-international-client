@@ -11,23 +11,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 const slides = [
-  {
-    id: 2,
-    title: (
-      <>
-        Build A Hospital In <br /> Bangladesh
-      </>
-    ),
-    subtitle: ["Are you planning to", " "],
-    imageUrl:
-      "https://i.postimg.cc/4dD1j3k3/Whats-App-Image-2024-09-14-at-19-15-16-9c4a91b1-1-1.png",
-    imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
-    link: "/services",
-    divMain: "items-start",
-    bg_color: "",
-    head: "text-[#fbbe24] text-left border-l-green-800",
-    paragraph: "text-left text-gray-900",
-  },
+  // {
+  //   id: 2,
+  //   title: (
+  //     <>
+  //       Build A Hospital In <br /> Bangladesh
+  //     </>
+  //   ),
+  //   subtitle: ["Are you planning to", " "],
+  //   imageUrl:
+  //     "https://i.postimg.cc/4dD1j3k3/Whats-App-Image-2024-09-14-at-19-15-16-9c4a91b1-1-1.png",
+  //   imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
+  //   link: "/services",
+  //   divMain: "items-start",
+  //   bg_color: "",
+  //   head: "text-[#fbbe24] text-left border-l-green-800",
+  //   paragraph: "text-left text-gray-900",
+  // },
 
   {
     id: 3,
@@ -79,6 +79,35 @@ export function Hero() {
       ]}
     >
       <CarouselContent>
+        <CarouselItem className="min-h-[90vh] w-full md:max-h-[90vh]">
+          <div className="relative">
+            <div className="absolute left-0 top-0 -z-10 w-full">
+              <Image
+                height={500}
+                width={1400}
+                src={
+                  "https://i.postimg.cc/9X94kXRN/Frame-7-1.png"
+                }
+                alt="Home page banner"
+                className="min-h-[90vh] w-full md:object-left object-cover md:max-h-[90vh]"
+              />
+            </div>
+            <div style={{clipPath:"polygon(0 0, 31% 0, 100% 100%, 0% 100%)"}} className="z-20 flex min-h-[90vh] md:max-w-lg lg:max-w-2xl border  w-full flex-col justify-center  md:max-h-[90vh] ">
+              <MaxWidthWrapper className=" ">
+                
+                <div className="  ">
+                <h1 className="my-5 md:leading-snug  max-w-lg  text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+                  Modern <br /> <span className="inline-block  lg:my-2">Modular OT</span>  <br /> Solution
+                </h1>
+                <Link href="/services">
+                  {" "}
+                  <Button className="mt-5">Exlpore More</Button>
+                </Link>
+                </div>
+              </MaxWidthWrapper>
+            </div>
+          </div>
+        </CarouselItem>
         {slides?.map((slide) => (
           <CarouselItem
             key={slide.id}
@@ -94,7 +123,7 @@ export function Hero() {
                   className="min-h-[90vh] w-full object-cover md:max-h-[90vh]"
                 />
               </div>
-              <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center  bg-gradient-to-r from-[#ffffff] via-transparent to-transparent md:max-h-[90vh]">
+              <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center bg-gradient-to-r from-[#ffffff] via-transparent to-transparent md:max-h-[90vh]">
                 <MaxWidthWrapper>
                   <p className="text-xl font-semibold text-si-primary">
                     {slide?.subtitle[0]}
