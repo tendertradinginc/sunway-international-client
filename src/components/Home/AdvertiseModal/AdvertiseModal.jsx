@@ -65,8 +65,8 @@ const AdvertiseModal = () => {
               <div className="text-center">
               <p className="text-xl font-semibold">Are You Planning To</p>
               <h1 className="text-si-primary  text-5xl my-5 font-semibold lg:leading-snug">Build A Quality Hospita In  Bangladesh</h1>
-              <p>We're aimign to transform healthcare spaces while empowering patient care with excellence</p>
-              <Link href="/" className="text-si-primary font-bold mt-8 inline-block">Explore More <FaArrowRight className="inline-block ml-2" /> </Link>
+              <p>We're aiming to transform healthcare spaces while empowering patient care with excellence</p>
+              <Link href="/services" className="text-si-primary font-bold mt-8 inline-block">Explore More <FaArrowRight className="inline-block ml-2" /> </Link>
             </div>
             </div>
            
