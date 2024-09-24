@@ -92,10 +92,25 @@ const Footer = () => {
                   touch with contact and get a quote form
                 </p>
               </li>
-              <li className="mt-5 flex gap-x-3 text-secondary">
+              {/* <li className="mt-5 flex gap-x-3 text-secondary">
                 <FaHome className="mt-1 text-xl text-gray-300" />
                 HM Plaza, (13th Floor) Sector-03 <br /> Uttara, Dhaka-1230
+              </li> */}
+              <li className="mt-5 flex flex-col gap-x-3 text-secondary">
+                {/* Clickable link to open the full map in a new tab */}
+                <Link
+                  href="https://www.google.com/maps?q=23.864890637620633,90.39577399358598&hl=en"
+                  target="_blank"
+                  className="flex items-center underline"
+                >
+                  <FaHome className="mt-1 text-xl text-gray-300" />
+                  <span className="ml-3 ">
+                    HM Plaza, (13th Floor) Sector-03 <br /> Uttara, Dhaka-1230
+                  </span>
+                </Link>
               </li>
+
+
               <li className="flex gap-x-3 text-secondary">
                 <IoCall className="mt-1 text-xl text-gray-300" />
                 +880 1700978687
@@ -108,15 +123,29 @@ const Footer = () => {
 
             {/* Socials */}
             <ul className="flex flex-col gap-y-3">
-              <li className="text-2xl font-bold text-gray-300">Socials</li>
-              <Image
+              <li className="text-2xl font-bold text-gray-300">Socials
+              </li>
+              {/* <Image
                 loader={customLoader}
                 className="mt-2"
                 height={50}
                 width={220}
                 alt="Twin Trade Int. logo footer"
                 src="https://i.postimg.cc/Pfbh7MmL/download-removebg-preview.png"
-              />
+              /> */}
+              <li>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1824.3485041533095!2d90.39577399358598!3d23.864890637620633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c411fec45ab9%3A0xa29fdaaa39a7c771!2sSector-04%2CUttara!5e0!3m2!1sen!2sbd!4v1727179036164!5m2!1sen!2sbd"
+                  width="250"
+                  height="170"
+                  style={{ border: 0, marginTop: '0px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </li>
+
+
               <li className="mt-5 flex gap-4">
                 <Link href="https://www.facebook.com/" target="_blank">
                   {" "}
