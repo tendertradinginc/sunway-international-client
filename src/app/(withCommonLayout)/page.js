@@ -1,3 +1,4 @@
+import AdvertiseModal from "@/components/Home/AdvertiseModal/AdvertiseModal";
 import AuthorizeDistributors from "@/components/Home/AuthorizeDistributior/AuthorizeDistributors";
 import Chatbot from "@/components/Home/Chatbot/Chatbot";
 import ConstructionService from "@/components/Home/ConstructionService/ConstructionService";
@@ -15,6 +16,7 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 export default function Home() {
   return (
     <div>
+        <AdvertiseModal />
       <Hero />
       {/* <BannerCategory /> */}
       <NewArrival />
@@ -44,6 +46,7 @@ export default function Home() {
       <OurClients />
       <CountUP />
       <Chatbot />
+    
     </div>
   );
 }
