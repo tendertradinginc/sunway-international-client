@@ -125,7 +125,7 @@ const HospitalFurniturePage = async () => {
 
       <MaxWidthWrapper className="min-h-[50vh] overflow-x-hidden py-16">
         {products.map((categoryObj, index) => {
-          // Access the keys of each object (category name)
+ 
           const categoryName = Object.keys(categoryObj)[0];
           const items = categoryObj[categoryName];
 
