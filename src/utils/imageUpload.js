@@ -2,45 +2,75 @@ const uploadImageToImgBB = async (imageFile) => {
   if (!imageFile) {
     return;
   }
-  const apiKey = "55845c5398adf68343489106e8bca664";
+
+  const apiKeys = [
+    "5a7a802c2424f1614a4f152452915832",
+    "9e1b81ca81cbceacdcca8a447cc16d02",
+    "0da602928a1b35b2309686a881ab0557",
+    "0d3061733aec759522fb2c6746aa447d",
+  ];
+
   const formData = new FormData();
   formData.append("image", imageFile);
 
-  try {
-    const response = await fetch(
-      `https://api.imgbb.com/1/upload?key=${apiKey}`,
-      {
-        method: "POST",
-        body: formData,
-      },
-    );
+  for (let apiKey of apiKeys) {
+    try {
+      const response = await fetch(
+        "https://api.imgbb.com/1/upload?key=" + apiKey,
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
-    const data = await response.json();
-    if (data.status === 200) {
-      const imageUrl = data.data.url;
-      return imageUrl;
-    } else {
-      console.error("Image upload failed");
-      return null;
+      const data = await response.json();
+      if (data.status === 200) {
+        const imageUrl = data.data.url;
+        return imageUrl;
+      } else {
+        console.error("Image upload failed for API key:", apiKey);
+      }
+    } catch (error) {
+      console.error("Error uploading image with API key:", apiKey, error);
     }
-  } catch (error) {
-    console.error("Error uploading image: ", error);
-    return null;
   }
+
+  // If all API keys fail
+  console.error("All API keys failed. Could not upload the image.");
+  return null;
 };
 
 export { uploadImageToImgBB };
 
-// use system
+// const uploadImageToImgBB = async (imageFile) => {
+//   if (!imageFile) {
+//     return;
+//   }
+//   const apiKey = "493b024a5f0d80b1f356d2614eb2d9cd";
+//   const formData = new FormData();
+//   formData.append("image", imageFile);
 
-//1
-// const [imageFile, setImageFile] = useState(null);
+//   try {
+//     const response = await fetch(
+//       "https://api.imgbb.com/1/upload?key=" + apiKey,
+//       {
+//         method: "POST",
+//         body: formData,
+//       }
+//     );
 
-//2
-// const handleImageUpload = (e) => {
-//   const file = e.target.files[0];
-//   setImageFile(file);
+//     const data = await response.json();
+//     if (data.status === 200) {
+//       const imageUrl = data.data.url;
+//       return imageUrl;
+//     } else {
+//       console.error("Image upload failed");
+//       return null;
+//     }
+//   } catch (error) {
+//     console.error("Error uploading image: ", error);
+//     return null;
+//   }
 // };
 
-//3
-// const imageUrl = await uploadImageToImgBB(imageFile);
+// export { uploadImageToImgBB };
