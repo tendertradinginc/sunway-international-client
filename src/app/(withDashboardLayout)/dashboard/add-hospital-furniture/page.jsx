@@ -66,7 +66,7 @@ const AddHospitalFurniturePage = () => {
       };
 
       const res = await axios.post(
-        "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
+        "http://localhost:5000/api/v1/officeEquipment/create",
         updatedFormData,
       );
 
@@ -128,49 +128,8 @@ const AddHospitalFurniturePage = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                {/* Short Description */}
-                <div className="mb-4">
-                  <Label className="mb-2 block">Short Description</Label>
-                  <Input
-                    type="text"
-                    name="shortDescription"
-                    value={formData.shortDescription}
-                    onChange={handleInputChange}
-                    required
-                    maxLength={150}
-                  />
-                </div>
-
-                {/* category */}
-                <div>
-                  <Label className="mb-2 block">Category</Label>
-                  <OfficeCategoryCombobox
-                    value={category}
-                    setValue={setCategory}
-                  />
-                </div>
-              </div>
-
-              {/* Full Description */}
-              <div className="mb-4">
-                <Label className="mb-2 block">Description</Label>
-                <Textarea
-                  name="description"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                  required
-                  className="min-h-64"
-                />
-
-                <Markdown
-                  className="prose whitespace-nowrap"
-                  remarkPlugins={[remarkGfm]}
-                >
-                  {formData.description}
-                </Markdown>
-              </div>
-
-              {/* Image Upload */}
+               
+                 {/* Image Upload */}
               <div className="mb-4">
                 <Label className="mb-2 block">Images</Label>
                 <Input
@@ -199,6 +158,53 @@ const AddHospitalFurniturePage = () => {
                   )}
                 </div>
               </div>
+
+                {/* category */}
+                <div>
+                  <Label className="mb-2 block">Category</Label>
+                  <OfficeCategoryCombobox
+                    value={category}
+                    setValue={setCategory}
+                  />
+                </div>
+              </div>
+
+                  {/* Short Description */}
+                  <div className="mb-4">
+                  <Label className="mb-2 block">Short Description</Label>
+                  <Textarea
+                    type="text"
+                    name="shortDescription"
+                    value={formData.shortDescription}
+                    onChange={handleInputChange}
+                    required
+                    
+                    // maxLength={150}
+                  />
+                </div>
+
+              {/* Full Description */}
+              <div className="mb-4">
+                <Label className="mb-2 block">Description</Label>
+                <Textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  required
+                  className="min-h-64"
+                />
+
+                <Markdown
+                  className="prose whitespace-nowrap"
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {formData.description}
+                </Markdown>
+              </div>
+
+           
+
+             
 
               {/* Submit Button */}
               <Button

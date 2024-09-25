@@ -45,31 +45,24 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Card className="mt-5 min-h-[600px] rounded-none">
+      <Card className="mt-5 min-h-[600px] rounded-none border-none shadow-none">
         <CardContent className="flex flex-col gap-5">
-          <section className="w-full">
+         <div>
+         <section className="md:w-1/2 float-left  ">
             <ProductImageCarousel images={product?.images || []} />
           </section>
 
           <section className="w-full p-5">
-            <h2 className="text-2xl font-bold lg:text-3xl">
+            <h2 className="text-2xl font-bold lg:text-3xl ">
               {product?.productName}
             </h2>
-            <p className="my-2">
-              <span className="font-semibold">Model No: </span>
+            <p className="my-2 mb-5">
+              <span className="font-semibold ">Model No: </span>
               {product?.modelNumber}
             </p>
-            <p className="">{product?.shortDescription}</p>
+            <p className="whitespace-break-spaces">{product?.shortDescription}</p>
 
-            <div className="mt-5 space-y-1">
-              <h4 className="text-lg font-bold">Product Details</h4>
-              <Markdown
-                className="prose max-w-none whitespace-normal break-words"
-                remarkPlugins={[remarkGfm]}
-              >
-                {product?.description}
-              </Markdown>
-            </div>
+           
 
             <div className="mt-5 flex flex-wrap items-center gap-5">
               {/* <Button className="">
@@ -80,6 +73,17 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
               <ContactDialog />
             </div>
           </section>
+         </div>
+
+          <div className="mt-5 space-y-1 overflow-x-scroll">
+              <h4 className="text-lg font-bold">Product Details</h4>
+              <Markdown
+                className="prose max-w-none whitespace-nowrap"
+                remarkPlugins={[remarkGfm]}
+              >
+                {product?.description}
+              </Markdown>
+            </div>
         </CardContent>
       </Card>
     </MaxWidthWrapper>
