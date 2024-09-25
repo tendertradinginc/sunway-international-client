@@ -68,7 +68,7 @@ const AddHospitalFurniturePage = () => {
       };
 
       const res = await axios.post(
-        "https://sunway-international-server.vercel.app/api/v1/officeEquipment/create",
+        "http://localhost:5000/api/v1/officeEquipment/create",
         updatedFormData,
       );
 
@@ -131,18 +131,36 @@ const AddHospitalFurniturePage = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                {/* Short Description */}
-                <div className="mb-4">
-                  <Label className="mb-2 block">Short Description</Label>
-                  <Input
-                    type="text"
-                    name="shortDescription"
-                    value={formData.shortDescription}
-                    onChange={handleInputChange}
-                    required
-                    maxLength={150}
-                  />
+               
+                 {/* Image Upload */}
+              <div className="mb-4">
+                <Label className="mb-2 block">Images</Label>
+                <Input
+                  type="file"
+                  accept="image/*"
+                  name="images"
+                  multiple
+                  onChange={handleImageUpload}
+                />
+                <div className="mt-2">
+                  {formData.images.length > 0 && (
+                    <div className="grid grid-cols-3 gap-4">
+                      {formData.images.map((image, index) => (
+                        <div key={index}>
+                          <Image
+                            loader={customLoader}
+                            src={image}
+                            height={200}
+                            width={200}
+                            alt={`Uploaded ${index}`}
+                            className="mt-2 h-auto w-full"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
+              </div>
 
                 {/* category */}
                 <div>
@@ -154,6 +172,21 @@ const AddHospitalFurniturePage = () => {
                 </div>
               </div>
 
+                  {/* Short Description */}
+                  <div className="mb-4">
+                  <Label className="mb-2 block">Short Description</Label>
+                  <Textarea
+                    type="text"
+                    name="shortDescription"
+                    value={formData.shortDescription}
+                    onChange={handleInputChange}
+                    required
+                    
+                    // maxLength={150}
+                  />
+                </div>
+
+              {/* Full Description */}
               <div className="mb-4">
                 {/* Description */}
                 <Label className="mb-2 block">Description</Label>
@@ -193,36 +226,6 @@ const AddHospitalFurniturePage = () => {
                   )}
                   <ScrollBar orientation="horizontal" />
                 </ScrollArea>
-              </div>
-
-              {/* Image Upload */}
-              <div className="mb-4">
-                <Label className="mb-2 block">Images</Label>
-                <Input
-                  type="file"
-                  accept="image/*"
-                  name="images"
-                  multiple
-                  onChange={handleImageUpload}
-                />
-                <div className="mt-2">
-                  {formData.images.length > 0 && (
-                    <div className="grid grid-cols-3 gap-4">
-                      {formData.images.map((image, index) => (
-                        <div key={index}>
-                          <Image
-                            loader={customLoader}
-                            src={image}
-                            height={200}
-                            width={200}
-                            alt={`Uploaded ${index}`}
-                            className="mt-2 h-auto w-full"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
               </div>
 
               {/* Submit Button */}

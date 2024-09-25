@@ -69,7 +69,6 @@ const AdvertiseModal = () => {
               <Link href="/services" className="text-si-primary font-bold mt-8 inline-block">Explore More <FaArrowRight className="inline-block ml-2" /> </Link>
             </div>
             </div>
-           
           </div>
         </AlertDialogHeader>
         <AlertDialogFooter></AlertDialogFooter>
