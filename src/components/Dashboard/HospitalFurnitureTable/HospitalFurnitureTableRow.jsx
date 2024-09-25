@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { customLoader } from "@/utils/customLoader";
 import axios from "axios";
 import { Archive, Eye, Pencil, Trash } from "lucide-react";
@@ -27,6 +27,7 @@ const HospitalFurnitureTableRow = ({ data, index, setReload }) => {
     images,
     shortDescription,
     description,
+    productTable,
   } = data;
 
   const handleDelete = async (id) => {
@@ -50,7 +51,7 @@ const HospitalFurnitureTableRow = ({ data, index, setReload }) => {
           archived: true,
         },
       );
-      
+
       setReload(true);
       toast.success("Product Archived Successfully!");
     } catch (error) {
@@ -84,9 +85,24 @@ const HospitalFurnitureTableRow = ({ data, index, setReload }) => {
 
                 <div className="mt-5 space-y-1">
                   <h4 className="font-bold">Product Details</h4>
-                  <Markdown className="prose" remarkPlugins={[remarkGfm]}>
+                  <Markdown
+                    className="prose max-w-[450px] whitespace-normal break-words"
+                    remarkPlugins={[remarkGfm]}
+                  >
                     {description}
                   </Markdown>
+
+                  <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+                    {productTable && (
+                      <Markdown
+                        className="prose whitespace-nowrap p-2"
+                        remarkPlugins={[remarkGfm]}
+                      >
+                        {productTable}
+                      </Markdown>
+                    )}
+                    <ScrollBar orientation="horizontal" />
+                  </ScrollArea>
                 </div>
 
                 <section className="w-full">

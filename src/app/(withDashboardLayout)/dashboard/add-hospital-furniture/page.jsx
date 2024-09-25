@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
@@ -27,6 +28,7 @@ const AddHospitalFurniturePage = () => {
     images: [],
     shortDescription: "",
     description: "",
+    productTable: "",
   });
 
   const handleInputChange = (e) => {
@@ -79,6 +81,7 @@ const AddHospitalFurniturePage = () => {
           images: [],
           shortDescription: "",
           description: "",
+          productTable: "",
         });
 
         setCategory("");
@@ -151,8 +154,8 @@ const AddHospitalFurniturePage = () => {
                 </div>
               </div>
 
-              {/* Full Description */}
               <div className="mb-4">
+                {/* Description */}
                 <Label className="mb-2 block">Description</Label>
                 <Textarea
                   name="description"
@@ -162,12 +165,34 @@ const AddHospitalFurniturePage = () => {
                   className="min-h-64"
                 />
 
+                {/* Description Table */}
+                <Label className="mb-2 mt-4 block">Description Table</Label>
+                <Textarea
+                  name="productTable"
+                  value={formData.productTable}
+                  onChange={handleInputChange}
+                  required
+                  className="min-h-64"
+                />
+              </div>
+              <div className="mb-5">
                 <Markdown
-                  className="prose whitespace-nowrap"
+                  className="prose max-w-none whitespace-normal break-words"
                   remarkPlugins={[remarkGfm]}
                 >
                   {formData.description}
                 </Markdown>
+                <ScrollArea className="mx-auto mt-5 max-w-[1300px] whitespace-nowrap rounded-md border">
+                  {formData?.productTable && (
+                    <Markdown
+                      className="prose whitespace-nowrap p-2"
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {formData?.productTable}
+                    </Markdown>
+                  )}
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
               </div>
 
               {/* Image Upload */}
