@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { ArrowDownToLineIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -62,7 +63,24 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
             </p>
             <p className="whitespace-break-spaces">{product?.shortDescription}</p>
 
-           
+            <Markdown
+              className="prose mt-5 max-w-none whitespace-normal break-words"
+              remarkPlugins={[remarkGfm]}
+            >
+              {product?.description}
+            </Markdown>
+
+            <ScrollArea className="mx-auto mt-12 max-w-[1300px] whitespace-nowrap rounded-md border">
+              {product?.productTable && (
+                <Markdown
+                  className="prose whitespace-nowrap p-2"
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {product?.productTable}
+                </Markdown>
+              )}
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
 
             <div className="mt-5 flex flex-wrap items-center gap-5">
               {/* <Button className="">
