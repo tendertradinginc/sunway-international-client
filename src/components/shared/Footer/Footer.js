@@ -123,7 +123,7 @@ const Footer = () => {
 
             {/* Socials */}
             <ul className="flex flex-col gap-y-3">
-              <li className="text-2xl font-bold text-gray-300">Socials
+              <li className="text-2xl font-bold text-gray-300">Live Location
               </li>
               {/* <Image
                 loader={customLoader}
@@ -145,8 +145,9 @@ const Footer = () => {
                 ></iframe>
               </li>
 
-
-              <li className="mt-5 flex gap-4">
+              <li className="text-xl font-bold mt-2 text-gray-300">Socials
+              </li>
+              <li className="mt-1 flex gap-4">
                 <Link href="https://www.facebook.com/" target="_blank">
                   {" "}
                   <div className="rounded-sm bg-white p-1">
