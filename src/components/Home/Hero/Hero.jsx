@@ -28,12 +28,29 @@ const slides = [
   //   head: "text-[#fbbe24] text-left border-l-green-800",
   //   paragraph: "text-left text-gray-900",
   // },
+  {
+    id: 2,
+    title: (
+      <>
+        Modular OT <br /> Solution
+      </>
+    ),
+    subtitle: ["Are you planning to", " "],
+    imageUrl:
+      "https://i.postimg.cc/4dD1j3k3/Whats-App-Image-2024-09-14-at-19-15-16-9c4a91b1-1-1.png",
+    imageUrlMobile: "https://i.ibb.co.com/txthZ7F/20231310511223.jpg",
+    link: "/services",
+    divMain: "items-start",
+    bg_color: "",
+    head: "text-[#fbbe24] text-left border-l-green-800",
+    paragraph: "text-left text-gray-900",
+  },
 
   {
     id: 3,
     title: (
       <>
-        Hospital Furniture <br /> Equipment
+        Modern Hospital Furniture <br /> Equipment
       </>
     ),
     subtitle: ["Hospital Revonation", " "],
@@ -85,24 +102,26 @@ export function Hero() {
               <Image
                 height={500}
                 width={1400}
-                src={
-                  "https://i.postimg.cc/9X94kXRN/Frame-7-1.png"
-                }
+                src={"https://i.postimg.cc/9X94kXRN/Frame-7-1.png"}
                 alt="Home page banner"
-                className="min-h-[90vh] w-full md:object-left object-cover md:max-h-[90vh]"
+                className="min-h-[90vh] w-full object-cover md:max-h-[90vh] md:object-left"
               />
             </div>
-            <div style={{clipPath:"polygon(0 0, 31% 0, 100% 100%, 0% 100%)"}} className="z-20 flex min-h-[90vh] md:max-w-lg lg:max-w-2xl border  w-full flex-col justify-center  md:max-h-[90vh] ">
+            <div
+              style={{ clipPath: "polygon(0 0, 31% 0, 100% 100%, 0% 100%)" }}
+              className="z-20 flex min-h-[90vh] w-full flex-col justify-center border md:max-h-[90vh] md:max-w-lg lg:max-w-2xl"
+            >
               <MaxWidthWrapper className=" ">
-                
-                <div className="  ">
-                <h1 className="my-5 md:leading-snug  max-w-lg  text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-                  Modern <br /> <span className="inline-block  lg:my-2">Modular OT</span>  <br /> Solution
-                </h1>
-                <Link href="/services">
-                  {" "}
-                  <Button className="mt-5">Exlpore More</Button>
-                </Link>
+                <div className=" ">
+                  <h1 className="my-5 max-w-lg text-3xl font-bold text-white md:text-4xl md:leading-snug lg:text-5xl">
+                    Modern <br />{" "}
+                    <span className="inline-block lg:my-2">Modular OT</span>{" "}
+                    <br /> Solution
+                  </h1>
+                  <Link href="/services">
+                    {" "}
+                    <Button className="mt-5">Exlpore More</Button>
+                  </Link>
                 </div>
               </MaxWidthWrapper>
             </div>

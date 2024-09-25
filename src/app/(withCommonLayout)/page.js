@@ -16,37 +16,21 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 export default function Home() {
   return (
     <div>
-        <AdvertiseModal />
+      <AdvertiseModal />
       <Hero />
       {/* <BannerCategory /> */}
       <NewArrival />
       <MedicalEquipments />
-
       <LatestHospitalFurniture />
-      
-
       <Services />
-
-      
       <ConstructionService />
-
       <OurAchievement />
-
-
       <FeatureProject></FeatureProject>
-
-
       <Testimonials />
-
-
-
       <AuthorizeDistributors />
-
-
       <OurClients />
       <CountUP />
       <Chatbot />
-    
     </div>
   );
 }
