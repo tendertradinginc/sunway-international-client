@@ -17,7 +17,9 @@ export default function Home() {
   return (
     <div>
       <AdvertiseModal />
+
       <Hero />
+
       {/* <BannerCategory /> */}
       <NewArrival />
       <MedicalEquipments />
