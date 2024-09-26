@@ -144,37 +144,6 @@ export function Hero() {
       ]}
     >
       <CarouselContent>
-        {/* <CarouselItem className="min-h-[90vh] w-full md:max-h-[90vh]">
-          <div className="relative">
-            <div className="absolute left-0 top-0 -z-10 w-full">
-              <Image
-                height={500}
-                width={1400}
-                src={"https://i.postimg.cc/9X94kXRN/Frame-7-1.png"}
-                alt="Home page banner"
-                className="min-h-[90vh] w-full object-cover md:max-h-[90vh] md:object-left"
-              />
-            </div>
-            <div
-              style={{ clipPath: "polygon(0 0, 31% 0, 100% 100%, 0% 100%)" }}
-              className="z-20 flex min-h-[90vh] w-full flex-col justify-center border md:max-h-[90vh] md:max-w-lg lg:max-w-2xl"
-            >
-              <MaxWidthWrapper className=" ">
-                <div className=" ">
-                  <h1 className="my-5 max-w-lg text-3xl font-bold text-white md:text-4xl md:leading-snug lg:text-5xl">
-                    Modern <br />{" "}
-                    <span className="inline-block lg:my-2">Modular OT</span>{" "}
-                    <br /> Solution
-                  </h1>
-                  <Link href="/services">
-                    {" "}
-                    <Button className="mt-5">Exlpore More</Button>
-                  </Link>
-                </div>
-              </MaxWidthWrapper>
-            </div>
-          </div>
-        </CarouselItem> */}
         {slides?.map((slide) => (
           <CarouselItem key={slide.id} className="w-full">
             <div className="relative">
@@ -184,9 +153,10 @@ export function Hero() {
                   unoptimized={true}
                   src={slide?.imageUrl}
                   alt="Home page banner"
-                  className="min-h-[90vh] w-full object-cover md:object-cover lg:object-fill"
+                  className="min-h-[90vh] w-full object-cover object-[left_top] md:object-center lg:object-fill"
                 />
               </div>
+
               <div className="z-20 flex min-h-[90vh] w-full flex-col justify-center md:max-h-[90vh]">
                 <MaxWidthWrapper>
                   <p className="text-xl font-semibold text-white">
