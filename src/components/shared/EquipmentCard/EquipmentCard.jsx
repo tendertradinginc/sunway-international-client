@@ -16,15 +16,15 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
           height={200}
           className="mb-4 h-auto w-full object-contain"
         />
-        <CardTitle className="break-words text-lg font-semibold">
-          {data.productName}
-        </CardTitle>
-        <p className="break-words font-medium">
-          Model: {data && (data?.model || data?.modelNumber)}
-        </p>
       </CardHeader>
 
-      <CardFooter className="mt-auto">
+      <CardFooter className="mt-auto flex-col">
+        <CardTitle className="break-words text-lg font-semibold">
+          <Link href={navigateTo}>{data.productName}</Link>
+        </CardTitle>
+        <p className="mb-2 break-words font-medium">
+          Model: {data && (data?.model || data?.modelNumber)}
+        </p>
         <Button
           className="mx-auto hover:bg-si-primary hover:text-white"
           variant="seeThrough"
