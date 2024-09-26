@@ -7,37 +7,35 @@ import { FaAnglesRight } from "react-icons/fa6";
 
 const LatestHospitalFurniture = async () => {
   const res = await fetch(
-    "https://sunway-international-server.vercel.app/api/v1/officeEquipment/all",
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/all?limit=${8}`,
     {
       cache: "no-store",
     },
   );
   const data = await res.json();
-  const blogs = data?.data?.result?.slice(0, 4);
+  // const blogs = data?.data?.result?.slice(0, 4);
+  const blogs = data?.data?.result;
 
   return (
-    <div className="lg:pb-20 ">
+    <div className="lg:pb-20">
       <MaxWidthWrapper>
         <SectionTitle
           title="Hospital Furniture"
           description="Twin Trade International aims to create spaces that heal, supply tools that cure as we deliver excellence to your doorstep"
         />
 
-
-        <div className=" flex justify-end mb-5">
+        <div className="mb-5 flex justify-end">
           <Link href="/hospital-furniture">
             {" "}
             <Button
               className="mx-auto hover:bg-si-primary hover:text-white"
               variant="seeThrough"
-
             >
-              See More <FaAnglesRight className="inline-block ml-2 text-lg" />
+              See More <FaAnglesRight className="ml-2 inline-block text-lg" />
             </Button>
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-
           {blogs.map((item, index) => {
             return (
               <div key={index}>
