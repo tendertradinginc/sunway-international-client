@@ -69,8 +69,8 @@ const HospitalFurnitureDetailsPage = async ({ params }) => {
               >
                 {product?.description}
               </Markdown>
-
-              {/* <ScrollArea className="mx-auto mt-12 max-w-[1300px] whitespace-nowrap rounded-md border">
+              {/* 
+              <ScrollArea className="mx-auto mt-12 max-w-[1300px] whitespace-nowrap rounded-md border">
                 {product?.productTable && (
                   <Markdown
                     className="prose whitespace-nowrap p-2"
