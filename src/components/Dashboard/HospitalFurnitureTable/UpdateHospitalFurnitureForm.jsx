@@ -110,7 +110,7 @@ const UpdateHospitalFurnitureForm = () => {
       );
 
       if (res.status === 200) {
-        router.push("/dashboard/office-equipment-table");
+        router.push("/dashboard/hospital-furniture-table");
         toast.success("Product Updated Successfully!");
       }
     } catch (error) {
