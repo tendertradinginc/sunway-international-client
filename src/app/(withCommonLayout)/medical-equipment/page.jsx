@@ -78,7 +78,7 @@ const MedicalEquipmentPage = async () => {
               {/* First CarouselItem */}
               <CarouselItem className="p-0">
                 {/* Large screen image */}
-                <div className="relative h-[400px] w-full hidden lg:block md:hidden">
+                <div className="relative hidden h-[400px] w-full md:hidden lg:block">
                   <Image
                     loader={customLoader}
                     src="https://i.ibb.co.com/gSzJXxM/photos14.jpg"
@@ -88,7 +88,7 @@ const MedicalEquipmentPage = async () => {
                   />
                 </div>
                 {/* Mobile screen image */}
-                <div className="relative h-[400px] w-full block lg:hidden md:block">
+                <div className="relative block h-[400px] w-full md:block lg:hidden">
                   <Image
                     loader={customLoader}
                     src="https://i.postimg.cc/44Mf3QxP/Whats-App-Image-2024-09-23-at-12-12-26-PM.jpg"
@@ -102,7 +102,7 @@ const MedicalEquipmentPage = async () => {
               {/* Second CarouselItem */}
               <CarouselItem className="p-0">
                 {/* Large screen image */}
-                <div className="relative h-[400px] w-full hidden lg:block md:hidden">
+                <div className="relative hidden h-[400px] w-full md:hidden lg:block">
                   <Image
                     loader={customLoader}
                     src="https://i.ibb.co.com/zrXBgmn/Whats-App-Image-2024-09-09-at-4-14-30-PM.jpg"
@@ -112,13 +112,13 @@ const MedicalEquipmentPage = async () => {
                   />
                 </div>
                 {/* Mobile screen image */}
-                <div className="relative h-[400px] w-full block lg:hidden md:block">
+                <div className="relative block h-[400px] w-full md:block lg:hidden">
                   <Image
                     loader={customLoader}
                     src="https://i.postimg.cc/1tGt65P9/Whats-App-Image-2024-09-23-at-12-10-17-PM.jpg"
                     alt="Advertisement"
                     fill
-                    className="object-cover  object-center"
+                    className="object-cover object-center"
                   />
                 </div>
               </CarouselItem>

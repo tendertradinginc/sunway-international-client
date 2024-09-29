@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { customLoader } from "@/utils/customLoader";
+import { numberSerial } from "@/utils/indexNumber";
 import axios from "axios";
 import { format } from "date-fns";
 import { Archive, Eye, Pencil, Trash } from "lucide-react";
@@ -20,9 +21,10 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
+const MedicalEquipmentTableRow = ({ data, index, setReload, page, limit }) => {
   const {
     _id,
+    uniqueId,
     productName,
     model,
     category,
@@ -69,7 +71,11 @@ const MedicalEquipmentTableRow = ({ data, index, setReload }) => {
 
   return (
     <tr className={` ${index % 2 === 1 ? "bg-[#f2f2f2]" : ""}`}>
-      <td className="px-4 py-1">{index + 1}</td>
+      <td className="px-4 py-1">
+        {" "}
+        {numberSerial(parseInt(index), limit, page)}
+      </td>
+      <td className="px-4 py-1 text-left font-semibold">{uniqueId}</td>
       <td className="px-4 py-1 text-left font-semibold">{productName}</td>
       <td className="px-4 py-1 text-left font-semibold">{model}</td>
       <td className="px-4 py-1 text-left font-semibold">{category}</td>

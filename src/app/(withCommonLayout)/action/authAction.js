@@ -49,7 +49,6 @@ export async function loginUser(pre, fromData) {
 
 export async function logOut() {
   try {
-   
     cookies().delete("accessToken");
   } catch (error) {
     throw error;

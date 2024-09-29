@@ -30,8 +30,6 @@ const Page = async () => {
           banner={"https://i.postimg.cc/zBv2qC5J/Downloader-La-463487-1.png"}
         ></PageBanner>
         <MaxWidthWrapper className="py-10">
-         
-
           {/* First Blog Section */}
           <div className="mt-12 grid grid-cols-1 gap-5 gap-y-20 lg:grid-cols-2">
             <div className="bg-secondary">
@@ -103,7 +101,7 @@ const Page = async () => {
                   height={500}
                   width={500}
                   src={item?.image}
-                  className="h-80 w-fit md:w-full object-cover"
+                  className="h-80 w-fit object-cover md:w-full"
                 />
                 <div className="p-3">
                   <h1 className="line-clamp-2 p-0 text-2xl font-semibold text-si-primary">
