@@ -26,16 +26,15 @@ const NavItems = ({ className }) => {
 
   return (
     <div className="flex flex-col items-center md:flex-row">
-            <Button
-            asChild
-            variant="link"
-         
-            className={cn(pathname === "/" ? "underline" : "")}
-          >
-            <Link href={"/"} className="font-semibold">
-              Home
-            </Link>
-          </Button>
+      <Button
+        asChild
+        variant="link"
+        className={cn(pathname === "/" ? "underline" : "")}
+      >
+        <Link href={"/"} className="font-medium">
+          Home
+        </Link>
+      </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
@@ -68,7 +67,7 @@ const NavItems = ({ className }) => {
             key={link.id}
             className={cn(pathname === link.url ? "underline" : "")}
           >
-            <Link href={link.url} className="font-semibold">
+            <Link href={link.url} className="font-medium">
               {link.label}
             </Link>
           </Button>
@@ -76,10 +75,9 @@ const NavItems = ({ className }) => {
       </div>
 
       <div className="mt-2 block md:hidden">
-        <Link href="/AboutUs#contact-section">
-          {" "}
-          <Button>Contact Us</Button>
-        </Link>
+        <Button asChild>
+          <Link href="/AboutUs#contact-section">Contact Us</Link>
+        </Button>
       </div>
     </div>
   );
