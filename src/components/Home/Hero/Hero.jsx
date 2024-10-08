@@ -129,7 +129,6 @@ const slides = [
 ];
 
 export function Hero() {
-  console.log("nothing for test");
   return (
     <Carousel
       className="mt-14 max-h-[80vh] min-h-[80dvh] w-full md:max-h-[80vh]"
@@ -153,7 +152,7 @@ export function Hero() {
                   unoptimized={true}
                   src={slide?.imageUrl}
                   alt="Home page banner"
-                  className="min-h-[90vh] w-full object-cover object-[left_top] md:object-center lg:object-fill"
+                  className="min-h-[70vh] w-full object-cover object-[left_top] md:min-h-[90vh] md:object-center lg:object-fill"
                 />
               </div>
 
