@@ -59,7 +59,7 @@ const MedicalCategoryPage = async ({ params, searchParams }) => {
 
       <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:my-10 lg:grid-cols-4">
         {equipment.length > 0 ? (
-          equipment.map((item) => (
+          equipment?.map((item) => (
             <div key={item._id}>
               <EquipmentCard
                 data={item}

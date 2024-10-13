@@ -15,7 +15,7 @@ const FeatureProject = () => {
         ></SectionTitle>
         <div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {cardData.map((card) => (
+            {cardData?.map((card) => (
               <div key={card?.id} className="bg-white p-4">
                 <div>
                   <Image

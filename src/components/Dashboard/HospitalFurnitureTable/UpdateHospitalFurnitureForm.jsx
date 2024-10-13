@@ -9,9 +9,9 @@ import { Label } from "@/components/ui/label";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { customLoader } from "@/utils/customLoader";
-import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
+import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -81,7 +81,9 @@ const UpdateHospitalFurnitureForm = () => {
     setLoading(true);
     try {
       const files = Array.from(e.target.files);
-      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUploadPromises = files?.map((file) =>
+        uploadImageToImgBB(file),
+      );
       const imageUrls = await Promise.all(imageUploadPromises);
 
       setFormData((prevFormData) => ({
@@ -262,7 +264,7 @@ const UpdateHospitalFurnitureForm = () => {
                 <div className="mt-2">
                   {formData.images.length > 0 && (
                     <div className="grid grid-cols-3 gap-4">
-                      {formData.images.map((url, index) => (
+                      {formData.images?.map((url, index) => (
                         <div key={index}>
                           <Image
                             loader={customLoader}

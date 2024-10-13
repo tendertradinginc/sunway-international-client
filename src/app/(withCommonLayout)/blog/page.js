@@ -57,7 +57,7 @@ const Page = async () => {
               </div>
             </div>
             <div className="flex flex-col gap-y-8">
-              {blogs?.slice(1, 4).map((item, idx) => (
+              {blogs?.slice(1, 4)?.map((item, idx) => (
                 <div
                   key={idx}
                   className="grid grid-cols-1 gap-2 bg-[#8cd9a61e] md:grid-cols-2"
@@ -93,7 +93,7 @@ const Page = async () => {
 
           {/* Second Blog Section */}
           <div className="mt-20 grid grid-cols-1 gap-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
-            {blogs?.slice(4, blogs.length).map((item, idx) => (
+            {blogs?.slice(4, blogs.length)?.map((item, idx) => (
               <div key={idx} className="bg-secondary">
                 <Image
                   loader={customLoader}

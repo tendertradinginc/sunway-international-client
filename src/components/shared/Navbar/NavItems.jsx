@@ -1,18 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 import { CaretDownIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavItems = ({ className }) => {
   const pathname = usePathname();
@@ -60,7 +58,7 @@ const NavItems = ({ className }) => {
         </DropdownMenuContent>
       </DropdownMenu>
       <div className="flex flex-col items-center md:flex-row">
-        {navLinks.map((link) => (
+        {navLinks?.map((link) => (
           <Button
             asChild
             variant="link"

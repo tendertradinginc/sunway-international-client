@@ -57,7 +57,7 @@ const HospitalFurniturePage = async () => {
           </div>
 
           <div className="flex max-w-[350px] flex-col bg-background">
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <Link
                 key={category._id}
                 href={`/hospital-furniture/${category?.name}`}
@@ -124,7 +124,7 @@ const HospitalFurniturePage = async () => {
       </MaxWidthWrapper>
 
       <MaxWidthWrapper className="min-h-[50vh] overflow-x-hidden py-16">
-        {products.map((categoryObj, index) => {
+        {products?.map((categoryObj, index) => {
           const categoryName = Object.keys(categoryObj)[0];
           const items = categoryObj[categoryName];
 
@@ -143,7 +143,7 @@ const HospitalFurniturePage = async () => {
                 </div>
               </CardHeader>
               <CardContent className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-                {items.map((item, index) => {
+                {items?.map((item, index) => {
                   return (
                     <div key={index}>
                       <EquipmentCard

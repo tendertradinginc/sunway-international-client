@@ -7,11 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
+import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
@@ -44,7 +44,9 @@ const AddHospitalFurniturePage = () => {
     setLoading(true); // Start loading before image upload
     try {
       const files = Array.from(e.target.files);
-      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUploadPromises = files?.map((file) =>
+        uploadImageToImgBB(file),
+      );
       const imageUrls = await Promise.all(imageUploadPromises);
 
       setFormData((prevFormData) => ({
@@ -167,11 +169,11 @@ const AddHospitalFurniturePage = () => {
                     multiple
                     onChange={handleImageUpload}
                   />
-                  
+
                   <div className="mt-2">
                     {formData.images.length > 0 && (
                       <div className="grid grid-cols-3 gap-4">
-                        {formData.images.map((url, index) => (
+                        {formData.images?.map((url, index) => (
                           <div key={index}>
                             <Image
                               loader={customLoader}
@@ -207,7 +209,7 @@ const AddHospitalFurniturePage = () => {
                               <Button
                                 type="button"
                                 onClick={(e) => {
-                                  e.preventDefault(); 
+                                  e.preventDefault();
                                   handleDeleteImage(index);
                                 }}
                                 variant="destructive"

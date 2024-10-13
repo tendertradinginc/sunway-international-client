@@ -92,7 +92,7 @@ const SideNavbar = () => {
 
         {/* Mapping over links */}
         <div className="flex flex-col gap-2">
-          {links.map((link) => (
+          {links?.map((link) => (
             <Button
               key={link.id}
               variant="secondary"

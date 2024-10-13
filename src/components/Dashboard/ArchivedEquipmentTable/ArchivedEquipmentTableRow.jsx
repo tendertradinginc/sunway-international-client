@@ -121,7 +121,7 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
                 </div>
 
                 <section className="w-full">
-                  {images.map((image, idx) => (
+                  {images?.map((image, idx) => (
                     <div
                       key={idx}
                       className="relative mx-auto mb-5 min-h-[500px] w-full"

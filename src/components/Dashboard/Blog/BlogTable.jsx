@@ -67,7 +67,7 @@ const BlogTable = () => {
                             setReload={setReload}
                           ></SingleBlog>
                         ))
-                      : Array.from({ length: 10 }).map((_, idx) => (
+                      : Array.from({ length: 10 })?.map((_, idx) => (
                           <tr
                             key={idx}
                             className={`h-10 w-full ${idx % 2 == 0 ? "bg-secondary" : ""} `}

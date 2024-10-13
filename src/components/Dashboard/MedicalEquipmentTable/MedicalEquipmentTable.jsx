@@ -83,7 +83,7 @@ const MedicalEquipmentTable = () => {
 
                   <tbody className="border text-center">
                     {products.length > 0
-                      ? products.map((product, index) => (
+                      ? products?.map((product, index) => (
                           <MedicalEquipmentTableRow
                             key={product?._id}
                             index={index}
@@ -93,7 +93,7 @@ const MedicalEquipmentTable = () => {
                             limit={limit}
                           />
                         ))
-                      : Array.from({ length: 10 }).map((_, idx) => (
+                      : Array.from({ length: 10 })?.map((_, idx) => (
                           <tr
                             key={idx}
                             className={`h-10 w-full ${
