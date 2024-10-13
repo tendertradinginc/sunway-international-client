@@ -7,7 +7,7 @@ import { FaAnglesRight } from "react-icons/fa6";
 
 const LatestHospitalFurniture = async () => {
   const res = await fetch(
-    `http://localhost:5000/api/v1/officeEquipment/allhomepage?limit=${8}`,
+    `https://sunway-international-server.vercel.app/api/v1/officeEquipment/allhomepage?limit=${8}`,
     {
       cache: "no-store",
     },
