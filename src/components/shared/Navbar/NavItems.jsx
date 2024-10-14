@@ -14,7 +14,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 
-const NavItems = ({ className }) => {
+const NavItems = ({ className, setIsSheetOpen }) => {
+  const hanldeSheetState = () => {
+    setIsSheetOpen((prev) => !prev);
+  };
   const pathname = usePathname();
 
   const navLinks = [
@@ -26,20 +29,21 @@ const NavItems = ({ className }) => {
 
   return (
     <div className="flex flex-col items-center md:flex-row">
-            <Button
-            asChild
-            variant="link"
-         
-            className={cn(pathname === "/" ? "underline" : "")}
-          >
-            <Link href={"/"} className="font-semibold">
-              Home
-            </Link>
-          </Button>
+      <Button
+        asChild
+        variant="link"
+        onClick={hanldeSheetState}
+        className={cn(pathname === "/" ? "underline" : "")}
+      >
+        <Link href={"/"} className="font-semibold">
+          Home
+        </Link>
+      </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="link"
+            onClick={hanldeSheetState}
             className={cn(
               pathname === "/hospital-furniture" ||
                 pathname === "/medical-equipment"
@@ -51,11 +55,11 @@ const NavItems = ({ className }) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem onClick={hanldeSheetState} asChild>
             <Link href="/hospital-furniture">Hospital Furniture</Link>
           </DropdownMenuItem>
 
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem onClick={hanldeSheetState} asChild>
             <Link href="/medical-equipment">Medical Equipment</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -67,6 +71,7 @@ const NavItems = ({ className }) => {
             variant="link"
             key={link.id}
             className={cn(pathname === link.url ? "underline" : "")}
+            onClick={hanldeSheetState}
           >
             <Link href={link.url} className="font-semibold">
               {link.label}

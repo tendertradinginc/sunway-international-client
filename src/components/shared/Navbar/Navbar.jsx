@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
@@ -54,12 +55,12 @@ const Navbar = () => {
         <Link href="/AboutUs#contact-section">  <Button>Contact Us</Button></Link>
         </div>
 
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger className="md:hidden">
             <RiMenu3Line className="size-5" />
           </SheetTrigger>
           <SheetContent>
-            <NavItems />
+            <NavItems setIsSheetOpen={setIsSheetOpen}  />
           </SheetContent>
         </Sheet>
       </MaxWidthWrapper>
