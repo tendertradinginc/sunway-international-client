@@ -40,7 +40,7 @@ const AddHospitalFurniturePage = () => {
   };
 
   const handleImageUpload = async (e) => {
-    setLoading(true); // Start loading before image upload
+    setLoading(true); 
     try {
       const files = Array.from(e.target.files);
       const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));

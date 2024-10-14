@@ -81,6 +81,7 @@ const ArchivedEquipmentTableRow = ({ data, index, setReload }) => {
             </Button>
           </DialogTrigger>
           <DialogContent>
+            <DialogTitle className="hidden"></DialogTitle>
             <ScrollArea className="h-[500px]">
               <div className="mt-5">
                 <h2 className="text-2xl font-semibold">{productName}</h2>
