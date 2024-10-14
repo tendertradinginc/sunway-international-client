@@ -12,7 +12,12 @@ import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavItems = ({ className }) => {
+const NavItems = ({ className, setIsSheetOpen }) => {
+  const hanldeSheetState = () => {
+    if (setIsSheetOpen) {
+      setIsSheetOpen((prev) => !prev);
+    }
+  };
   const pathname = usePathname();
 
   const navLinks = [
@@ -27,9 +32,10 @@ const NavItems = ({ className }) => {
       <Button
         asChild
         variant="link"
+        onClick={hanldeSheetState}
         className={cn(pathname === "/" ? "underline" : "")}
       >
-        <Link href={"/"} className="font-medium">
+        <Link href={"/"} className="font-semibold">
           Home
         </Link>
       </Button>
@@ -37,6 +43,7 @@ const NavItems = ({ className }) => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="link"
+            onClick={hanldeSheetState}
             className={cn(
               pathname === "/hospital-furniture" ||
                 pathname === "/medical-equipment"
@@ -48,11 +55,11 @@ const NavItems = ({ className }) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem onClick={hanldeSheetState} asChild>
             <Link href="/hospital-furniture">Hospital Furniture</Link>
           </DropdownMenuItem>
 
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem onClick={hanldeSheetState} asChild>
             <Link href="/medical-equipment">Medical Equipment</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -64,6 +71,7 @@ const NavItems = ({ className }) => {
             variant="link"
             key={link.id}
             className={cn(pathname === link.url ? "underline" : "")}
+            onClick={hanldeSheetState}
           >
             <Link href={link.url} className="font-medium">
               {link.label}

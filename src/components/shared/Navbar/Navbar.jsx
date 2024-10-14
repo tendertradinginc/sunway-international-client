@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
@@ -36,7 +37,7 @@ const Navbar = () => {
       className={`fixed z-50 w-full bg-white py-2 shadow-lg backdrop-blur-md duration-300 ${isVisible ? "top-0" : "-top-24"}`}
     >
       <MaxWidthWrapper className="flex items-center justify-between">
-      <Link href="/">
+        <Link href="/">
           <Image
             loader={customLoader}
             src="https://i.ibb.co/MZfwXL1/7-removebg-preview.png"
@@ -46,20 +47,23 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="hidden md:block  ">
+        <div className="hidden md:block">
           <NavItems />
         </div>
 
-        <div className="hidden md:block  ">
-        <Link href="/AboutUs#contact-section">  <Button>Contact Us</Button></Link>
+        <div className="hidden md:block">
+          <Link href="/AboutUs#contact-section">
+            {" "}
+            <Button>Contact Us</Button>
+          </Link>
         </div>
 
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger className="md:hidden">
             <RiMenu3Line className="size-5" />
           </SheetTrigger>
           <SheetContent>
-            <NavItems />
+            <NavItems setIsSheetOpen={setIsSheetOpen} />
           </SheetContent>
         </Sheet>
       </MaxWidthWrapper>
