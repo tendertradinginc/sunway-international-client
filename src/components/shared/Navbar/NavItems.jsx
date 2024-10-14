@@ -16,7 +16,9 @@ import { CaretDownIcon } from "@radix-ui/react-icons";
 
 const NavItems = ({ className, setIsSheetOpen }) => {
   const hanldeSheetState = () => {
-    setIsSheetOpen((prev) => !prev);
+    if (setIsSheetOpen) {
+      setIsSheetOpen((prev) => !prev);
+    }
   };
   const pathname = usePathname();
 

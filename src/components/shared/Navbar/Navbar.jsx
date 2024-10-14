@@ -48,7 +48,7 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:block  ">
-          <NavItems />
+          <NavItems  />
         </div>
 
         <div className="hidden md:block  ">
