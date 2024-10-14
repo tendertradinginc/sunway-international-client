@@ -37,7 +37,7 @@ const Navbar = () => {
       className={`fixed z-50 w-full bg-white py-2 shadow-lg backdrop-blur-md duration-300 ${isVisible ? "top-0" : "-top-24"}`}
     >
       <MaxWidthWrapper className="flex items-center justify-between">
-      <Link href="/">
+        <Link href="/">
           <Image
             loader={customLoader}
             src="https://i.ibb.co/MZfwXL1/7-removebg-preview.png"
@@ -47,12 +47,15 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="hidden md:block  ">
-          <NavItems  />
+        <div className="hidden md:block">
+          <NavItems />
         </div>
 
-        <div className="hidden md:block  ">
-        <Link href="/AboutUs#contact-section">  <Button>Contact Us</Button></Link>
+        <div className="hidden md:block">
+          <Link href="/AboutUs#contact-section">
+            {" "}
+            <Button>Contact Us</Button>
+          </Link>
         </div>
 
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -60,7 +63,7 @@ const Navbar = () => {
             <RiMenu3Line className="size-5" />
           </SheetTrigger>
           <SheetContent>
-            <NavItems setIsSheetOpen={setIsSheetOpen}  />
+            <NavItems setIsSheetOpen={setIsSheetOpen} />
           </SheetContent>
         </Sheet>
       </MaxWidthWrapper>

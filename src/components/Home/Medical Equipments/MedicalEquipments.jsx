@@ -7,13 +7,12 @@ import { FaAnglesRight } from "react-icons/fa6";
 
 const MedicalEquipments = async () => {
   const res = await fetch(
-    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/all?limit=${8}`,
+    `https://sunway-international-server.vercel.app/api/v1/medicalEquipment/allhomepage?limit=${8}`,
     { cache: "no-store" },
   );
   const data = await res.json();
-  console.log("medi", data);
-  // const blogs = data?.data?.result?.slice(0, 4);
-  const blogs = data?.data?.result;
+
+  const blogs = data?.data;
 
   return (
     <div className="py-20">
@@ -34,7 +33,7 @@ const MedicalEquipments = async () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
-          {blogs.map((item, index) => (
+          {blogs?.map((item, index) => (
             <div key={index}>
               <EquipmentCard
                 data={item}

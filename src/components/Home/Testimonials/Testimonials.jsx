@@ -70,8 +70,13 @@ export default function Testimonials() {
 
   return (
     <div className="lg:pb-10">
-      <MaxWidthWrapper className="lg:py-20 ">
-        <SectionTitle title={"What Clients Say"} description={"Discover what our clients think about our services and how we've helped them achieve success."}></SectionTitle>
+      <MaxWidthWrapper className="lg:py-20">
+        <SectionTitle
+          title={"What Clients Say"}
+          description={
+            "Discover what our clients think about our services and how we've helped them achieve success."
+          }
+        ></SectionTitle>
         <Carousel
           opts={{ loop: true }}
           plugins={[
@@ -81,18 +86,26 @@ export default function Testimonials() {
           ]}
         >
           <CarouselContent>
-            {companyQuotes.map((quote, idx) => (
-              <CarouselItem key={quote.date + idx} className="mx-auto max-w-2xl my-10 ">
-                <Card className={` h-full py-10 bg-gradient-to-r from-gray-100  to-transparent mx-1`}>
+            {companyQuotes?.map((quote, idx) => (
+              <CarouselItem
+                key={quote.date + idx}
+                className="mx-auto my-10 max-w-2xl"
+              >
+                <Card
+                  className={`mx-1 h-full bg-gradient-to-r from-gray-100 to-transparent py-10`}
+                >
                   <CardHeader>
-                    <div className="bg-si-primary rounded-full p-3 w-max mx-auto">
-                      <PiQuotes className=" text-white  font-bold mx-auto" size={25} />
+                    <div className="mx-auto w-max rounded-full bg-si-primary p-3">
+                      <PiQuotes
+                        className="mx-auto font-bold text-white"
+                        size={25}
+                      />
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-semibold text-center">{quote.quote}</p>
+                    <p className="text-center font-semibold">{quote.quote}</p>
                   </CardContent>
-                  <CardFooter className="flex flex-wrap gap-2 overflow-hidden text-nowrap justify-center">
+                  <CardFooter className="flex flex-wrap justify-center gap-2 overflow-hidden text-nowrap">
                     <h5 className="font-medium">- {quote.quoter}</h5>
                     <span>|</span>
                     <p className="">{quote.date}</p>

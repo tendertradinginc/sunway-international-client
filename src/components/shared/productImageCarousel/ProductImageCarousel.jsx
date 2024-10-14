@@ -23,8 +23,8 @@ const ProductImageCarousel = ({ images }) => {
         ]}
         className="h-full w-full"
       >
-        <CarouselContent className=" ml-0 h-full w-full">
-          {images.map((src, idx) => {
+        <CarouselContent className="ml-0 h-full w-full px-6">
+          {images?.map((src, idx) => {
             return (
               <CarouselItem className="pl-0" key={src + idx}>
                 <div className="relative h-auto min-h-[500px] w-full">
@@ -41,7 +41,6 @@ const ProductImageCarousel = ({ images }) => {
           })}
         </CarouselContent>
         <div className="absolute bottom-5 left-1/2">
-      
           {images?.lenght > 1 && (
             <div>
               <CarouselPrevious />

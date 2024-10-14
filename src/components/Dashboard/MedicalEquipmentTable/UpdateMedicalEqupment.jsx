@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
+import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -20,7 +21,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
-const UpdateMedicalEqupment = () => {
+const UpdateMedicalEquipment = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
@@ -93,7 +94,9 @@ const UpdateMedicalEqupment = () => {
     setLoading(true);
     try {
       const files = Array.from(e.target.files);
-      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUploadPromises = files?.map((file) =>
+        uploadImageToImgBB(file),
+      );
       const imageUrls = await Promise.all(imageUploadPromises);
 
       setFormData((prevFormData) => ({
@@ -104,6 +107,31 @@ const UpdateMedicalEqupment = () => {
       toast.error("Failed to upload images. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleDeleteImage = (indexToDelete) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      images: prevFormData.images.filter((_, index) => index !== indexToDelete),
+    }));
+  };
+
+  const handleMoveImage = (index, direction) => {
+    const newImages = [...formData.images];
+    const targetIndex = index + direction;
+
+    if (targetIndex >= 0 && targetIndex < newImages.length) {
+      // Swap the images
+      [newImages[index], newImages[targetIndex]] = [
+        newImages[targetIndex],
+        newImages[index],
+      ];
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: newImages,
+      }));
     }
   };
 
@@ -275,7 +303,6 @@ const UpdateMedicalEqupment = () => {
                   name="productTable"
                   value={formData.productTable}
                   onChange={handleInputChange}
-                  required
                   className="min-h-64"
                 />
               </div>
@@ -315,7 +342,7 @@ const UpdateMedicalEqupment = () => {
                 <div className="mt-2">
                   {formData.images.length > 0 && (
                     <div className="grid grid-cols-3 gap-4">
-                      {formData.images.map((url, index) => (
+                      {formData.images?.map((url, index) => (
                         <div key={index}>
                           <Image
                             loader={customLoader}
@@ -325,6 +352,41 @@ const UpdateMedicalEqupment = () => {
                             alt={`Uploaded ${index}`}
                             className="mt-2 h-auto w-full"
                           />
+                          <div className="mt-2 flex items-center gap-2">
+                            <Button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleMoveImage(index, -1);
+                              }}
+                              disabled={index === 0}
+                              size="icon"
+                            >
+                              <ChevronUp />
+                            </Button>
+                            <Button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleMoveImage(index, 1);
+                              }}
+                              disabled={index === formData.images.length - 1}
+                              size="icon"
+                            >
+                              <ChevronDown />
+                            </Button>
+                            <Button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault(); // Prevent form submission
+                                handleDeleteImage(index);
+                              }}
+                              variant="destructive"
+                              size="icon"
+                            >
+                              <Trash2 />
+                            </Button>
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -356,4 +418,4 @@ const UpdateMedicalEqupment = () => {
   );
 };
 
-export default UpdateMedicalEqupment;
+export default UpdateMedicalEquipment;

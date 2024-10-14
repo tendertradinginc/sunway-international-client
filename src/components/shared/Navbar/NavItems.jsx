@@ -1,18 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 import { CaretDownIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavItems = ({ className, setIsSheetOpen }) => {
   const hanldeSheetState = () => {
@@ -67,7 +65,7 @@ const NavItems = ({ className, setIsSheetOpen }) => {
         </DropdownMenuContent>
       </DropdownMenu>
       <div className="flex flex-col items-center md:flex-row">
-        {navLinks.map((link) => (
+        {navLinks?.map((link) => (
           <Button
             asChild
             variant="link"
@@ -75,7 +73,7 @@ const NavItems = ({ className, setIsSheetOpen }) => {
             className={cn(pathname === link.url ? "underline" : "")}
             onClick={hanldeSheetState}
           >
-            <Link href={link.url} className="font-semibold">
+            <Link href={link.url} className="font-medium">
               {link.label}
             </Link>
           </Button>
@@ -83,10 +81,9 @@ const NavItems = ({ className, setIsSheetOpen }) => {
       </div>
 
       <div className="mt-2 block md:hidden">
-        <Link href="/AboutUs#contact-section">
-          {" "}
-          <Button>Contact Us</Button>
-        </Link>
+        <Button asChild>
+          <Link href="/AboutUs#contact-section">Contact Us</Link>
+        </Button>
       </div>
     </div>
   );

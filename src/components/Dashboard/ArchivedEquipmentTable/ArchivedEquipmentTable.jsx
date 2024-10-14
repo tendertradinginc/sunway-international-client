@@ -74,7 +74,7 @@ const ArchivedEquipmentTable = () => {
 
                   <tbody className="border text-center">
                     {products?.length > 0 ? (
-                      products.map((product, index) => (
+                      products?.map((product, index) => (
                         <ArchivedEquipmentTableRow
                           key={product?._id}
                           index={index}

@@ -15,7 +15,6 @@ import MaxWidthWrapper from "../custom/MaxWidthWrapper";
 
 import SectionTitle from "../shared/SectionTitle/SectionTitle";
 
-
 const MedicalInstrument = () => {
   const products = [
     {
@@ -77,9 +76,11 @@ const MedicalInstrument = () => {
             {/* <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
               Medical Equipment
             </h1> */}
-            <div
-              className="text-center text-3xl font-bold text-white md:text-5xl">
-              <SectionTitle title1={" Medical"} title2={"Equipment"}></SectionTitle>
+            <div className="text-center text-3xl font-bold text-white md:text-5xl">
+              <SectionTitle
+                title1={" Medical"}
+                title2={"Equipment"}
+              ></SectionTitle>
             </div>
 
             <p className="mt-5 text-center font-semibold text-gray-300">
@@ -107,7 +108,7 @@ const MedicalInstrument = () => {
             className="mx-auto w-full max-w-64 p-0 md:max-w-xl lg:max-w-5xl"
           >
             <CarouselContent>
-              {products.map((item, index) => (
+              {products?.map((item, index) => (
                 <CarouselItem
                   key={index}
                   className="bg-transparent md:basis-1/3 lg:basis-1/4"

@@ -56,7 +56,7 @@ const ProjectShowcase = () => {
             ></SectionTitle>
 
             <section className="grid h-full w-full grid-cols-2 gap-4 lg:grid-cols-4">
-              {projects.map((project) => (
+              {projects?.map((project) => (
                 <div key={project.id} className="h-[400px] w-full">
                   <div
                     className="h-full w-full bg-cover bg-center"

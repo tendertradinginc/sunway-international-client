@@ -1,4 +1,3 @@
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,6 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 
 export default function Loading() {
@@ -40,7 +40,7 @@ export default function Loading() {
       </div>
 
       <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:my-10 lg:grid-cols-4">
-        {[...Array(8)].map((_, index) => (
+        {[...Array(8)]?.map((_, index) => (
           <div key={index} className="rounded-lg bg-background p-4 shadow">
             <Skeleton className="mb-4 h-48 w-full" /> {/* Image placeholder */}
             <Skeleton className="mb-2 h-6 w-3/4" /> {/* Title placeholder */}

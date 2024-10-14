@@ -15,7 +15,7 @@ const MedicalEquipmentTable = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(parseInt(searchParams.get("page")) || 1);
-  const [limit, setLimit] = useState(parseInt(searchParams.get("limit")) || 10);
+  const [limit, setLimit] = useState(parseInt(searchParams.get("limit")) || 20);
   const [totalProducts, setTotalProducts] = useState(0);
   const [reload, setReload] = useState(false);
 
@@ -50,7 +50,7 @@ const MedicalEquipmentTable = () => {
             <div className="flex items-center justify-between pb-6">
               <h2 className="text-2xl font-semibold text-si-primary">
                 <AiFillDatabase className="mb-1 inline" />
-                Medical Equipment List
+                Medical Equipment List- {totalProducts}
               </h2>
               <Button asChild>
                 <Link href="/dashboard/add-medical-equipment">
@@ -73,6 +73,7 @@ const MedicalEquipmentTable = () => {
                   <thead className="border-2 border-si-primary bg-si-primary text-white">
                     <tr>
                       <th className="px-4 py-2">No</th>
+                      <th className="px-4 py-2">Id</th>
                       <th className="px-4 py-2 text-left">Product Name</th>
                       <th className="px-4 py-2 text-left">Model Number</th>
                       <th className="px-4 py-2 text-left">Category</th>
@@ -82,15 +83,17 @@ const MedicalEquipmentTable = () => {
 
                   <tbody className="border text-center">
                     {products.length > 0
-                      ? products.map((product, index) => (
+                      ? products?.map((product, index) => (
                           <MedicalEquipmentTableRow
                             key={product?._id}
                             index={index}
                             data={product}
                             setReload={setReload}
+                            page={page}
+                            limit={limit}
                           />
                         ))
-                      : Array.from({ length: 10 }).map((_, idx) => (
+                      : Array.from({ length: 10 })?.map((_, idx) => (
                           <tr
                             key={idx}
                             className={`h-10 w-full ${

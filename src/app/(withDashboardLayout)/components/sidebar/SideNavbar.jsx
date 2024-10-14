@@ -92,7 +92,7 @@ const SideNavbar = () => {
 
         {/* Mapping over links */}
         <div className="flex flex-col gap-2">
-          {links.map((link) => (
+          {links?.map((link) => (
             <Button
               key={link.id}
               variant="secondary"
@@ -114,7 +114,7 @@ const SideNavbar = () => {
       </section>
 
       {/* //* For Smaller Devices */}
-      <section className="sticky top-0 z-50 flex w-full items-center justify-between border-b bg-background px-2.5 py-4 lg:hidden">
+      <section className="sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-500 bg-white px-2.5 py-4 lg:hidden">
         {/* //* Slider */}
         <div>
           <Sheet>
@@ -126,6 +126,16 @@ const SideNavbar = () => {
             <SheetContent side="left">
               <div className="mt-5 flex flex-col gap-2">
                 {/* Map over routes and generate links */}
+                {links.map((link) => (
+                  <Button
+                    key={link.id}
+                    variant="secondary"
+                    asChild
+                    className="justify-start"
+                  >
+                    <Link href={link.href}>{link.label}</Link>
+                  </Button>
+                ))}
               </div>
 
               <Button
@@ -140,10 +150,16 @@ const SideNavbar = () => {
         </div>
 
         {/* //* LOGO */}
-        {/* <Link to={"/"}>
+        {/* <Link href={"/"}>
           <div className="flex items-center gap-1">
-            <img src={logo} alt="tti logo" className="size-10" />
-            <h4 className="font-semibold">Tender Trading Inc.</h4>
+            <Image
+              src="/logo.png"
+              alt="tti logo"
+              width={80}
+              height={80}
+              className="size-10"
+            />
+            <h4 className="font-semibold">DCL Eng.</h4>
           </div>
         </Link> */}
 
@@ -151,18 +167,18 @@ const SideNavbar = () => {
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Avatar>
-                <AvatarImage src={user?.profile || ""} alt="profile-picture" />
+                {/* <AvatarImage src={user?.profile || ""} alt="profile-picture" /> */}
                 <AvatarFallback className="bg-blue-600 font-semibold text-white">
-                  {user?.fullName?.split("")[0]}
+                  {/* {user?.fullName?.split("")[0]} */}
                 </AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mr-1.5">
               <DropdownMenuLabel>
-                {user?.fullName || "Not Available"}
+                {/* {user?.fullName || "Not Available"} */}
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <Link to={"/"}>
+              <Link href={"/"}>
                 <DropdownMenuItem asChild>
                   <Button className="my-1 w-full">Home</Button>
                 </DropdownMenuItem>

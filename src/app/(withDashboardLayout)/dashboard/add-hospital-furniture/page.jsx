@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { customLoader } from "@/utils/customLoader";
 import { uploadImageToImgBB } from "@/utils/imageUpload";
 import axios from "axios";
+import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
@@ -43,7 +44,9 @@ const AddHospitalFurniturePage = () => {
     setLoading(true); 
     try {
       const files = Array.from(e.target.files);
-      const imageUploadPromises = files.map((file) => uploadImageToImgBB(file));
+      const imageUploadPromises = files?.map((file) =>
+        uploadImageToImgBB(file),
+      );
       const imageUrls = await Promise.all(imageUploadPromises);
 
       setFormData((prevFormData) => ({
@@ -54,6 +57,31 @@ const AddHospitalFurniturePage = () => {
       toast.error("Failed to upload images. Please try again.");
     } finally {
       setLoading(false); // Stop loading after image upload is complete
+    }
+  };
+
+  const handleDeleteImage = (indexToDelete) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      images: prevFormData.images.filter((_, index) => index !== indexToDelete),
+    }));
+  };
+
+  const handleMoveImage = (index, direction) => {
+    const newImages = [...formData.images];
+    const targetIndex = index + direction;
+
+    if (targetIndex >= 0 && targetIndex < newImages.length) {
+      // Swap the images
+      [newImages[index], newImages[targetIndex]] = [
+        newImages[targetIndex],
+        newImages[index],
+      ];
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        images: newImages,
+      }));
     }
   };
 
@@ -141,19 +169,55 @@ const AddHospitalFurniturePage = () => {
                     multiple
                     onChange={handleImageUpload}
                   />
+
                   <div className="mt-2">
                     {formData.images.length > 0 && (
                       <div className="grid grid-cols-3 gap-4">
-                        {formData.images.map((image, index) => (
+                        {formData.images?.map((url, index) => (
                           <div key={index}>
                             <Image
                               loader={customLoader}
-                              src={image}
+                              src={url}
                               height={200}
                               width={200}
                               alt={`Uploaded ${index}`}
                               className="mt-2 h-auto w-full"
                             />
+                            <div className="mt-2 flex items-center gap-2">
+                              <Button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleMoveImage(index, -1);
+                                }}
+                                disabled={index === 0}
+                                size="icon"
+                              >
+                                <ChevronUp />
+                              </Button>
+                              <Button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleMoveImage(index, 1);
+                                }}
+                                disabled={index === formData.images.length - 1}
+                                size="icon"
+                              >
+                                <ChevronDown />
+                              </Button>
+                              <Button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleDeleteImage(index);
+                                }}
+                                variant="destructive"
+                                size="icon"
+                              >
+                                <Trash2 />
+                              </Button>
+                            </div>
                           </div>
                         ))}
                       </div>

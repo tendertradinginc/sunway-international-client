@@ -67,7 +67,7 @@ export function OfficeCategoryCombobox({ value, setValue }) {
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandList>
             <CommandGroup>
-              {categories.map((category) => (
+              {categories?.map((category) => (
                 <CommandItem
                   key={category._id}
                   value={category.name}
