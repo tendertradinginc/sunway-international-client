@@ -10,7 +10,7 @@ const EquipmentCard = ({ navigateTo = "", data }) => {
       <CardHeader className="flex-grow text-center">
         <Image
           loader={customLoader}
-          src={data.images[0]}
+          src={data?.images[0]}
           alt={data.name}
           width={200}
           height={200}
