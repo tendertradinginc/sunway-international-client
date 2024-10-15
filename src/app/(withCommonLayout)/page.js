@@ -16,6 +16,7 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 export default function Home() {
   return (
     <div>
+       
       <AdvertiseModal />
 
       <Hero />
